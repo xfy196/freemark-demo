@@ -1,0 +1,1 @@
+                                        <div class="time">${date?number_to_datetime?string("yyyy年MM月dd日 HH:mm")}</div>
