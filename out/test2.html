@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF</title>
+    <style>
+        .clearfix:after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+           .approve-container .approve-content {
+            position: relative;
+
+        }
+
+        .approve-container .approve-content .approve-box {
+            width: 49%;
+            position: absolute;
+        }
+
+        .approve-container .approve-content .apply {
+            left: 0;
+
+        }
+
+        .approve-container .approve-content .closeItem {
+            right: 0;
+
+        }
+
+        .approve-panel .approve-item {
+            margin-top: 39px;
+            position: relative;
+        }
+
+        .approve-panel .approve-item .approve-item-status {
+            float: right;
+            text-align: right;
+            max-width: 200px;
+        }
+
+        .approve-panel .approve-item .approve-item-status .status {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1AB370;
+            line-height: 14px;
+        }
+
+        .approve-panel .approve-item .approve-item-status .time {
+            margin: 8px 0;
+        }
+
+        .approve-panel .approve-item .approve-item-status .time,
+        .approve-panel .approve-item .approve-item-status .note {
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+            line-height: 12px;
+        }
+
+        .approve-panel .approve-item:first-child {
+            margin-top: 0;
+        }
+
+        .approve-panel .approve-item .approve-item-tag {
+            height: 100%;
+            float: left;
+            position: relative;
+
+        }
+
+        .approve-panel .approve-item .approve-item-tag .tag {
+            width: 29px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #F89C33;
+            line-height: 12px;
+            background: #F4F4F4;
+            padding: 2px 3px;
+            border-radius: 2px;
+            position: absolute;
+            left: 12px;
+            top: 8px;
+
+        }
+
+        .approve-panel .approve-item .approve-item-tag .approve-item-schedule {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .approve-panel .approve-item .approve-item-tag .approve-item-schedule:after {
+            content: "";
+            height: 100%;
+            width: 2px;
+            background: #dcdee0;
+            border-radius: 1px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-top-left-radius: 1px;
+            border-top-right-radius: 1px;
+            border-bottom-right-radius: 1px;
+            border-bottom-left-radius: 1px;
+        }
+
+        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball {
+            width: 8px;
+            height: 8px;
+            background: #e5e5e5;
+            border-radius: 100%;
+            position: relative;
+            margin-top: 12px;
+            z-index: 9;
+        }
+
+        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.has-border {
+            width: 8px;
+            height: 8px;
+            background: #F89C33;
+            border: 2px solid #FEEBD6;
+        }
+
+        .approve-panel .approve-item .approve-item-schedule-progress {
+            width: 1px;
+            background: #dcdee0;
+            border-radius: 1px;
+            position: absolute;
+            top: 21px;
+            height: 100%;
+            left: 4px;
+        }
+
+        .approve-panel .approve-item .approve-item-body {
+            float: left;
+            margin-left: 52px;
+        }
+
+        .approve-panel .approve-item .approve-item-body .person-item {
+            float: left;
+            width: 32px;
+            text-align: center;
+            margin-left: 20px;
+            margin-bottom: 7px;
+        }
+
+        .approve-panel .approve-item .approve-item-body .person-item.no-margin-left {
+            margin-left: 0;
+        }
+
+        .approve-panel .approve-item .approve-item-body .person-item .avatar {
+            width: 32px;
+            height: 32px;
+        }
+
+        .approve-panel .approve-item .approve-item-body .person-item .person-name {
+            margin-top: 5px;
+            font-size: 11px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="approve-container">
+        <div class="public-header">
+          <span class="public-header-tltle"><a style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
+            会议审批进度</span>
+        </div>
+        <div class="approve-content">
+
+          <div class="apply approve-box">
+
+            <div class="head table-title">申请审批</div>
+
+            <div class="approve-panel">
+
+              <div class="approve-item clearfix">
+
+                <div class="approve-item-schedule-progress"></div>
+
+
+
+                <div class="approve-item-tag">
+
+                  <div class="approve-item-schedule">
+
+                    <div class="approve-item-schedule-ball has-border"></div>
+
+                  </div>
+
+                  <div class="tag">会签</div>
+
+                </div>
+
+                <div class="approve-item-body">
+
+                  <div class="person-item no-margin-left">
+
+                    <div class="avatar">
+
+                      <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
+
+                    </div>
+
+                    <div class="person-name">xxy</div>
+
+                  </div>
+
+                  <div class="person-item">
+
+                    <div class="avatar">
+
+                      <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
+
+                    </div>
+
+                    <div class="person-name">xxy</div>
+
+                  </div>
+
+                  <div class="person-item">
+
+                    <div class="avatar">
+
+                      <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
+
+                    </div>
+
+                    <div class="person-name">xxy</div>
+
+                  </div>
+
+                  <div class="person-item">
+
+                    <div class="avatar">
+
+                      <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
+
+                    </div>
+
+                    <div class="person-name">xxy</div>
+
+                  </div>
+
+                </div>
+
+                <div class="approve-item-status">
+
+                  <div class="status">审批通过</div>
+
+                  <div class="note">审批不通过</div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+          <div class="closeItem approve-box">
+
+            <div class="head table-title">结项审批</div>
+
+          </div>
+        </div>
+
+      </div>
+</body>
+</html>

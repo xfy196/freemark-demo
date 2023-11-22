@@ -12,7 +12,7 @@
     <title>PDF</title>
     <style>
         @page {
-            size: 1100px 1200px;
+            size: 1100px 12000px;
         }
 
         .clearfix:after {
@@ -661,9 +661,11 @@
 
         }
 
+
         .approve-panel .approve-item {
             margin-top: 39px;
             position: relative;
+            padding-left: 10px;
         }
 
         .approve-panel .approve-item .approve-item-status {
@@ -672,10 +674,18 @@
             max-width: 200px;
         }
 
-        .approve-panel .approve-item .approve-item-status .status {
+        .approve-panel .approve-item .approve-item-status .pass {
             font-size: 14px;
             font-weight: 400;
             color: #1AB370;
+            line-height: 14px;
+        }
+
+        .approve-panel .approve-item .approve-item-status .no-pass {
+            font-size: 14px;
+            font-weight: 400;
+
+            color: #FF4D4F;
             line-height: 14px;
         }
 
@@ -719,17 +729,15 @@
 
         .approve-panel .approve-item .approve-item-tag .approve-item-schedule {
             position: relative;
-            overflow: hidden;
         }
 
-        .approve-panel .approve-item .approve-item-tag .approve-item-schedule:after {
-            content: "";
-            height: 100%;
-            width: 2px;
+        .approve-panel .approve-item .approve-item-tag .approve-item-schedule .approve-item-schedule-progress {
+            width: 1px;
             background: #dcdee0;
             border-radius: 1px;
             position: absolute;
             left: 50%;
+            top: 9px;
             transform: translateX(-50%);
             border-top-left-radius: 1px;
             border-top-right-radius: 1px;
@@ -737,31 +745,27 @@
             border-bottom-left-radius: 1px;
         }
 
+        .approve-panel .approve-item .approve-item-tag .approve-item-schedule .approve-item-schedule-progress.has-border {
+            top: 11px;
+        }
+
         .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball {
             width: 8px;
             height: 8px;
             background: #e5e5e5;
             border-radius: 100%;
-            position: relative;
+            position: absolute;
             margin-top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 9;
         }
 
         .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.has-border {
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             background: #F89C33;
-            border: 2px solid rgba(248, 156, 51, 0.2);
-        }
-
-        .approve-panel .approve-item .approve-item-schedule-progress {
-            width: 1px;
-            background: #dcdee0;
-            border-radius: 1px;
-            position: absolute;
-            top: 21px;
-            height: calc(100% + 29px);
-            left: 4px;
+            border: 2px solid #FEEBD6;
         }
 
         .approve-panel .approve-item .approve-item-body {
@@ -1558,111 +1562,87 @@
 
                 <div class="approve-container">
                     <div class="public-header">
-                      <span class="public-header-tltle"><a style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                        会议审批进度</span>
+                        <span class="public-header-tltle"><a
+                                style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
+                            会议审批进度</span>
                     </div>
                     <div class="approve-content">
-            
-                      <div class="apply approve-box">
-            
-                        <div class="head table-title">申请审批</div>
-            
-                        <div class="approve-panel">
-            
-                          <div class="approve-item clearfix">
-            
-                            <div class="approve-item-schedule-progress"></div>
-            
-            
-            
-                            <div class="approve-item-tag">
-            
-                              <div class="approve-item-schedule">
-            
-                                <div class="approve-item-schedule-ball has-border"></div>
-            
-                              </div>
-            
-                              <div class="tag">会签</div>
-            
+                        <div class="apply approve-box">
+
+                            <div class="head table-title">申请审批</div>
+
+                            <div class="approve-panel">
+
+                                <#list audit.approve as auditData>
+                                    <div class="approve-item clearfix">
+
+                                        <div class="approve-item-tag">
+                                            <#assign sizeRoundedUp=(((auditData.people?size - 1)!0) / 4 + 1)?floor>
+                                                <div class="approve-item-schedule">
+                                             
+
+                                                    <div
+                                                        class="approve-item-schedule-ball<#if auditData.status == true>  has-border</#if>">
+                                                        <#if (audit.approve?size> 0 && auditData?index != audit.approve?size
+                                                        - 1)>
+
+                                                        <div style="height: ${sizeRoundedUp * 60 + (auditData.status?then(25, 28))}px"
+                                                            class="approve-item-schedule-progress <#if auditData.status == true>  has-border</#if>">
+                                                        </div>
+                                                    </#if>
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="tag">
+                                                    ${auditData.type}
+                                                </div>
+
+                                        </div>
+                                        <div class="approve-item-body">
+                                            <#if auditData.people??>
+                                                <#list auditData.people as people>
+                                                    <div
+                                                        class="person-item  <#if (people?index % 4) == 0> clear-left no-margin-left</#if>">
+
+                                                        <div class="avatar">
+
+                                                            <img src="${people.avatar}" alt="" />
+
+                                                        </div>
+
+                                                        <div class="person-name">${people.name}</div>
+
+                                                    </div>
+                                                </#list>
+                                            </#if>
+                                        </div>
+
+                                        <div class="approve-item-status clearfix">
+                                            <#if auditData.status==true>
+                                                <div class="pass">审批通过</div>
+
+                                                <#else>
+                                                    <div class="no-pass">审批不通过</div>
+
+                                            </#if>
+                                            <div class="time">${date?number_to_datetime?string("yyyy年MM月dd日 HH:mm")}</div>
+                                            <div class="note">${auditData.note}</div>
+
+                                        </div>
+                                    </div>
+                                </#list>
                             </div>
-            
-                            <div class="approve-item-body">
-            
-                              <div class="person-item no-margin-left">
-            
-                                <div class="avatar">
-            
-                                  <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
-            
-                                </div>
-            
-                                <div class="person-name">xxy</div>
-            
-                              </div>
-            
-                              <div class="person-item">
-            
-                                <div class="avatar">
-            
-                                  <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
-            
-                                </div>
-            
-                                <div class="person-name">xxy</div>
-            
-                              </div>
-            
-                              <div class="person-item">
-            
-                                <div class="avatar">
-            
-                                  <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
-            
-                                </div>
-            
-                                <div class="person-name">xxy</div>
-            
-                              </div>
-            
-                              <div class="person-item">
-            
-                                <div class="avatar">
-            
-                                  <img src="https://cdn.xxytime.top/%E7%BC%96%E7%BB%84%202.png" alt="" />
-            
-                                </div>
-            
-                                <div class="person-name">xxy</div>
-            
-                              </div>
-            
-                            </div>
-            
-                            <div class="approve-item-status">
-            
-                              <div class="status">审批通过</div>
-            
-                              <div class="note">审批不通过</div>
-            
-                            </div>
-            
-                          </div>
-            
-            
-            
+
                         </div>
-            
-                      </div>
-            
-                      <div class="closeItem approve-box">
-            
-                        <div class="head table-title">结项审批</div>
-            
-                      </div>
+                        <div class="closeItem approve-box">
+
+                            <div class="head table-title">结项审批</div>
+
+                        </div>
                     </div>
-            
-                  </div>
+
+                </div>
             </div>
         </div>
     </#escape>
