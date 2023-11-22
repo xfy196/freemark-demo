@@ -717,7 +717,6 @@
             font-size: 12px;
             font-weight: 400;
             color: #F89C33;
-            line-height: 12px;
             background: #F4F4F4;
             padding: 2px 3px;
             border-radius: 2px;
