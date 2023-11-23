@@ -12,7 +12,7 @@
     <title>PDF</title>
     <style>
         @page {
-            size: 1100px 12000px;
+            size: 1100px 1200px;
         }
 
         .clearfix:after {
@@ -666,6 +666,8 @@
             margin-top: 39px;
             position: relative;
             padding-left: 10px;
+            border-bottom: 1px dashed #DCDEE0;
+
         }
 
         .approve-panel .approve-item .approve-item-status {
@@ -681,7 +683,7 @@
             line-height: 14px;
         }
 
-        .approve-panel .approve-item .approve-item-status .no-pass {
+        .approve-panel .approve-item .approve-item-status .reject {
             font-size: 14px;
             font-weight: 400;
 
@@ -689,8 +691,16 @@
             line-height: 14px;
         }
 
+        .approve-panel .approve-item .approve-item-status .withdraw {
+            font-size: 14px;
+            font-weight: 400;
+
+            color: #999999;
+            line-height: 14px;
+        }
+
         .approve-panel .approve-item .approve-item-status .time {
-            margin: 8px 0;
+            margin: 20px 0;
         }
 
         .approve-panel .approve-item .approve-item-status .time,
@@ -698,7 +708,7 @@
             font-size: 12px;
             font-weight: 400;
             color: #999999;
-            line-height: 12px;
+            line-height: 14px;
         }
 
         .approve-panel .approve-item:first-child {
@@ -708,6 +718,7 @@
         .approve-panel .approve-item .approve-item-tag {
             height: 100%;
             float: left;
+            width: 52px;
             position: relative;
 
         }
@@ -723,30 +734,14 @@
             position: absolute;
             left: 12px;
             top: 8px;
-
+            text-align: center;
         }
 
         .approve-panel .approve-item .approve-item-tag .approve-item-schedule {
             position: relative;
         }
 
-        .approve-panel .approve-item .approve-item-tag .approve-item-schedule .approve-item-schedule-progress {
-            width: 1px;
-            background: #dcdee0;
-            border-radius: 1px;
-            position: absolute;
-            left: 50%;
-            top: 9px;
-            transform: translateX(-50%);
-            border-top-left-radius: 1px;
-            border-top-right-radius: 1px;
-            border-bottom-right-radius: 1px;
-            border-bottom-left-radius: 1px;
-        }
 
-        .approve-panel .approve-item .approve-item-tag .approve-item-schedule .approve-item-schedule-progress.has-border {
-            top: 11px;
-        }
 
         .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball {
             width: 8px;
@@ -755,16 +750,23 @@
             border-radius: 100%;
             position: absolute;
             margin-top: 12px;
-            left: 50%;
-            transform: translateX(-50%);
+            border: 2px solid #FAFAFA;
             z-index: 9;
         }
 
-        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.has-border {
-            width: 8px;
-            height: 8px;
+        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.withdraw {
+            background: #999999;
+            border-color: #e5e5e5;
+        }
+
+        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.reject {
+            background: #ff4d4f;
+            border-color: #FFDFDF;
+        }
+
+        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.pass {
             background: #F89C33;
-            border: 2px solid #FEEBD6;
+            border-color: #FEEBD6;
         }
 
         .approve-panel .approve-item .approve-item-body {
@@ -772,12 +774,44 @@
             margin-left: 52px;
         }
 
+        .approve-panel .approve-item .approve-item-body.countersign {
+            float: none;
+        }
+
+        .approve-panel .approve-item .approve-item-body.countersign .person-item {
+            float: none;
+            width: auto;
+        }
+        .approve-panel .approve-item .approve-item-body.countersign .person-item .left-box {
+            width: 56px;
+            float: left;
+        }
+        .approve-panel .approve-item .approve-item-body.countersign .person-item .right-box {
+            float: right;
+        }
+        .approve-panel .approve-item .approve-item-body .withdraw {
+            color: #999999;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .approve-panel .approve-item .approve-item-body .reject {
+            color: #ff4d4f;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
+        .approve-panel .approve-item .approve-item-body .pass {
+            color: #F89C33;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+
         .approve-panel .approve-item .approve-item-body .person-item {
             float: left;
-            width: 32px;
             text-align: center;
-            margin-left: 20px;
             margin-bottom: 7px;
+            width: 56px;
         }
 
         .approve-panel .approve-item .approve-item-body .person-item.no-margin-left {
@@ -787,6 +821,15 @@
         .approve-panel .approve-item .approve-item-body .person-item .avatar {
             width: 32px;
             height: 32px;
+            margin: 0 auto;
+            border-radius: 100%;
+            overflow: hidden;
+
+        }
+
+        .approve-panel .approve-item .approve-item-body .person-item .avatar img {
+            width: 100%;
+            height: 100%;
         }
 
         .approve-panel .approve-item .approve-item-body .person-item .person-name {
@@ -795,6 +838,9 @@
             font-weight: 400;
             color: #333333;
             line-height: 16px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
     </style>
 </head>
@@ -816,34 +862,30 @@
                         <div class="basicInfo-main-title">
                                 <span class="basicInfo-main-titleFlag">线上会议</span>
                             <span class="basicInfo-main-titleC">
-                                测试批量签到
+                                xxy1
                             </span>
                         </div>
                         <div class="basicInfo-main-type">
-                            会议类型：邱硕审批
+                            会议类型：儿科讨论会
                         </div>
                         <div class="basicInfo-main-time">
                             <div class="basicInfo-main-timeR">
                                 <label>计划时间：</label>
-                                <span>2022/12/15 17:39~2022/12/16 23:39</span>
+                                <span>2023/11/23 10:07~11:07</span>
                             </div>
                             <div class="basicInfo-main-timeR">
                                 <label>实际时间：</label>
-                                <span>2022/12/16 17:36~2022/12/16 17:36</span>
+                                <span></span>
                             </div>
-                                <div style="width: 25%;margin-right: 0;" class="basicInfo-main-timeR">
-                                    <label>会议时长：</label>
-                                    <span>2秒</span>
-                                </div>
                         </div>
                         <div class="basicInfo-main-sponsor">
                             <div class="basicInfo-main-sponsor-C">
                                 <label>发起人：</label>
-                                <span>邱硕 医百兴合dev3</span>
+                                <span>t tt</span>
                             </div>
                             <div class="basicInfo-main-sponsor-C">
                                 <label>负责人：</label>
-                                <span>邱硕 医百兴合dev3</span>
+                                <span>t tt</span>
                             </div>
                         </div>
                     </div>
@@ -859,20 +901,6 @@
                                 参会信息</span>
                         </div>
                         <div class="attend-info-main">
-                                <div class="attend-info-main-qrcode">
-                                    <label>签到二维码定位地址：</label>
-                                    <span>山东杂粮煎饼南京紫金学院店</span>
-                                </div>
-                                <div class="attend-info-main-customer">
-                                        <div class="customer-one">
-                                            <label>参会客户：</label>
-                                            <span>22人</span>
-                                        </div>
-                                        <div class="customer-two">
-                                            <label>签到客户：</label>
-                                            <span>22人</span>
-                                        </div>
-                                </div>
                         </div>
                     </div>
 
@@ -891,1157 +919,126 @@
                     </div>
 
 
-                    <div class="cloud-recording">
-                        <div class="public-header">
-                            <span class="public-header-tltle"><a
-                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                                云端录制</span>
-                        </div>
-                        <div class="speaker-main">
-                            <table style="border-collapse: collapse">
-                                <tr>
-                                    <th width="100">序号</th>
-                                    <th>文件名</th>
-                                    <th width="120">时长</th>
-                                    <th width="100">文件大小</th>
-                                    <th width="100">操作</th>
-                                </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>
-                                            VID_20220805_102316.mp4
-                                        </td>
-                                        <td>4分25秒</td>
-                                        <td>881.26MB</td>
-                                        <td><a style="text-decoration: none; color: #1ab370;"
-                                                href="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/database/18351883820/20221216/1671187216281a82551ef">点击预览</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>
-                                            22.mp4
-                                        </td>
-                                        <td>5秒</td>
-                                        <td>0.89MB</td>
-                                        <td><a style="text-decoration: none; color: #1ab370;"
-                                                href="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/database/18351883820/20221216/1671187373694fe1ac3e7">点击预览</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>
-                                            22.mp4
-                                        </td>
-                                        <td>5秒</td>
-                                        <td>0.89MB</td>
-                                        <td><a style="text-decoration: none; color: #1ab370;"
-                                                href="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/database/18351883820/20221216/167118757445874e3481a">点击预览</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>
-                                            1.mp4
-                                        </td>
-                                        <td>4分25秒</td>
-                                        <td>40.26MB</td>
-                                        <td><a style="text-decoration: none; color: #1ab370;"
-                                                href="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/database/18351883820/20221216/167118757117094d8dc8b">点击预览</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>
-                                            22.mp4
-                                        </td>
-                                        <td>5秒</td>
-                                        <td>0.89MB</td>
-                                        <td><a style="text-decoration: none; color: #1ab370;"
-                                                href="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/database/18351883820/20221216/16711876043950e9cb478">点击预览</a></td>
-                                    </tr>
-                            </table>
-                        </div>
-                    </div>
 
-                    <div class="cloud-chart">
-                        <div class="public-header">
-                            <span class="public-header-tltle"><a
-                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                                云端截图</span>
-                        </div>
-                        <div class="cloud-chart-img">
-                                <div class="picture-item">
-                                    <div class="parent-img">
-                                        <img class="pic-img" src="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/1671180982837WX20221213-140500%402x.png" alt="" />
-                                    </div>
-                                </div>
-                                <div class="picture-info">
-                                    <div class="info-left">
-                                        <span>截图人：许富荧</span>
-                                        <span class="split-line"> </span>
-                                        <span class="">截图时间：2022年12月16日 16:56</span>
-                                    </div>
-                                    <div class="info-right">
-                                        参会人员：22</div>
-                                </div>
-                                <div class="picture-item">
-                                    <div class="parent-img">
-                                        <img class="pic-img" src="https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/poster_dev/100000009/1671182508889WX20221213-140500%402x.png" alt="" />
-                                    </div>
-                                </div>
-                                <div class="picture-info">
-                                    <div class="info-left">
-                                        <span>截图人：许富荧</span>
-                                        <span class="split-line"> </span>
-                                        <span class="">截图时间：2022年12月16日 17:21</span>
-                                    </div>
-                                    <div class="info-right">
-                                        参会人员：22</div>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="meeting-detail">
-                        <div class="public-header">
-                            <span class="public-header-tltle"><a
-                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>参会医生明细</span>
-                        </div>
-                        <div class="speaker-main">
-                            <table style="border-collapse: collapse">
-                                <tr>
-                                        <th width="80">会议编码</th>
-                                        <th width="80">会议主题</th>
-                                        <th width="80">会议日期</th>
-                                        <th width="80">姓名</th>
-                                        <th width="80">机构名称</th>
-                                        <th width="80">科室</th>
-                                        <th width="80">职称</th>
-                                        <th width="80">省份</th>
-                                        <th width="80">会议签到</th>
-                                        <th width="80">签到方式</th>
-                                </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>11111化规范化风格化风格化法国</td>
-                                            <td>建国路98号</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>112233</td>
-                                            <td>123123123123</td>
-                                            <td>12</td>
-                                            <td>初级护师</td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>1212</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>1221111222111212</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>123456.89</td>
-                                            <td>测试医院</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>9999999999</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>test-许富荧</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>test2-许富荧</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>测试22222</td>
-                                            <td>测试机构</td>
-                                            <td>12</td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>测试客户2</td>
-                                            <td>测试机构</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>的大苏打</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>哈哈</td>
-                                            <td>123123123123</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>哈哈哈</td>
-                                            <td>测试机构</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>哈哈哈哈</td>
-                                            <td>测试医院11</td>
-                                            <td>12</td>
-                                            <td>初级技士</td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>急急急急急急急</td>
-                                            <td>建国路98号</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>李 兴智</td>
-                                            <td>兴智科技园</td>
-                                            <td>12</td>
-                                            <td>初级护师</td>
-                                            <td>江苏省</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>李健123123123</td>
-                                            <td>建国路98号</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>哦吼</td>
-                                            <td>建国路98号</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>哦吼</td>
-                                            <td>兴智科技园</td>
-                                            <td>12</td>
-                                            <td>初级检验技师</td>
-                                            <td>江苏省</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                                    <tr>
-                                            <td>XXHY000000437</td>
-                                            <td>测试批量签到</td>
-                                            <td>2022/12/15~2022/12/16</td>
-                                            <td>行会你好</td>
-                                            <td>建国路98号</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>北京市</td>
-                                            <td>已签到</td>
-                                            <td>代签</td>
-                                    </tr>
-                            </table>
-                        </div>
-                    </div>
 
                 <!-- 参会员工 -->
 
 
                 <!-- 执行标准 -->
 
-                    <div class="ask">
+
+
+                <!-- 会议审批进度 -->
+                    <div class="approve-container">
                         <div class="public-header">
                             <span class="public-header-tltle"><a
                                     style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                                执行标准</span>
+                                会议审批进度</span>
+                        </div>
+                        <div class="approve-content">
+                                <div class="apply approve-box">
+
+                                    <div class="head table-title">申请审批</div>
+                                    <div class="approve-panel">
+
+                                                        <div class="approve-item clearfix">
+
+                                                            <div class="approve-item-tag">
+                                                                <div class="approve-item-schedule">
+
+                                                                        <div class="approve-item-schedule-ball
+                                                                         withdraw 
+                                                                        ">
+                                                                        </div>
+
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="approve-item-body">
+                                                                        <div class="withdraw">已撤回</div>
+                                                            </div>
+
+                                                            <div class="approve-item-status">
+
+
+
+                                                                        <div class="time">
+                                                                            2023年11月23日
+                                                                            20:29:28</div>
+                                                            </div>
+                                                        </div>
+                                                            <div class="approve-item clearfix">
+
+                                                                <div class="approve-item-tag">
+                                                                    <div class="approve-item-schedule">
+
+
+                                                                        <div class="approve-item-schedule-ball">
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="tag">
+                                                                            会签
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="approve-item-body countersign">
+                                                                            <div
+                                                                                class="person-item clearfix">
+                                                                                <div class="left-box">
+                                                                                    <div class="avatar">
+                                                                                                <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
+                                                                                                    alt="" />
+
+
+                                                                                    </div>
+
+                                                                                    <div class="person-name">
+                                                                                        吕俊超12312312
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="right-box">
+                                                                                    <div class="approve-item-status">
+                                                                                        sadsd
+                                                                </div>
+                                                            </div>
+
+                                    </div>
+                                                                            <div
+                                                                                class="person-item clearfix">
+                                                                                <div class="left-box">
+                                                                                    <div class="avatar">
+
+                                                                                            <img src="https://omnidev.100url.cn/s3file/dev_10/staffInfo/2023-11-15/170002205741560vji7ja.jpg"
+                                                                                                alt="" />
+
+                                                                                    </div>
+
+                                                                                    <div class="person-name">
+                                                                                        李亚飞
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="right-box">
+                                                                                    <div class="approve-item-status">
+                                                                                        sadsd
+                                                                </div>
+                                                            </div>
+
+                                    </div>
                         </div>
 
 
-                            <!-- 参会人数 -->
-                                <div class="table-title">参会人数</div>
-                                <div class="speaker-main">
-                                    <table style="border-collapse: collapse">
-                                        <tr>
-                                            <th width="240">内容</th>
-                                            <th width="180">标准</th>
-                                            <th>实际</th>
-                                            <th width="120">是否达标</th>
-                                        </tr>
-                                                <tr>
-                                                    <td>参会医生人数</td>
-                                                    <td>45~</td>
-                                                    <td>22</td>
-                                                    <td>
-                                                            <span style="color: #FF4D4F;">未达标</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>单医院单科室最多参会人数</td>
-                                                    <td>3</td>
-                                                    <td>8</td>
-                                                    <td>
-                                                            <span style="color: #FF4D4F;">未达标</span>
-                                                    </td>
-                                                </tr>
-                                    </table>
-                                </div>
 
-                                <!-- 参会频率 -->
-                            <!-- 参会人数 -->
-                            <!-- 参会人数 -->
-                                    <div class="table-title">参会频率</div>
-                                    <div class="speaker-main">
-                                        <table style="border-collapse: collapse">
-                                            <tr>
-                                                <th width="240">内容</th>
-                                                <th width="180">标准</th>
-                                                <th>实际</th>
-                                                <th width="120">是否达标</th>
-                                            </tr>
-                                            <tr>
-                                                <td>医生近30天参会次数上限</td>
-                                                <td>5</td>
-                                                <td></td>
-                                                <td>
-                                                        <span style="color: #1AB370;">达标</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <!-- 讲者 -->
-                            <!-- 参会人数 -->
-                            <!-- 参会人数 -->
-                                        <div class="table-title">讲者</div>
-                                        <div class="speaker-main">
-                                            <table style="border-collapse: collapse">
-                                                <tr>
-                                                    <th width="240">内容</th>
-                                                    <th width="180">标准</th>
-                                                    <th>实际</th>
-                                                    <th width="120">是否达标</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>年讲课数量上限</td>
-                                                    <td>6</td>
-                                                    <td></td>
-                                                    <td>
-                                                            <span style="color: #1AB370;">达标</span>
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
 
 
-
-
-                    </div>
-
-
-                <div class="approve-container">
-                    <div class="public-header">
-                        <span class="public-header-tltle"><a
-                                style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                            会议审批进度</span>
-                    </div>
-                    <div class="approve-content">
-                        <div class="apply approve-box">
-
-                            <div class="head table-title">申请审批</div>
-
-                            <div class="approve-panel">
-
-                                    <div class="approve-item clearfix">
-
-                                        <div class="approve-item-tag">
-                                                <div class="approve-item-schedule">
-                                             
-
-                                                    <div
-                                                        class="approve-item-schedule-ball  has-border">
-
-                                                        <div style="height: 145px"
-                                                            class="approve-item-schedule-progress   has-border">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="tag">
-                                                    会签
-                                                </div>
-
-                                        </div>
-                                        <div class="approve-item-body">
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                        </div>
-
-                                        <div class="approve-item-status clearfix">
-                                                <div class="pass">审批通过</div>
-
-                                            <div class="time">2023年11月21日 20:05</div>
-                                            <div class="note">审批不通过大声道哈师大哈多大大大的啊哒哒哒哒哒啊啊阿达阿达阿达啊大大撒撒撒阿达大大阿达打算阿大大大的</div>
-
-                                        </div>
-                                    </div>
-                                    <div class="approve-item clearfix">
-
-                                        <div class="approve-item-tag">
-                                                <div class="approve-item-schedule">
-                                             
-
-                                                    <div
-                                                        class="approve-item-schedule-ball">
-
-                                                        <div style="height: 148px"
-                                                            class="approve-item-schedule-progress ">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="tag">
-                                                    会签
-                                                </div>
-
-                                        </div>
-                                        <div class="approve-item-body">
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                        </div>
-
-                                        <div class="approve-item-status clearfix">
-                                                    <div class="no-pass">审批不通过</div>
-
-                                            <div class="time">2023年11月21日 20:05</div>
-                                            <div class="note">审批不通过大声道哈师大哈多大大大的啊哒哒哒哒哒啊啊阿达阿达阿达啊大大撒撒撒阿达大大阿达打算阿大大大的</div>
-
-                                        </div>
-                                    </div>
-                                    <div class="approve-item clearfix">
-
-                                        <div class="approve-item-tag">
-                                                <div class="approve-item-schedule">
-                                             
-
-                                                    <div
-                                                        class="approve-item-schedule-ball  has-border">
-
-                                                        <div style="height: 265px"
-                                                            class="approve-item-schedule-progress   has-border">
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="tag">
-                                                    会签
-                                                </div>
-
-                                        </div>
-                                        <div class="approve-item-body">
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                        </div>
-
-                                        <div class="approve-item-status clearfix">
-                                                <div class="pass">审批通过</div>
-
-                                            <div class="time">2023年11月21日 20:05</div>
-                                            <div class="note">审批不通过大声道哈师大哈多大大大的啊哒哒哒哒哒啊啊阿达阿达阿达啊大大撒撒撒阿达大大阿达打算阿大大大的</div>
-
-                                        </div>
-                                    </div>
-                                    <div class="approve-item clearfix">
-
-                                        <div class="approve-item-tag">
-                                                <div class="approve-item-schedule">
-                                             
-
-                                                    <div
-                                                        class="approve-item-schedule-ball">
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="tag">
-                                                    会签
-                                                </div>
-
-                                        </div>
-                                        <div class="approve-item-body">
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item   clear-left no-margin-left">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                                    <div
-                                                        class="person-item  ">
-
-                                                        <div class="avatar">
-
-                                                            <img src="https://cdn.xxytime.top/avatar.png" alt="" />
-
-                                                        </div>
-
-                                                        <div class="person-name">xxy</div>
-
-                                                    </div>
-                                        </div>
-
-                                        <div class="approve-item-status clearfix">
-                                                    <div class="no-pass">审批不通过</div>
-
-                                            <div class="time">2023年11月21日 20:05</div>
-                                            <div class="note">审批不通过大声道哈师大哈多大大大的啊哒哒哒哒哒啊啊阿达阿达阿达啊大大撒撒撒阿达大大阿达打算阿大大大的</div>
-
-                                        </div>
-                                    </div>
-                            </div>
-
-                        </div>
-                        <div class="closeItem approve-box">
-
-                            <div class="head table-title">结项审批</div>
-
-                        </div>
-                    </div>
-
-                </div>
             </div>
+
+        </div>
+        </div>
+
+        </div>
+
+        </div>
         </div>
 </body>
 

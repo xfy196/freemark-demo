@@ -1,0 +1,485 @@
+{
+  "meetingStatus": 0,
+  "supplementFinishApprovalRecordId": -1,
+  "planExpense": {
+    "name": "计划费用",
+    "type": "EXPENSE",
+    "value": ""
+  },
+  "templateId": 40322,
+  "participantCount": 0,
+  "id": 7485,
+  "meetingTypeId": 3985,
+  "state": "APPLY_AUDIT_APPROVED",
+  "questionnaireStatisticsVo": {
+    "participantCount": 0,
+    "totalRecordCount": 0
+  },
+  "actualFee": 0.00,
+  "planStartTime": 1700705252000,
+  "planDate": "2023/11/23",
+  "organiser": "",
+  "showExecuteStandard": false,
+  "alreadyAttend": 0,
+  "supplementEnable": true,
+  "coOrganizer": [],
+  "supplement": false,
+  "speaker": [],
+  "planAttendeeCustomer": [],
+  "stateLabel": "未开始",
+  "topic": "xxy1",
+  "planCustomerCount": 0,
+  "staffSpeaker": [],
+  "creatorDeptId": 10,
+  "showParticipant": true,
+  "approvalInfo": {
+    "apply": [
+      {
+        "auditors": [
+          {
+            "participants": [
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127104,
+                "auditUid": 138366,
+                "auditName": "邱硕177",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703984000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703984000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧大大大大叔大婶",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },{
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              }
+            ],
+            "identity": 1,
+            "approvalType": 0,
+            "status": 20,
+            "statusString": "通过"
+          },
+          {
+            "participants": [
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127104,
+                "auditUid": 138366,
+                "auditName": "邱硕177",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703984000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703984000
+              }
+            ],
+            "identity": 1,
+            "approvalType": 0,
+            "status": 10,
+            "statusString": "通过"
+          }
+        ],
+        "ccUser": [],
+        "recordVo": {
+          "id": 48068,
+          "processId": 0,
+          "applyUid": 138363,
+          "applierName": "许富荧",
+          "applierDeptNames": "华润内部员工",
+          "identityType": 0,
+          "endAuditIdentity": 1,
+          "enterpriseId": 10,
+          "createTime": 1700703456000,
+          "approvalTime": 1700703984000,
+          "status": 20,
+          "reason": "你猜萨达大叔大婶大萨达海u等哈迪欧萨哈打扫打手机哦ID萨达拉萨你打大萨达花生豆阿仕顿大家啊三等奖阿德",
+          "templateId": 40303,
+          "templateName": "hahahah",
+          "templateStatus": 0,
+          "controlChanged": false,
+          "category": 10,
+          "bizId": 7485,
+          "bizName": "xxy1",
+          "transfer": false,
+          "statusValue": "通过",
+          "approvedTime": 1700703984000,
+          "showChange": false,
+          "auditor": false,
+          "showCancel": false,
+          "applier": true
+        },
+        "controls": []
+      }
+    ],
+    "finish": [
+      {
+        "auditors": [
+          {
+            "participants": [
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127104,
+                "auditUid": 138366,
+                "auditName": "邱硕177",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703984000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703984000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧大大大大叔大婶",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },{
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              }
+            ],
+            "identity": 1,
+            "approvalType": 0,
+            "status": 20,
+            "statusString": "通过"
+          },
+          {
+            "participants": [
+              {
+                "id": 127102,
+                "auditUid": 138363,
+                "auditName": "许富荧",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703456000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703456000
+              },
+              {
+                "id": 127104,
+                "auditUid": 138366,
+                "auditName": "邱硕177",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1700703984000,
+                "identityType": 1,
+                "approvalType": 0,
+                "statusValue": "通过",
+                "auditTime": 1700703984000
+              }
+            ],
+            "identity": 1,
+            "approvalType": 0,
+            "status": 10,
+            "statusString": "通过"
+          }
+        ],
+        "ccUser": [],
+        "recordVo": {
+          "id": 48068,
+          "processId": 0,
+          "applyUid": 138363,
+          "applierName": "许富荧",
+          "applierDeptNames": "华润内部员工",
+          "identityType": 0,
+          "endAuditIdentity": 1,
+          "enterpriseId": 10,
+          "createTime": 1700703456000,
+          "approvalTime": 1700703984000,
+          "status": 20,
+          "reason": "你猜萨达大叔大婶大萨达海u等哈迪欧萨哈打扫打手机哦ID萨达拉萨你打大萨达花生豆阿仕顿大家啊三等奖阿德",
+          "templateId": 40303,
+          "templateName": "hahahah",
+          "templateStatus": 0,
+          "controlChanged": false,
+          "category": 10,
+          "bizId": 7485,
+          "bizName": "xxy1",
+          "transfer": false,
+          "statusValue": "通过",
+          "approvedTime": 1700703984000,
+          "showChange": false,
+          "auditor": false,
+          "showCancel": false,
+          "applier": true
+        },
+        "controls": []
+      }
+    ],
+    "supplementFinish": []
+  },
+  "customFields": [],
+  "planUploadOnline": {
+    "uploadOnlineEnable": true,
+    "uploaded": false
+  },
+  "creatorId": 138363,
+  "meetingTypeName": "儿科讨论会",
+  "onlineMeetingEnable": true,
+  "actualExpense": {
+    "name": "实际费用",
+    "type": "EXPENSE",
+    "value": ""
+  },
+  "approvalRecordId": 48068,
+  "duration": 0,
+  "staffInCharge": {
+    "bizId": 60264,
+    "name": "t",
+    "attendeeType": 1,
+    "id": 138363,
+    "wechatUserId": "",
+    "thumbAvatar": "",
+    "deleted": true,
+    "deptName": "tt",
+    "departmentId": 10,
+    "ifCcDept": false,
+    "type": 2,
+    "label": "t"
+  },
+  "planExtendJson": [
+    {
+      "templateControlId": 36632,
+      "controlName": "计划费用",
+      "controlTypeName": "EXPENSE",
+      "jsonConfig": "{\"label\":\"计划费用\",\"apperAfterStart\":false,\"options\":[]}",
+      "enabled": false
+    },
+    {
+      "templateControlId": 36633,
+      "controlName": "实际费用",
+      "controlTypeName": "EXPENSE",
+      "jsonConfig": "{\"label\":\"实际费用\",\"apperAfterStart\":true,\"options\":[]}",
+      "enabled": false
+    }
+  ],
+  "finishAudited": -100,
+  "functionType": 20,
+  "enAttendanceDoctorHeaders": [
+    "name",
+    "dept",
+    "organization"
+  ],
+  "finishApprovalRecordId": -1,
+  "staffInChargeId": 138363,
+  "durationFormat": "",
+  "staffInChargeDeptId": 10,
+  "attendanceTaskId": 0,
+  "meetingRoles": [],
+  "creator": {
+    "bizId": 60263,
+    "name": "t",
+    "attendeeType": 0,
+    "id": 138363,
+    "wechatUserId": "",
+    "thumbAvatar": "",
+    "deleted": true,
+    "deptName": "tt",
+    "departmentId": 10,
+    "ifCcDept": false,
+    "type": 2,
+    "label": "t"
+  },
+  "createAudited": 20,
+  "meetingDataFlag": false,
+  "onlineMeetingEnableByMini": true,
+  "planCode": "XXHY000000099",
+  "attendanceDoctor": [],
+  "questionnaires": [],
+  "waterMarkEnable": false,
+  "planTime": "2023/11/23 10:07~11:07",
+  "planEndTime": 1700708852000,
+  "step": "APPLY_AUDIT",
+  "enterpriseId": 10,
+  "cnAttendanceDoctorHeaders": [
+    "姓名",
+    "科室",
+    "机构名称"
+  ],
+  "prompt": -1,
+  "statistics": {
+    "attendanceCount": 0,
+    "attendanceRepCount": 0,
+    "onlineRepCount": 0,
+    "onlineCustomerCount": 0,
+    "uniqCustomerCount": 0,
+    "uniqRepCount": 0,
+    "durationAvg": 0,
+    "durationRepAvg": 0,
+    "avgDuration": "",
+    "onlinePeopleCount": 0,
+    "attendeePeopleCount": 0,
+    "avgDurationRep": ""
+  }
+}
