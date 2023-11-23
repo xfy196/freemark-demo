@@ -774,21 +774,6 @@
             margin-left: 52px;
         }
 
-        .approve-panel .approve-item .approve-item-body.countersign {
-            float: none;
-        }
-
-        .approve-panel .approve-item .approve-item-body.countersign .person-item {
-            float: none;
-            width: auto;
-        }
-        .approve-panel .approve-item .approve-item-body.countersign .person-item .left-box {
-            width: 56px;
-            float: left;
-        }
-        .approve-panel .approve-item .approve-item-body.countersign .person-item .right-box {
-            float: right;
-        }
         .approve-panel .approve-item .approve-item-body .withdraw {
             color: #999999;
             font-size: 12px;
@@ -826,12 +811,10 @@
             overflow: hidden;
 
         }
-
         .approve-panel .approve-item .approve-item-body .person-item .avatar img {
             width: 100%;
             height: 100%;
         }
-
         .approve-panel .approve-item .approve-item-body .person-item .person-name {
             margin-top: 5px;
             font-size: 11px;
@@ -1631,14 +1614,14 @@
                                                                     <#assign
                                                                         lastAuditor=applyData.auditors[applyData.auditors?size
                                                                         - 1]>
-
+    
                                                                         <div class="approve-item-schedule-ball<#if applyData.recordVo.status??>
                                                                         <#if applyData.recordVo.status == 20 || applyData.recordVo.status == 50> pass <#elseif applyData.recordVo.status == 30 || applyData.recordVo.status == -30> reject <#elseif applyData.recordVo.status == 40> withdraw </#if>
                                                                         </#if>">
                                                                         </div>
-
+    
                                                                 </div>
-
+    
                                                             </div>
                                                             <div class="approve-item-body">
                                                                 <#if applyData.recordVo.status??>
@@ -1651,12 +1634,12 @@
                                                                     </#if>
                                                                 </#if>
                                                             </div>
-
+    
                                                             <div class="approve-item-status">
-
-
+    
+    
                                                                 <#if approvalInfo.apply?size gt 0>
-
+    
                                                                     <#if applyData.recordVo??>
                                                                         <div class="time">
                                                                             ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
@@ -1666,10 +1649,10 @@
                                                             </div>
                                                         </div>
                                                     </#if>
-                                                    <#if auditor.approvalType==0 && applyData.recordVo.approvalTime??>
-                                                        <div class="approve-item clearfix">
+                                                    <#if auditor.approvalType == 0 && applyData.recordVo.approvalTime??>
+                                                    <div class="approve-item clearfix">
 
-                                                            <div class="approve-item-tag">
+                                                        <div class="approve-item-tag">
                                                                 <div class="approve-item-schedule">
 
 
@@ -1687,218 +1670,209 @@
                                                                     </#if>
                                                                 </div>
 
-                                                            </div>
-                                                            <div class="approve-item-body">
-                                                                <#if auditor.participants??>
-                                                                    <#list auditor.participants as participant>
-                                                                        <div
-                                                                            class="person-item  <#if (participant?index % 4) == 0> clear-left no-margin-left</#if>">
+                                                        </div>
+                                                        <div class="approve-item-body">
+                                                            <#if auditor.participants??>
+                                                                <#list auditor.participants as participant>
+                                                                    <div
+                                                                        class="person-item  <#if (participant?index % 4) == 0> clear-left no-margin-left</#if>">
 
-                                                                            <div class="avatar">
-                                                                                <#if participant.avatar??>
+                                                                        <div class="avatar">
+                                                                            <#if participant.avatar??>
 
-                                                                                    <img src="${participant.avatar}"
+                                                                                <img src="${participant.avatar}"
+                                                                                    alt="" />
+                                                                                <#else>
+                                                                                    <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
                                                                                         alt="" />
-                                                                                    <#else>
-                                                                                        <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
-                                                                                            alt="" />
 
-                                                                                </#if>
-
-                                                                            </div>
-
-                                                                            <div class="person-name">
-                                                                                ${participant.auditName}
-                                                                            </div>
+                                                                            </#if>
 
                                                                         </div>
-                                                                    </#list>
-                                                                </#if>
-                                                            </div>
-                                                            <div class="approve-item-status">
-                                                                <#if auditor.status??>
-                                                                    <#if auditor.status==20>
-                                                                        <div class="pass">已通过</div>
-                                                                        <#elseif auditor.status==30>
-                                                                            <div class="reject">未通过</div>
-                                                                    </#if>
-                                                                </#if>
 
-                                                                <#if approvalInfo.apply?size gt 0>
+                                                                        <div class="person-name">
+                                                                            ${participant.auditName}
+                                                                        </div>
 
-                                                                    <#if applyData.recordVo??>
-
-
-                                                                        <div class="time">
-                                                                            ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
-                                                                            HH:mm:ss")}</div>
-                                                                    </#if>
-
-                                                                    <#if auditor.status??>
-                                                                        <#if applyData.recordVo.reason?? &&
-                                                                            auditor.status==30>
-                                                                            <div class="note">
-                                                                                未通过原因：${applyData.recordVo.reason}
-                                                                            </div>
-                                                                        </#if>
-                                                                    </#if>
-                                                                </#if>
-
-                                                            </div>
+                                                                    </div>
+                                                                </#list>
+                                                            </#if>
                                                         </div>
-                                                        <!-- 1---- -->
-                                                        <#else>
-                                                            <div class="approve-item clearfix">
+                                                        <#if auditor.approvalType == 0>
+                                                        <div class="approve-item-status">
+                                                            <#if auditor.status??>
+                                                                <#if auditor.status==20>
+                                                                    <div class="pass">已通过</div>
+                                                                    <#elseif auditor.status==30>
+                                                                        <div class="reject">未通过</div>
+                                                                </#if>
+                                                            </#if>
 
-                                                                <div class="approve-item-tag">
-                                                                    <div class="approve-item-schedule">
+                                                            <#if approvalInfo.apply?size gt 0>
+
+                                                                <#if applyData.recordVo??>
+                                                               
+
+                                                                <div class="time">
+                                                                    ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
+                                                                    HH:mm:ss")}</div>
+                                                                </#if>
+
+                                                                <#if auditor.status??>
+                                                                    <#if applyData.recordVo.reason?? &&
+                                                                        auditor.status==30>
+                                                                        <div class="note">未通过原因：${applyData.recordVo.reason}
+                                                                        </div>
+                                                                    </#if>
+                                                                </#if>
+                                                            </#if>
+
+                                                        </div>
+                                                        </#if>
+                                                    </div>
+                                                    <#else>
+                                                    <div class="approve-item clearfix">
+
+                                                        <div class="approve-item-tag">
+                                                                <div class="approve-item-schedule">
 
 
-                                                                        <div class="approve-item-schedule-ball<#if auditor.status??>
+                                                                    <div class="approve-item-schedule-ball<#if auditor.status??>
                                                                         <#if auditor.status == 20 || auditor.status == 50> pass <#elseif auditor.status == 30 || auditor.status == -30> reject <#elseif auditor.status == 40> withdraw </#if>
                                                                         </#if>">
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="tag">
+                                                                    <#if auditor.approvalType==1>
+                                                                        会签
+                                                                        <#elseif auditor.approvalType==0>
+                                                                            或签
+                                                                    </#if>
+                                                                </div>
+
+                                                        </div>
+                                                        <div class="approve-item-body">
+                                                            <#if auditor.participants??>
+                                                                <#list auditor.participants as participant>
+                                                                    <div
+                                                                        class="person-item  <#if (participant?index % 4) == 0> clear-left no-margin-left</#if>">
+
+                                                                        <div class="avatar">
+                                                                            <#if participant.avatar??>
+
+                                                                                <img src="${participant.avatar}"
+                                                                                    alt="" />
+                                                                                <#else>
+                                                                                    <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
+                                                                                        alt="" />
+
+                                                                            </#if>
+
+                                                                        </div>
+
+                                                                        <div class="person-name">
+                                                                            ${participant.auditName}
                                                                         </div>
 
                                                                     </div>
-                                                                    <div class="tag">
-                                                                        <#if auditor.approvalType==1>
-                                                                            会签
-                                                                            <#elseif auditor.approvalType==0>
-                                                                                或签
-                                                                        </#if>
-                                                                    </div>
+                                                                </#list>
+                                                            </#if>
+                                                        </div>
+                                                        <#if auditor.approvalType == 0>
+                                                        <div class="approve-item-status">
+                                                            <#if auditor.status??>
+                                                                <#if auditor.status==20>
+                                                                    <div class="pass">已通过</div>
+                                                                    <#elseif auditor.status==30>
+                                                                        <div class="reject">未通过</div>
+                                                                </#if>
+                                                            </#if>
 
-                                                                </div>
-                                                                <div class="approve-item-body countersign">
-                                                                    <#if auditor.participants??>
-                                                                        <#list auditor.participants as participant>
-                                                                            <div
-                                                                                class="person-item clearfix">
-                                                                                <div class="left-box">
-                                                                                    <div class="avatar">
-                                                                                        <#if participant.avatar??>
+                                                            <#if approvalInfo.apply?size gt 0>
 
-                                                                                            <img src="${participant.avatar}"
-                                                                                                alt="" />
-                                                                                            <#else>
-                                                                                                <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
-                                                                                                    alt="" />
+                                                                <#if applyData.recordVo??>
+                                                               
 
-                                                                                        </#if>
+                                                                <div class="time">
+                                                                    ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
+                                                                    HH:mm:ss")}</div>
+                                                                </#if>
 
-                                                                                    </div>
-
-                                                                                    <div class="person-name">
-                                                                                        ${participant.auditName}
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="right-box">
-                                                                                    <div class="approve-item-status">
-                                                                                        sadsd
-                                                                                        <#if auditor.status??>
-                                                                                            <#if auditor.status==20>
-                                                                                                <div class="pass">已通过
-                                                                                                </div>
-                                                                                                <#elseif
-                                                                                                    auditor.status==30>
-                                                                                                    <div class="reject">
-                                                                                                        未通过</div>
-                                                                                            </#if>
-
-                                                                                            <#if approvalInfo.apply?size
-                                                                                                gt 0>
-
-                                                                                                <#if
-                                                                                                    applyData.recordVo??>
-
-
-                                                                                                    <div class="time">
-                                                                                                        ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
-                                                                                                        HH:mm:ss")}
-                                                                                                    </div>
-                                                                                                </#if>
-
-                                                                                                <#if auditor.status??>
-                                                                                                    <#if applyData.recordVo.reason??
-                                                                                                        &&
-                                                                                                        auditor.status==30>
-                                                                                                        <div
-                                                                                                            class="note">
-                                                                                                            未通过原因：${applyData.recordVo.reason}
-                                                                                                        </div>
-                                                                                                    </#if>
-                                                                                                </#if>
-                                                                                            </#if>
-
-                                                                                    </div>
+                                                                <#if auditor.status??>
+                                                                    <#if applyData.recordVo.reason?? &&
+                                                                        auditor.status==30>
+                                                                        <div class="note">未通过原因：${applyData.recordVo.reason}
+                                                                        </div>
                                                                     </#if>
-                                                                </div>
-                                                            </div>
+                                                                </#if>
+                                                            </#if>
 
-                                    </div>
-                                    </#list>
-                            </#if>
-                        </div>
+                                                        </div>
+                                                        </#if>
+                                                    </div>
+                                                    
+                                                    </#if>
+                                                    
 
+                                                </#list>
+                                                <#if applyData.auditors?size==applyData.recordVo.endAuditIdentity &&
+                                                    (applyData.recordVo.status==-30 || applyData.recordVo.status==40 ||
+                                                    applyData.recordVo.status==50)>
+                                                    <div class="approve-item clearfix">
 
-                </#if>
+                                                        <div class="approve-item-tag">
+                                                            <div class="approve-item-schedule">
+                                                                <#assign
+                                                                    lastAuditor=applyData.auditors[applyData.auditors?size
+                                                                    - 1]>
 
-
-                </#list>
-                <#if applyData.auditors?size==applyData.recordVo.endAuditIdentity && (applyData.recordVo.status==-30 ||
-                    applyData.recordVo.status==40 || applyData.recordVo.status==50)>
-                    <div class="approve-item clearfix">
-
-                        <div class="approve-item-tag">
-                            <div class="approve-item-schedule">
-                                <#assign lastAuditor=applyData.auditors[applyData.auditors?size - 1]>
-
-                                    <div class="approve-item-schedule-ball<#if applyData.recordVo.status??>
+                                                                    <div class="approve-item-schedule-ball<#if applyData.recordVo.status??>
                                                                     <#if applyData.recordVo.status == 20 || applyData.recordVo.status == 50> pass <#elseif applyData.recordVo.status == 30 || applyData.recordVo.status == -30> reject <#elseif applyData.recordVo.status == 40> withdraw </#if>
                                                                     </#if>">
+                                                                    </div>
+
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="approve-item-body">
+                                                            <#if applyData.recordVo.status??>
+                                                                <#if applyData.recordVo.status==40>
+                                                                    <div class="withdraw">已撤回</div>
+                                                                    <#elseif applyData.recordVo.status==50>
+                                                                        <div class="pass">系统通过</div>
+                                                                        <#elseif applyData.recordVo.status==30>
+                                                                            <div class="reject">未通过</div>
+                                                                </#if>
+                                                            </#if>
+                                                        </div>
+
+                                                        <div class="approve-item-status">
+
+
+                                                            <#if approvalInfo.apply?size gt 0>
+
+                                                                <#if applyData.recordVo??>
+                                                                    <div class="time">
+                                                                        ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
+                                                                        HH:mm:ss")}</div>
+                                                                </#if>
+                                                            </#if>
+                                                        </div>
+                                                    </div>
+                                                </#if>
+                                        </#if>
+
                                     </div>
 
-                            </div>
-
-                        </div>
-                        <div class="approve-item-body">
-                            <#if applyData.recordVo.status??>
-                                <#if applyData.recordVo.status==40>
-                                    <div class="withdraw">已撤回</div>
-                                    <#elseif applyData.recordVo.status==50>
-                                        <div class="pass">系统通过</div>
-                                        <#elseif applyData.recordVo.status==30>
-                                            <div class="reject">未通过</div>
-                                </#if>
+                                </div>
                             </#if>
                         </div>
 
-                        <div class="approve-item-status">
-
-
-                            <#if approvalInfo.apply?size gt 0>
-
-                                <#if applyData.recordVo??>
-                                    <div class="time">
-                                        ${applyData.recordVo.approvalTime?number_to_datetime?string("yyyy年MM月dd日
-                                        HH:mm:ss")}</div>
-                                </#if>
-                            </#if>
-                        </div>
                     </div>
-                </#if>
                 </#if>
 
             </div>
-
-        </div>
-        </#if>
-        </div>
-
-        </div>
-        </#if>
-
-        </div>
         </div>
     </#escape>
 </body>
