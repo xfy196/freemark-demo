@@ -1741,17 +1741,11 @@
                                                                                                 系统通过</div>
                                                                         </#if>
                                                                     </#if>
-
-                                                                    <#if approvalInfo.apply?size gt 0>
-
                                                                         <#if auditor.auditTime?has_content>
                                                                             <div class="time">
                                                                                 ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
                                                                                 HH:mm:ss")}</div>
                                                                         </#if>
-
-                                                                    </#if>
-
                                                                 </div>
                                                             </div>
                                                         </#if>
@@ -1802,8 +1796,6 @@
                                                                                                     </div>
                                                                                             </#if>
 
-                                                                                            <#if approvalInfo.apply?size
-                                                                                                gt 0>
                                                                                                 <#if
                                                                                                     participant.approvalTime?has_content>
                                                                                                     <div class="time">
@@ -1811,9 +1803,6 @@
                                                                                                         HH:mm:ss")}
                                                                                                     </div>
                                                                                                 </#if>
-
-                                                                                            </#if>
-
                                                                                         </div>
                                                                                     </#if>
                                                                                 </div>
@@ -1857,7 +1846,6 @@
                                                                             </#if>
                                                                         </#if>
 
-                                                                        <#if approvalInfo.apply?size gt 0>
 
                                                                             <#if auditor.auditTime?has_content>
 
@@ -1866,8 +1854,6 @@
                                                                                     ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
                                                                                     HH:mm:ss")}</div>
                                                                             </#if>
-                                                                        </#if>
-
                                                                     </div>
                                                             </#if>
                                                         </div>
