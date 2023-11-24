@@ -663,9 +663,9 @@
 
 
         .approve-panel .approve-item {
-            margin-top: 39px;
+            margin-top: 20px;
             position: relative;
-            padding-left: 10px;
+             padding-left: 10px;
             border-bottom: 1px dashed #DCDEE0;
 
         }
@@ -673,7 +673,7 @@
         .approve-panel .approve-item .right-box {
             float: right;
             text-align: right;
-            max-width: 200px;
+            max-width: 140px;
         }
 
         .approve-panel .approve-item .approve-item-status .pass {
@@ -704,7 +704,7 @@
         }
 
         .approve-panel .approve-item .approve-item-status .time,
-        .approve-panel .approve-item .approve-item-status .note {
+        .approve-panel .approve-item .approve-item-status .reason {
             font-size: 12px;
             font-weight: 400;
             color: #999999;
@@ -718,7 +718,7 @@
         .approve-panel .approve-item .approve-item-tag {
             height: 100%;
             float: left;
-            width: 52px;
+            width: 60px;
 
         }
 
@@ -731,25 +731,19 @@
             padding: 2px 3px;
             border-radius: 2px;
             position: absolute;
-            top: 50%;
-            left: 18px;
-            transform: translateY(-50%);
+            top: 0;
+            left: 25px;
             text-align: center;
         }
-
-
-
 
         .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball {
             width: 8px;
             height: 8px;
             background: #e5e5e5;
             border-radius: 100%;
-            position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
             border: 2px solid #FAFAFA;
             z-index: 9;
+            margin-top: 5px;
         }
 
         .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.withdraw {
@@ -767,63 +761,115 @@
             border-color: #FEEBD6;
         }
 
-        .approve-panel .approve-item.counter-sign .approve-item-body{
+        .approve-panel .approve-item.counter-sign .approve-item-body {
             margin-right: 0;
         }
+
         .approve-panel .approve-item .approve-item-body {
-            margin-left: 52px;
-            overflow: hidden;
-            margin-right: 200px;
-     
+            margin-left: 60px;
+            margin-right: 140px;
+            position: relative;
+            min-height: 60px;
+
         }
-        
-        .approve-panel .approve-item.counter-sign .approve-item-body{
+
+        .approve-panel .approve-item .approve-item-body .audit-item-box {
+            overflow: hidden;
+        }
+
+        .approve-panel .approve-item .approve-item-body .audit-item-end-box {
+            margin: 10px 0;
+        }
+
+        .approve-panel .approve-item .approve-item-body .audit-item-end-box .reason {
+            font-size: 14px;
+            font-weight: 400;
+            color: #999999;
+            line-height: 16px;
+        }
+
+        .approve-panel .approve-item.counter-sign .approve-item-body {
             position: relative;
             top: 0;
             transform: none;
         }
-        .approve-panel .approve-item.counter-sign .approve-item-body .person-item{
+
+        .approve-panel .approve-item.counter-sign .approve-item-body .person-item {
             float: none;
             width: 100%;
             position: relative;
         }
-        
-        .approve-panel .approve-item .approve-item-body .person-item .left-box{
+
+        .approve-panel .approve-item .approve-item-body .person-item .left-box {
             width: 56px;
-            position:static;
+            position: static;
             top: 0;
             transform: none;
-            
+
         }
-        .approve-panel .approve-item.counter-sign .approve-item-body  .left-box{
+
+        .approve-panel .approve-item.counter-sign .approve-item-body .left-box {
             float: left;
         }
-        .approve-panel .approve-item .approve-item-body  .left-box{
+
+        .approve-panel .approve-item .approve-item-body .left-box {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
         }
-        .approve-panel .approve-item .approve-item-body  .right-box{
+
+        .no-margin-right {
+            margin-right: 0 !important;
+        }
+
+        .approve-panel .approve-item .approve-item-body .right-box {
             float: right;
         }
-        .approve-panel .approve-item .right-box{
+
+        .approve-panel .approve-item .approve-item-body .approve-end-box .approve-status {
+            position: absolute;
+            left: 0;
+            /* margin-top: 0; */
+        }
+
+        .approve-panel .approve-item .approve-item-body .approve-end-box .time {
+            position: absolute;
+            right: 0;
+            font-size: 12px;
+            font-weight: 400;
+            color: #999999;
+            line-height: 14px;
+        }
+
+        .approve-panel .approve-item .approve-item-body .approve-end-box .reason {
+            font-size: 14px;
+            font-weight: 400;
+            color: #999999;
+        }
+
+        .approve-panel .approve-item .right-box {
             float: right;
         }
+
         .approve-panel .approve-item .approve-item-body .withdraw {
             color: #999999;
             font-size: 12px;
+            margin-top: 5px;
+
         }
 
         .approve-panel .approve-item .approve-item-body .reject {
             color: #ff4d4f;
             font-size: 12px;
-            margin-top: 10px;
+            margin-top: 5px;
+
         }
 
         .approve-panel .approve-item .approve-item-body .pass {
             color: #F89C33;
             font-size: 12px;
-            margin-top: 10px;
+            margin-top: 5px;
+
         }
 
         .approve-panel .approve-item .approve-item-body .person-item {
@@ -831,6 +877,12 @@
             text-align: center;
             margin-bottom: 7px;
             width: 56px;
+            height: 66px;
+            overflow: hidden;
+        }
+
+        .approve-panel .approve-item .approve-item-body .person-item:last-child {
+            margin-bottom: 0;
         }
 
         .approve-panel .approve-item .approve-item-body .person-item.no-margin-left {
@@ -845,10 +897,12 @@
             overflow: hidden;
 
         }
+
         .approve-panel .approve-item .approve-item-body .person-item .avatar img {
             width: 100%;
             height: 100%;
         }
+
         .approve-panel .approve-item .approve-item-body .person-item .person-name {
             margin-top: 5px;
             font-size: 11px;
@@ -858,6 +912,7 @@
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -958,125 +1013,88 @@
                                     <div class="head table-title">申请审批</div>
                                     <div class="approve-panel">
 
-                                                        <div class="approve-item clearfix">
 
-                                                            <div class="approve-item-tag">
-                                                                <div class="approve-item-schedule">
-    
-                                                                        <div class="approve-item-schedule-ball
-                                                                         withdraw 
-                                                                        ">
-                                                                        </div>
-    
-                                                                </div>
-    
-                                                            </div>
-                                                            <div class="right-box">
-                                                                <div class="approve-item-status">
-
-
-        
-                                                                            <div class="time">
-                                                                                2023年11月23日
-                                                                                20:29:28</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="approve-item-body clearfix">
-                                                                <div class="left-box">
-                                                                        <div class="withdraw">已撤回</div>
-                                                                </div>
-                                                                
-                                                            </div>
-    
-                                                           
-                                                        </div>
-                                                  
-                                                    <div class="approve-item counter-sign clearfix">
+                                                    <div
+                                                        class="approve-item  clearfix">
 
                                                         <div class="approve-item-tag">
-                                                                <div class="approve-item-schedule">
+                                                            <div class="approve-item-schedule">
 
 
-                                                                    <div class="approve-item-schedule-ball">
-                                                                    </div>
-
+                                                                <div class="approve-item-schedule-ball
+                                                                         reject 
+                                                                        ">
                                                                 </div>
+
+                                                            </div>
                                                                 <div class="tag">
-                                                                        会签
+                                                                        或签
                                                                 </div>
 
                                                         </div>
-                                                        <div class="approve-item-body clearfix">
-                                                                <div
-                                                                        class="person-item clearfix">
-                                                                <div class="left-box">
-
-                                                                    <div class="avatar">
-                                                                                <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
-                                                                                    alt="" />
+                                                            <div class="right-box">
+                                                                <div class="approve-item-status">
+                                                                                        <div
+                                                                                            class="reject approve-status">
+                                                                                            未通过</div>
 
 
-                                                                    </div>
-
-                                                                    <div class="person-name">
-                                                                        吕俊超12312312
-                                                                    </div>
-
-                                                                </div>
-                                                                <div class="right-box">
-                                                                    <div class="approve-item-status">
-                                                                                <div class="pass">已通过</div>
-            
-            
-                                                                           
-            
                                                                             <div class="time">
                                                                                 2023年11月23日
-                                                                                20:29:28</div>
-            
-            
-                                                                    </div>
-                                                                </div>
-                                                                </div>
-                                                                
-                                                                   
-                                                                <div
-                                                                        class="person-item clearfix">
-                                                                <div class="left-box">
+                                                                                18:42:31</div>
 
-                                                                    <div class="avatar">
-
-                                                                            <img src="https://omnidev.100url.cn/s3file/dev_10/staffInfo/2023-11-15/170002205741560vji7ja.jpg"
-                                                                                alt="" />
-
-                                                                    </div>
-
-                                                                    <div class="person-name">
-                                                                        李亚飞
-                                                                    </div>
 
                                                                 </div>
-                                                                <div class="right-box">
-                                                                    <div class="approve-item-status">
-            
-            
-                                                                           
-            
-                                                                            <div class="time">
-                                                                                2023年11月23日
-                                                                                20:29:28</div>
-            
-            
-                                                                    </div>
+                                                            </div>
+                                                        <div
+                                                            class="approve-item-body  clearfix">
+                                                                <div class="audit-item-box">
+
+                                                                        <div class="person-item">
+
+                                                                            <div class="left-box">
+
+                                                                                <div class="avatar">
+                                                                                            <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
+                                                                                                alt="" />
+
+
+                                                                                </div>
+
+                                                                                <div class="person-name">
+                                                                                    许富荧
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="person-item">
+
+                                                                            <div class="left-box">
+
+                                                                                <div class="avatar">
+                                                                                            <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
+                                                                                                alt="" />
+
+
+                                                                                </div>
+
+                                                                                <div class="person-name">
+                                                                                    李健
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
                                                                 </div>
+
+                                                                <div class="audit-item-end-box">
+                                                                            <div class="reason">未通过原因：顶顶顶顶顶顶顶顶
+                                                                            </div>
                                                                 </div>
-                                                                
-                                                                   
+
+                                                                <!-- 已撤回状态 -->
                                                         </div>
-                                                       
+
                                                     </div>
-                                                    
-                                                    
 
 
                                     </div>

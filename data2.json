@@ -1,11 +1,6 @@
 {
     "meetingStatus": 0,
     "supplementFinishApprovalRecordId": -1,
-    "planExpense": {
-        "name": "计划费用",
-        "type": "EXPENSE",
-        "value": ""
-    },
     "templateId": 40322,
     "participantCount": 0,
     "id": 7485,
@@ -15,7 +10,7 @@
         "participantCount": 0,
         "totalRecordCount": 0
     },
-    "actualFee": 0.00,
+    "actualFee": 0.0,
     "planStartTime": 1700705252000,
     "planDate": "2023/11/23",
     "organiser": "",
@@ -35,185 +30,161 @@
     "approvalInfo": {
         "apply": [
             {
-                "auditors":[
+                "auditors": [
                     {
-                        "auditTime": 1700733412000,
+                        "status": 20,
+                        "auditTime": 1700740546000,
                         "reason": "",
                         "participants": [
                             {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127115,
-                                "auditUid": 138363,
-                                "auditName": "许富荧",
-                                "status": 20,
-                                "reason": "",
-                                "approvalTime": 1700733412000,
-                                "identityType": 1,
-                                "approvalType": 0,
-                                "statusValue": "通过",
-                                "auditTime": 1700733412000
-                            },
-                            {
-                                "id": 127116,
+                                "id": 127122,
                                 "auditUid": 138362,
                                 "auditName": "李健",
-                                "status": 40,
+                                "status": 20,
                                 "reason": "",
-                                "approvalTime": -28800000,
+                                "approvalTime": 1700740546000,
                                 "identityType": 1,
                                 "approvalType": 0,
-                                "statusValue": "撤回"
+                                "statusValue": "通过",
+                                "auditTime": 1700740546000
                             },
                             {
-                                "id": 127117,
+                                "id": 127123,
                                 "auditUid": 138366,
                                 "auditName": "邱硕177",
-                                "status": 40,
+                                "status": 20,
                                 "reason": "",
-                                "approvalTime": -28800000,
+                                "approvalTime": 1700740391000,
                                 "identityType": 1,
                                 "approvalType": 0,
-                                "statusValue": "撤回"
+                                "statusValue": "通过",
+                                "auditTime": 1700740391000
                             }
                         ],
                         "approvalType": 0
-                    },
-                    {
-                        "status": 40,
+                    },  {
+                        "status": 20,
+                        "auditTime": 1700740546000,
                         "reason": "",
-                        "auditTime": 1700735968000,
-                        "participants": []
+                        "participants": [
+                            {
+                                "id": 127122,
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700740546000,
+                                "identityType": 1,
+                                "approvalType": 0,
+                                "statusValue": "通过",
+                                "auditTime": 1700740546000
+                            },
+                            {
+                                "id": 127123,
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700740391000,
+                                "identityType": 1,
+                                "approvalType": 0,
+                                "statusValue": "通过",
+                                "auditTime": 1700740391000
+                            }
+                        ],
+                        "approvalType": 0
+                    },  {
+                        "status": 20,
+                        "auditTime": 1700740546000,
+                        "reason": "",
+                        "participants": [
+                            {
+                                "id": 127122,
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700740546000,
+                                "identityType": 1,
+                                "approvalType": 0,
+                                "statusValue": "通过",
+                                "auditTime": 1700740546000
+                            },
+                            {
+                                "id": 127123,
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700740391000,
+                                "identityType": 1,
+                                "approvalType": 0,
+                                "statusValue": "通过",
+                                "auditTime": 1700740391000
+                            }
+                        ],
+                        "approvalType": 0
+                    },  {
+                        "status": 20,
+                        "auditTime": 1700740546000,
+                        "reason": "",
+                        "participants": [
+                            {
+                                "id": 127122,
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700740546000,
+                                "identityType": 1,
+                                "approvalType": 0,
+                                "statusValue": "通过",
+                                "auditTime": 1700740546000
+                            },
+                            {
+                                "id": 127123,
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700740391000,
+                                "identityType": 1,
+                                "approvalType": 0,
+                                "statusValue": "通过",
+                                "auditTime": 1700740391000
+                            }
+                        ],
+                        "approvalType": 0
                     }
                 ],
-                "ccUser": [
-                    {
-                        "auditUid": 138362,
-                        "auditName": "李健",
-                        "approvalType": 0,
-                        "statusValue": ""
-                    }
-                ],
+                "ccUser": [],
                 "recordVo": {
-                    "id": 48077,
+                    "id": 48068,
                     "processId": 0,
                     "applyUid": 138363,
                     "applierName": "许富荧",
                     "applierDeptNames": "华润内部员工",
                     "identityType": 0,
-                    "endAuditIdentity": 0,
+                    "endAuditIdentity": 1,
                     "enterpriseId": 10,
-                    "createTime": 1700742312000,
-                    "approvalTime": 1700742568000,
-                    "status": 40,
+                    "createTime": 1700703456000,
+                    "approvalTime": 1700703984000,
+                    "status": 20,
                     "reason": "",
-                    "templateId": 40341,
-                    "templateName": "张月飞审批",
+                    "templateId": 40303,
+                    "templateName": "hahahah",
                     "templateStatus": 0,
                     "controlChanged": false,
                     "category": 10,
-                    "bizId": 7499,
-                    "bizName": "xxy-hhh",
+                    "bizId": 7485,
+                    "bizName": "xxy1",
                     "transfer": false,
-                    "applier": true,
-                    "statusValue": "撤回",
-                    "showChange": true,
                     "showCancel": false,
-                    "auditor": false
+                    "auditor": false,
+                    "showChange": false,
+                    "applier": true,
+                    "statusValue": "通过",
+                    "approvedTime": 1700703984000
                 },
                 "controls": []
             }
@@ -221,34 +192,45 @@
         "finish": [],
         "supplementFinish": []
     },
-    "customFields": [],
+    "customFields": [
+        {
+            "name": "计划费用",
+            "type": "EXPENSE",
+            "value": ""
+        },
+        {
+            "name": "实际费用",
+            "type": "EXPENSE",
+            "value": ""
+        }
+    ],
     "planUploadOnline": {
-        "uploadOnlineEnable": true,
+        "uploadOnlineEnable": false,
         "uploaded": false
     },
     "creatorId": 138363,
     "meetingTypeName": "儿科讨论会",
     "onlineMeetingEnable": true,
-    "actualExpense": {
-        "name": "实际费用",
-        "type": "EXPENSE",
-        "value": ""
-    },
     "approvalRecordId": 48068,
     "duration": 0,
     "staffInCharge": {
         "bizId": 60264,
-        "name": "t",
+        "name": "许富荧",
         "attendeeType": 1,
         "id": 138363,
-        "wechatUserId": "",
-        "thumbAvatar": "",
-        "deleted": true,
-        "deptName": "tt",
+        "wechatUserId": "xxy",
+        "deleted": false,
+        "deptName": "华润内部员工",
         "departmentId": 10,
+        "position": "",
+        "mobile": "15212186290",
+        "auditedType": 0,
+        "audited": -100,
+        "fee": 0,
+        "attendeeDeleted": false,
         "ifCcDept": false,
         "type": 2,
-        "label": "t"
+        "label": "许富荧"
     },
     "planExtendJson": [
         {
@@ -281,17 +263,22 @@
     "meetingRoles": [],
     "creator": {
         "bizId": 60263,
-        "name": "t",
+        "name": "许富荧",
         "attendeeType": 0,
         "id": 138363,
-        "wechatUserId": "",
-        "thumbAvatar": "",
-        "deleted": true,
-        "deptName": "tt",
+        "wechatUserId": "xxy",
+        "deleted": false,
+        "deptName": "华润内部员工",
         "departmentId": 10,
+        "position": "",
+        "mobile": "15212186290",
+        "auditedType": 0,
+        "audited": -100,
+        "fee": 0,
+        "attendeeDeleted": false,
         "ifCcDept": false,
         "type": 2,
-        "label": "t"
+        "label": "许富荧"
     },
     "createAudited": 20,
     "meetingDataFlag": false,

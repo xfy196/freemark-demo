@@ -36,142 +36,48 @@
     "apply": [
       {
         "auditors": [
-          {
-            "participants": [
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
+            {
+                "status": 10,
+                "auditTime": "",
                 "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },
-              {
-                "id": 127104,
-                "auditUid": 138366,
-                "auditName": "邱硕177",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703984000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703984000
-              },
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧大大大大叔大婶",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },
-
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },{
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              }
-            ],
-            "identity": 1,
-            "approvalType": 0,
-            "status": 20,
-            "statusString": "通过"
-          },
-          {
-            "participants": [
-              {
-                "id": 127102,
-                "auditUid": 138363,
-                "auditName": "许富荧",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703456000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703456000
-              },
-              {
-                "id": 127104,
-                "auditUid": 138366,
-                "auditName": "邱硕177",
-                "status": 20,
-                "reason": "",
-                "approvalTime": 1700703984000,
-                "identityType": 1,
-                "approvalType": 0,
-                "statusValue": "通过",
-                "auditTime": 1700703984000
-              }
-            ],
-            "identity": 1,
-            "approvalType": 0,
-            "status": 10,
-            "statusString": "通过"
-          }
+                "participants": [
+                    {
+                        "id": 127186,
+                        "auditUid": 134145,
+                        "auditName": "吕俊超12312312",
+                        "status": 10,
+                        "reason": "",
+                        "approvalTime": -28800000,
+                        "identityType": 1,
+                        "approvalType": 1,
+                        "statusValue": "审批中"
+                    },
+                    {
+                        "id": 127187,
+                        "auditUid": 138341,
+                        "auditName": "李亚飞",
+                        "status": 10,
+                        "reason": "",
+                        "approvalTime": -28800000,
+                        "identityType": 1,
+                        "approvalType": 1,
+                        "avatar": "https://omnidev.100url.cn/s3file/dev_10/staffInfo/2023-11-15/170002205741560vji7ja.jpg",
+                        "statusValue": "审批中"
+                    },
+                    {
+                        "id": 127188,
+                        "auditUid": 138362,
+                        "auditName": "李健",
+                        "status": 10,
+                        "reason": "",
+                        "approvalTime": -28800000,
+                        "identityType": 1,
+                        "approvalType": 1,
+                        "statusValue": "审批中"
+                    }
+                ],
+                "approvalType": 1
+            }
         ],
         "ccUser": [],
         "recordVo": {
