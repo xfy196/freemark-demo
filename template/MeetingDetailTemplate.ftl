@@ -673,7 +673,7 @@
         .approve-panel .approve-item .right-box {
             float: right;
             text-align: right;
-            max-width: 140px;
+            min-width: 140px;
         }
 
         .approve-panel .approve-item .approve-item-status .pass {
