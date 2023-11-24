@@ -885,9 +885,6 @@
             margin-bottom: 0;
         }
 
-        .approve-panel .approve-item .approve-item-body .person-item.no-margin-left {
-            margin-left: 0;
-        }
 
         .approve-panel .approve-item .approve-item-body .person-item .avatar {
             width: 32px;
