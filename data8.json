@@ -1,0 +1,282 @@
+{
+    "meetingStatus": 0,
+    "supplementFinishApprovalRecordId": -1,
+    "planExpense": {
+        "name": "计划费用",
+        "type": "EXPENSE",
+        "value": ""
+    },
+    "templateId": 40322,
+    "participantCount": 0,
+    "id": 7485,
+    "meetingTypeId": 3985,
+    "state": "APPLY_AUDIT_APPROVED",
+    "questionnaireStatisticsVo": {
+        "participantCount": 0,
+        "totalRecordCount": 0
+    },
+    "actualFee": 0.00,
+    "planStartTime": 1700705252000,
+    "planDate": "2023/11/23",
+    "organiser": "",
+    "showExecuteStandard": false,
+    "alreadyAttend": 0,
+    "supplementEnable": true,
+    "coOrganizer": [],
+    "supplement": false,
+    "speaker": [],
+    "planAttendeeCustomer": [],
+    "stateLabel": "未开始",
+    "topic": "xxy1",
+    "planCustomerCount": 0,
+    "staffSpeaker": [],
+    "creatorDeptId": 10,
+    "showParticipant": true,
+    "approvalInfo": {
+        "apply": [
+            {
+                "auditors": [
+                    {
+                        "participants": [
+                            {
+                                "id": 127376,
+                                "auditUid": 138363,
+                                "auditName": "许富荧",
+                                "status": 10,
+                                "reason": "",
+                                "approvalTime": -28800000,
+                                "identityType": 1,
+                                "approvalType": 1,
+                                "statusValue": "审批中"
+                            },
+                            {
+                                "id": 127377,
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700986212000,
+                                "identityType": 1,
+                                "approvalType": 1,
+                                "statusValue": "通过",
+                                "auditTime": 1700986212000
+                            },
+                            {
+                                "id": 127378,
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "status": 10,
+                                "reason": "",
+                                "approvalTime": -28800000,
+                                "identityType": 1,
+                                "approvalType": 1,
+                                "statusValue": "审批中"
+                            }
+                        ],
+                        "identity": 1,
+                        "approvalType": 1,
+                        "status": 10,
+                        "statusString": "审批中"
+                    },
+                    {
+                        "participants": [
+                            {
+                                "auditUid": 138370,
+                                "auditName": "肖家欣",
+                                "approvalType": 0,
+                                "avatar": "https://omnidev.100url.cn/s3file/devf_/systemAuthorization/2023-11-21/17005570533640hrsa5js.jpeg",
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138368,
+                                "auditName": "孙健",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138363,
+                                "auditName": "许富荧",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            }
+                        ],
+                        "identity": 2,
+                        "approvalType": 0,
+                        "statusString": ""
+                    }
+                ],
+                "ccUser": [
+                    {
+                        "auditUid": 138368,
+                        "auditName": "孙健",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    },
+                    {
+                        "auditUid": 138362,
+                        "auditName": "李健",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    },
+                    {
+                        "auditUid": 138363,
+                        "auditName": "许富荧",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    },
+                    {
+                        "auditUid": 138366,
+                        "auditName": "邱硕177",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    }
+                ],
+                "recordVo": {
+                    "id": 48150,
+                    "processId": 0,
+                    "applyUid": 138362,
+                    "applierName": "李健",
+                    "applierDeptNames": "华润内部员工/产研,华润内部员工",
+                    "identityType": 0,
+                    "endAuditIdentity": 1,
+                    "enterpriseId": 10,
+                    "createTime": 1700986212000,
+                    "approvalTime": -28800000,
+                    "status": 10,
+                    "reason": "",
+                    "templateId": 40388,
+                    "templateName": "会签或前",
+                    "templateStatus": 0,
+                    "controlChanged": false,
+                    "category": 10,
+                    "bizId": 7565,
+                    "bizName": "12121212",
+                    "transfer": false,
+                    "auditor": false,
+                    "applier": true,
+                    "showChange": false,
+                    "showCancel": true,
+                    "statusValue": "审批中"
+                },
+                "controls": []
+            }
+        ],
+        "finish": [],
+        "supplementFinish": []
+    },
+    "customFields": [],
+    "planUploadOnline": {
+        "uploadOnlineEnable": true,
+        "uploaded": false
+    },
+    "creatorId": 138363,
+    "meetingTypeName": "儿科讨论会",
+    "onlineMeetingEnable": true,
+    "actualExpense": {
+        "name": "实际费用",
+        "type": "EXPENSE",
+        "value": ""
+    },
+    "approvalRecordId": 48068,
+    "duration": 0,
+    "staffInCharge": {
+        "bizId": 60264,
+        "name": "t",
+        "attendeeType": 1,
+        "id": 138363,
+        "wechatUserId": "",
+        "thumbAvatar": "",
+        "deleted": true,
+        "deptName": "tt",
+        "departmentId": 10,
+        "ifCcDept": false,
+        "type": 2,
+        "label": "t"
+    },
+    "planExtendJson": [
+        {
+            "templateControlId": 36632,
+            "controlName": "计划费用",
+            "controlTypeName": "EXPENSE",
+            "jsonConfig": "{\"label\":\"计划费用\",\"apperAfterStart\":false,\"options\":[]}",
+            "enabled": false
+        },
+        {
+            "templateControlId": 36633,
+            "controlName": "实际费用",
+            "controlTypeName": "EXPENSE",
+            "jsonConfig": "{\"label\":\"实际费用\",\"apperAfterStart\":true,\"options\":[]}",
+            "enabled": false
+        }
+    ],
+    "finishAudited": -100,
+    "functionType": 20,
+    "enAttendanceDoctorHeaders": [
+        "name",
+        "dept",
+        "organization"
+    ],
+    "finishApprovalRecordId": -1,
+    "staffInChargeId": 138363,
+    "durationFormat": "",
+    "staffInChargeDeptId": 10,
+    "attendanceTaskId": 0,
+    "meetingRoles": [],
+    "creator": {
+        "bizId": 60263,
+        "name": "t",
+        "attendeeType": 0,
+        "id": 138363,
+        "wechatUserId": "",
+        "thumbAvatar": "",
+        "deleted": true,
+        "deptName": "tt",
+        "departmentId": 10,
+        "ifCcDept": false,
+        "type": 2,
+        "label": "t"
+    },
+    "createAudited": 20,
+    "meetingDataFlag": false,
+    "onlineMeetingEnableByMini": true,
+    "planCode": "XXHY000000099",
+    "attendanceDoctor": [],
+    "questionnaires": [],
+    "waterMarkEnable": false,
+    "planTime": "2023/11/23 10:07~11:07",
+    "planEndTime": 1700708852000,
+    "step": "APPLY_AUDIT",
+    "enterpriseId": 10,
+    "cnAttendanceDoctorHeaders": [
+        "姓名",
+        "科室",
+        "机构名称"
+    ],
+    "prompt": -1,
+    "statistics": {
+        "attendanceCount": 0,
+        "attendanceRepCount": 0,
+        "onlineRepCount": 0,
+        "onlineCustomerCount": 0,
+        "uniqCustomerCount": 0,
+        "uniqRepCount": 0,
+        "durationAvg": 0,
+        "durationRepAvg": 0,
+        "avgDuration": "",
+        "onlinePeopleCount": 0,
+        "attendeePeopleCount": 0,
+        "avgDurationRep": ""
+    }
+}
