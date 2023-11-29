@@ -1864,6 +1864,189 @@
 
                                 </div>
                             </#if>
+                               <#if (approvalInfo.finish??) && (approvalInfo.finish?size gt 0)>
+                                <div class="closeItem approve-box">
+
+                                    <div class="head table-title">申请审批</div>
+                                    <div class="approve-panel">
+                                        <#if approvalInfo.finish?size gt 0>
+                                            <#assign finishData=approvalInfo.finish[0]>
+
+                                                <#list finishData.auditors as auditor>
+
+                                                    <div
+                                                        class="approve-item <#if auditor.approvalType?? && auditor.approvalType != 0>counter-sign</#if> clearfix">
+
+                                                        <div class="approve-item-tag">
+                                                            <div class="approve-item-schedule">
+
+
+                                                                <div class="approve-item-schedule-ball<#if auditor.status??>
+                                                                        <#if auditor.status == 20 || auditor.status == 50> pass <#elseif auditor.status == 30 || auditor.status == -30> reject <#elseif auditor.status == 40> withdraw </#if>
+                                                                        </#if>">
+                                                                </div>
+
+                                                            </div>
+                                                            <#if auditor.approvalType??>
+                                                                <div class="tag">
+                                                                    <#if auditor.approvalType==0>
+                                                                        或签
+                                                                        <#else>
+                                                                            会签
+                                                                    </#if>
+                                                                </div>
+                                                            </#if>
+
+                                                        </div>
+                                                        <#if auditor.participants?size gt 0 && auditor.approvalType==0>
+                                                            <div class="right-box">
+                                                                <div class="approve-item-status">
+                                                                    <#if auditor.status??>
+                                                                        <#if auditor.status==20>
+                                                                            <div class="pass approve-status">已通过
+                                                                            </div>
+                                                                            <#elseif auditor.status==40>
+                                                                                <div class="withdraw approve-status">
+                                                                                    已撤回</div>
+                                                                                <#elseif auditor.status==-30>
+                                                                                    <div class="reject approve-status">
+                                                                                        系统驳回</div>
+                                                                                    <#elseif auditor.status==30>
+                                                                                        <div
+                                                                                            class="reject approve-status">
+                                                                                            未通过</div>
+                                                                                        <#elseif auditor.status==50>
+                                                                                            <div
+                                                                                                class="pass approve-status">
+                                                                                                系统通过</div>
+                                                                        </#if>
+                                                                    </#if>
+                                                                        <#if auditor.auditTime?has_content>
+                                                                            <div class="time">
+                                                                                ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
+                                                                                HH:mm:ss")}</div>
+                                                                        </#if>
+                                                                </div>
+                                                            </div>
+                                                        </#if>
+                                                        <div
+                                                            class="approve-item-body <#if auditor.participants?? && auditor.participants?size == 0 >no-margin-right</#if> clearfix">
+                                                            <#if auditor.participants?? && auditor.participants?size gt
+                                                                0>
+                                                                <div class="audit-item-box">
+
+                                                                    <#list auditor.participants as participant>
+                                                                        <div class="person-item">
+
+                                                                            <div class="left-box">
+
+                                                                                <div class="avatar">
+                                                                                    <#if participant.avatar??>
+
+                                                                                        <img src="${participant.avatar}"
+                                                                                            alt="" />
+                                                                                        <#else>
+                                                                                            <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
+                                                                                                alt="" />
+
+                                                                                    </#if>
+
+                                                                                </div>
+
+                                                                                <div class="person-name">
+                                                                                    ${participant.auditName}
+                                                                                </div>
+
+                                                                            </div>
+                                                                            <#if auditor.approvalType?? &&
+                                                                                auditor.approvalType !=0>
+                                                                                <div class="right-box">
+                                                                                    <#if participant.status?? &&
+                                                                                        (participant.status==20 ||
+                                                                                        participant.status==30)>
+                                                                                        <div
+                                                                                            class="approve-item-status">
+                                                                                            <#if participant.status==30>
+                                                                                                <div class="reject">未通过
+                                                                                                </div>
+                                                                                                <#elseif
+                                                                                                    participant.status==20>
+                                                                                                    <div class="pass">
+                                                                                                        已通过
+                                                                                                    </div>
+                                                                                            </#if>
+
+                                                                                                <#if
+                                                                                                    participant.approvalTime?has_content>
+                                                                                                    <div class="time">
+                                                                                                        ${participant.approvalTime?number_to_datetime?string("yyyy年MM月dd日
+                                                                                                        HH:mm:ss")}
+                                                                                                    </div>
+                                                                                                </#if>
+                                                                                        </div>
+                                                                                    </#if>
+                                                                                </div>
+                                                                            </#if>
+                                                                        </div>
+                                                                    </#list>
+                                                                </div>
+
+                                                                <div class="audit-item-end-box">
+                                                                    <#if auditor.status??>
+                                                                        <#if auditor.reason?? && auditor.status==30>
+                                                                            <div class="reason">未通过原因：${auditor.reason}
+                                                                            </div>
+                                                                        </#if>
+                                                                    </#if>
+                                                                </div>
+
+                                                                <!-- 已撤回状态 -->
+                                                                <#else>
+                                                                    <div class="approve-end-box">
+                                                                        <#if auditor.status??>
+                                                                            <#if auditor.status==20>
+                                                                                <div class="pass approve-status">已通过
+                                                                                </div>
+                                                                                <#elseif auditor.status==40>
+                                                                                    <div
+                                                                                        class="withdraw approve-status">
+                                                                                        已撤回</div>
+                                                                                    <#elseif auditor.status==-30>
+                                                                                        <div
+                                                                                            class="reject approve-status">
+                                                                                            系统驳回</div>
+                                                                                        <#elseif auditor.status==30>
+                                                                                            <div
+                                                                                                class="reject approve-status">
+                                                                                                未通过</div>
+                                                                                            <#elseif auditor.status==50>
+                                                                                                <div
+                                                                                                    class="pass approve-status">
+                                                                                                    系统通过</div>
+                                                                            </#if>
+                                                                        </#if>
+
+
+                                                                            <#if auditor.auditTime?has_content>
+
+
+                                                                                <div class="time">
+                                                                                    ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
+                                                                                    HH:mm:ss")}</div>
+                                                                            </#if>
+                                                                    </div>
+                                                            </#if>
+                                                        </div>
+
+                                                    </div>
+
+                                                </#list>
+                                        </#if>
+
+                                    </div>
+
+                                </div>
+                            </#if>
                         </div>
 
                     </div>
