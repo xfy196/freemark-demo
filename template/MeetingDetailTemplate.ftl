@@ -673,7 +673,7 @@
         .approve-panel .approve-item .right-box {
             float: right;
             text-align: right;
-            min-width: 140px;
+            min-width: 150px;
         }
 
         .approve-panel .approve-item .approve-item-status .pass {
@@ -716,10 +716,9 @@
         }
 
         .approve-panel .approve-item .approve-item-tag {
-            height: 100%;
+            height: 30px;
             float: left;
             width: 60px;
-
         }
 
         .approve-panel .approve-item .approve-item-tag .tag {
@@ -973,17 +972,7 @@
                                 <label>发起人：</label>
                                 <span>${creator.name} ${creator.deptName}</span>
                             </div>
-                            <div class="basicInfo-main-sponsor-C">
-                                <label>负责人：</label>
-                                <span>${staffInCharge.name} ${staffInCharge.deptName}</span>
-                            </div>
                         </div>
-                        <#if organiser?? && organiser!=''>
-                            <div class="basicInfo-main-organizer">
-                                <label>协办人：</label>
-                                <span>${organiser}</span>
-                            </div>
-                        </#if>
                     </div>
                 </div>
 
@@ -1867,7 +1856,7 @@
                                <#if (approvalInfo.finish??) && (approvalInfo.finish?size gt 0)>
                                 <div class="closeItem approve-box">
 
-                                    <div class="head table-title">申请审批</div>
+                                    <div class="head table-title">结项审批</div>
                                     <div class="approve-panel">
                                         <#if approvalInfo.finish?size gt 0>
                                             <#assign finishData=approvalInfo.finish[0]>
