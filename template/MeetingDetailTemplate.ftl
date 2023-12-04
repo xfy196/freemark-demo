@@ -677,14 +677,14 @@
         }
 
         .approve-panel .approve-item .approve-item-status .pass {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
             color: #1AB370;
             line-height: 14px;
         }
 
         .approve-panel .approve-item .approve-item-status .reject {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
 
             color: #FF4D4F;
@@ -692,7 +692,7 @@
         }
 
         .approve-panel .approve-item .approve-item-status .withdraw {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
 
             color: #999999;
@@ -769,7 +769,7 @@
             margin-right: 140px;
             position: relative;
             min-height: 60px;
-
+            overflow: hidden;
         }
 
         .approve-panel .approve-item .approve-item-body .audit-item-box {
@@ -781,7 +781,7 @@
         }
 
         .approve-panel .approve-item .approve-item-body .audit-item-end-box .reason {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
             color: #999999;
             line-height: 16px;
@@ -825,6 +825,9 @@
             float: right;
         }
 
+.approve-panel .approve-item .approve-item-body .approve-end-box{
+    margin-top: 4px
+}
         .approve-panel .approve-item .approve-item-body .approve-end-box .approve-status {
             position: absolute;
             left: 0;
@@ -841,7 +844,7 @@
         }
 
         .approve-panel .approve-item .approve-item-body .approve-end-box .reason {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
             color: #999999;
         }
@@ -1542,10 +1545,60 @@
 
 
                         <#list 0..(executeStandards?size-1) as i>
+                        <#--  线下会议跨科室要求  -->
+                            <#if  i==0 && (executeStandards[i].executionStandardType=='MAXIMUM_SPEAKER_DOCTOR_RATIO' ||
+                                executeStandards[i].executionStandardType=='MAXIMUM_DEPT_DIFFERENT')>
+                                <div class="table-title">线下会议跨科室要求</div>
+                                <div class="speaker-main">
+                                    <table style="border-collapse: collapse">
+                                        <tr>
+                                            <th width="240">内容</th>
+                                            <th width="180">标准</th>
+                                            <th>实际</th>
+                                            <th width="120">是否达标</th>
+                                        </tr>
+                                        <#list executeStandards as executeStandard>
+                                            <#if executeStandard.executionStandardType=='MAXIMUM_SPEAKER_DOCTOR_RATIO'>
+                                                <tr>
+                                                    <td>讲者与医生听众比例</td>
+                                                    <td>${executeStandard.standardValue!}</td>
+                                                    <td>${executeStandard.actualValue!}</td>
+                                                    <td>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            executeStandard.isSatisfied>
+                                                            <span style="color: #1AB370;">达标</span>
+                                                        </#if>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            !executeStandard.isSatisfied>
+                                                            <span style="color: #FF4D4F;">未达标</span>
+                                                        </#if>
+                                                    </td>
+                                                </tr>
+                                            <#elseif executeStandard.executionStandardType=='MAXIMUM_DEPT_DIFFERENT'>
+                                                <tr>
+                                                    <td>讲者与医生听众跨科室要求</td>
+                                                    <td>${executeStandard.standardValue!}</td>
+                                                    <td>${executeStandard.actualValue!}</td>
+                                                    <td>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            executeStandard.isSatisfied>
+                                                            <span style="color: #1AB370;">达标</span>
+                                                        </#if>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            !executeStandard.isSatisfied>
+                                                            <span style="color: #FF4D4F;">未达标</span>
+                                                        </#if>
+                                                    </td>
+                                                </tr>
+                                            </#if>
+                                        </#list>
+                                    </table>
+                                </div>
+
                             <!-- 参会人数 -->
-                            <#if i==0 && (executeStandards[i].executionStandardType=='NUMBER_OF_ATTENDING_DOCTORS' ||
+                            <#elseif executeStandards[i].executionStandardType=='NUMBER_OF_ATTENDING_DOCTORS' ||
                                 executeStandards[i].executionStandardType=='MAXIMUM_PARTICIPANTS_PER_DOCTOR_PER_DEPARTMENT'
-                                )>
+                                >
                                 <div class="table-title">参会人数</div>
                                 <div class="speaker-main">
                                     <table style="border-collapse: collapse">
@@ -1572,8 +1625,7 @@
                                                         </#if>
                                                     </td>
                                                 </tr>
-                                            </#if>
-                                            <#if
+                                            <#elseif
                                                 executeStandard.executionStandardType=='MAXIMUM_PARTICIPANTS_PER_DOCTOR_PER_DEPARTMENT'>
                                                 <tr>
                                                     <td>单医院单科室最多参会人数</td>
@@ -1624,22 +1676,22 @@
                                             </tr>
                                         </table>
                                     </div>
-                                    <!-- 讲者 -->
-                                    <#elseif
-                                        executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR'>
-                                        <div class="table-title">讲者</div>
-                                        <div class="speaker-main">
-                                            <table style="border-collapse: collapse">
+                                     <!-- 费用 -->
+                            <#elseif executeStandards[i].executionStandardType=='MAXIMUM_ACTUAL_EXPENSES'
+                                >
+                                <div class="table-title">费用</div>
+                                <div class="speaker-main">
+                                    <table style="border-collapse: collapse">
+                                        <tr>
+                                            <th width="240">内容</th>
+                                            <th width="180">标准</th>
+                                            <th>实际</th>
+                                            <th width="120">是否达标</th>
+                                        </tr>
                                                 <tr>
-                                                    <th width="240">内容</th>
-                                                    <th width="180">标准</th>
-                                                    <th>实际</th>
-                                                    <th width="120">是否达标</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>年讲课数量上限</td>
+                                                    <td>实际费用上限</td>
                                                     <td>${executeStandards[i].standardValue!}</td>
-                                                    <td>${executeStandards[i].actualValue}</td>
+                                                    <td>${executeStandards[i].actualValue!}</td>
                                                     <td>
                                                         <#if executeStandards[i].isSatisfied?? &&
                                                             executeStandards[i].isSatisfied>
@@ -1651,6 +1703,55 @@
                                                         </#if>
                                                     </td>
                                                 </tr>
+                                    </table>
+                                </div>
+                                    <!-- 讲者 -->
+                                    <#elseif
+                                        executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR' || executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR'>
+                                        <div class="table-title">讲者</div>
+                                        <div class="speaker-main">
+                                            <table style="border-collapse: collapse">
+                                                <tr>
+                                                    <th width="240">内容</th>
+                                                    <th width="180">标准</th>
+                                                    <th>实际</th>
+                                                    <th width="120">是否达标</th>
+                                                </tr>
+                                                  <#list executeStandards as executeStandard>
+                                            <#if executeStandard.executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR'>
+                                                <tr>
+                                                    <td>年讲课数量上限</td>
+                                                    <td>${executeStandard.standardValue!}</td>
+                                                    <td>${executeStandard.actualValue!}</td>
+                                                    <td>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            executeStandard.isSatisfied>
+                                                            <span style="color: #1AB370;">达标</span>
+                                                        </#if>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            !executeStandard.isSatisfied>
+                                                            <span style="color: #FF4D4F;">未达标</span>
+                                                        </#if>
+                                                    </td>
+                                                </tr>
+                                                 <#elseif executeStandard.executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR'>
+                                                <tr>
+                                                    <td>讲者讲课时长要求</td>
+                                                    <td>${executeStandard.standardValue!}</td>
+                                                    <td>${executeStandard.actualValue!}</td>
+                                                    <td>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            executeStandard.isSatisfied>
+                                                            <span style="color: #1AB370;">达标</span>
+                                                        </#if>
+                                                        <#if executeStandard.isSatisfied?? &&
+                                                            !executeStandard.isSatisfied>
+                                                            <span style="color: #FF4D4F;">未达标</span>
+                                                        </#if>
+                                                    </td>
+                                                </tr>
+                                                </#if>
+                                                </#list>
                                             </table>
                                         </div>
                             </#if>
@@ -1811,23 +1912,23 @@
                                                                     <div class="approve-end-box">
                                                                         <#if auditor.status??>
                                                                             <#if auditor.status==20>
-                                                                                <div class="pass approve-status">已通过
+                                                                                <div class="reason approve-status">已通过
                                                                                 </div>
                                                                                 <#elseif auditor.status==40>
                                                                                     <div
-                                                                                        class="withdraw approve-status">
+                                                                                        class="reason approve-status">
                                                                                         已撤回</div>
                                                                                     <#elseif auditor.status==-30>
                                                                                         <div
-                                                                                            class="reject approve-status">
+                                                                                            class="reason approve-status">
                                                                                             系统驳回</div>
                                                                                         <#elseif auditor.status==30>
                                                                                             <div
-                                                                                                class="reject approve-status">
+                                                                                                class="reason approve-status">
                                                                                                 未通过</div>
                                                                                             <#elseif auditor.status==50>
                                                                                                 <div
-                                                                                                    class="pass approve-status">
+                                                                                                    class="reason approve-status">
                                                                                                     系统通过</div>
                                                                             </#if>
                                                                         </#if>
@@ -1994,23 +2095,23 @@
                                                                     <div class="approve-end-box">
                                                                         <#if auditor.status??>
                                                                             <#if auditor.status==20>
-                                                                                <div class="pass approve-status">已通过
+                                                                                <div class="reason approve-status">已通过
                                                                                 </div>
                                                                                 <#elseif auditor.status==40>
                                                                                     <div
-                                                                                        class="withdraw approve-status">
+                                                                                        class="reason approve-status">
                                                                                         已撤回</div>
                                                                                     <#elseif auditor.status==-30>
                                                                                         <div
-                                                                                            class="reject approve-status">
+                                                                                            class="reason approve-status">
                                                                                             系统驳回</div>
                                                                                         <#elseif auditor.status==30>
                                                                                             <div
-                                                                                                class="reject approve-status">
+                                                                                                class="reason approve-status">
                                                                                                 未通过</div>
                                                                                             <#elseif auditor.status==50>
                                                                                                 <div
-                                                                                                    class="pass approve-status">
+                                                                                                    class="reason approve-status">
                                                                                                     系统通过</div>
                                                                             </#if>
                                                                         </#if>
