@@ -826,7 +826,7 @@
         }
 
 .approve-panel .approve-item .approve-item-body .approve-end-box{
-    margin-top: 4px
+    margin-top: 3px
 }
         .approve-panel .approve-item .approve-item-body .approve-end-box .approve-status {
             position: absolute;
