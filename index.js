@@ -11,6 +11,7 @@ const data7 = require("./data7.json");
 const data8 = require("./data8.json");
 const data9 = require("./data9.json");
 const data10 = require("./data10.json");
+const data11 = require("./data11.json");
 var fm = new Freemarker({
   viewRoot: path.join(__dirname, "./template"),
   options: {
@@ -19,7 +20,7 @@ var fm = new Freemarker({
 });
 
 // Single template file
-fm.render("MeetingDetailTemplate.ftl", data, function (err, html, output) {
+fm.render("MeetingDetailTemplate.ftl", data11, function (err, html, output) {
   console.log("🚀 ~ file: index.js:14 ~ output:", output);
   if (err) {
     console.log("🚀 ~ file: index.js:17 ~ err:", err);

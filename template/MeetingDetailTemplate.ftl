@@ -1544,10 +1544,16 @@
                         </div>
 
 
+                        <#assign renderedMaxCross = false>
+                        <#assign renderedMaxParticipants = false>
+                        <#assign renderedMaxFrequency = false>
+                        <#assign renderedMaxCost = false>
+                        <#assign renderedMaxSpeaker = false>
                         <#list 0..(executeStandards?size-1) as i>
                         <#--  线下会议跨科室要求  -->
-                            <#if  i==0 && (executeStandards[i].executionStandardType=='MAXIMUM_SPEAKER_DOCTOR_RATIO' ||
+                            <#if !renderedMaxCross && (executeStandards[i].executionStandardType=='MAXIMUM_SPEAKER_DOCTOR_RATIO' ||
                                 executeStandards[i].executionStandardType=='MAXIMUM_DEPT_DIFFERENT')>
+                                    <#assign renderedMaxCross = true>
                                 <div class="table-title">线下会议跨科室要求</div>
                                 <div class="speaker-main">
                                     <table style="border-collapse: collapse">
@@ -1596,9 +1602,10 @@
                                 </div>
 
                             <!-- 参会人数 -->
-                            <#elseif executeStandards[i].executionStandardType=='NUMBER_OF_ATTENDING_DOCTORS' ||
-                                executeStandards[i].executionStandardType=='MAXIMUM_PARTICIPANTS_PER_DOCTOR_PER_DEPARTMENT'
+                            <#elseif !renderedMaxParticipants &&  (executeStandards[i].executionStandardType=='NUMBER_OF_ATTENDING_DOCTORS' ||
+                                executeStandards[i].executionStandardType=='MAXIMUM_PARTICIPANTS_PER_DOCTOR_PER_DEPARTMENT')
                                 >
+                                <#assign renderedMaxParticipants = true>
                                 <div class="table-title">参会人数</div>
                                 <div class="speaker-main">
                                     <table style="border-collapse: collapse">
@@ -1649,7 +1656,9 @@
 
                                 <!-- 参会频率 -->
                                 <#elseif
-                                    executeStandards[i].executionStandardType=='MAXIMUM_ATTENDANCE_COUNT_FOR_DOCTOR_WITHIN30_DAYS'>
+                                   !renderedMaxFrequency && (executeStandards[i].executionStandardType=='MAXIMUM_ATTENDANCE_COUNT_FOR_DOCTOR_WITHIN30_DAYS')>
+                                    <#assign renderedMaxFrequency = true>
+
                                     <div class="table-title">参会频率</div>
                                     <div class="speaker-main">
                                         <table style="border-collapse: collapse">
@@ -1676,9 +1685,11 @@
                                             </tr>
                                         </table>
                                     </div>
-                                     <!-- 费用 -->
-                            <#elseif executeStandards[i].executionStandardType=='MAXIMUM_ACTUAL_EXPENSES'
-                                >
+                            <!-- 费用 -->
+                            <#elseif !renderedMaxCost && (executeStandards[i].executionStandardType=='MAXIMUM_ACTUAL_EXPENSES')>
+
+                            <#assign renderedMaxCost = false>
+
                                 <div class="table-title">费用</div>
                                 <div class="speaker-main">
                                     <table style="border-collapse: collapse">
@@ -1705,55 +1716,56 @@
                                                 </tr>
                                     </table>
                                 </div>
-                                    <!-- 讲者 -->
-                                    <#elseif
-                                        executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR' || executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR'>
-                                        <div class="table-title">讲者</div>
-                                        <div class="speaker-main">
-                                            <table style="border-collapse: collapse">
-                                                <tr>
-                                                    <th width="240">内容</th>
-                                                    <th width="180">标准</th>
-                                                    <th>实际</th>
-                                                    <th width="120">是否达标</th>
-                                                </tr>
-                                                  <#list executeStandards as executeStandard>
-                                            <#if executeStandard.executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR'>
-                                                <tr>
-                                                    <td>年讲课数量上限</td>
-                                                    <td>${executeStandard.standardValue!}</td>
-                                                    <td>${executeStandard.actualValue!}</td>
-                                                    <td>
-                                                        <#if executeStandard.isSatisfied?? &&
-                                                            executeStandard.isSatisfied>
-                                                            <span style="color: #1AB370;">达标</span>
-                                                        </#if>
-                                                        <#if executeStandard.isSatisfied?? &&
-                                                            !executeStandard.isSatisfied>
-                                                            <span style="color: #FF4D4F;">未达标</span>
-                                                        </#if>
-                                                    </td>
-                                                </tr>
-                                                 <#elseif executeStandard.executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR'>
-                                                <tr>
-                                                    <td>讲者讲课时长要求</td>
-                                                    <td>${executeStandard.standardValue!}</td>
-                                                    <td>${executeStandard.actualValue!}</td>
-                                                    <td>
-                                                        <#if executeStandard.isSatisfied?? &&
-                                                            executeStandard.isSatisfied>
-                                                            <span style="color: #1AB370;">达标</span>
-                                                        </#if>
-                                                        <#if executeStandard.isSatisfied?? &&
-                                                            !executeStandard.isSatisfied>
-                                                            <span style="color: #FF4D4F;">未达标</span>
-                                                        </#if>
-                                                    </td>
-                                                </tr>
-                                                </#if>
-                                                </#list>
-                                            </table>
-                                        </div>
+                                <!-- 讲者 -->
+                                <#elseif !renderedMaxSpeaker && (executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR' ||  executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR')>
+                                <#assign renderedMaxSpeaker = false>
+
+                                    <div class="table-title">讲者</div>
+                                    <div class="speaker-main">
+                                        <table style="border-collapse: collapse">
+                                            <tr>
+                                                <th width="240">内容</th>
+                                                <th width="180">标准</th>
+                                                <th>实际</th>
+                                                <th width="120">是否达标</th>
+                                            </tr>
+                                                <#list executeStandards as executeStandard>
+                                        <#if executeStandard.executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR'>
+                                            <tr>
+                                                <td>年讲课数量上限</td>
+                                                <td>${executeStandard.standardValue!}</td>
+                                                <td>${executeStandard.actualValue!}</td>
+                                                <td>
+                                                    <#if executeStandard.isSatisfied?? &&
+                                                        executeStandard.isSatisfied>
+                                                        <span style="color: #1AB370;">达标</span>
+                                                    </#if>
+                                                    <#if executeStandard.isSatisfied?? &&
+                                                        !executeStandard.isSatisfied>
+                                                        <span style="color: #FF4D4F;">未达标</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                                <#elseif executeStandard.executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR'>
+                                            <tr>
+                                                <td>讲者讲课时长要求</td>
+                                                <td>${executeStandard.standardValue!}</td>
+                                                <td>${executeStandard.actualValue!}</td>
+                                                <td>
+                                                    <#if executeStandard.isSatisfied?? &&
+                                                        executeStandard.isSatisfied>
+                                                        <span style="color: #1AB370;">达标</span>
+                                                    </#if>
+                                                    <#if executeStandard.isSatisfied?? &&
+                                                        !executeStandard.isSatisfied>
+                                                        <span style="color: #FF4D4F;">未达标</span>
+                                                    </#if>
+                                                </td>
+                                            </tr>
+                                            </#if>
+                                            </#list>
+                                        </table>
+                                    </div>
                             </#if>
                         </#list>
 
