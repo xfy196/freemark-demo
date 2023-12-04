@@ -1324,7 +1324,149 @@
     "creatorDeptId": 27333,
     "showParticipant": true,
     "approvalInfo": {
-        "apply": [],
+        "apply": [
+            {
+                "auditors": [
+                    {
+                        "reason": "审批流程变更系统审批通过",
+                        "participants": [
+                            {
+                                "id": 127387,
+                                "auditUid": 138363,
+                                "auditName": "许富荧",
+                                "status": 50,
+                                "reason": "",
+                                "approvalTime": 1700987642000,
+                                "identityType": 1,
+                                "approvalType": 1,
+                                "statusValue": "系统通过"
+                            },
+                            {
+                                "id": 127388,
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "status": 20,
+                                "reason": "",
+                                "approvalTime": 1700987603000,
+                                "identityType": 1,
+                                "approvalType": 1,
+                                "auditTime": 1700987603000,
+                                "statusValue": "通过"
+                            },
+                            {
+                                "id": 127389,
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "status": 50,
+                                "reason": "",
+                                "approvalTime": 1700987642000,
+                                "identityType": 1,
+                                "approvalType": 1,
+                                "statusValue": "系统通过"
+                            }
+                        ],
+                        "approvalType": 1
+                    },
+                    {
+                        "auditTime": 1700987642000,
+                        "status": 50,
+                        "reason": "审批流程变更系统审批通过",
+                        "participants": []
+                    },
+                    {
+                        "reason": "审批流程变更系统审批通过",
+                        "participants": [
+                            {
+                                "auditUid": 138370,
+                                "auditName": "肖家欣",
+                                "approvalType": 0,
+                                "avatar": "https://omnidev.100url.cn/s3file/devf_/systemAuthorization/2023-11-21/17005570533640hrsa5js.jpeg",
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138368,
+                                "auditName": "孙健",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138362,
+                                "auditName": "李健",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138363,
+                                "auditName": "许富荧",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            },
+                            {
+                                "auditUid": 138366,
+                                "auditName": "邱硕177",
+                                "approvalType": 0,
+                                "statusValue": ""
+                            }
+                        ],
+                        "approvalType": 0
+                    }
+                ],
+                "ccUser": [
+                    {
+                        "auditUid": 138368,
+                        "auditName": "孙健",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    },
+                    {
+                        "auditUid": 138362,
+                        "auditName": "李健",
+                        "approv alType": 0,
+                        "statusValue": ""
+                    },
+                    {
+                        "auditUid": 138363,
+                        "auditName": "许富荧",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    },
+                    {
+                        "auditUid": 138366,
+                        "auditName": "邱硕177",
+                        "approvalType": 0,
+                        "statusValue": ""
+                    }
+                ],
+                "recordVo": {
+                    "id": 48154,
+                    "processId": 0,
+                    "applyUid": 138362,
+                    "applierName": "李健",
+                    "applierDeptNames": "华润内部员工",
+                    "endAuditIdentity": 1,
+                    "enterpriseId": 10,
+                    "createTime": 1700987603000,
+                    "approvalTime": 1700987642000,
+                    "status": 50,
+                    "reason": "审批流程变更系统审批通过",
+                    "templateId": 40388,
+                    "templateName": "会签或前",
+                    "templateStatus": 0,
+                    "controlChanged": false,
+                    "category": 10,
+                    "bizId": 7568,
+                    "bizName": "ccccccccccccccccccc",
+                    "transfer": false,
+                    "approvedTime": 1700987642000,
+                    "statusValue": "系统通过",
+                    "auditor": false,
+                    "showChange": false,
+                    "showCancel": false,
+                    "applier": false
+                },
+                "controls": []
+            }
+        ],
         "finish": [],
         "supplementFinish": []
     },
