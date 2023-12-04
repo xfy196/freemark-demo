@@ -825,9 +825,9 @@
             float: right;
         }
 
-.approve-panel .approve-item .approve-item-body .approve-end-box{
-    margin-top: 3px
-}
+        .approve-panel .approve-item .approve-item-body .approve-end-box{
+            margin-top: 3px
+        }
         .approve-panel .approve-item .approve-item-body .approve-end-box .approve-status {
             position: absolute;
             left: 0;
