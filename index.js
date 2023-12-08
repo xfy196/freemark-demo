@@ -12,6 +12,7 @@ const data8 = require("./data8.json");
 const data9 = require("./data9.json");
 const data10 = require("./data10.json");
 const data11 = require("./data11.json");
+const data12 = require("./data12.json");
 var fm = new Freemarker({
   viewRoot: path.join(__dirname, "./template"),
   options: {

@@ -1688,7 +1688,7 @@
                             <!-- 费用 -->
                             <#elseif !renderedMaxCost && (executeStandards[i].executionStandardType=='MAXIMUM_ACTUAL_EXPENSES')>
 
-                            <#assign renderedMaxCost = false>
+                            <#assign renderedMaxCost = true>
 
                                 <div class="table-title">费用</div>
                                 <div class="speaker-main">
@@ -1718,7 +1718,7 @@
                                 </div>
                                 <!-- 讲者 -->
                                 <#elseif !renderedMaxSpeaker && (executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR' ||  executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR')>
-                                <#assign renderedMaxSpeaker = false>
+                                <#assign renderedMaxSpeaker = true>
 
                                     <div class="table-title">讲者</div>
                                     <div class="speaker-main">
