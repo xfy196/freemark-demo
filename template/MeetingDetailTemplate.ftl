@@ -972,10 +972,17 @@
                         </div>
                         <div class="basicInfo-main-sponsor">
                             <div class="basicInfo-main-sponsor-C">
-                                <label>发起人：</label>
+                                <label>创建人：</label>
                                 <span>${creator.name} ${creator.deptName}</span>
                             </div>
+                            
                         </div>
+                        <#if organiser?? && organiser!=''>
+                        <div class="basicInfo-main-organizer">
+                            <label>协办人：</label>
+                            <span>${organiser}</span>
+                        </div>
+                    </#if>
                     </div>
                 </div>
 
