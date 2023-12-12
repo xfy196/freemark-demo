@@ -233,7 +233,7 @@
             background: #f9f9f9;
             width: 99%;
 
-            height: 36px;
+            min-height: 36px;
             line-height: 36px;
         }
 
@@ -985,7 +985,6 @@
                     </#if>
                     </div>
                 </div>
-
 
                 <#if speakers?? && (speakers?size> 0) >
                     <div class="speaker">
