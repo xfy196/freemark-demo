@@ -217,6 +217,7 @@
             font-size: 14px;
             min-width: 70px;
             font-weight: 500;
+            color: #333333;
             display: block;
             float: left;
         }
@@ -242,6 +243,7 @@
             min-width: 70px;
             display: block;
             font-weight: 500;
+            color: #333333;
             float: left;
             height: 60px;
         }
@@ -955,9 +957,9 @@
                             会议类型：${meetingTypeName}
                         </div>
                         <div class="basicInfo-main-time">
-                            <div class="basicInfo-main-timeR">
+                           <div class="basicInfo-main-timeR">
                                 <label>计划时间：</label>
-                                <span>${planTime!''}</span>
+                                <span>${firstPlanTime!''}</span>
                             </div>
                             <div class="basicInfo-main-timeR">
                                 <label>实际时间：</label>
@@ -971,6 +973,10 @@
                             </#if>
                         </div>
                         <div class="basicInfo-main-sponsor">
+                          <div class="basicInfo-main-sponsor-C">
+                                <label>计划时间（更新）：</label>
+                                <span>${planTime!''}</span>
+                            </div>
                             <div class="basicInfo-main-sponsor-C">
                                 <label>创建人：</label>
                                 <span>${creator.name} ${creator.deptName}</span>
@@ -978,11 +984,11 @@
                             
                         </div>
                         <#if organiser?? && organiser!=''>
-                        <div class="basicInfo-main-organizer">
-                            <label>协办人：</label>
-                            <span>${organiser}</span>
-                        </div>
-                    </#if>
+                            <div class="basicInfo-main-organizer">
+                                <label>协办人：</label>
+                                <span>${organiser}</span>
+                            </div>
+                        </#if>
                     </div>
                 </div>
 
