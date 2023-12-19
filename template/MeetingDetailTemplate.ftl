@@ -681,7 +681,7 @@
         .approve-panel .approve-item .approve-item-status .pass {
             font-size: 12px;
             font-weight: 400;
-            color: #1AB370;
+            color: #1ab370;
             line-height: 14px;
         }
 
@@ -758,8 +758,8 @@
         }
 
         .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.pass {
-            background: #F89C33;
-            border-color: #FEEBD6;
+            background: #1ab370;
+            border-color: #D1F0E2;
         }
 
         .approve-panel .approve-item.counter-sign .approve-item-body {
@@ -870,7 +870,7 @@
         }
 
         .approve-panel .approve-item .approve-item-body .pass {
-            color: #F89C33;
+            color: #1ab370;
             font-size: 12px;
             margin-top: 5px;
 
