@@ -645,7 +645,7 @@
 
         .approve-container .approve-content {
             position: relative;
-
+            padding-bottom: 16px;
         }
 
         .approve-container .approve-content .approve-box {
