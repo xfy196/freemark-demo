@@ -650,7 +650,6 @@
 
         .approve-container .approve-content .approve-box {
             width: 49%;
-            position: absolute;
         }
 
         .approve-container .approve-content .apply {
@@ -1794,7 +1793,7 @@
                                     style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
                                 会议审批进度</span>
                         </div>
-                        <div class="approve-content">
+                        <div class="approve-content clearfix">
                             <#if (approvalInfo.apply??) && (approvalInfo.apply?size gt 0)>
                                 <div class="apply approve-box">
 
