@@ -646,6 +646,7 @@
         .approve-container .approve-content {
             position: relative;
             padding-bottom: 16px;
+            page-break-inside: avoid;
         }
 
         .approve-container .approve-content .approve-box {
@@ -801,7 +802,7 @@
         }
 
         .approve-panel .approve-item .approve-item-body .person-item .left-box {
-            width: 56px;
+            min-width: 56px;
             position: static;
             top: 0;
             transform: none;
@@ -879,7 +880,7 @@
             float: left;
             text-align: center;
             margin-bottom: 7px;
-            width: 56px;
+            min-width: 56px;
             height: 66px;
             overflow: hidden;
         }
@@ -892,10 +893,12 @@
         .approve-panel .approve-item .approve-item-body .person-item .avatar {
             width: 32px;
             height: 32px;
-            margin: 0 auto;
-            border-radius: 100%;
+            border-radius: 50%;
             overflow: hidden;
-
+            margin: 0 auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .approve-panel .approve-item .approve-item-body .person-item .avatar img {
@@ -904,6 +907,7 @@
         }
 
         .approve-panel .approve-item .approve-item-body .person-item .person-name {
+            min-width: 56px;
             margin-top: 5px;
             font-size: 11px;
             font-weight: 400;
@@ -1869,19 +1873,12 @@
                                                                         <div class="person-item">
 
                                                                             <div class="left-box">
-
-                                                                                <div class="avatar">
-                                                                                    <#if participant.avatar??>
-
-                                                                                        <img src="${participant.avatar}"
-                                                                                            alt="" />
-                                                                                        <#else>
-                                                                                            <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
-                                                                                                alt="" />
-
-                                                                                    </#if>
-
+                                                                            <#if participant.avatar??>
+                                                                                <div class="avatar" style="background-image: url(${participant.avatar})">
                                                                                 </div>
+                                                                                <#else>
+                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
+                                                                                </#if>
 
                                                                                 <div class="person-name">
                                                                                     ${participant.auditName}
@@ -2053,18 +2050,12 @@
 
                                                                             <div class="left-box">
 
-                                                                                <div class="avatar">
-                                                                                    <#if participant.avatar??>
-
-                                                                                        <img src="${participant.avatar}"
-                                                                                            alt="" />
-                                                                                        <#else>
-                                                                                            <img src="https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png"
-                                                                                                alt="" />
-
-                                                                                    </#if>
-
+                                                                                <#if participant.avatar??>
+                                                                                <div class="avatar" style="background-image: url(${participant.avatar})">
                                                                                 </div>
+                                                                                <#else>
+                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
+                                                                                </#if>
 
                                                                                 <div class="person-name">
                                                                                     ${participant.auditName}
