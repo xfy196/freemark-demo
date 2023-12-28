@@ -1877,7 +1877,7 @@
                                                                                 <div class="avatar" style="background-image: url(${participant.avatar})">
                                                                                 </div>
                                                                                 <#else>
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
+                                                                                  <div class="avatar" style="background-image: url(${staticImgUrl}/s3static/static/qywx/omni_audit_person_im.png)"></div>
                                                                                 </#if>
 
                                                                                 <div class="person-name">
@@ -2054,7 +2054,7 @@
                                                                                 <div class="avatar" style="background-image: url(${participant.avatar})">
                                                                                 </div>
                                                                                 <#else>
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
+                                                                                  <div class="avatar" style="background-image: url(${staticImgUrl}/s3static/static/qywx/omni_audit_person_im.png)"></div>
                                                                                 </#if>
 
                                                                                 <div class="person-name">
