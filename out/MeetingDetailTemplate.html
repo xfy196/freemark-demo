@@ -11,918 +11,903 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF</title>
     <style>
-        @page {
-            size: 1100px 1200px;
-        }
+    @page {
+        size: 1100px 1200px;
+    }
 
-        .clearfix:after {
-            content: '';
-            display: block;
-            clear: both;
-        }
+    .clearfix:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
 
-        .clear-left {
-            clear: left;
-        }
+    .clear-left {
+        clear: left;
+    }
 
-        .clear-right {
-            clear: right;
-        }
+    .clear-right {
+        clear: right;
+    }
 
-        object[type="watermark"] {
-            position: fixed;
-            display: block;
-            width: 100%;
-            height: 100%;
-            transform: rotate(-45deg);
-            z-index: 1000;
-            left: 0;
-            top: 0;
-        }
+    object[type="watermark"] {
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-45deg);
+        z-index: 1000;
+        left: 0;
+        top: 0;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
-        body {
-            font-family: 'Source Han Sans', 'Emoji';
-            font-size: 16px;
-            line-height: 1.5;
-        }
+    body {
+        font-family: 'Source Han Sans', 'Emoji';
+        font-size: 16px;
+        line-height: 1.5;
+    }
 
-        .container {
-            background: #fff;
-        }
+    .container {
+        background: #fff;
+    }
 
-        .pt16 {
-            padding-top: 16px;
-        }
+    .pt16 {
+        padding-top: 16px;
+    }
 
-        .public-header {
-            padding-bottom: 14px;
-            padding-top: 40px;
-            border-bottom: 1px solid #333333;
-        }
+    .public-header {
+        padding-bottom: 14px;
+        padding-top: 40px;
+        border-bottom: 1px solid #333333;
+    }
 
-        .table-title {
-            margin: 12px 0;
-            height: 16px;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 16px;
-            padding-left: 10px;
-            border-left: 2px solid #1AB370;
-        }
+    .table-title {
+        margin: 12px 0;
+        height: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 16px;
+        padding-left: 10px;
+        border-left: 2px solid #1AB370;
+    }
 
-        .public-header-tltle {
-            color: #333;
-            font-size: 24px;
-            font-weight: 500;
-            position: relative;
-            padding-left: 1px;
-            display: inline;
-        }
+    .public-header-tltle {
+        color: #333;
+        font-size: 24px;
+        font-weight: 500;
+        position: relative;
+        padding-left: 1px;
+        display: inline;
+    }
 
-        .public-header-tltle-right {
-            position: absolute;
-            top: 50px;
-            right: 0px;
-        }
+    .public-header-tltle-right {
+        position: absolute;
+        top: 50px;
+        right: 0px;
+    }
 
-        .public-header-tltle-right-code {
-            font-size: 14px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 14px;
-            margin-right: 12px;
-        }
+    .public-header-tltle-right-code {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 14px;
+        margin-right: 12px;
+    }
 
-        .public-header-tltle-right-code-name {
-            margin-right: 8px;
-        }
+    .public-header-tltle-right-code-name {
+        margin-right: 8px;
+    }
 
-        .public-header-tltle-right-tag {
-            /* width: 100%;
+    .public-header-tltle-right-tag {
+        /* width: 100%;
               height: 100%; */
-            width: 36px;
-            height: 20px;
-            display: inline-block;
-            position: relative;
-            top: 4px;
-        }
+        width: 36px;
+        height: 20px;
+        display: inline-block;
+        position: relative;
+        top: 4px;
+    }
 
-        .basic-info {}
+    .basic-info {}
 
-        .basicInfo-main-title {
-            font-size: 22px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 30px;
-        }
+    .basicInfo-main-title {
+        font-size: 22px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 30px;
+    }
 
-        .basicInfo-main-titleFlag {
-            width: 60px;
-            height: 25px;
-            padding: 0px 7px;
-            font-size: 12px;
-            font-weight: 500;
-            line-height: 2;
-            color: #ffffff;
-            text-align: center;
-            background: #1ab370;
-            vertical-align: middle;
-            display: inline-block;
-            margin-bottom: 7px;
-        }
+    .basicInfo-main-titleFlag {
+        width: 60px;
+        height: 25px;
+        padding: 0px 7px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 2;
+        color: #ffffff;
+        text-align: center;
+        background: #1ab370;
+        vertical-align: middle;
+        display: inline-block;
+        margin-bottom: 7px;
+    }
 
-        .basicInfo-main-titleFlagNew {
-            min-width: 10px;
-            padding: 0 6px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #ffffff;
-            text-align: center;
-            background: #1ab370;
-            vertical-align: middle;
-        }
+    .basicInfo-main-titleFlagNew {
+        min-width: 10px;
+        padding: 0 6px;
+        font-size: 12px;
+        font-weight: 500;
+        color: #ffffff;
+        text-align: center;
+        background: #1ab370;
+        vertical-align: middle;
+    }
 
-        .basicInfo-main-titleC {
-            padding-left: 10px;
-            font-size: 19px;
-        }
+    .basicInfo-main-titleC {
+        padding-left: 10px;
+        font-size: 19px;
+    }
 
-        .basicInfo-main-type {
-            font-size: 18px;
-            font-weight: 400;
-            color: #333333;
-            padding: 16px 0 24px 0;
-        }
+    .basicInfo-main-type {
+        font-size: 18px;
+        font-weight: 400;
+        color: #333333;
+        padding: 16px 0 24px 0;
+    }
 
-        .basicInfo-main-time {
-            /* display: flex; */
-        }
+    .basicInfo-main-time {
+        /* display: flex; */
+    }
 
-        .basicInfo-main-timeR {
-            width: 36%;
-            height: 36px;
-            line-height: 36px;
-            background: #f9f9f9;
-            margin-right: 1%;
-            float: left;
-        }
+    .basicInfo-main-timeR {
+        width: 36%;
+        height: 36px;
+        line-height: 36px;
+        background: #f9f9f9;
+        margin-right: 1%;
+        float: left;
+    }
 
-        .basicInfo-main-timeR label {
-            font-size: 14px;
-            font-weight: 500;
-            color: #333333;
-            float: left;
-        }
+    .basicInfo-main-timeR label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333333;
+        float: left;
+    }
 
-        .basicInfo-main-timeR span {
-            font-size: 14px;
-            font-weight: 400;
-            color: #666666;
-            float: left;
-        }
+    .basicInfo-main-timeR span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666666;
+        float: left;
+    }
 
-        .basic-info-main label {
-            padding-left: 16px;
-        }
+    .basic-info-main label {
+        padding-left: 16px;
+    }
 
-        .basic-info-main span {
-            padding-left: 8px;
-        }
+    .basic-info-main span {
+        padding-left: 8px;
+    }
 
-        .basicInfo-main-sponsor {
-            clear: both;
-            padding-top: 4px;
-            padding-bottom: 4px;
-        }
+    .basicInfo-main-sponsor {
+        clear: both;
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
 
-        .basicInfo-main-sponsor-C {
-            float: left;
-            margin-right: 1%;
-            background: #f9f9f9;
-            width: 49%;
-            margin-bottom: 4px;
+    .basicInfo-main-sponsor-C {
+        float: left;
+        margin-right: 1%;
+        background: #f9f9f9;
+        width: 49%;
+        margin-bottom: 4px;
+        min-height: 36px;
+        line-height: 36px;
+        word-break: break-all;
+    }
 
-            min-height: 36px;
-            line-height: 36px;
-            word-break: break-all;
-        }
+    .basicInfo-main-sponsor-C label {
+        font-size: 14px;
+        min-width: 70px;
+        font-weight: 500;
+        color: #333333;
+        display: block;
+        float: left;
+    }
 
-        .basicInfo-main-sponsor-C label {
-            font-size: 14px;
-            min-width: 70px;
-            font-weight: 500;
-            color: #333333;
-            display: block;
-            float: left;
-        }
+    .basicInfo-main-sponsor-C span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666666;
+        display: block;
+    }
 
-        .basicInfo-main-sponsor-C span {
-            font-size: 14px;
-            font-weight: 400;
-            color: #666666;
-            display: block;
-        }
+    .basicInfo-main-organizer {
+        clear: both;
+        background: #f9f9f9;
+        width: 99%;
+        min-height: 36px;
+        line-height: 36px;
+    }
 
-        .basicInfo-main-organizer {
-            clear: both;
-            background: #f9f9f9;
-            width: 99%;
+    .basicInfo-main-organizer label {
+        font-size: 14px;
+        min-width: 70px;
+        display: block;
+        font-weight: 500;
+        color: #333333;
+        float: left;
+    }
 
-            min-height: 36px;
-            line-height: 36px;
-        }
+    .basicInfo-main-organizer span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666666;
+        margin-top: 4px;
+        background: #f9f9f9;
+        display: block;
+    }
 
-        .basicInfo-main-organizer label {
-            font-size: 14px;
-            min-width: 70px;
-            display: block;
-            font-weight: 500;
-            color: #333333;
-            float: left;
-            height: 60px;
-        }
+    .speaker {
+        clear: both;
+    }
 
-        .basicInfo-main-organizer span {
-            font-size: 14px;
-            font-weight: 400;
-            color: #666666;
-            margin-top: 4px;
-            background: #f9f9f9;
-            display: block;
-        }
+    .speaker-main {
+        margin-top: 16px;
+    }
 
-        .speaker {
-            clear: both;
-        }
+    .staff {}
 
-        .speaker-main {
-            margin-top: 16px;
-        }
+    .attend-info {
+        clear: both;
+    }
 
-        .staff {}
+    .attend-info-main {
+        margin-top: 16px;
+    }
 
-        .attend-info {
-            clear: both;
-        }
+    .attend-info-main-people {
+        /* display: flex; */
+        height: 36px;
+    }
 
-        .attend-info-main {
-            margin-top: 16px;
-        }
+    .attend-info-main-people label,
+    .attend-info-main-customer label,
+    .attend-info-main-qrcode label,
+    .attend-info-main-staff label {
+        font-size: 14px;
+        color: #333333;
+        line-height: 16px;
+        padding-left: 16px;
+    }
 
-        .attend-info-main-people {
-            /* display: flex; */
-            height: 36px;
-        }
+    .attend-info-main-people label,
+    .attend-info-main-qrcode label {
+        font-weight: 500;
+    }
 
-        .attend-info-main-people label,
-        .attend-info-main-customer label,
-        .attend-info-main-qrcode label,
-        .attend-info-main-staff label {
-            font-size: 14px;
-            color: #333333;
-            line-height: 16px;
-            padding-left: 16px;
-        }
+    .customer-one {
+        font-weight: 500;
+    }
 
-        .attend-info-main-people label,
-        .attend-info-main-qrcode label {
-            font-weight: 500;
-        }
+    .attend-info-main-people span,
+    .attend-info-main-customer span,
+    .attend-info-main-qrcode span,
+    .attend-info-main-staff span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 16px;
+        padding-left: 8px;
+    }
 
-        .customer-one {
-            font-weight: 500;
-        }
+    .people-one,
+    .people-two {
+        width: 49%;
+        height: 36px;
+        line-height: 36px;
+        background: #f9f9f9;
+        margin-right: 1%;
+        float: left;
+    }
 
-        .attend-info-main-people span,
-        .attend-info-main-customer span,
-        .attend-info-main-qrcode span,
-        .attend-info-main-staff span {
-            font-size: 14px;
-            font-weight: 400;
-            color: #666666;
-            line-height: 16px;
-            padding-left: 8px;
-        }
+    .attend-info-main-customer {
+        width: 99%;
+        background: #f9f9f9;
+        margin-top: 4px;
+    }
 
-        .people-one,
-        .people-two {
-            width: 49%;
-            height: 36px;
-            line-height: 36px;
-            background: #f9f9f9;
-            margin-right: 1%;
-            float: left;
-        }
+    .customer-one,
+    .customer-two,
+    .customer-there {
+        padding-top: 5px
+    }
 
-        .attend-info-main-customer {
-            width: 99%;
-            background: #f9f9f9;
-            margin-top: 4px;
-        }
+    .attend-info-main-staff {
+        width: 99%;
+        background: #f9f9f9;
+        margin-top: 4px;
+    }
 
-        .customer-one,
-        .customer-two,
-        .customer-there {
-            padding-top: 5px
-        }
+    .staff-one,
+    .staff-two,
+    .staff-there {
+        padding-top: 5px
+    }
 
-        .attend-info-main-staff {
-            width: 99%;
-            background: #f9f9f9;
-            margin-top: 4px;
-        }
+    .staff-one {
+        font-weight: 500;
+    }
 
-        .staff-one,
-        .staff-two,
-        .staff-there {
-            padding-top: 5px
-        }
+    .attend-info-main-qrcode {
+        width: 99%;
+        background: #f9f9f9;
+        margin-top: 4px;
+        height: 36px;
+        line-height: 36px;
+    }
 
-        .staff-one {
-            font-weight: 500;
-        }
+    .other-info {}
 
-        .attend-info-main-qrcode {
-            width: 99%;
-            background: #f9f9f9;
-            margin-top: 4px;
-            height: 36px;
-            line-height: 36px;
-        }
-
-        .other-info {}
-
-        .other-info-one {
-            /* display: flex;
+    .other-info-one {
+        /* display: flex;
               flex-direction: column; */
-            margin-top: 16px;
-            width: 100%;
-        }
+        margin-top: 16px;
+        width: 100%;
+    }
 
-        .other-info-one .info-one-title {
-            font-size: 16px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 16px;
-        }
+    .other-info-one .info-one-title {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 16px;
+    }
 
-        .other-info-one .info-one-desc {
-            font-size: 14px;
-            font-weight: 400;
-            color: #666666;
-            line-height: 20px;
-            padding-top: 8px;
-        }
+    .other-info-one .info-one-desc {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 20px;
+        padding-top: 8px;
+    }
 
-        .other-info-two {
-            width: 99%;
-            margin-top: 24px;
-        }
+    .other-info-two {
+        width: 99%;
+        margin-top: 24px;
+    }
 
-        .other-info-planMoney {
-            font-size: 16px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 16px;
-            margin-top: 2px;
-            margin-bottom: 8px;
-            clear: both;
-        }
+    .other-info-planMoney {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 16px;
+        margin-top: 2px;
+        margin-bottom: 8px;
+        clear: both;
+    }
 
-        .other-info-template {
-            margin-top: 24px;
-            width: 100%;
-        }
+    .other-info-template {
+        margin-top: 24px;
+        width: 100%;
+    }
 
-        .other-info-template .other-info-T {
-            font-size: 16px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 16px;
-            margin-bottom: 16px;
-        }
+    .other-info-template .other-info-T {
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 16px;
+        margin-bottom: 16px;
+    }
 
-        .other-info-template .temp-text {
-            margin-bottom: 24px;
-            clear: both;
-        }
+    .other-info-template .temp-text {
+        margin-bottom: 24px;
+        clear: both;
+    }
 
-        .temp-text .temp-title {
-            font-size: 14px;
-            font-weight: 400;
-            color: #333333;
-            line-height: 20px;
-        }
+    .temp-text .temp-title {
+        font-size: 14px;
+        font-weight: 400;
+        color: #333333;
+        line-height: 20px;
+    }
 
-        .temp-text .temp-desc {
-            font-size: 14px;
-            font-weight: 400;
-            color: #666666;
-            line-height: 20px;
-            margin-top: 8px;
-        }
+    .temp-text .temp-desc {
+        font-size: 14px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 20px;
+        margin-top: 8px;
+    }
 
-        .temp-text .temp-list {
-            margin-top: 8px;
-        }
+    .temp-text .temp-list {
+        margin-top: 8px;
+    }
 
-        .temp-text .temp-list .temp-li {
-            padding: 0px 14px;
-            border: 1px solid #f5f5f5;
-            margin-top: 4px;
-            height: 36px;
-            line-height: 36px;
-        }
+    .temp-text .temp-list .temp-li {
+        padding: 0px 14px;
+        border: 1px solid #f5f5f5;
+        margin-top: 4px;
+        height: 36px;
+        line-height: 36px;
+    }
 
-        .temp-li .temp-li-T {
-            display: inline-block;
-            width: 90%;
-        }
+    .temp-li .temp-li-T {
+        display: inline-block;
+        width: 90%;
+    }
 
-        .temp-li .temp-li-B {
-            display: inline-block;
-            padding-left: 10px;
-        }
+    .temp-li .temp-li-B {
+        display: inline-block;
+        padding-left: 10px;
+    }
 
-        .temp-text .temp-list .temp-li span {
-            font-size: 14px;
-            font-weight: 400;
-            color: #333333;
-            line-height: 20px;
-        }
+    .temp-text .temp-list .temp-li span {
+        font-size: 14px;
+        font-weight: 400;
+        color: #333333;
+        line-height: 20px;
+    }
 
-        .temp-text .temp-list .temp-li span:last-child {
-            color: #1ab370;
-            cursor: pointer;
-        }
+    .temp-text .temp-list .temp-li span:last-child {
+        color: #1ab370;
+        cursor: pointer;
+    }
 
-        .temp-mp4 {}
+    .temp-mp4 {}
 
-        .temp-mp4-li {
-            float: left;
-            padding: 16px;
-            margin-top: 8px;
-            border: 1px solid #f5f5f5;
-            margin-right: 20px;
-            width: 136px;
-            height: 156px;
-            box-sizing: border-box;
-            margin-bottom: 24px;
-        }
+    .temp-mp4-li {
+        float: left;
+        padding: 16px;
+        margin-top: 8px;
+        border: 1px solid #f5f5f5;
+        margin-right: 20px;
+        width: 136px;
+        height: 156px;
+        box-sizing: border-box;
+        margin-bottom: 24px;
+    }
 
-        .temp-mp4-li .temp-mp4-img {
-            border: 1px solid #f5f5f5;
-            width: 104px;
-            height: 104px;
-        }
+    .temp-mp4-li .temp-mp4-img {
+        border: 1px solid #f5f5f5;
+        width: 104px;
+        height: 104px;
+    }
 
-        .temp-mp4-li .temp-mp4-btn {
-            color: #1ab370;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
-            text-align: center;
-            padding-top: 8px;
-        }
+    .temp-mp4-li .temp-mp4-btn {
+        color: #1ab370;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+        padding-top: 8px;
+    }
 
-        .temp-mp4-li .temp-mp4-img img {
-            width: 100%;
-            height: 100%;
-        }
+    .temp-mp4-li .temp-mp4-img img {
+        width: 100%;
+        height: 100%;
+    }
 
-        .temp-img-li {
-            width: 600px;
-            height: 100%;
-            margin-top: 16px;
-        }
+    .temp-img-li {
+        width: 600px;
+        height: 100%;
+        margin-top: 16px;
+    }
 
-        .temp-img-li img {
-            max-width: 100%;
-            max-height: 400px;
-        }
+    .temp-img-li img {
+        max-width: 100%;
+        max-height: 400px;
+    }
 
-        .ask {
-            clear: both;
-        }
+    .ask {
+        clear: both;
+    }
 
-        .cloud-recording {
-            clear: both;
-        }
+    .cloud-recording {
+        clear: both;
+    }
 
-        .meeting-detail {
-            clear: both;
-        }
+    .meeting-detail {
+        clear: both;
+    }
 
-        .meeting-detail th,
-        .meeting-detail td {
-            font-size: 12px;
-        }
+    .meeting-detail th,
+    .meeting-detail td {
+        font-size: 12px;
+    }
 
-        .cloud-recording td:last-child {
-            color: #1ab370;
-            cursor: pointer;
-        }
+    .cloud-recording td:last-child {
+        color: #1ab370;
+        cursor: pointer;
+    }
 
-        .cloud-chart {
-            clear: both;
-        }
+    .cloud-chart {
+        clear: both;
+    }
 
-        .img-list {
-            width: 100%;
-            height: 533px;
-            margin-top: 16px;
-        }
+    .img-list {
+        width: 100%;
+        height: 533px;
+        margin-top: 16px;
+    }
 
-        .img-list img {
-            width: auto;
-            height: 100%;
-        }
+    .img-list img {
+        width: auto;
+        height: 100%;
+    }
 
-        /* @media only screen and (max-width: 1200px) {
+    /* @media only screen and (max-width: 1200px) {
             .basicInfo-main-title {
               align-items: baseline;
             }
           } */
-        table {
-            width: 100%;
-        }
-
-        td {
-            border-bottom: 1px solid #f5f5f5;
-            padding: 14px 17px 14px 0;
-            text-align: left;
-            font-size: 14px;
-            font-weight: 400;
-            color: #333333;
-        }
-
-        th {
-            text-align: left;
-            font-size: 14px;
-            font-weight: 500;
-            color: #333333;
-            line-height: 20px;
-            height: 48px;
-            background: #EEF7F1;
-            border-radius: 4px;
-        }
-
-        th:first-child,
-        td:first-child {
-            padding-left: 20px;
-        }
-
-        .picture-item {
-            margin-bottom: 10px;
-            margin-top: 16px;
-        }
-
-        .parent-img {
-            text-align: center;
-            background: #333;
-            padding-top: 1px;
-        }
-
-        .pic-img {
-            max-height: 400px;
-            max-width: 100%;
-        }
-
-        .picture-info {
-            position: relative;
-            top: -21px;
-            padding: 7px 14px;
-            background: #f5f5f5;
-            border-radius: 0px 0px 4px 4px;
-            border: 1px solid #eeeeee;
-            font-size: 13px;
-            color: #666666;
-            overflow: hidden;
-        }
-
-        .info-left {
-            float: left;
-            padding-top: 7px;
-        }
-
-        .info-right {
-            float: right;
-            padding: 3px 10px;
-            background: #eeeeee;
-            border-radius: 18px;
-            text-align: center;
-            line-height: 28px;
-        }
-
-        .split-line {
-            display: inline-block;
-            position: relative;
-            top: 2px;
-            width: 1px;
-            height: 14px;
-            background: #e5e5e5;
-            margin: 0 14px;
-        }
-
-        .attend-info-main-people,
-        .attend-info-main-qrcode,
-        .attend-info-main-customer,
-        .temp-text,
-        .temp-li,
-        .temp-img-li,
-        .picture-item,
-        tr {
-            page-break-inside: avoid;
-        }
-
-
-        .approve-container .approve-content {
-            position: relative;
-            padding-bottom: 16px;
-            page-break-inside: avoid;
-        }
-
-        .approve-container .approve-content .approve-box {
-            width: 49%;
-        }
-
-        .approve-container .approve-content .apply {
-            left: 0;
-
-        }
-
-        .approve-container .approve-content .closeItem {
-            right: 0;
-
-        }
-
-
-        .approve-panel .approve-item {
-            margin-top: 20px;
-            position: relative;
-             padding-left: 10px;
-            border-bottom: 1px dashed #DCDEE0;
-
-        }
-
-        .approve-panel .approve-item .right-box {
-            float: right;
-            text-align: right;
-            min-width: 150px;
-        }
-
-        .approve-panel .approve-item .approve-item-status .pass {
-            font-size: 12px;
-            font-weight: 400;
-            color: #1ab370;
-            line-height: 14px;
-        }
-
-        .approve-panel .approve-item .approve-item-status .reject {
-            font-size: 12px;
-            font-weight: 400;
-
-            color: #FF4D4F;
-            line-height: 14px;
-        }
-
-        .approve-panel .approve-item .approve-item-status .withdraw {
-            font-size: 12px;
-            font-weight: 400;
-
-            color: #999999;
-            line-height: 14px;
-        }
-
-        .approve-panel .approve-item .approve-item-status .time {
-            margin: 20px 0;
-        }
-
-        .approve-panel .approve-item .approve-item-status .time,
-        .approve-panel .approve-item .approve-item-status .reason {
-            font-size: 12px;
-            font-weight: 400;
-            color: #999999;
-            line-height: 14px;
-        }
-
-        .approve-panel .approve-item:first-child {
-            margin-top: 0;
-        }
-
-        .approve-panel .approve-item .approve-item-tag {
-            height: 30px;
-            float: left;
-            width: 60px;
-        }
-
-        .approve-panel .approve-item .approve-item-tag .tag {
-            width: 29px;
-            font-size: 12px;
-            font-weight: 400;
-            color: #F89C33;
-            background: #F4F4F4;
-            padding: 2px 3px;
-            border-radius: 2px;
-            position: absolute;
-            top: 0;
-            left: 25px;
-            text-align: center;
-        }
-
-        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball {
-            width: 8px;
-            height: 8px;
-            background: #e5e5e5;
-            border-radius: 100%;
-            border: 2px solid #FAFAFA;
-            z-index: 9;
-            margin-top: 5px;
-        }
-
-        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.withdraw {
-            background: #999999;
-            border-color: #e5e5e5;
-        }
-
-        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.reject {
-            background: #ff4d4f;
-            border-color: #FFDFDF;
-        }
-
-        .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.pass {
-            background: #1ab370;
-            border-color: #D1F0E2;
-        }
-
-        .approve-panel .approve-item.counter-sign .approve-item-body {
-            margin-right: 0;
-        }
-
-        .approve-panel .approve-item .approve-item-body {
-            margin-left: 60px;
-            margin-right: 140px;
-            position: relative;
-            min-height: 60px;
-            overflow: hidden;
-        }
-
-        .approve-panel .approve-item .approve-item-body .audit-item-box {
-            overflow: hidden;
-        }
-
-        .approve-panel .approve-item .approve-item-body .audit-item-end-box {
-            margin: 10px 0;
-        }
-
-        .approve-panel .approve-item .approve-item-body .audit-item-end-box .reason {
-            font-size: 12px;
-            font-weight: 400;
-            color: #999999;
-            line-height: 16px;
-        }
-
-        .approve-panel .approve-item.counter-sign .approve-item-body {
-            position: relative;
-            top: 0;
-            transform: none;
-        }
-
-        .approve-panel .approve-item.counter-sign .approve-item-body .person-item {
-            float: none;
-            width: 100%;
-            position: relative;
-        }
-
-        .approve-panel .approve-item .approve-item-body .person-item .left-box {
-            min-width: 56px;
-            position: static;
-            top: 0;
-            transform: none;
-
-        }
-
-        .approve-panel .approve-item.counter-sign .approve-item-body .left-box {
-            float: left;
-        }
-
-        .approve-panel .approve-item .approve-item-body .left-box {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .no-margin-right {
-            margin-right: 0 !important;
-        }
-
-        .approve-panel .approve-item .approve-item-body .right-box {
-            float: right;
-        }
-
-        .approve-panel .approve-item .approve-item-body .approve-end-box{
-            margin-top: 3px
-        }
-        .approve-panel .approve-item .approve-item-body .approve-end-box .approve-status {
-            position: absolute;
-            left: 0;
-            /* margin-top: 0; */
-        }
-
-        .approve-panel .approve-item .approve-item-body .approve-end-box .time {
-            position: absolute;
-            right: 0;
-            font-size: 12px;
-            font-weight: 400;
-            color: #999999;
-            line-height: 14px;
-        }
-
-        .approve-panel .approve-item .approve-item-body .approve-end-box .reason {
-            font-size: 12px;
-            font-weight: 400;
-            color: #999999;
-        }
-
-        .approve-panel .approve-item .right-box {
-            float: right;
-        }
-
-        .approve-panel .approve-item .approve-item-body .withdraw {
-            color: #999999;
-            font-size: 12px;
-            margin-top: 5px;
-
-        }
-
-        .approve-panel .approve-item .approve-item-body .reject {
-            color: #ff4d4f;
-            font-size: 12px;
-            margin-top: 5px;
-
-        }
-
-        .approve-panel .approve-item .approve-item-body .pass {
-            color: #1ab370;
-            font-size: 12px;
-            margin-top: 5px;
-
-        }
-
-        .approve-panel .approve-item .approve-item-body .person-item {
-            float: left;
-            text-align: center;
-            margin-bottom: 7px;
-            min-width: 56px;
-            height: 66px;
-            overflow: hidden;
-        }
-
-        .approve-panel .approve-item .approve-item-body .person-item:last-child {
-            margin-bottom: 0;
-        }
-
-
-        .approve-panel .approve-item .approve-item-body .person-item .avatar {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto;
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .approve-panel .approve-item .approve-item-body .person-item .avatar img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .approve-panel .approve-item .approve-item-body .person-item .person-name {
-            min-width: 56px;
-            margin-top: 5px;
-            font-size: 11px;
-            font-weight: 400;
-            color: #333333;
-            line-height: 16px;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            margin-top: 10px;
-        }
+    table {
+        width: 100%;
+    }
+
+    td {
+        border-bottom: 1px solid #f5f5f5;
+        padding: 14px 17px 14px 0;
+        text-align: left;
+        font-size: 14px;
+        font-weight: 400;
+        color: #333333;
+    }
+
+    th {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 500;
+        color: #333333;
+        line-height: 20px;
+        height: 48px;
+        background: #EEF7F1;
+        border-radius: 4px;
+    }
+
+    th:first-child,
+    td:first-child {
+        padding-left: 20px;
+    }
+
+    .picture-item {
+        margin-bottom: 10px;
+        margin-top: 16px;
+    }
+
+    .parent-img {
+        text-align: center;
+        background: #333;
+        padding-top: 1px;
+    }
+
+    .pic-img {
+        max-height: 400px;
+        max-width: 100%;
+    }
+
+    .picture-info {
+        position: relative;
+        top: -21px;
+        padding: 7px 14px;
+        background: #f5f5f5;
+        border-radius: 0px 0px 4px 4px;
+        border: 1px solid #eeeeee;
+        font-size: 13px;
+        color: #666666;
+        overflow: hidden;
+    }
+
+    .info-left {
+        float: left;
+        padding-top: 7px;
+    }
+
+    .info-right {
+        float: right;
+        padding: 3px 10px;
+        background: #eeeeee;
+        border-radius: 18px;
+        text-align: center;
+        line-height: 28px;
+    }
+
+    .split-line {
+        display: inline-block;
+        position: relative;
+        top: 2px;
+        width: 1px;
+        height: 14px;
+        background: #e5e5e5;
+        margin: 0 14px;
+    }
+
+    .attend-info-main-people,
+    .attend-info-main-qrcode,
+    .attend-info-main-customer,
+    .temp-text,
+    .temp-li,
+    .temp-img-li,
+    .picture-item,
+    tr {
+        page-break-inside: avoid;
+    }
+
+    .approve-container .approve-content {
+        position: relative;
+        padding-bottom: 16px;
+        page-break-inside: avoid;
+    }
+
+    .approve-container .approve-content .approve-box {
+        width: 49%;
+    }
+
+    .approve-container .approve-content .apply {
+        left: 0;
+    }
+
+    .approve-container .approve-content .closeItem {
+        right: 0;
+    }
+
+    .approve-panel .approve-item {
+        margin-top: 20px;
+        position: relative;
+        padding-left: 10px;
+        border-bottom: 1px dashed #DCDEE0;
+    }
+
+    .approve-panel .approve-item .right-box {
+        float: right;
+        text-align: right;
+        min-width: 150px;
+    }
+
+    .approve-panel .approve-item .approve-item-status .pass {
+        font-size: 12px;
+        font-weight: 400;
+        color: #1ab370;
+        line-height: 14px;
+    }
+
+    .approve-panel .approve-item .approve-item-status .reject {
+        font-size: 12px;
+        font-weight: 400;
+        color: #FF4D4F;
+        line-height: 14px;
+    }
+
+    .approve-panel .approve-item .approve-item-status .withdraw {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 14px;
+    }
+
+    .approve-panel .approve-item .approve-item-status .time {
+        margin: 20px 0;
+    }
+
+    .approve-panel .approve-item .approve-item-status .time,
+    .approve-panel .approve-item .approve-item-status .reason {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 14px;
+    }
+
+    .approve-panel .approve-item:first-child {
+        margin-top: 0;
+    }
+
+    .approve-panel .approve-item .approve-item-tag {
+        height: 30px;
+        float: left;
+        width: 60px;
+    }
+
+    .approve-panel .approve-item .approve-item-tag .tag {
+        width: 29px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #F89C33;
+        background: #F4F4F4;
+        padding: 2px 3px;
+        border-radius: 2px;
+        position: absolute;
+        top: 0;
+        left: 25px;
+        text-align: center;
+    }
+
+    .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball {
+        width: 8px;
+        height: 8px;
+        background: #e5e5e5;
+        border-radius: 100%;
+        border: 2px solid #FAFAFA;
+        z-index: 9;
+        margin-top: 5px;
+    }
+
+    .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.withdraw {
+        background: #999999;
+        border-color: #e5e5e5;
+    }
+
+    .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.reject {
+        background: #ff4d4f;
+        border-color: #FFDFDF;
+    }
+
+    .approve-panel .approve-item .approve-item-schedule .approve-item-schedule-ball.pass {
+        background: #1ab370;
+        border-color: #D1F0E2;
+    }
+
+    .approve-panel .approve-item.counter-sign .approve-item-body {
+        margin-right: 0;
+    }
+
+    .approve-panel .approve-item .approve-item-body {
+        margin-left: 60px;
+        margin-right: 140px;
+        position: relative;
+        min-height: 60px;
+        overflow: hidden;
+    }
+
+    .approve-panel .approve-item .approve-item-body .audit-item-box {
+        overflow: hidden;
+    }
+
+    .approve-panel .approve-item .approve-item-body .audit-item-end-box {
+        margin: 10px 0;
+    }
+
+    .approve-panel .approve-item .approve-item-body .audit-item-end-box .reason {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 16px;
+    }
+
+    .approve-panel .approve-item.counter-sign .approve-item-body {
+        position: relative;
+        top: 0;
+        transform: none;
+    }
+
+    .approve-panel .approve-item.counter-sign .approve-item-body .person-item {
+        float: none;
+        width: 100%;
+        position: relative;
+    }
+
+    .approve-panel .approve-item .approve-item-body .person-item .left-box {
+        min-width: 56px;
+        position: static;
+        top: 0;
+        transform: none;
+    }
+
+    .approve-panel .approve-item.counter-sign .approve-item-body .left-box {
+        float: left;
+    }
+
+    .approve-panel .approve-item .approve-item-body .left-box {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .no-margin-right {
+        margin-right: 0 !important;
+    }
+
+    .approve-panel .approve-item .approve-item-body .right-box {
+        float: right;
+    }
+
+    .approve-panel .approve-item .approve-item-body .approve-end-box {
+        margin-top: 3px
+    }
+
+    .approve-panel .approve-item .approve-item-body .approve-end-box .approve-status {
+        position: absolute;
+        left: 0;
+        /* margin-top: 0; */
+    }
+
+    .approve-panel .approve-item .approve-item-body .approve-end-box .time {
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+        line-height: 14px;
+    }
+
+    .approve-panel .approve-item .approve-item-body .approve-end-box .reason {
+        font-size: 12px;
+        font-weight: 400;
+        color: #999999;
+    }
+
+    .approve-panel .approve-item .right-box {
+        float: right;
+    }
+
+    .approve-panel .approve-item .approve-item-body .withdraw {
+        color: #999999;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .approve-panel .approve-item .approve-item-body .reject {
+        color: #ff4d4f;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .approve-panel .approve-item .approve-item-body .pass {
+        color: #1ab370;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .approve-panel .approve-item .approve-item-body .person-item {
+        float: left;
+        text-align: center;
+        margin-bottom: 7px;
+        min-width: 56px;
+        height: 66px;
+        overflow: hidden;
+    }
+
+    .approve-panel .approve-item .approve-item-body .person-item:last-child {
+        margin-bottom: 0;
+    }
+
+    .approve-panel .approve-item .approve-item-body .person-item .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .approve-panel .approve-item .approve-item-body .person-item .avatar img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .approve-panel .approve-item .approve-item-body .person-item .person-name {
+        min-width: 56px;
+        margin-top: 5px;
+        font-size: 11px;
+        font-weight: 400;
+        color: #333333;
+        line-height: 16px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-top: 10px;
+    }
     </style>
 </head>
 
 <body>
-
             <div class="container">
             <div class="container-all">
                 <div class="basic-info">
@@ -933,46 +918,103 @@
                         <span class="public-header-tltle-right">
                         </span>
                     </div>
-
                     <div class="basic-info-main pt16">
                         <div class="basicInfo-main-title">
+                                <span class="basicInfo-main-titleFlag">线上会议</span>
                             <span class="basicInfo-main-titleC">
-                                123123123轻微
+                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
                             </span>
                         </div>
                         <div class="basicInfo-main-type">
-                            会议类型：全部模版-不带审批
+                            会议类型：冒烟冒烟冒烟冒烟冒烟冒烟冒烟冒烟冒烟冒烟
                         </div>
                         <div class="basicInfo-main-time">
-                           <div class="basicInfo-main-timeR">
+                            <div class="basicInfo-main-timeR">
                                 <label>计划时间：</label>
-                                <span></span>
+                                <span>
+                                    2023/12/06 13:59~19:59
+                                </span>
                             </div>
                             <div class="basicInfo-main-timeR">
                                 <label>实际时间：</label>
-                                <span>2023/12/01 20:53</span>
+                                <span>
+                                    2023/12/06 20:24~23:24
+                                </span>
                             </div>
+                                <div style="width: 25%;margin-right: 0;" class="basicInfo-main-timeR">
+                                    <label>会议时长：</label>
+                                    <span>
+                                        2时59分52秒
+                                    </span>
+                                </div>
                         </div>
                         <div class="basicInfo-main-sponsor">
-                          <div class="basicInfo-main-sponsor-C">
+                         <div class="basicInfo-main-sponsor-C">
                                 <label>计划时间（更新）：</label>
-                                <span>2023/12/01 14:55~2023/12/05 15:55</span>
+                                <span>
+                                    2023/12/06 13:59~19:59
+                                </span>
                             </div>
                             <div class="basicInfo-main-sponsor-C">
-                                <label>创建人：</label>
-                                <span>伊同钢 产研</span>
+                                <label>在线会议时长：</label>
+                                <span>
+                                    2023/12/06 13:59~19:59
+                                </span>
                             </div>
-                            
+                        </div>
+                        <div class="basicInfo-main-organizer">
+                            <label>创建人：</label>
+                            <span>
+                                郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓 华北大区
+                            </span>
                         </div>
                             <div class="basicInfo-main-organizer">
                                 <label>协办人：</label>
-                                <span>李亚飞、吕俊超12312312、罗兴魁、许富荧、邱硕177、张月飞、肖家欣、雷奥、liujy、伊同钢、李健、张多、孙健、李亚飞、吕俊超12312312、罗兴魁、许富荧、邱硕177、张月飞、肖家欣、雷奥、liujy、伊同钢、李健、张多、孙健、leiao、吕俊超D、李亚飞、吕俊超12312312、罗兴魁、许富荧、邱硕177、张月飞、肖家欣、雷奥、liujy、伊同钢、李健、张多、孙健、leiao、吕俊超D、李亚飞、吕俊超12312312、罗兴魁、许富荧、邱硕177、张月飞、肖家欣、雷奥、liujy、伊同钢、李健、张多、孙健、leiao、吕俊超D</span>
+                                <span>
+                                    郭晓萍8750-合约商A、郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓、郭晓萍8750-合约商A
+                                </span>
                             </div>
                     </div>
                 </div>
-
-
-
+                    <div class="speaker">
+                        <div class="public-header">
+                            <span class="public-header-tltle"><a
+                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・
+                                </a>讲者</span>
+                        </div>
+                        <div class="speaker-main">
+                            <table style="border-collapse: collapse">
+                                <tr>
+                                    <th width="100">序号</th>
+                                    <th>姓名</th>
+                                    <th>机构名称</th>
+                                        <th>
+                                            科室
+                                        </th>
+                                        <th>
+                                            职称
+                                        </th>
+                                </tr>
+                                        <tr>
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                001
+                                            </td>
+                                            <td>
+                                                医院零零一医院零零一医院零零一医院零零一医院零零一医院零零一医院零零一医院零零一医院零零一医院零零一
+                                            </td>
+                                                <td>
+                                                    科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室
+                                                </td>
+                                                <td>
+                                                    职称长度职称长度职称长度职称长度职称长度职称长度职称长度职称长度职称长度职称长度职称长度职称长度职称
+                                                </td>
+                                        </tr>
+                            </table>
+                        </div>
+                    </div>
                     <div class="attend-info">
                         <div class="public-header">
                             <span class="public-header-tltle"><a
@@ -982,20 +1024,56 @@
                         <div class="attend-info-main">
                                 <div class="attend-info-main-qrcode">
                                     <label>签到二维码定位地址：</label>
-                                    <span>望京soho塔1A座</span>
+                                    <span>
+                                        朝阳区望京soho塔一写字楼
+                                    </span>
+                                </div>
+                                <div class="attend-info-main-customer">
+                                        <div class="customer-one">
+                                            <label>参会客户：</label>
+                                            <span>
+                                                2人</span>
+                                        </div>
+                                        <div class="customer-two">
+                                            <label>签到客户：</label>
+                                            <span>
+                                                2人</span>
+                                        </div>
+                                        <div class="customer-there">
+                                            <label>在线客户：</label>
+                                            <span>
+                                                2人 ｜
+                                                客户平均在线时长：54秒
+                                            </span>
+                                        </div>
+                                </div>
+                                <div class="attend-info-main-staff">
+                                        <div class="staff-one">
+                                            <label>参会员工：</label>
+                                            <span>
+                                                2人</span>
+                                        </div>
+                                        <div class="staff-two">
+                                            <label>签到员工：</label>
+                                            <span>
+                                                1人</span>
+                                        </div>
+                                        <div class="staff-there">
+                                            <label>在线员工：</label>
+                                            <span>
+                                                2人 ｜
+                                                员工平均在线时长：1分3秒
+                                            </span>
+                                        </div>
                                 </div>
                         </div>
                     </div>
-
-
-
                     <div class="other-info">
                         <div class="public-header">
                             <span class="public-header-tltle"><a
                                     style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
                                 其他信息</span>
                         </div>
-
                         <div class="other-info-template">
                                         <div class="temp-text">
                                             <div class="temp-title"
@@ -1007,23 +1085,15 @@
                                                 
                                             </div>
                                         </div>
-
-
-
-
-
-
-
                                         <div class="temp-text">
                                             <div class="temp-title"
                                                 style="font-size: 16px; font-weight: 500; color: #333333;">
-                                                会议图片
+                                                会议图片嘿嘿嘿哈
                                                 ：
                                             </div>
                                             <div class="temp-img">
                                             </div>
                                         </div>
-
                                         <div class="temp-text">
                                             <div class="temp-title"
                                                 style="font-size: 16px; font-weight: 500; color: #333333;">
@@ -1034,14 +1104,8 @@
                                                 
                                             </div>
                                         </div>
-
-
-
-
                         </div>
-
                     </div>
-
                     <div class="ask">
                         <div class="public-header">
                             <span class="public-header-tltle"><a
@@ -1056,377 +1120,508 @@
                                     <th width="120">已征集数量</th>
                                 </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>测试问卷</td>
-                                        <td>0</td>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td>
+                                            内-kanui
+                                        </td>
+                                        <td>
+                                            0
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td>2</td>
-                                        <td>新的测试问卷-副本</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>新的测试问卷</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>213123-副本</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>213123</td>
-                                        <td>0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>测试问卷-副本-副本</td>
-                                        <td>0</td>
+                                        <td>
+                                            2
+                                        </td>
+                                        <td>
+                                            问卷测试列表-王洋
+                                        </td>
+                                        <td>
+                                            0
+                                        </td>
                                     </tr>
                             </table>
                         </div>
                     </div>
-
-
-
+                    <div class="meeting-detail">
+                        <div class="public-header">
+                            <span class="public-header-tltle"><a
+                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>参会医生明细</span>
+                        </div>
+                        <div class="speaker-main">
+                            <table style="border-collapse: collapse">
+                                <tr>
+                                        <th width="80">
+                                            会议编码
+                                        </th>
+                                        <th width="80">
+                                            会议主题
+                                        </th>
+                                        <th width="80">
+                                            会议日期
+                                        </th>
+                                        <th width="80">
+                                            姓名
+                                        </th>
+                                        <th width="80">
+                                            机构名称
+                                        </th>
+                                        <th width="80">
+                                            科室
+                                        </th>
+                                        <th width="80">
+                                            省份
+                                        </th>
+                                        <th width="80">
+                                            城市
+                                        </th>
+                                        <th width="80">
+                                            在线时长
+                                        </th>
+                                        <th width="80">
+                                            会议签到
+                                        </th>
+                                        <th width="80">
+                                            签到方式
+                                        </th>
+                                </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                哈哈哈
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                呵呵
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                002
+                                            </td>
+                                            <td>
+                                                解放军第九六八医院朝阳院区
+                                            </td>
+                                            <td>
+                                                科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室
+                                            </td>
+                                            <td>
+                                                北京市
+                                            </td>
+                                            <td>
+                                                北京市
+                                            </td>
+                                            <td>
+                                                15秒
+                                            </td>
+                                            <td>
+                                                已签到
+                                            </td>
+                                            <td>
+                                                范围外
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                FF_
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                测试-入会后小后台修改
+                                            </td>
+                                            <td>
+                                                测试
+                                            </td>
+                                            <td>
+                                                科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室长度科室
+                                            </td>
+                                            <td>
+                                                北京市
+                                            </td>
+                                            <td>
+                                                北京市
+                                            </td>
+                                            <td>
+                                                1分34秒
+                                            </td>
+                                            <td>
+                                                已签到
+                                            </td>
+                                            <td>
+                                                范围外
+                                            </td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
                 <!-- 参会员工 -->
-
-
+                    <div class="meeting-detail">
+                        <div class="public-header">
+                            <span class="public-header-tltle"><a
+                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>参会员工明细</span>
+                        </div>
+                        <div class="speaker-main">
+                            <table style="border-collapse: collapse">
+                                <tr>
+                                        <th width="80">
+                                            会议编码
+                                        </th>
+                                        <th width="80">
+                                            会议主题
+                                        </th>
+                                        <th width="80">
+                                            会议日期
+                                        </th>
+                                        <th width="80">
+                                            姓名
+                                        </th>
+                                        <th width="80">
+                                            账号
+                                        </th>
+                                        <th width="80">
+                                            辖区
+                                        </th>
+                                        <th width="80">
+                                            职务
+                                        </th>
+                                        <th width="80">
+                                            入会次数
+                                        </th>
+                                        <th width="80">
+                                            在线时长
+                                        </th>
+                                        <th width="80">
+                                            会议签到
+                                        </th>
+                                        <th width="80">
+                                            签到方式
+                                        </th>
+                                </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓萍5253-合约商A郭晓
+                                            </td>
+                                            <td>
+                                                zhanghao15238915253-A
+                                            </td>
+                                            <td>
+                                                华北大区,华西大区
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                2
+                                            </td>
+                                            <td>
+                                                36秒
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                            <td>
+                                                XXHY000000020
+                                            </td>
+                                            <td>
+                                                线上会议嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿嘿嘿嘿嘿嘿哈嘿嘿嘿
+                                            </td>
+                                            <td>
+                                                2023/12/06
+                                            </td>
+                                            <td>
+                                                郭晓萍8750-合约商A
+                                            </td>
+                                            <td>
+                                                zhanghao18638398750-A
+                                            </td>
+                                            <td>
+                                                华北大区
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>
+                                                1
+                                            </td>
+                                            <td>
+                                                1分31秒
+                                            </td>
+                                            <td>
+                                                已签到
+                                            </td>
+                                            <td>
+                                                范围内签到
+                                            </td>
+                                    </tr>
+                            </table>
+                        </div>
+                    </div>
                 <!-- 执行标准 -->
-
                     <div class="ask">
                         <div class="public-header">
                             <span class="public-header-tltle"><a
                                     style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
                                 执行标准</span>
                         </div>
-
-
-
-                                    <div class="table-title">讲者</div>
-                                    <div class="speaker-main">
-                                        <table style="border-collapse: collapse">
-                                            <tr>
-                                                <th width="240">内容</th>
-                                                <th width="180">标准</th>
-                                                <th>实际</th>
-                                                <th width="120">是否达标</th>
-                                            </tr>
-                                            <tr>
-                                                <td>讲者讲课时长要求</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                <div class="table-title">参会人数</div>
-                                <div class="speaker-main">
-                                    <table style="border-collapse: collapse">
-                                        <tr>
-                                            <th width="240">内容</th>
-                                            <th width="180">标准</th>
-                                            <th>实际</th>
-                                            <th width="120">是否达标</th>
-                                        </tr>
-                                                <tr>
-                                                    <td>参会医生人数</td>
-                                                    <td>1~3</td>
-                                                    <td>0</td>
-                                                    <td>
-                                                            <span style="color: #FF4D4F;">未达标</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>单医院单科室最多参会人数</td>
-                                                    <td>3</td>
-                                                    <td>0</td>
-                                                    <td>
-                                                            <span style="color: #1AB370;">达标</span>
-                                                    </td>
-                                                </tr>
-                                    </table>
-                                </div>
-
-                                <!-- 参会频率 -->
-
-                                    <div class="table-title">参会频率</div>
-                                    <div class="speaker-main">
-                                        <table style="border-collapse: collapse">
-                                            <tr>
-                                                <th width="240">内容</th>
-                                                <th width="180">标准</th>
-                                                <th>实际</th>
-                                                <th width="120">是否达标</th>
-                                            </tr>
-                                            <tr>
-                                                <td>医生近30天参会次数上限</td>
-                                                <td>1</td>
-                                                <td></td>
-                                                <td>
-                                                        <span style="color: #1AB370;">达标</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                            <!-- 费用 -->
-                                <div class="table-title">线下会议跨科室要求</div>
-                                <div class="speaker-main">
-                                    <table style="border-collapse: collapse">
-                                        <tr>
-                                            <th width="240">内容</th>
-                                            <th width="180">标准</th>
-                                            <th>实际</th>
-                                            <th width="120">是否达标</th>
-                                        </tr>
-                                                <tr>
-                                                    <td>讲者与医生听众跨科室要求</td>
-                                                    <td>至少有一个听众与讲者科室不同</td>
-                                                    <td>5位讲者不达标：还好我电脑卡, 见者有份2, 许富荧, 我就卡25, 刘德华</td>
-                                                    <td>
-                                                            <span style="color: #FF4D4F;">未达标</span>
-                                                    </td>
-                                                </tr>
-                                    </table>
-                                </div>
-
-                            <!-- 参会人数 -->
-
-                    </div>
-
-
-                <!-- 会议审批进度 -->
-                    <div class="approve-container">
-                        <div class="public-header">
-                            <span class="public-header-tltle"><a
-                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                                会议审批进度</span>
-                        </div>
-                        <div class="approve-content clearfix">
-                                <div class="apply approve-box">
-
-                                    <div class="head table-title">申请审批</div>
-                                    <div class="approve-panel">
-
-
-                                                    <div
-                                                        class="approve-item counter-sign clearfix">
-
-                                                        <div class="approve-item-tag">
-                                                            <div class="approve-item-schedule">
-
-
-                                                                <div class="approve-item-schedule-ball">
-                                                                </div>
-
+                                                                                            <div class="table-title">讲者</div>
+                                                                                            <div class="speaker-main">
+                                                                                                <table style="border-collapse: collapse">
+                                                                                                    <tr>
+                                                                                                        <th width="240">内容</th>
+                                                                                                        <th width="180">标准</th>
+                                                                                                        <th>实际</th>
+                                                                                                        <th width="120">是否达标</th>
+                                                                                                    </tr>
+                                                                                                            <tr>
+                                                                                                                <td>年讲课数量上限</td>
+                                                                                                                <td>
+                                                                                                                    999
+                                                                                                                </td>
+                                                                                                                <td>
+                                                                                                                    
+                                                                                                                </td>
+                                                                                                                <td>
+                                                                                                                        <span style="color: #1AB370;">达标</span>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                                    <tr>
+                                                                                                                        <td>讲者讲课时长要求</td>
+                                                                                                                        <td>
+                                                                                                                            
+                                                                                                                        </td>
+                                                                                                                        <td>
+                                                                                                                            
+                                                                                                                        </td>
+                                                                                                                        <td>
+                                                                                                                        </td>
+                                                                                                                    </tr>
+                                                                                                </table>
+                                                                                            </div>
+                                                            <div class="table-title">线下会议跨科室要求</div>
+                                                            <div class="speaker-main">
+                                                                <table style="border-collapse: collapse">
+                                                                    <tr>
+                                                                        <th width="240">内容</th>
+                                                                        <th width="180">标准</th>
+                                                                        <th>实际</th>
+                                                                        <th width="120">是否达标</th>
+                                                                    </tr>
+                                                                                <tr>
+                                                                                    <td>讲者与医生听众跨科室要求</td>
+                                                                                    <td>
+                                                                                        至少有一个听众与讲者科室不同
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        1位讲者不达标：001
+                                                                                    </td>
+                                                                                    <td>
+                                                                                            <span style="color: #FF4D4F;">未达标</span>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            <tr>
+                                                                                <td>讲者与医生听众比例</td>
+                                                                                <td>
+                                                                                    9999
+                                                                                </td>
+                                                                                <td>
+                                                                                    2.0
+                                                                                </td>
+                                                                                <td>
+                                                                                        <span style="color: #FF4D4F;">未达标</span>
+                                                                                </td>
+                                                                            </tr>
+                                                                </table>
                                                             </div>
-                                                                <div class="tag">
-                                                                            会签
-                                                                </div>
-
-                                                        </div>
-                                                        <div
-                                                            class="approve-item-body  clearfix">
-                                                                <div class="audit-item-box">
-
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    许富荧
-                                                                                </div>
-
-                                                                            </div>
-                                                                                <div class="right-box">
-                                                                                </div>
-                                                                        </div>
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    李健
-                                                                                </div>
-
-                                                                            </div>
-                                                                                <div class="right-box">
-                                                                                        <div
-                                                                                            class="approve-item-status">
-                                                                                                    <div class="pass">
-                                                                                                        已通过
-                                                                                                    </div>
-
-                                                                                                    <div class="time">
-                                                                                                        2023年11月26日
-                                                                                                        16:33:23
-                                                                                                    </div>
-                                                                                        </div>
-                                                                                </div>
-                                                                        </div>
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    邱硕177
-                                                                                </div>
-
-                                                                            </div>
-                                                                                <div class="right-box">
-                                                                                </div>
-                                                                        </div>
-                                                                </div>
-
-                                                                <div class="audit-item-end-box">
-                                                                </div>
-
-                                                                <!-- 已撤回状态 -->
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <div
-                                                        class="approve-item  clearfix">
-
-                                                        <div class="approve-item-tag">
-                                                            <div class="approve-item-schedule">
-
-
-                                                                <div class="approve-item-schedule-ball
-                                                                         pass 
-                                                                        ">
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-                                                        <div
-                                                            class="approve-item-body no-margin-right clearfix">
-                                                                    <div class="approve-end-box">
-                                                                                                <div
-                                                                                                    class="reason approve-status">
-                                                                                                    系统通过</div>
-
-
-
-
-                                                                                <div class="time">
-                                                                                    2023年11月26日
-                                                                                    16:34:02</div>
+                                                            <!-- 参会人数 -->
+                                                                    <div class="table-title">参会人数</div>
+                                                                    <div class="speaker-main">
+                                                                        <table style="border-collapse: collapse">
+                                                                            <tr>
+                                                                                <th width="240">内容</th>
+                                                                                <th width="180">标准</th>
+                                                                                <th>实际</th>
+                                                                                <th width="120">是否达标</th>
+                                                                            </tr>
+                                                                                        <tr>
+                                                                                            <td>单医院单科室最多参会人数</td>
+                                                                                            <td>
+                                                                                                9999
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                1
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                    <span style="color: #1AB370;">达标</span>
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    <tr>
+                                                                                        <td>参会医生人数</td>
+                                                                                        <td>
+                                                                                            111~9999
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            2
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <span style="color: #FF4D4F;">未达标</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                        </table>
                                                                     </div>
-                                                        </div>
-
-                                                    </div>
-
-
-                                                    <div
-                                                        class="approve-item  clearfix">
-
-                                                        <div class="approve-item-tag">
-                                                            <div class="approve-item-schedule">
-
-
-                                                                <div class="approve-item-schedule-ball">
-                                                                </div>
-
-                                                            </div>
-                                                                <div class="tag">
-                                                                        或签
-                                                                </div>
-
-                                                        </div>
-                                                            <div class="right-box">
-                                                                <div class="approve-item-status">
-                                                                </div>
-                                                            </div>
-                                                        <div
-                                                            class="approve-item-body  clearfix">
-                                                                <div class="audit-item-box">
-
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                <div class="avatar" style="background-image: url(https://omnidev.100url.cn/s3file/devf_/systemAuthorization/2023-11-21/17005570533640hrsa5js.jpeg)">
-                                                                                </div>
-
-                                                                                <div class="person-name">
-                                                                                    肖家欣
-                                                                                </div>
-
+                                                                    <!-- 参会频率 -->
+                                                                            <div class="table-title">参会频率</div>
+                                                                            <div class="speaker-main">
+                                                                                <table style="border-collapse: collapse">
+                                                                                    <tr>
+                                                                                        <th width="240">内容</th>
+                                                                                        <th width="180">标准</th>
+                                                                                        <th>实际</th>
+                                                                                        <th width="120">是否达标</th>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>医生近30天参会次数上限</td>
+                                                                                        <td>
+                                                                                            9999
+                                                                                        </td>
+                                                                                        <td>
+                                                                                            
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <span style="color: #1AB370;">达标</span>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </table>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    孙健
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    李健
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    许富荧
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="person-item">
-
-                                                                            <div class="left-box">
-                                                                                  <div class="avatar" style="background-image: url(https://omnitest.100url.cn/s3static/static/qywx/omni_audit_person_im.png)"></div>
-
-                                                                                <div class="person-name">
-                                                                                    邱硕177
-                                                                                </div>
-
-                                                                            </div>
-                                                                        </div>
-                                                                </div>
-
-                                                                <div class="audit-item-end-box">
-                                                                </div>
-
-                                                                <!-- 已撤回状态 -->
-                                                        </div>
-
-                                                    </div>
-
-
-                                    </div>
-
-                                </div>
-                        </div>
-
+                                                                            <!-- 费用 -->
                     </div>
-
+                <!-- 会议审批进度 -->
             </div>
         </div>
 </body>
 <object type="watermark"></object>
+
 </html>

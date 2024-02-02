@@ -21,7 +21,7 @@ var fm = new Freemarker({
 });
 
 // Single template file
-fm.render("MeetingDetailTemplate.ftl", data11, function (err, html, output) {
+fm.render("MeetingDetailTemplate.ftl", data, function (err, html, output) {
   console.log("🚀 ~ file: index.js:14 ~ output:", output);
   if (err) {
     console.log("🚀 ~ file: index.js:17 ~ err:", err);
