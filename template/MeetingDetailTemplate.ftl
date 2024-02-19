@@ -944,13 +944,13 @@
                             会议类型：${meetingTypeName}
                         </div>
                         <div class="basicInfo-main-time">
-                        <#if firstPlanTime??>
-                            <div class="basicInfo-main-timeR">
-                                <label>计划时间：</label>
-                                <span>
-                                    ${firstPlanTime!''}
-                                </span>
-                            </div>
+                            <#if firstPlanTime??>
+                                <div class="basicInfo-main-timeR">
+                                    <label>计划时间：</label>
+                                    <span>
+                                        ${firstPlanTime!''}
+                                    </span>
+                                </div>
                             </#if>
                             <div class="basicInfo-main-timeR">
                                 <label>实际时间：</label>
@@ -968,19 +968,19 @@
                             </#if>
                         </div>
                         <div class="basicInfo-main-sponsor">
-                         <div class="basicInfo-main-sponsor-C">
+                            <div class="basicInfo-main-sponsor-C">
                                 <label>计划时间（更新）：</label>
                                 <span>
                                     ${planTime!''}
                                 </span>
                             </div>
                             <#if maxOnlineDuration??>
-                            <div class="basicInfo-main-sponsor-C">
-                                <label>在线会议时长：</label>
-                                <span>
-                                    ${maxOnlineDuration}
-                                </span>
-                            </div>
+                                <div class="basicInfo-main-sponsor-C">
+                                    <label>在线会议时长：</label>
+                                    <span>
+                                        ${maxOnlineDuration}
+                                    </span>
+                                </div>
                             </#if>
                         </div>
                         <div class="basicInfo-main-organizer">
@@ -1826,7 +1826,7 @@
                                                                                         </table>
                                                                                     </div>
                                                                                     <!-- 讲者 -->
-                                                                                    <#elseif !renderedMaxSpeaker && (executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR' || executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR' || executeStandards[i].executionStandardType=='MAXIMUM_FEE_COUNT_PER_YEAR' || executeStandards[i].executionStandardType=='ONLINE_MEETING_DURATION')>
+                                                                                    <#elseif !renderedMaxSpeaker && (executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_COUNT_PER_YEAR' || executeStandards[i].executionStandardType=='MAXIMUM_LECTURE_TIME_PER_YEAR' || executeStandards[i].executionStandardType=='MAXIMUM_FEE_COUNT_PER_YEAR' || executeStandards[i].executionStandardType=='ONLINE_MEETING_DURATION' )>
                                                                                         <#assign renderedMaxSpeaker=true>
                                                                                             <div class="table-title">讲者</div>
                                                                                             <div class="speaker-main">
@@ -1898,27 +1898,27 @@
                                                                                                                             </#if>
                                                                                                                         </td>
                                                                                                                     </tr>
-                                                                                                                    <#--  在线会议时长  -->
-                                                                                                                     <#elseif executeStandard.executionStandardType=='ONLINE_MEETING_DURATION'>
-                                                                                                                    <tr>
-                                                                                                                        <td>在线会议时长</td>
-                                                                                                                        <td>
-                                                                                                                            ${executeStandard.standardValue!}
-                                                                                                                        </td>
-                                                                                                                        <td>
-                                                                                                                            ${executeStandard.actualValue!}
-                                                                                                                        </td>
-                                                                                                                        <td>
-                                                                                                                            <#if executeStandard.isSatisfied?? &&
-                                                                                                                                executeStandard.isSatisfied>
-                                                                                                                                <span style="color: #1AB370;">达标</span>
-                                                                                                                            </#if>
-                                                                                                                            <#if executeStandard.isSatisfied?? &&
-                                                                                                                                !executeStandard.isSatisfied>
-                                                                                                                                <span style="color: #FF4D4F;">未达标</span>
-                                                                                                                            </#if>
-                                                                                                                        </td>
-                                                                                                                    </tr>
+                                                                                                                    <#-- 在线会议时长 -->
+                                                                                                                        <#elseif executeStandard.executionStandardType=='ONLINE_MEETING_DURATION'>
+                                                                                                                            <tr>
+                                                                                                                                <td>在线会议时长</td>
+                                                                                                                                <td>
+                                                                                                                                    ${executeStandard.standardValue!}
+                                                                                                                                </td>
+                                                                                                                                <td>
+                                                                                                                                    ${executeStandard.actualValue!}
+                                                                                                                                </td>
+                                                                                                                                <td>
+                                                                                                                                    <#if executeStandard.isSatisfied?? &&
+                                                                                                                                        executeStandard.isSatisfied>
+                                                                                                                                        <span style="color: #1AB370;">达标</span>
+                                                                                                                                    </#if>
+                                                                                                                                    <#if executeStandard.isSatisfied?? &&
+                                                                                                                                        !executeStandard.isSatisfied>
+                                                                                                                                        <span style="color: #FF4D4F;">未达标</span>
+                                                                                                                                    </#if>
+                                                                                                                                </td>
+                                                                                                                            </tr>
                                                                                                         </#if>
                                                                                                     </#list>
                                                                                                 </table>
