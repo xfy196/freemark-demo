@@ -184,7 +184,6 @@
         font-size: 14px;
         font-weight: 400;
         color: #666666;
-        float: left;
     }
 
     .basic-info-main label {
