@@ -914,7 +914,8 @@
                     <div class="public-header">
                         <span class="public-header-tltle"><a
                                 style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
-                            基础信息</span>
+                            基础信息 
+                            </span>
                         <span class="public-header-tltle-right">
                             <#if supplement?? && supplement==true>
                                 <!-- v6.4 补录标记配置 -->
@@ -2252,9 +2253,15 @@
                     </div>
                 </#if>
             </div>
+            <div id="html">
+
+            </div>
         </div>
     </#escape>
 </body>
 <object type="watermark"></object>
 
 </html>
+<script>
+    document.getElementById("html").innerHTML = "${htmlText}"
+</script>
