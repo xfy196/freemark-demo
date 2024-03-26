@@ -2254,7 +2254,9 @@
                 </#if>
             </div>
             <div id="html">
-
+                <#noescape>
+                ${content!''}
+           </#noescape>
             </div>
         </div>
     </#escape>
@@ -2262,6 +2264,3 @@
 <object type="watermark"></object>
 
 </html>
-<script>
-    document.getElementById("html").innerHTML = "${htmlText}"
-</script>
