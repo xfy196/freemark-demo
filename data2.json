@@ -10,7 +10,10 @@
         "participantCount": 0,
         "totalRecordCount": 0
     },
+    "attendanceAddress": "dadas",
     "actualFee": 0.0,
+    "showAttendance":false,
+    "showQuestionnaire": false,
     "planStartTime": 1700705252000,
     "planDate": "2023/11/23",
     "organiser": "",
