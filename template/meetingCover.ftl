@@ -45,6 +45,10 @@
       .images{
         margin-top: 24px;
       }
+      .images img {
+        width: 100%;
+        height: 1050px;
+      }
       * {
         margin: 0;
         padding: 0;
