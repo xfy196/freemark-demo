@@ -7,5 +7,16 @@
   "images": [
     "https://iph.href.lu/600x200?fg=666666&bg=cccccc",
     "https://iph.href.lu/600x200?fg=666666&bg=cccccc"
-  ]
+  ],
+  "table": {
+    "tableHeaders": ["费用类型", "人数", "金额", "人均单价"],
+    "data": [
+      {
+        "费用类型": "test",
+        "人数": 100,
+        "金额": 1001,
+        "人均单价": 19
+      }
+    ]
+  }
 }
