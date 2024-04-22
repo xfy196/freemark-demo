@@ -1234,8 +1234,10 @@
                                                                     <#else>
                                                                         <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                             alt="" />
-                                                                    <div class="approval-image-desc">${video.imageDes}</div>
                                                                 </#if>
+                                                                <#if video.imageDes?? && video.imageDes??>
+                                                                        <div class="approval-image-desc">${video.imageDes}</div>
+                                                                    </#if>
                                                             </div>
                                                             <div class="temp-mp4-btn">
                                                                 <a style="text-decoration: none; color: #1ab370;"
@@ -1260,7 +1262,9 @@
                                                     <#list custom.value as image>
                                                         <div class="temp-img-li">
                                                             <img src="${image.url}" alt="" />
-                                                            <div class="approval-image-desc">${image.imageDes}</div>
+                                                            <#if image.imageDes?? && image.imageDes??>
+                                                                <div class="approval-image-desc">${image.imageDes}</div>
+                                                            </#if>
                                                         </div>
                                                     </#list>
                                                 </#if>
@@ -1323,6 +1327,8 @@
                                                                         <#else>
                                                                             <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                                 alt="" />
+                                                                    </#if>
+                                                                    <#if video.imageDes?? && video.imageDes??>
                                                                         <div class="approval-image-desc">${video.imageDes}</div>
                                                                     </#if>
                                                                 </div>
@@ -1344,7 +1350,9 @@
                                                         <#list item.value as image>
                                                             <div class="temp-img-li">
                                                                 <img src="${image.url}" alt="" />
-                                                                <div class="approval-image-desc">${image.imageDes}</div>
+                                                                 <#if video.imageDes?? && video.imageDes??>
+                                                                    <div class="approval-image-desc">${video.imageDes}</div>
+                                                                </#if>
                                                             </div>
                                                         </#list>
                                                     </#if>
