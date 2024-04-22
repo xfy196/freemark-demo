@@ -484,13 +484,12 @@
         }
         .temp-mp4-li .temp-mp4-img .approval-image-desc{
             position: absolute;
-            bottom: 0;
+            bottom: 0px;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
             text-align: center;
             color: #ffffff;
-            background-color: #b2b2b2;
             font-size: 14px;
         }
         .temp-mp4-li .temp-mp4-btn {
@@ -528,7 +527,6 @@
             width: 100%;
             text-align: center;
             color: #ffffff;
-            background-color: #b2b2b2;
             font-size: 14px;
             width: 100%;
         }
