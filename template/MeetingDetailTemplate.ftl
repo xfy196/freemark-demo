@@ -480,8 +480,19 @@
             border: 1px solid #f5f5f5;
             width: 104px;
             height: 104px;
+            position: relative;
         }
-
+        .temp-mp4-li .temp-mp4-img .approval-image-desc{
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
+        }
         .temp-mp4-li .temp-mp4-btn {
             color: #1ab370;
             cursor: pointer;
@@ -501,11 +512,23 @@
             width: 600px;
             height: 100%;
             margin-top: 16px;
+            position: relative;
         }
 
         .temp-img-li img {
             max-width: 100%;
             max-height: 400px;
+        }
+        .temp-img-li .approval-image-desc{
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            text-align: center;
+            color: #ffffff;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 14px;
         }
 
         .ask {
@@ -1211,6 +1234,7 @@
                                                                     <#else>
                                                                         <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                             alt="" />
+                                                                    <div class="approval-image-desc">${video.imageDes}</div>
                                                                 </#if>
                                                             </div>
                                                             <div class="temp-mp4-btn">
@@ -1236,6 +1260,7 @@
                                                     <#list custom.value as image>
                                                         <div class="temp-img-li">
                                                             <img src="${image.url}" alt="" />
+                                                            <div class="approval-image-desc">${image.imageDes}</div>
                                                         </div>
                                                     </#list>
                                                 </#if>
@@ -1298,6 +1323,7 @@
                                                                         <#else>
                                                                             <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                                 alt="" />
+                                                                        <div class="approval-image-desc">${video.imageDes}</div>
                                                                     </#if>
                                                                 </div>
                                                                 <div class="temp-mp4-btn">
@@ -1318,6 +1344,7 @@
                                                         <#list item.value as image>
                                                             <div class="temp-img-li">
                                                                 <img src="${image.url}" alt="" />
+                                                                <div class="approval-image-desc">${image.imageDes}</div>
                                                             </div>
                                                         </#list>
                                                     </#if>
@@ -1877,7 +1904,8 @@
                                                                                 <div class="avatar" style="background-image: url(${participant.avatar})">
                                                                                 </div>
                                                                                 <#else>
-                                                                                  <div class="avatar" style="background-image: url(${staticImgUrl}/s3static/static/qywx/omni_audit_person_im.png)"></div>
+                                                                                  <div
+                                                                                          class="avatar" style="background-image: url(${staticImgUrl}/s3static/static/qywx/omni_audit_person_im.png)"></div>
                                                                                 </#if>
 
                                                                                 <div class="person-name">
@@ -2054,7 +2082,8 @@
                                                                                 <div class="avatar" style="background-image: url(${participant.avatar})">
                                                                                 </div>
                                                                                 <#else>
-                                                                                  <div class="avatar" style="background-image: url(${staticImgUrl}/s3static/static/qywx/omni_audit_person_im.png)"></div>
+                                                                                  <div
+                                                                                          class="avatar" style="background-image: url(${staticImgUrl}/s3static/static/qywx/omni_audit_person_im.png)"></div>
                                                                                 </#if>
 
                                                                                 <div class="person-name">

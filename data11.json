@@ -1480,12 +1480,28 @@
         },
         {
             "name": "会议图片",
-            "type": "IMAGE"
+            "type": "IMAGE",
+            "value": [
+                {
+                    "url": "https://placehold.co/600x400",
+                    "imageDes": "审核中"
+                }
+            ]
         },
         {
             "name": "会议总结",
             "type": "TEXT_MULTILINE",
             "value": ""
+        },
+        {
+            "name": "视频",
+            "type": "VIDEO",
+            "value": [
+                {
+                   "url": "",
+                   "imageDes": "审核中"
+                }
+            ]
         }
     ],
     "planUploadOnline": {

@@ -257,7 +257,13 @@
         },
         {
             "name": "会议图片",
-            "type": "IMAGE"
+            "type": "IMAGE",
+            "value": [
+                {
+                    "url": "https://www.baidu.com/link?url=n_KPUPQo45OO8ILIF2nIjLnyvcRcppnzD_yGDAjsIUzF-qOXx0B8ocI8wM4m68IZ8j4WbvtWkTOruzore0gYRCU9ektLyhjCF077UfAo_w_PshWY2iOCBV5lPmoeSE0CugfigFnDsKlxrXMZ-v4ZgQmhkfGMZYtwBj_NH4AtExePILid2b08aRsx3UHwUFFM_ynPSbbe1BUR1IAbZ-G9DCXqNHm-uPhmJXzD78WjivcrXXlTVi19oHBh1Sy-Mvaw2ot098Jcq57FnA9TnDDJQDYQIoiD6ripoOvELuCb2ZxRfWTIM913HmjMeNPdQT9WwBLKp9J4xFc1s1s2dvun-6KmV5pPPTOlb7YyDGZtab5xKWmeRDwjCerLv_gWjaBMWzoP0HVOqzaf4xNsO-Ye6znN6a36xapoMiOEV3-KTe6obnEHkc4uLa1bqvDLHAWT2i_s2dZiqiOogO9fwJo-BhlctA6YF8ZBFIelXKtzDU4_ZV-erjNuhJHbZLKzlsrnIumkEH5MAmYNxYyfePKpNJiygzhyQRlI8AY1yQiK6kpC33ePH8Bq57KGbiyDiWG_Aa9WDZSjVrY6g4hjW6WYTYUy0bk6R265o-ivce-L7K1AIMkZGpDdDrAPiVNI0e2jj-cLFwHXyRfviTYeDCjJgxgItmMS1wqjgHQE4xbvfSJJMVH73hmXSjap1RE4XUtSa48JTLcP-2tXVlXEJMxBFWcQHPmpaukZctWL8BIlHV6Fv9Q_ChJaVqK2GWxCZhjr_Y2PWVUAjjmtS90EWQCTOq&wd=&eqid=c4d1d77e000109c0000000046625d921",
+                    "imageDes": "审核中"
+                }
+            ]
         },
         {
             "name": "会议总结",
