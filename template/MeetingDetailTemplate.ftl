@@ -484,13 +484,13 @@
         }
         .temp-mp4-li .temp-mp4-img .approval-image-desc{
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
             text-align: center;
             color: #ffffff;
-            background: rgba(0, 0, 0, 0.5);
+            background-color: #b2b2b2;
             font-size: 14px;
         }
         .temp-mp4-li .temp-mp4-btn {
@@ -509,8 +509,9 @@
         }
 
         .temp-img-li {
-            width: 600px;
-            height: 100%;
+            max-width: 600px;
+            height: 400px;
+            display: inline-block;
             margin-top: 16px;
             position: relative;
         }
@@ -521,14 +522,15 @@
         }
         .temp-img-li .approval-image-desc{
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
             text-align: center;
             color: #ffffff;
-            background: rgba(0, 0, 0, 0.5);
+            background-color: #b2b2b2;
             font-size: 14px;
+            width: 100%;
         }
 
         .ask {
@@ -1235,8 +1237,8 @@
                                                                         <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                             alt="" />
                                                                 </#if>
-                                                                <#if video.imageDes?? && video.imageDes??>
-                                                                        <div class="approval-image-desc">${video.imageDes}</div>
+                                                                <#if video.imageDesc?? && video.imageDesc != "">
+                                                                        <div class="approval-image-desc">${video.imageDesc}</div>
                                                                     </#if>
                                                             </div>
                                                             <div class="temp-mp4-btn">
@@ -1262,10 +1264,11 @@
                                                     <#list custom.value as image>
                                                         <div class="temp-img-li">
                                                             <img src="${image.url}" alt="" />
-                                                            <#if image.imageDes?? && image.imageDes??>
-                                                                <div class="approval-image-desc">${image.imageDes}</div>
+                                                            <#if image.imageDesc?? && image.imageDesc !="">
+                                                                <div class="approval-image-desc">${image.imageDesc}</div>
                                                             </#if>
                                                         </div>
+                                                        <br/>
                                                     </#list>
                                                 </#if>
                                             </div>
@@ -1328,8 +1331,8 @@
                                                                             <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                                 alt="" />
                                                                     </#if>
-                                                                    <#if video.imageDes?? && video.imageDes??>
-                                                                        <div class="approval-image-desc">${video.imageDes}</div>
+                                                                    <#if video.imageDesc?? && video.imageDesc !="">
+                                                                        <div class="approval-image-desc">${video.imageDesc}</div>
                                                                     </#if>
                                                                 </div>
                                                                 <div class="temp-mp4-btn">
@@ -1350,10 +1353,11 @@
                                                         <#list item.value as image>
                                                             <div class="temp-img-li">
                                                                 <img src="${image.url}" alt="" />
-                                                                 <#if video.imageDes?? && video.imageDes??>
-                                                                    <div class="approval-image-desc">${video.imageDes}</div>
+                                                                 <#if image.imageDesc?? && image.imageDesc != ''>
+                                                                    <div class="approval-image-desc">${image.imageDesc}</div>
                                                                 </#if>
                                                             </div>
+                                                            <br/>
                                                         </#list>
                                                     </#if>
                                                 </div>
