@@ -484,7 +484,7 @@
         }
         .temp-mp4-li .temp-mp4-img .approval-image-desc{
             position: absolute;
-            bottom: 0px;
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
@@ -1165,7 +1165,30 @@
                         </div>
                     </div>
                 </#if>
-
+                
+                <#if meetingSchedule?? && meetingSchedule?is_sequence && (meetingSchedule?size > 0)>
+                    <div class="attend-info">
+                        <div class="public-header">
+                            <span class="public-header-tltle"><a
+                                    style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
+                                会议日程</span>
+                        </div>
+                            <table style="border-collapse: collapse">
+                                <tr>
+                                    <th width="33.3%">时间</th>
+                                    <th width="33.3%">会议环节或讲题</th>
+                                    <th width="33.3%">提供服务的HCP姓名</th>
+                                </tr>
+                                <#list meetingSchedule as ms>
+                                        <tr>
+                                            <td>${ms.startTime}-${ms.endTime}</td>
+                                            <td>${ms.content}</td>
+                                            <td>${ms.name}</td>
+                                        </tr>
+                                </#list>
+                            </table>
+                    </div>
+                </#if>
 
 
                 <#if customFields?? || product?? || planExpense?? || actualExpense?? || nestedName??>

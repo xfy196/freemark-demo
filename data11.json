@@ -9,6 +9,14 @@
     "id": 7802,
     "meetingTypeId": 4001,
     "state": "MEETING_PROCESSING",
+    "meetingSchedule": [
+        {
+            "startTime": "14:20",
+            "endTime": "19:20",
+            "name": "test1",
+            "content": "content"
+        }
+    ],
     "questionnaireStatisticsVo": {
         "participantCount": 0,
         "totalRecordCount": 0
