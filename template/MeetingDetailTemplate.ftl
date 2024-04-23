@@ -544,7 +544,7 @@
         }
 
         .meeting-detail th,
-        .meeting-detail td {
+        .meeting-detail td { 
             font-size: 12px;
         }
 
