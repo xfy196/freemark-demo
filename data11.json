@@ -11,8 +11,7 @@
     "state": "MEETING_PROCESSING",
     "meetingSchedule": [
         {
-            "startTime": "14:20",
-            "endTime": "19:20",
+            "timeStr": "14:20-19:00",
             "name": "test1",
             "content": "content"
         }

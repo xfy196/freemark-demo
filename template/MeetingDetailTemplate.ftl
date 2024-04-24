@@ -1181,7 +1181,7 @@
                                 </tr>
                                 <#list meetingSchedule as ms>
                                         <tr>
-                                            <td>${ms.startTime}-${ms.endTime}</td>
+                                            <td>${ms.timeStr}</td>
                                             <td>${ms.content}</td>
                                             <td>${ms.name}</td>
                                         </tr>
