@@ -143,21 +143,21 @@
               <td style="width: 22.4736%; text-align: left; vertical-align: middle">
                 <span style="color: #333333; font-size: 14px"><strong>会议名称</strong></span>
               </td>
-              <td style="width: 22.4736%; vertical-align: middle">${topic}</td>
+              <td style="width: 22.4736%; vertical-align: middle">${name}</td>
               <td style="width: 22.4736%; text-align: left; vertical-align: middle">
                 <span style="color: #333333; font-size: 14px"><strong>活动类型</strong></span>
               </td>
-              <td style="width: 22.4736%; vertical-align: middle"></td>
+              <td style="width: 22.4736%; vertical-align: middle">${meetingTypeName}</td>
             </tr>
             <tr style="height: 36px">
               <td style="width: 22.4736%; text-align: left; vertical-align: middle">
                 <span style="color: #333333; font-size: 14px"><strong>会议主题</strong></span>
               </td>
-              <td style="width: 22.4736%; vertical-align: middle"></td>
+              <td style="width: 22.4736%; vertical-align: middle">${topic}</td>
               <td style="width: 22.4736%; text-align: left; vertical-align: middle">
                 <span style="color: #333333; font-size: 14px"><strong>活动地点</strong></span>
               </td>
-              <td style="width: 22.4736%; vertical-align: middle"></td>
+              <td style="width: 22.4736%; vertical-align: middle">${address}</td>
             </tr>
             <tr style="height: 36px">
               <td style="width: 22.4736%; text-align: left; vertical-align: middle">
