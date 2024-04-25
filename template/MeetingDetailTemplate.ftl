@@ -517,7 +517,7 @@
 
         .temp-img-li img {
             max-width: 100%;
-            max-height: 400px;
+            height: 400px;
         }
         .temp-img-li .approval-image-desc{
             position: absolute;
@@ -530,7 +530,15 @@
             font-size: 14px;
             width: 100%;
         }
-
+        .temp-img-li  .approval-image-desc.approval-status-green {
+            color: #1ab370;
+        }
+       .temp-img-li .approval-image-desc.approval-status-red {
+            color: #f53f3f;
+        }
+        .temp-img-li  .approval-image-desc.approval-status-orange {
+            color: #ff8200;
+        }
         .ask {
             clear: both;
         }
@@ -1258,7 +1266,7 @@
                                                                         <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                             alt="" />
                                                                 </#if>
-                                                                <#if video.imageDesc?? && video.imageDesc != "">
+                                                                <#if video.imageDesc?? && (video.imageDesc != "")>
                                                                         <div class="approval-image-desc">${video.imageDesc}</div>
                                                                     </#if>
                                                             </div>
@@ -1285,8 +1293,17 @@
                                                     <#list custom.value as image>
                                                         <div class="temp-img-li">
                                                             <img src="${image.url}" alt="" />
-                                                            <#if image.imageDesc?? && image.imageDesc !="">
-                                                                <div class="approval-image-desc">${image.imageDesc}</div>
+                                                            <#if image.imageDesc?? && (image.imageDesc !="")>
+                                                                
+                                                                <#if image.imageDesc == '实时拍摄' || image.imageDesc == '相册上传' || image.realTime??>
+                                                                    <div class="approval-image-desc">${image.imageDesc}</div>
+                                                                <#elseif image.imageDesc == '待审核'>
+                                                                    <div class="approval-image-desc approval-status-green">${image.imageDesc}</div>
+                                                                <#elseif image.imageDesc == '已驳回'>
+                                                                    <div class="approval-image-desc approval-status-red">${image.imageDesc}</div>
+                                                                <#elseif image.imageDesc == '审核中'>
+                                                                    <div class="approval-image-desc approval-status-orange">${image.imageDesc}</div>
+                                                                </#if>
                                                             </#if>
                                                         </div>
                                                         <br/>
@@ -1352,7 +1369,7 @@
                                                                             <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
                                                                                 alt="" />
                                                                     </#if>
-                                                                    <#if video.imageDesc?? && video.imageDesc !="">
+                                                                    <#if video.imageDesc?? && (video.imageDesc !="")>
                                                                         <div class="approval-image-desc">${video.imageDesc}</div>
                                                                     </#if>
                                                                 </div>
@@ -1374,8 +1391,16 @@
                                                         <#list item.value as image>
                                                             <div class="temp-img-li">
                                                                 <img src="${image.url}" alt="" />
-                                                                 <#if image.imageDesc?? && image.imageDesc != ''>
+                                                                 <#if image.imageDesc?? && (image.imageDesc != '')>
+                                                                     <#if image.imageDesc == '实时拍摄' || image.imageDesc == '相册上传' || image.realTime??>
                                                                     <div class="approval-image-desc">${image.imageDesc}</div>
+                                                                <#elseif image.imageDesc == '待审核'>
+                                                                    <div class="approval-image-desc approval-status-green">${image.imageDesc}</div>
+                                                                <#elseif image.imageDesc == '已驳回'>
+                                                                    <div class="approval-image-desc approval-status-red">${image.imageDesc}</div>
+                                                                <#elseif image.imageDesc == '审核中'>
+                                                                    <div class="approval-image-desc approval-status-orange">${image.imageDesc}</div>
+                                                                </#if>
                                                                 </#if>
                                                             </div>
                                                             <br/>

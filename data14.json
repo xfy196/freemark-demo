@@ -1,0 +1,640 @@
+{
+  "meetingStatus": 4,
+  "supplementFinishApprovalRecordId": -1,
+  "templateId": 17199,
+  "nested": [],
+  "attendanceStaff": [],
+  "uploadMedia": true,
+  "participantCount": 0,
+  "speakers": {
+    "displayDeptColumn": true,
+    "deptColumnName": "科室",
+    "deptNameAlias": "",
+    "displayTitleColumn": true,
+    "titleColumnName": "职称",
+    "titleNameAlias": "",
+    "totalCount": 1,
+    "data": [
+      {
+        "id": 89357,
+        "name": "11",
+        "gender": "未知",
+        "hospitalId": 502148,
+        "hospitalName": "解放军第九六八医院朝阳院区",
+        "province": "北京市",
+        "city": "北京市",
+        "county": "朝阳区",
+        "phoneNumber": "",
+        "attendMeeting": "未参会"
+      }
+    ],
+    "computedDeptName": "科室",
+    "computedTitleName": "职称"
+  },
+  "approvalRecordState": 20,
+  "id": 1582,
+  "meetingTypeId": 2560,
+  "state": "FINISH_AUDIT_APPROVED",
+  "questionnaireStatisticsVo": { "participantCount": 0, "totalRecordCount": 0 },
+  "actualFee": 0.0,
+  "firstPlanStartTime": 1714034463000,
+  "planStartTime": 1714034463000,
+  "nestedName": "嵌套模板",
+  "cnAttendanceStaffHeaders": ["姓名"],
+  "planDate": "2024/04/25",
+  "meetingSchedule": [],
+  "organiser": "",
+  "showExecuteStandard": true,
+  "alreadyAttend": 0,
+  "supplementEnable": true,
+  "coOrganizer": [],
+  "supplement": false,
+  "manualStartTime": 1714033199000,
+  "speaker": [
+    {
+      "bizId": 4944,
+      "attendeeEnterpriseId": 4275,
+      "name": "11",
+      "attendeeType": 3,
+      "attendeeId": 89357,
+      "deleted": false,
+      "deptName": "",
+      "departmentId": 0,
+      "auditedType": 0,
+      "audited": -100,
+      "fee": 0,
+      "attendeeDeleted": false,
+      "ifCcDept": false,
+      "creator": 11483,
+      "id": 89357,
+      "type": 2,
+      "label": "11"
+    }
+  ],
+  "waterMarkContent": "123",
+  "stateLabel": "已结项",
+  "topic": "123",
+  "planCustomerCount": 0,
+  "staffSpeaker": [],
+  "creatorDeptId": 4287,
+  "showParticipant": true,
+  "approvalInfo": {
+    "apply": [
+      {
+        "auditors": [
+          {
+            "status": 20,
+            "reason": "",
+            "participants": [
+              {
+                "id": 4394,
+                "auditUid": 11491,
+                "auditName": "郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1714033125000,
+                "identityType": 1,
+                "approvalType": 0,
+                "avatar": "https://omnitest.100url.cn/s3file/test_4275/systemAuthorization/2024-01-18/1705563640280rgfl4sui.jpg",
+                "statusValue": "通过",
+                "auditTime": 1714033125000
+              }
+            ],
+            "approvalType": 0
+          }
+        ],
+        "ccUser": [],
+        "recordVo": {
+          "id": 1646,
+          "processId": 0,
+          "applyUid": 11483,
+          "applierName": "郭晓萍5253",
+          "applierDeptNames": "医百经销商/郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓",
+          "endAuditIdentity": 1,
+          "enterpriseId": 4275,
+          "createTime": 1714032698000,
+          "approvalTime": 1714033125000,
+          "status": 20,
+          "reason": "",
+          "templateId": 17195,
+          "templateName": "87500000",
+          "templateStatus": 0,
+          "controlChanged": false,
+          "category": 10,
+          "bizId": 1582,
+          "bizName": "123",
+          "transfer": false,
+          "statusValue": "通过",
+          "approvedTime": 1714033125000,
+          "showCancel": false,
+          "auditor": false,
+          "showChange": false,
+          "applier": false
+        },
+        "controls": [],
+        "attendeeApprovalInfos": []
+      },
+      {
+        "auditors": [
+          {
+            "status": 20,
+            "reason": "",
+            "participants": [
+              {
+                "id": 4393,
+                "auditUid": 11491,
+                "auditName": "郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭晓萍8750郭",
+                "status": 20,
+                "reason": "",
+                "approvalTime": 1714032682000,
+                "identityType": 1,
+                "approvalType": 0,
+                "avatar": "https://omnitest.100url.cn/s3file/test_4275/systemAuthorization/2024-01-18/1705563640280rgfl4sui.jpg",
+                "statusValue": "通过",
+                "auditTime": 1714032682000
+              }
+            ],
+            "approvalType": 0
+          }
+        ],
+        "ccUser": [],
+        "recordVo": {
+          "id": 1645,
+          "processId": 0,
+          "applyUid": 11483,
+          "applierName": "郭晓萍5253",
+          "applierDeptNames": "医百经销商/郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓",
+          "endAuditIdentity": 1,
+          "enterpriseId": 4275,
+          "createTime": 1714032666000,
+          "approvalTime": 1714032682000,
+          "status": 20,
+          "reason": "",
+          "templateId": 17195,
+          "templateName": "87500000",
+          "templateStatus": 0,
+          "controlChanged": false,
+          "category": 10,
+          "bizId": 1582,
+          "bizName": "123",
+          "transfer": false,
+          "statusValue": "通过",
+          "approvedTime": 1714032682000,
+          "showCancel": false,
+          "auditor": false,
+          "showChange": false,
+          "applier": false
+        },
+        "controls": [],
+        "attendeeApprovalInfos": []
+      }
+    ],
+    "finish": [],
+    "supplementFinish": []
+  },
+  "firstPlanEndTime": 1714038063000,
+  "customFields": [
+    { "name": "11", "type": "CHOOSE_ORGANIZATION", "value": "" },
+    { "name": "单行文本", "type": "TEXT_SINGLE", "value": "" },
+    { "name": "多行文本", "type": "TEXT_MULTILINE", "value": "" },
+    { "name": "数字", "type": "NUMBER", "value": "" },
+    { "name": "日期", "type": "DATE", "value": "" },
+    { "name": "日期+时间", "type": "DATETIME", "value": "" },
+    { "name": "单选", "type": "SELECT_SINGLE", "value": "" },
+    { "name": "多选", "type": "SELECT_MULTIPLE", "value": "" },
+    {
+      "name": "图片",
+      "type": "IMAGE",
+      "value": [
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033240523ears3tw9.jpeg",
+          "imageDesc": "实时拍摄"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033356117ucp8xlfi.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033422750jn0qckk3.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/17140334297019pfl826t.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033439390yfy3r4qe.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714034255920xqz38ci7.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714034267148bnmu263j.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714034267142dq3huyxg.jpeg",
+          "imageDesc": "已驳回"
+        },
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/17140342671569hwt5q57.jpeg",
+          "imageDesc": "已驳回"
+        }
+      ]
+    },
+    {
+      "name": "视频",
+      "type": "VIDEO",
+      "value": [
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033998879z96y46x3.mp4",
+          "name": "1714033998879z96y46x3.mp4",
+          "thumb": "https://omnitestp.100url.cn/s3file/test_4275/extract_first_frame/2024-04-25/1714034001608e5LVt84o.jpg",
+          "imageDesc": "审核中"
+        }
+      ]
+    },
+    { "name": "位置", "type": "POSITION", "value": "" },
+    { "name": "附件", "type": "FILE", "value": [] },
+    { "name": "产品", "type": "CHOOSE_PRODUCT", "value": "" },
+    {
+      "name": "222",
+      "type": "IMAGE",
+      "value": [
+        {
+          "url": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714032697238u7ctyosn.jpeg"
+        }
+      ]
+    }
+  ],
+  "planUploadOnline": { "uploadOnlineEnable": true, "uploaded": false },
+  "creatorId": 11483,
+  "meetingTypeName": "郭晓萍会议",
+  "onlineMeetingEnable": false,
+  "approvalRecordId": 1646,
+  "duration": 1116,
+  "staticImgUrl": "https://omnitestp.100url.cn",
+  "planExtendJson": [
+    {
+      "templateControlId": 41292,
+      "controlName": "讲者",
+      "controlTypeName": "SPEAKER",
+      "jsonConfig": "{\"required\":false,\"modifies\":[\"NOT_START\"],\"approvalId\":\"\",\"options\":[],\"apperAfterStart\":false,\"id\":32083,\"edit\":true}",
+      "enabled": true,
+      "config": { "options": [], "required": false, "apperAfterStart": false }
+    },
+    {
+      "templateControlId": 41293,
+      "inputValue": "",
+      "controlName": "会议日程",
+      "controlTypeName": "MEETING_SCHEDULE",
+      "jsonConfig": "{\"options\":[],\"modifies\":[\"NOT_START\"],\"label\":\"会议日程\",\"apperAfterStart\":false,\"required\":false}",
+      "enabled": true,
+      "config": {
+        "label": "会议日程",
+        "options": [],
+        "required": false,
+        "apperAfterStart": false,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41294,
+      "inputValue": "",
+      "controlName": "11",
+      "controlTypeName": "CHOOSE_ORGANIZATION",
+      "jsonConfig": "{\"options\":[],\"label\":\"11\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "11",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41295,
+      "inputValue": "",
+      "controlName": "单行文本",
+      "controlTypeName": "TEXT_SINGLE",
+      "jsonConfig": "{\"options\":[],\"label\":\"单行文本\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "单行文本",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41296,
+      "inputValue": "",
+      "controlName": "多行文本",
+      "controlTypeName": "TEXT_MULTILINE",
+      "jsonConfig": "{\"options\":[],\"label\":\"多行文本\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "多行文本",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41297,
+      "inputValue": "",
+      "controlName": "数字",
+      "controlTypeName": "NUMBER",
+      "jsonConfig": "{\"options\":[],\"label\":\"数字\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "数字",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41298,
+      "inputValue": "",
+      "controlName": "日期",
+      "controlTypeName": "DATE",
+      "jsonConfig": "{\"options\":[],\"label\":\"日期\",\"minDate\":1711900800000,\"maxDate\":1714406400000,\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "日期",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41299,
+      "inputValue": "",
+      "controlName": "日期+时间",
+      "controlTypeName": "DATETIME",
+      "jsonConfig": "{\"options\":[],\"label\":\"日期+时间\",\"minDate\":1711900800000,\"maxDate\":1714406400000,\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "日期+时间",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41300,
+      "inputValue": "",
+      "controlName": "单选",
+      "controlTypeName": "SELECT_SINGLE",
+      "jsonConfig": "{\"options\":[{\"name\":\"111111\"},{\"name\":\"2222222222\"},{\"name\":\"333333333333\"}],\"label\":\"单选\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "单选",
+        "options": [
+          { "name": "111111" },
+          { "name": "2222222222" },
+          { "name": "333333333333" }
+        ],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41301,
+      "inputValue": "",
+      "controlName": "多选",
+      "controlTypeName": "SELECT_MULTIPLE",
+      "jsonConfig": "{\"options\":[{\"name\":\"1\"},{\"name\":\"2\"},{\"name\":\"3\"}],\"apperAfterStart\":true,\"required\":false,\"label\":\"多选\"}",
+      "config": {
+        "label": "多选",
+        "options": [{ "name": "1" }, { "name": "2" }, { "name": "3" }],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41302,
+      "inputValue": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033240523ears3tw9.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033356117ucp8xlfi.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033422750jn0qckk3.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/17140334297019pfl826t.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033439390yfy3r4qe.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714034255920xqz38ci7.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714034267148bnmu263j.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714034267142dq3huyxg.jpeg,https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/17140342671569hwt5q57.jpeg",
+      "controlName": "图片",
+      "controlTypeName": "IMAGE",
+      "jsonConfig": "{\"options\":[],\"num\":9,\"maxSize\":20,\"required\":false,\"matchFlag\":true,\"apperAfterStart\":true,\"allowRealTimeShootNotRequired\":true,\"label\":\"图片\",\"matchThreshold\":0,\"allowRealTimeShoot\":false,\"id\":37118,\"edit\":true,\"approvalId\":17008}",
+      "config": {
+        "label": "图片",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "allowRealTimeShootNotRequired": true,
+        "allowRealTimeShoot": false,
+        "approvalId": 17008
+      }
+    },
+    {
+      "templateControlId": 41303,
+      "inputValue": "[{\"url\":\"https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714033998879z96y46x3.mp4\",\"name\":\"1714033998879z96y46x3.mp4\",\"isImage\":false,\"isVideo\":true,\"thumb\":\"https://omnitestp.100url.cn/s3file/test_4275/extract_first_frame/2024-04-25/1714034001608e5LVt84o.jpg\",\"uploadType\":\"album\",\"approvalStatus\":\"相册上传\"}]",
+      "controlName": "视频",
+      "controlTypeName": "VIDEO",
+      "jsonConfig": "{\"options\":[],\"label\":\"视频\",\"apperAfterStart\":true,\"allowRealTimeShootNotRequired\":true,\"required\":false,\"maxSize\":100,\"num\":9,\"allowRealTimeShoot\":false,\"id\":37119,\"edit\":true,\"approvalId\":17008}",
+      "config": {
+        "label": "视频",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "allowRealTimeShootNotRequired": true,
+        "allowRealTimeShoot": false,
+        "approvalId": 17008
+      }
+    },
+    {
+      "templateControlId": 41304,
+      "inputValue": "",
+      "controlName": "位置",
+      "controlTypeName": "POSITION",
+      "jsonConfig": "{\"options\":[],\"label\":\"位置\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "位置",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41305,
+      "inputValue": "[]",
+      "controlName": "附件",
+      "controlTypeName": "FILE",
+      "jsonConfig": "{\"options\":[],\"label\":\"附件\",\"required\":false,\"num\":5,\"apperAfterStart\":true}",
+      "config": {
+        "label": "附件",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41306,
+      "controlName": "产品",
+      "controlTypeName": "CHOOSE_PRODUCT",
+      "jsonConfig": "{\"options\":[],\"label\":\"产品\",\"required\":false,\"apperAfterStart\":true}",
+      "config": {
+        "label": "产品",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41307,
+      "controlName": "嵌套模板",
+      "controlTypeName": "NESTED_TEMPLATE",
+      "jsonConfig": "{\"nestedTemplateId\":17175,\"label\":\"嵌套模板\",\"options\":[],\"required\":false,\"apperAfterStart\":true,\"id\":37069,\"edit\":true}",
+      "nestedControlConfig": [
+        {
+          "id": 37051,
+          "templateId": 17175,
+          "controlName": "文本2",
+          "controlTypeName": "TEXT_SINGLE",
+          "jsonConfig": "{\"options\":[],\"label\":\"文本2\",\"required\":false}",
+          "orderNumber": 0,
+          "deleted": false,
+          "templateControlId": 37051
+        },
+        {
+          "id": 37052,
+          "templateId": 17175,
+          "controlName": "数字2",
+          "controlTypeName": "NUMBER",
+          "jsonConfig": "{\"options\":[],\"label\":\"数字2\",\"required\":false}",
+          "orderNumber": 1,
+          "deleted": false,
+          "templateControlId": 37052
+        },
+        {
+          "id": 37053,
+          "templateId": 17175,
+          "controlName": "图片2",
+          "controlTypeName": "IMAGE",
+          "jsonConfig": "{\"options\":[],\"num\":9,\"maxSize\":20,\"matchThreshold\":0,\"label\":\"图片2\",\"required\":false,\"matchFlag\":true,\"allowRealTimeShootNotRequired\":true,\"allowRealTimeShoot\":false}",
+          "orderNumber": 2,
+          "deleted": false,
+          "templateControlId": 37053
+        },
+        {
+          "id": 37054,
+          "templateId": 17175,
+          "controlName": "视频2",
+          "controlTypeName": "VIDEO",
+          "jsonConfig": "{\"options\":[],\"num\":9,\"maxSize\":100,\"label\":\"视频2\",\"required\":false,\"allowRealTimeShootNotRequired\":true,\"allowRealTimeShoot\":false}",
+          "orderNumber": 3,
+          "deleted": false,
+          "templateControlId": 37054
+        }
+      ],
+      "config": {
+        "nestedTemplateId": 17175,
+        "label": "嵌套模板",
+        "options": [],
+        "required": false,
+        "apperAfterStart": true,
+        "approvalId": 0
+      }
+    },
+    {
+      "templateControlId": 41308,
+      "inputValue": "https://omnitestp.100url.cn/s3file/testp_4275/meeting/2024-04-25/1714032697238u7ctyosn.jpeg",
+      "controlName": "222",
+      "controlTypeName": "IMAGE",
+      "jsonConfig": "{\"options\":[],\"num\":1,\"maxSize\":20,\"required\":false,\"label\":\"222\",\"matchFlag\":false,\"matchThreshold\":0,\"allowRealTimeShootNotRequired\":false,\"apperAfterStart\":false,\"allowRealTimeShoot\":false}",
+      "config": {
+        "label": "222",
+        "options": [],
+        "required": false,
+        "apperAfterStart": false,
+        "allowRealTimeShootNotRequired": false,
+        "allowRealTimeShoot": false,
+        "approvalId": 0
+      }
+    }
+  ],
+  "executeStandards": [
+    {
+      "standardValue": "1",
+      "actualValue": "1位讲者不达标：11",
+      "isSatisfied": false,
+      "executionStandardType": "MAXIMUM_LECTURE_COUNT_PER_YEAR"
+    },
+    {
+      "standardValue": "9999999",
+      "actualValue": "",
+      "isSatisfied": true,
+      "executionStandardType": "MAXIMUM_FEE_COUNT_PER_YEAR"
+    }
+  ],
+  "finishAudited": 20,
+  "functionType": 20,
+  "enAttendanceDoctorHeaders": ["name", "organization", "dept"],
+  "finishApprovalRecordId": 0,
+  "durationFormat": "18分36秒",
+  "attendanceTaskId": 0,
+  "meetingRoles": [],
+  "creator": {
+    "bizId": 4941,
+    "attendeeEnterpriseId": 4275,
+    "name": "郭晓萍5253",
+    "attendeeType": 0,
+    "attendeeId": 11483,
+    "wechatUserId": "zhanghao15238915253",
+    "thumbAvatar": "https://omnitestp.100url.cn/s3file/testp_4275/staffInfo/2024-02-19/1708325303433is2gbu41.jpg",
+    "deleted": false,
+    "deptName": "郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓萍辖区郭晓",
+    "departmentId": 4287,
+    "position": "",
+    "mobile": "15238915253",
+    "auditedType": 0,
+    "audited": -100,
+    "fee": 0,
+    "attendeeDeleted": false,
+    "ifCcDept": false,
+    "creator": 11483,
+    "id": 11483,
+    "type": 2,
+    "label": "郭晓萍5253"
+  },
+  "createAudited": 20,
+  "manualEndTime": 1714034316000,
+  "meetingDataFlag": true,
+  "onlineMeetingEnableByMini": false,
+  "enAttendanceStaffHeaders": ["name"],
+  "planCode": "XXHY01714032666693",
+  "attendanceDoctor": [],
+  "questionnaires": [],
+  "finishApprovalRecordState": 20,
+  "waterMarkEnable": true,
+  "planTime": "2024/04/25 16:41~17:41",
+  "planEndTime": 1714038063000,
+  "step": "FINISH_AUDIT",
+  "enterpriseId": 4275,
+  "cnAttendanceDoctorHeaders": ["科室", "姓名", "机构名称"],
+  "prompt": 15,
+  "manualTime": "2024/04/25 16:19~16:38",
+  "statistics": {
+    "attendanceCount": 0,
+    "attendanceRepCount": 0,
+    "onlineRepCount": 0,
+    "onlineCustomerCount": 0,
+    "uniqCustomerCount": 0,
+    "uniqRepCount": 0,
+    "durationAvg": 0,
+    "durationRepAvg": 0,
+    "attendeePeopleCount": 0,
+    "onlinePeopleCount": 0,
+    "avgDurationRep": "",
+    "avgDuration": ""
+  }
+}
