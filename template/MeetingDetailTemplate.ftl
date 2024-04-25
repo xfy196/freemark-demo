@@ -492,6 +492,15 @@
             color: #ffffff;
             font-size: 14px;
         }
+        .temp-mp4-li .temp-mp4-img .approval-image-desc.approval-status-green {
+            color: #1ab370;
+        }
+       .temp-mp4-li .approval-image-desc.approval-status-red {
+            color: #f53f3f;
+        }
+        .temp-mp4-li  .approval-image-desc.approval-status-orange {
+            color: #ff8200;
+        }
         .temp-mp4-li .temp-mp4-btn {
             color: #1ab370;
             cursor: pointer;
@@ -1267,7 +1276,15 @@
                                                                             alt="" />
                                                                 </#if>
                                                                 <#if video.imageDesc?? && (video.imageDesc != "")>
-                                                                        <div class="approval-image-desc">${video.imageDesc}</div>
+                                                                <#if video.imageDesc == '实时拍摄' || video.imageDesc == '相册上传' || video.realTime??>
+                                                                <div class="approval-image-desc">${video.imageDesc}</div>
+                                                            <#elseif video.imageDesc == '待审核'>
+                                                                <div class="approval-image-desc approval-status-green">${video.imageDesc}</div>
+                                                            <#elseif video.imageDesc == '已驳回'>
+                                                                <div class="approval-image-desc approval-status-red">${video.imageDesc}</div>
+                                                            <#elseif video.imageDesc == '审核中'>
+                                                                <div class="approval-image-desc approval-status-orange">${video.imageDesc}</div>
+                                                            </#if>
                                                                     </#if>
                                                             </div>
                                                             <div class="temp-mp4-btn">
@@ -1370,7 +1387,15 @@
                                                                                 alt="" />
                                                                     </#if>
                                                                     <#if video.imageDesc?? && (video.imageDesc !="")>
-                                                                        <div class="approval-image-desc">${video.imageDesc}</div>
+                                                                    <#if video.imageDesc == '实时拍摄' || video.imageDesc == '相册上传' || video.realTime??>
+                                                                    <div class="approval-image-desc">${video.imageDesc}</div>
+                                                                <#elseif video.imageDesc == '待审核'>
+                                                                    <div class="approval-image-desc approval-status-green">${video.imageDesc}</div>
+                                                                <#elseif video.imageDesc == '已驳回'>
+                                                                    <div class="approval-image-desc approval-status-red">${video.imageDesc}</div>
+                                                                <#elseif video.imageDesc == '审核中'>
+                                                                    <div class="approval-image-desc approval-status-orange">${video.imageDesc}</div>
+                                                                </#if>
                                                                     </#if>
                                                                 </div>
                                                                 <div class="temp-mp4-btn">
