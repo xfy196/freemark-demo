@@ -313,13 +313,13 @@
           </tbody>
         </table>
       </div>
+      <#list images as image>
       <div class="page page-break-before">
         <div class="images">
-            <#list images as image>
             <img src="${image}" />
-            </#list>
           </div>
         </div>
+        </#list>
       </#if>
       <div>
         <#list speakerProtocols as template>
