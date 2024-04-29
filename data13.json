@@ -56,5 +56,6 @@
     "Final Approval"
   ],
   "personalExpenseCostHeader": ["费用类型", "人数", "金额", "人均单价"],
-  "otherExpenseCostHeader": ["费用类型", "供应商", "金额"]
+  "otherExpenseCostHeader": ["费用类型", "供应商", "金额"],
+  "exportCover": true
 }

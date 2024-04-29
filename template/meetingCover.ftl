@@ -80,8 +80,8 @@
 
 <body>
   <#escape x as x?html>
-
-    <div class="container">
+  <div class="container">
+      <#if exportCover?? && exportCover>
       <div class="page">
         <p style="text-align: center;margin-top: 48px;">
           <span style="color: #333333; font-size: 32px"><strong>会议封皮</strong></span>
@@ -315,11 +315,12 @@
       </div>
       <div class="page page-break-before">
         <div class="images">
-          <#list images as image>
+            <#list images as image>
             <img src="${image}" />
-          </#list>
+            </#list>
+          </div>
         </div>
-      </div>
+      </#if>
       <div>
         <#list speakerProtocols as template>
           <div class="page page-break-before">
