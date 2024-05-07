@@ -490,7 +490,7 @@
             width: 100%;
             text-align: center;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 18px;
         }
         .temp-mp4-li .temp-mp4-img .approval-image-desc.approval-status-green {
             color: #1ab370;
@@ -534,7 +534,7 @@
             width: 100%;
             text-align: center;
             color: #ffffff;
-            font-size: 14px;
+            font-size: 18px;
             width: 100%;
         }
         .temp-img-li  .approval-image-desc.approval-status-green {
