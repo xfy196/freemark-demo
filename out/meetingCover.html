@@ -9,6 +9,17 @@
   <style>
     @page {
       size: 1100px 1200px;
+       -fs-max-overflow-pages: 10; /* 0 by default */
+      -fs-overflow-pages-direction: ltr; /* Also available is rtl */
+      @top-right {
+
+          /* 分页页数 */
+          /*content: "Page33" counter(page) " of " counter(pages);*/
+          background-image: url("https://poster-1253412830.cos.ap-beijing.myqcloud.com/333/50c639a3-dbea-4d54-a315-12515f8aa522.jpeg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+      }
     }
 
     .clearfix:after {
@@ -79,7 +90,7 @@
 </head>
 
 <body>
-    <div class="container">
+  <div class="container">
       <div class="page">
         <p style="text-align: center;margin-top: 48px;">
           <span style="color: #333333; font-size: 32px"><strong>会议封皮</strong></span>

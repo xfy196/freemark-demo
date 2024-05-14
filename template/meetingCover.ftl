@@ -9,6 +9,17 @@
   <style>
     @page {
       size: 1100px 1200px;
+       -fs-max-overflow-pages: 10; /* 0 by default */
+      -fs-overflow-pages-direction: ltr; /* Also available is rtl */
+      @top-right {
+
+          /* 分页页数 */
+          /*content: "Page33" counter(page) " of " counter(pages);*/
+          background-image: url("${logoUrl}");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+      }
     }
 
     .clearfix:after {
