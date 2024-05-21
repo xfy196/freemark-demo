@@ -1,20 +1,20 @@
 const path = require("path");
 const fs = require("fs");
 var Freemarker = require("freemarker.js");
-const data = require("./data.json");
-const data3 = require("./data3.json");
-const data4 = require("./data4.json");
-const data2 = require("./data2.json");
-const data5 = require("./data5.json");
-const data6 = require("./data6.json");
-const data7 = require("./data7.json");
-const data8 = require("./data8.json");
-const data9 = require("./data9.json");
-const data10 = require("./data10.json");
-const data11 = require("./data11.json");
-const data12 = require("./data12.json");
-const data13 = require("./data13.json");
-const data14 = require("./data14.json");
+const data = require("./json/data.json");
+const data3 = require("./json/data3.json");
+const data4 = require("./json/data4.json");
+const data2 = require("./json/data2.json");
+const data5 = require("./json/data5.json");
+const data6 = require("./json/data6.json");
+const data7 = require("./json/data7.json");
+const data8 = require("./json/data8.json");
+const data9 = require("./json/data9.json");
+const data10 = require("./json/data10.json");
+const data11 = require("./json/data11.json");
+const data12 = require("./json/data12.json");
+const data13 = require("./json/data13.json");
+const data14 = require("./json/data14.json");
 var fm = new Freemarker({
   viewRoot: path.join(__dirname, "./template"),
   options: {
