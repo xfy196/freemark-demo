@@ -59,9 +59,11 @@
         p{
             font-size: 14px;
             margin-top: 8px;
+            color: #333333;
         }
         table{
             font-size: 14px;
+            color: #333333;
         }
     </style>
 </head>
