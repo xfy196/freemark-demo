@@ -47,7 +47,6 @@
         top: 0;
       }
       .container {
-        width: 950px;
         margin: 0 auto;
         background: #fff;
         color: #333333;
