@@ -1,4 +1,35 @@
 {
-    "photos": ["https://picsum.photos/id/1/500/800", "https://picsum.photos/id/1/500/800"],
-    "screenshots": ["https://picsum.photos/id/1/500/800","https://picsum.photos/id/1/500/800"]
+    "domain": "计算机科学",
+    "remark": "年度学术会议",
+    "company": "Tech Innovators Inc.",
+    "companyAbbreviation": "TII",
+    "topic": "人工智能的未来",
+    "planDate": "2024-06-15",
+    "address": "北京国际会议中心",
+    "meetingSchedule": [
+        {
+            "id": 1,
+            "enterpriseId": 1001,
+            "planId": 5001,
+            "name": "注册与签到",
+            "content": "与会人员进行注册和签到",
+            "startTime": "2024-06-15T08:00:00",
+            "endTime": "2024-06-15T09:00:00",
+            "createTime": "2024-05-01T12:00:00",
+            "updateTime": "2024-05-10T12:00:00",
+            "timeStr": "08:00 - 09:00"
+        },
+        {
+            "id": 2,
+            "enterpriseId": 1001,
+            "planId": 5001,
+            "name": "开幕式",
+            "content": "会议开幕仪式",
+            "startTime": "2024-06-15T09:00:00",
+            "endTime": "2024-06-15T10:00:00",
+            "createTime": "2024-05-01T12:00:00",
+            "updateTime": "2024-05-10T12:00:00",
+            "timeStr": "09:00 - 10:00"
+        }
+    ]
 }

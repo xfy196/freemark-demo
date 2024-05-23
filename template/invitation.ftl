@@ -79,14 +79,13 @@
                 <br />
                 <p style="line-height: 1;"><span style="color: #333333; font-size: 14px;">尊敬的专家：</span></p>
                 <p style="text-indent: 2em; margin-top: 14px;"><span style="color: #333333;"><span
-                            style="font-size: 14px;">为推进XXXXXXXXX领域的科学研究和学术交流，XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX（以下简称&ldquo;华润川贸&rdquo;）非常高兴地邀请您参加下述学术会议（以下简称&ldquo;会议&rdquo;）具体信息如下：</span></span>
+                            style="font-size: 14px;">为推进${domain}领域的科学研究和学术交流，${company}（以下简称${companyAbbreviation}）非常高兴地邀请您参加下述学术会议（以下简称&ldquo;会议&rdquo;）具体信息如下：</span></span>
                 </p>
-                <p><span style="color: #333333;">会议主题：111</span></p>
-                <p><span style="color: #333333;">会议时间：111</span>
+                <p><span style="color: #333333;">会议主题：${topic}</span></p>
+                <p><span style="color: #333333;">会议时间：${planDate}</span>
                 </p>
-                <p><span style="color: #333333;">会议地点：111</span></p>
+                <p><span style="color: #333333;">会议地点：${address}</span></p>
                 <p><span style="color: #333333;">会议日程：</span></p>
-                <p>&nbsp;</p>
                 <table style="border-collapse: collapse; width: 100%;" border="1">
                     <tbody>
                         <tr>
@@ -96,19 +95,16 @@
                             <td style="width: 33.33%;"><strong><span
                                         style="color: #333333;">提供服务的HCP姓名</span></strong></td>
                         </tr>
+                        <#list meetingSchedule as item>
                         <tr>
-                            <td style="width: 33.33%;"><span style="color: #333333;">15:20~16:40</span></td>
-                            <td style="width: 33.33%;"><span style="color: #333333;">签到</span></td>
-                            <td style="width: 33.33%;"><span style="color: #333333;">--</span></td>
+                            <td style="width: 33.33%;"><span style="color: #333333;">${item.timeStr}</span></td>
+                            <td style="width: 33.33%;"><span style="color: #333333;">${item.name}</span></td>
+                            <td style="width: 33.33%;"><span style="color: #333333;">${item.content}</span></td>
                         </tr>
-                        <tr>
-                            <td style="width: 33.33%;">&nbsp;</td>
-                            <td style="width: 33.33%;">&nbsp;</td>
-                            <td style="width: 33.33%;">&nbsp;</td>
-                        </tr>
+                        </#list>
                     </tbody>
                 </table>
-                <p><span style="color: #333333;">备注信息：</span></p>
+                <p><span style="color: #333333;">备注信息：${remark}</span></p>
 
             </div>
         </div>
