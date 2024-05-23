@@ -74,7 +74,7 @@
         <div class="container">
             <div class="page">
                 <p style="text-align: center; line-height: 1;"><strong><span
-                            style="color: #333333; font-size: 32px;">邀请函</span></strong>
+                            style="color: #333333; font-size: 28px;">邀请函</span></strong>
                 </p>
                 <br />
                 <p style="line-height: 1;"><span style="color: #333333; font-size: 14px;">尊敬的专家：</span></p>

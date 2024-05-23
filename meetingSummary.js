@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 var Freemarker = require("freemarker.js");
-const invitationData = require("./json/invitation.json");
+const meetingSummaryData = require("./json/meetingSummary.json");
 var fm = new Freemarker({
   viewRoot: path.join(__dirname, "./template"),
   options: {
@@ -10,14 +10,14 @@ var fm = new Freemarker({
 });
 
 // Single template file
-fm.render("invitation.ftl", invitationData, function (err, html, output) {
+fm.render("meetingSummary.ftl", meetingSummaryData, function (err, html, output) {
   console.log("🚀 ~ file: index.js:14 ~ output:", output);
   if (err) {
     console.log("🚀 ~ file: index.js:17 ~ err:", err);
     return;
   }
   fs.writeFile(
-    path.join(__dirname, "./out/invitation.html"),
+    path.join(__dirname, "./out/meetingSummary.html"),
     html,
     "utf8",
     (err) => {
