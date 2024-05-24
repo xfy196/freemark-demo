@@ -1,4 +1,7 @@
 {
-    "photos": ["https://picsum.photos/id/1/500/800", "https://picsum.photos/id/1/500/800"],
-    "screenshots": ["https://picsum.photos/id/1/500/800","https://picsum.photos/id/1/500/800"]
+    "topic": "Annual Business Review",
+    "planDate": "2024-06-01 09:00:00",
+    "address": "Conference Room A, Main Building",
+    "summarize": "The meeting focused on the annual performance review, strategic planning for the next fiscal year, and key initiatives to drive growth. Key decisions incl"
 }
+  

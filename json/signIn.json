@@ -1,4 +1,46 @@
 {
-    "photos": ["https://picsum.photos/id/1/500/800", "https://picsum.photos/id/1/500/800"],
-    "screenshots": ["https://picsum.photos/id/1/500/800","https://picsum.photos/id/1/500/800"]
-}
+    "topic": "Annual Business Review",
+    "planDate": "2024-06-01 09:00:00",
+    "address": "Conference Room A, Main Building",
+    "customerAttendances": [
+      {
+        "name": "Dr. John Smith",
+        "orgName": "Central Hospital",
+        "deptName": "Cardiology",
+        "sign": "Signed In",
+        "account": "johnsmith",
+        "position": "Head of Department",
+        "duration": 7200
+      },
+      {
+        "name": "Dr. Emily Johnson",
+        "orgName": "Westside Clinic",
+        "deptName": "Dermatology",
+        "sign": "Signed In",
+        "account": "emilyj",
+        "position": "Senior Consultant",
+        "duration": 5400
+      }
+    ],
+    "repAttendances": [
+      {
+        "name": "Alice Brown",
+        "orgName": "ABC Pharmaceuticals",
+        "deptName": "Sales",
+        "sign": "Signed In",
+        "account": "aliceb",
+        "position": "Sales Manager",
+        "duration": 3600
+      },
+      {
+        "name": "Bob Green",
+        "orgName": "XYZ Pharma",
+        "deptName": "Marketing",
+        "sign": "Signed In",
+        "account": "bobg",
+        "position": "Marketing Director",
+        "duration": 4800
+      }
+    ]
+  }
+  

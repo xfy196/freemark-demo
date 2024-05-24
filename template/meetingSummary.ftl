@@ -72,11 +72,11 @@
         <div class="container">
             <div class="page">
                 <p style="text-align: center; font-size: 28px;"><strong>会议小结</strong></p>
-                <p><span></span>会议主题：</p>
-                <p><span></span>会议时间：</p>
-                <p><span></span>会议地点：</p>
+                <p><span></span>会议主题：${topic}</p>
+                <p><span></span>会议时间：${planDate}</p>
+                <p><span></span>会议地点：${address}</p>
                 <p><span
-                    ></span>xxxx大大阿达大大阿达大大说大大大实打实大师大师大苏打说大大啊大大撒大声地撒啊大大撒阿达四大四大xxxxxx大大阿达大大阿达大大说大大大实打实大师大师大苏打说大大啊大大撒大声地撒啊大大撒阿达四大四大xxxxxx大大阿达大大阿达大大说大大大实打实大师大师大苏打说大大啊大大撒大声地撒啊大大撒阿达四大四大xx
+                    ></span>${summarize}
                 </p>
                 <p><span></span>报告人：</p>
                 <p><span></span>上级签字：</p>

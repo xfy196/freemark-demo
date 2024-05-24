@@ -71,10 +71,10 @@
 
         <div class="container">
             <div class="page">
-                <p style="text-align: center; font-size: 28px;"><strong><span>员工签到表</span></strong></p>
-                <p>会议主题：</p>
-                <p>会议时间：</p>
-                <p>会议地点：</p>
+                <p style="text-align: center; font-size: 28px;"><strong><span>专家签到表</span></strong></p>
+                <p>会议主题：${topic}</p>
+                <p>会议时间：${planDate}</p>
+                <p>会议地点：${address}</p>
                 <br/>
                 <table style="border-collapse: collapse; width: 100%;" border="1">
                     <tbody>
@@ -84,18 +84,14 @@
                             <td style="width: 22.0646%;"><strong><span>科室</span></strong></td>
                             <td style="width: 22.0646%;"><strong><span>会议签到</span></strong></td>
                         </tr>
+                        <#list customerAttendances as customer>
                         <tr>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                            <td style="width: 22.0646%;">&nbsp;</td>
+                            <td style="width: 22.0646%;">${customer.name}</td>
+                            <td style="width: 22.0646%;">${customer.orgName}</td>
+                            <td style="width: 22.0646%;">${customer.deptName}</td>
+                            <td style="width: 22.0646%;">${customer.sign}</td>
                         </tr>
-                        <tr>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                            <td style="width: 22.0646%;">&nbsp;</td>
-                        </tr>
+                        </#list>
                     </tbody>
                 </table>
 
@@ -103,9 +99,9 @@
             </div>
             <div class="page page-break-before">
                 <p style="text-align: center; font-size: 28px;"><strong><span>员工签到表</span></strong></p>
-                <p>会议主题：</p>
-                <p>会议时间：</p>
-                <p>会议地点：</p>
+                <p>会议主题：${topic}</p>
+                <p>会议时间：${planDate}</p>
+                <p>会议地点：${address}</p>
                 <br/>
                 <table style="border-collapse: collapse; width: 100%;" border="1">
                     <tbody>
@@ -117,22 +113,16 @@
                             <td style="width: 14.224%;"><strong><span>在线时长</span></strong></td>
                             <td style="width: 14.224%;"><strong><span>会议签到</span></strong></td>
                         </tr>
+                        <#list repAttendances as req>
                         <tr>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
+                            <td style="width: 14.224%;">${req.name}</td>
+                            <td style="width: 14.224%;">${req.account}</td>
+                            <td style="width: 14.224%;">${req.deptName}</td>
+                            <td style="width: 14.224%;">${req.position}</td>
+                            <td style="width: 14.224%;">${req.duration}</td>
+                            <td style="width: 14.224%;">${req.sign}</td>
                         </tr>
-                        <tr>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                            <td style="width: 14.224%;">&nbsp;</td>
-                        </tr>
+                        </#list>
                     </tbody>
                 </table>
             </div>
