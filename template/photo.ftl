@@ -115,7 +115,7 @@
         <div class="page">
             <div class="title">照片</div>
             <div class="imgs">
-                <#list photos as img>
+                <#list images as img>
                 <img class="<#if img?index !=0>page-break-before</#if> img" src="${img}" alt=""/>
               </#list>
             </div>
@@ -123,17 +123,17 @@
         <div class="page cloud-screenshot  page-break-before">
             <div class="title">云端截图</div>
             <div class="imgs">
-                <#list screenshots as img>
+                <#list screenshots as screenshot>
                 <div class="img-box">
-                  <img class="<#if img?index !=0>page-break-before</#if> img" src="${img}" alt=""/>
+                  <img class="<#if screenshot?index !=0>page-break-before</#if> img" src="${screenshot.url}" alt=""/>
                   <div class="picture-info">
                     <div class="info-left">
-                        <span>截图人：</span>
+                        <span>截图人：${screenshot.author}</span>
                         <span class="split-line"> </span>
-                        <span class="">截图时间：</span>
+                        <span class="">截图时间：${screenshot.time}</span>
                     </div>
                     <div class="info-right">
-                        参会人员：</div>
+                        参会人员：${screenshot.number}</div>
                 </div>
                 </div>
               </#list>

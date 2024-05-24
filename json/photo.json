@@ -1,4 +1,20 @@
 {
-    "photos": ["https://picsum.photos/id/1/500/800", "https://picsum.photos/id/1/500/800"],
-    "screenshots": ["https://picsum.photos/id/1/500/800","https://picsum.photos/id/1/500/800"]
-}
+    "screenshots": [
+      {
+        "url": "https://example.com/screenshot1.png",
+        "author": "Jane Doe",
+        "time": "2024-06-01 10:00:00",
+        "number": 1
+      },
+      {
+        "url": "https://example.com/screenshot2.png",
+        "author": "John Smith",
+        "time": "2024-06-01 10:30:00",
+        "number": 2
+      }
+    ],
+    "images": [
+      "https://example.com/image1.jpg",
+      "https://example.com/image2.jpg"
+    ]
+  }
