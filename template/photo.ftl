@@ -120,25 +120,28 @@
               </#list>
             </div>
         </div>
+        <#if onlineMeetingEnableByMini>
         <div class="page cloud-screenshot  page-break-before">
-            <div class="title">云端截图</div>
-            <div class="imgs">
-                <#list screenshots as screenshot>
-                <div class="img-box">
-                  <img class="<#if screenshot?index !=0>page-break-before</#if> img" src="${screenshot.url}" alt=""/>
-                  <div class="picture-info">
-                    <div class="info-left">
-                        <span>截图人：${screenshot.author}</span>
-                        <span class="split-line"> </span>
-                        <span class="">截图时间：${screenshot.time}</span>
-                    </div>
-                    <div class="info-right">
-                        参会人员：${screenshot.number}</div>
-                </div>
-                </div>
-              </#list>
-            </div>
-        </div>
+          <div class="title">云端截图</div>
+          <div class="imgs">
+              <#list screenshots as screenshot>
+              <div class="img-box">
+                <img class="<#if screenshot?index !=0>page-break-before</#if> img" src="${screenshot.url}" alt=""/>
+                <div class="picture-info">
+                  <div class="info-left">
+                      <span>截图人：${screenshot.author}</span>
+                      <span class="split-line"> </span>
+                      <span class="">截图时间：${screenshot.time}</span>
+                  </div>
+                  <div class="info-right">
+                      参会人员：${screenshot.number}</div>
+              </div>
+              </div>
+            </#list>
+          </div>
+      </div>
+        </#if>
+        
     </div>
 </#escape>
 
