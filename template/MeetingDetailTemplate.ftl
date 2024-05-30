@@ -1263,7 +1263,7 @@
                                             ：
                                         </div>
                                         <div class="temp-mp4">
-                                            <#if custom.value ?? && (custom.value?size> 0)>
+                                            <#if custom.value?? && (custom.value?size> 0)>
                                                 <#list custom.value as video>
                                                     <div class="temp-mp4-li">
                                                         <div class="temp-mp4-img">
