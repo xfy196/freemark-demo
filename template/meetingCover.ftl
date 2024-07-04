@@ -21,7 +21,6 @@
           background-position: right;
       }
     }
-
     .clearfix:after {
       content: "";
       display: block;
@@ -31,6 +30,7 @@
     @media print {
       .page-break-before {
         page-break-before: always;
+        page-break-after: avoid;
       }
     }
 
@@ -56,7 +56,12 @@
       margin: 24px 0;
     }
 
-    td {
+    table{
+      page-break-inside: avoid;
+      -fs-table-paginate: paginate;
+      -fs-page-break-min-height: 1.5cm;
+    }
+    table td {
       padding: 10px 0 10px 14px;
     }
 
