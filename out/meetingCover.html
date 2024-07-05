@@ -2,478 +2,481 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PDF</title>
-  <style>
-    @page {
-      size: 1100px 1200px;
-       -fs-max-overflow-pages: 10; /* 0 by default */
-      -fs-overflow-pages-direction: ltr; /* Also available is rtl */
-      @top-right {
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>PDF</title>
+    <style>
+        @page {
+            size: 1100px 1200px;
+            -fs-max-overflow-pages: 10; /* 0 by default */
+            -fs-overflow-pages-direction: ltr; /* Also available is rtl */
+            @top-right {
 
-          /* 分页页数 */
-          /*content: "Page33" counter(page) " of " counter(pages);*/
-          background-image: url("https://poster-1253412830.cos.ap-beijing.myqcloud.com/333/50c639a3-dbea-4d54-a315-12515f8aa522.jpeg");
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: right;
-      }
-    }
-    .clearfix:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
+                /* 分页页数 */
+                /*content: "Page33" counter(page) " of " counter(pages);*/
+                background-image: url("https://representative-visit-1252497236.cos.accelerate.myqcloud.com/test_0/config/2024-07-04/1720076266574gycyhn40.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: right;
+            }
+        }
 
-    @media print {
-      .page-break-before {
-        page-break-before: always;
-        page-break-after: avoid;
-      }
-    }
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
 
-    .divider {
-      width: 950px;
-      border-bottom: 1px solid #333333;
-      border-radius: 2px 2px 2px 2px;
-      margin: 24px auto;
-    }
+        @media print {
+            .page-break-before {
+                page-break-before: always;
+            }
+        }
 
-    object[type="watermark"] {
-      position: fixed;
-      display: block;
-      width: 100%;
-      height: 100%;
-      transform: rotate(-45deg);
-      z-index: 1000;
-      left: 0;
-      top: 0;
-    }
+        .divider {
+            width: 950px;
+            border-bottom: 1px solid #333333;
+            border-radius: 2px 2px 2px 2px;
+            margin: 24px auto;
+        }
 
-    hr {
-      margin: 24px 0;
-    }
+        object[type="watermark"] {
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-45deg);
+            z-index: 1000;
+            left: 0;
+            top: 0;
+        }
 
-    table{
-      page-break-inside: avoid;
-      -fs-table-paginate: paginate;
-      /* -fs-page-break-min-height: 1.5cm; */
-    }
-    table td {
-      padding: 10px 0 10px 14px;
-    }
+        hr {
+            margin: 24px 0;
+        }
 
-    .images {
-      margin-top: 24px;
-    }
+        table {
+            page-break-inside: avoid;
+            -fs-table-paginate: paginate;
+            -fs-page-break-min-height: 1.5cm;
+        }
 
-    .images img {
-      width: 100%;
-      height: 1050px;
-    }
+        table td {
+            padding: 10px 0 10px 14px;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-    }
+        .images {
+            margin-top: 24px;
+        }
 
-    body {
-      font-family: 'Source Han Sans', 'Emoji';
-      font-size: 16px;
-      line-height: 1.5;
-    }
+        .images img {
+            width: 100%;
+            height: 1050px;
+        }
 
-    .container {
-      width: 950px;
-      margin: 0 auto;
-      background: #fff;
-      color: #333333;
-    }
-  </style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Source Han Sans', 'Emoji';
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .container {
+            width: 950px;
+            margin: 0 auto;
+            background: #fff;
+            color: #333333;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-      <div class="page">
-        <p style="text-align: center;margin-top: 48px;">
-          <span style="color: #333333; font-size: 32px"><strong>会议封皮</strong></span>
-        </p>
-        <div class="divider"></div>
+    <div class="container">
+            <div class="page">
+                <p style="text-align: center;margin-top: 48px;">
+                    <span style="color: #333333; font-size: 32px"><strong>会议封皮</strong></span>
+                </p>
+                <div class="divider"></div>
 
-        <table style="border-collapse: collapse; width: 100%" border="1" cellpadding="0">
-          <tbody>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>姓名</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px">John Doe</span>
-              </td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>岗位</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">Engineering</td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>大区</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">North</td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>地区</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">East</td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>员工号</strong></span>
-              </td>
-              <td style="width: 67.4208%; vertical-align: middle" colspan="3">
-                JD001
-              </td>
-            </tr>
-            <tr style="height: 72px">
-              <td style="
+                <table style="border-collapse: collapse; width: 100%" border="1" cellpadding="0">
+                    <tbody>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>姓名</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px">范思佳</span>
+                        </td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>岗位</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">上海大区</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>大区</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">艾力斯7.0-7.9合并</td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>地区</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">艾力斯7.0-7.9合并</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>员工号</strong></span>
+                        </td>
+                        <td style="width: 67.4208%; vertical-align: middle" colspan="3">
+                            18616306336
+                        </td>
+                    </tr>
+                    <tr style="height: 72px">
+                        <td style="
                       width: 89.8944%;
                       text-align: center;
                       vertical-align: middle;
                     " colspan="4">
-                <span style="color: #333333; font-size: 24px"><strong>会议基础信息</strong></span>
-              </td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>编码</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">MC2024</td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>参会人数</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">50</td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>会议名称</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">test</td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>活动类型</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">11111</td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>会议主题</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">Annual Engineering Conference</td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>活动地点</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle"></td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>活动开始时间</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle"></td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>成本中心</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">ENG123</td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>预算金额</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">5000</td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>实际金额</strong></span>
-              </td>
-              <td style="width: 22.4736%; vertical-align: middle">4800</td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>备注</strong></span>
-              </td>
-              <td style="width: 67.4208%; vertical-align: middle" colspan="3">
-                Annual conference for engineering team.
-              </td>
-            </tr>
-            <tr style="height: 72px">
-              <td style="
+                            <span style="color: #333333; font-size: 24px"><strong>会议基础信息</strong></span>
+                        </td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>编码</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">XXHY000000012</td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>参会人数</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">7</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>会议名称</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05</td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>活动类型</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">产品测试会议类型</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>会议主题</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">7.1.1产品验收</td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>活动地点</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">迪士尼达到100号</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>活动开始时间</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">2024-07-05</td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>成本中心</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">青松成本中心</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>预算金额</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">1000.00</td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>实际金额</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; vertical-align: middle">2000.00</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>备注</strong></span>
+                        </td>
+                        <td style="width: 67.4208%; vertical-align: middle" colspan="3">
+                            这里是成本中心���注
+                        </td>
+                    </tr>
+                    <tr style="height: 72px">
+                        <td style="
                       width: 89.8944%;
                       text-align: center;
                       vertical-align: middle;
                     " colspan="4">
-                <span style="color: #333333; font-size: 24px"><strong>个人费用明细</strong></span>
-              </td>
-            </tr>
-            <tr style="height: 36px">
-                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                  <span style="color: #333333; font-size: 14px"><strong>费用类型</strong></span>
-                </td>
-                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                  <span style="color: #333333; font-size: 14px"><strong>人数</strong></span>
-                </td>
-                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                  <span style="color: #333333; font-size: 14px"><strong>金额</strong></span>
-                </td>
-                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                  <span style="color: #333333; font-size: 14px"><strong>人均单价</strong></span>
-                </td>
+                            <span style="color: #333333; font-size: 24px"><strong>个人费用明细</strong></span>
+                        </td>
+                    </tr>
+                    <tr style="height: 36px">
+                            <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                <span style="color: #333333; font-size: 14px"><strong>费用类型</strong></span>
+                            </td>
+                            <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                <span style="color: #333333; font-size: 14px"><strong>人数</strong></span>
+                            </td>
+                            <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                <span style="color: #333333; font-size: 14px"><strong>金额</strong></span>
+                            </td>
+                            <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                <span style="color: #333333; font-size: 14px"><strong>人均单价</strong></span>
+                            </td>
 
-            </tr>
-              <tr style="height: 36px">
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    Travel
-                  </td>
+                    </tr>
+                        <tr style="height: 36px">
+                                <td style="width: 22.4736%; vertical-align: middle">
+                                    交通费
+                                </td>
 
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
+                                <td style="width: 22.4736%; vertical-align: middle">
+                                    7
+                                </td>
 
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
+                                <td style="width: 22.4736%; vertical-align: middle">
+                                    500.00
+                                </td>
 
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
+                                <td style="width: 22.4736%; vertical-align: middle">
+                                    71.42
+                                </td>
 
-              </tr>
-              <tr style="height: 36px">
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    Travel
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-              </tr>
-              <tr style="height: 36px">
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    Travel
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-              </tr>
-              <tr style="height: 36px">
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    Travel
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-                  <td style="width: 22.4736%; vertical-align: middle">
-                    1000
-                  </td>
-
-              </tr>
-            <tr style="height: 72px">
-              <td style="
+                        </tr>
+                    <tr style="height: 72px">
+                        <td style="
                       width: 89.8944%;
                       text-align: center;
                       vertical-align: middle;
                     " colspan="4">
-                <span style="color: #333333; font-size: 24px"><strong>第三方费用</strong></span>
-              </td>
-            </tr>
+                            <span style="color: #333333; font-size: 24px"><strong>第三方费用</strong></span>
+                        </td>
+                    </tr>
 
-            <tr style="height: 36px">
-                    <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                      <span style="color: #333333; font-size: 14px"><strong>费用类型</strong></span>
-                    </td>
-                  <td style="width: 44.9472%; text-align: left; vertical-align: middle" colspan="2">
-                    <span style="color: #333333; font-size: 14px"><strong>供应商</strong></span>
-                  </td>
-                    <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                      <span style="color: #333333; font-size: 14px"><strong>金额</strong></span>
-                    </td>
+                    <tr style="height: 36px">
+                                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                    <span style="color: #333333; font-size: 14px"><strong>费用类型</strong></span>
+                                </td>
+                                <td style="width: 44.9472%; text-align: left; vertical-align: middle"
+                                    colspan="2">
+                                    <span style="color: #333333; font-size: 14px"><strong>供应商</strong></span>
+                                </td>
+                                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                    <span style="color: #333333; font-size: 14px"><strong>金额</strong></span>
+                                </td>
 
-            </tr>
+                    </tr>
 
 
-              <tr style="height: 36px">
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        Venue
-                      </td>
+                        <tr style="height: 36px">
+                                    <td style="width: 22.4736%; vertical-align: middle">
+                                        场地费
+                                    </td>
 
-                    <td style="width: 44.9472%; vertical-align: middle" colspan="2">
-                      2000
+                                    <td style="width: 44.9472%; vertical-align: middle"
+                                        colspan="2">
+                                        上海供应商
 
-                    </td>
+                                    </td>
 
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        1000
-                      </td>
+                                    <td style="width: 22.4736%; vertical-align: middle">
+                                        500.00
+                                    </td>
 
-              </tr>
-              <tr style="height: 36px">
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        Venue
-                      </td>
+                        </tr>
 
-                    <td style="width: 44.9472%; vertical-align: middle" colspan="2">
-                      2000
-
-                    </td>
-
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        1000
-                      </td>
-
-              </tr>
-              <tr style="height: 36px">
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        Venue
-                      </td>
-
-                    <td style="width: 44.9472%; vertical-align: middle" colspan="2">
-                      2000
-
-                    </td>
-
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        1000
-                      </td>
-
-              </tr>
-              <tr style="height: 36px">
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        Venue
-                      </td>
-
-                    <td style="width: 44.9472%; vertical-align: middle" colspan="2">
-                      2000
-
-                    </td>
-
-                      <td style="width: 22.4736%; vertical-align: middle">
-                        1000
-                      </td>
-
-              </tr>
-
-            <tr style="height: 72px">
-              <td style="
+                    <tr style="height: 72px">
+                        <td style="
                       width: 89.8944%;
                       text-align: center;
                       vertical-align: middle;
                     " colspan="4">
-                <span style="color: #333333; font-size: 24px"><strong>讲课费明细</strong></span>
-              </td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>姓名</strong></span>
-              </td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>角色</strong></span>
-              </td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>金额</strong></span>
-              </td>
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>级别</strong></span>
-              </td>
-            </tr>
-              <tr style="height: 36px">
-                <td style="width: 22.4736%; vertical-align: middle">Alice</td>
-                <td style="width: 22.4736%; vertical-align: middle">Senior Engineer</td>
-                <td style="width: 22.4736%; vertical-align: middle">Engineering</td>
-                <td style="width: 22.4736%; vertical-align: middle">test</td>
-              </tr>
-              <tr style="height: 36px">
-                <td style="width: 22.4736%; vertical-align: middle">Bob</td>
-                <td style="width: 22.4736%; vertical-align: middle">Lead Engineer</td>
-                <td style="width: 22.4736%; vertical-align: middle">Engineering</td>
-                <td style="width: 22.4736%; vertical-align: middle">test</td>
-              </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>审批流程</strong></span>
-              </td>
-              <td style="width: 67.4208%; vertical-align: middle" colspan="3">
-                  <div>
-                    Manager Approval
-
-                  </div>
-                  <div>
-                    Finance Approval
-
-                  </div>
-                  <div>
-                    Final Approval
-
-                  </div>
-              </td>
-            </tr>
-            <tr style="height: 36px">
-              <td style="width: 22.4736%; text-align: left; vertical-align: middle">
-                <span style="color: #333333; font-size: 14px"><strong>会议日程</strong></span>
-              </td>
-              <td style="width: 67.4208%; vertical-align: middle" colspan="3">
-                <span style="color: #333333; font-size: 14px">见附件</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="page page-break-before">
-        <div class="images">
-            <img src="https://iph.href.lu/600x200?fg=666666&amp;bg=cccccc" />
-          </div>
+                            <span style="color: #333333; font-size: 24px"><strong>讲课费明细</strong></span>
+                        </td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>姓名</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>角色</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>金额</strong></span>
+                        </td>
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>级别</strong></span>
+                        </td>
+                    </tr>
+                        <tr style="height: 36px">
+                            <td style="width: 22.4736%; vertical-align: middle">范主任</td>
+                            <td style="width: 22.4736%; vertical-align: middle">主讲</td>
+                            <td style="width: 22.4736%; vertical-align: middle">500</td>
+                            <td style="width: 22.4736%; vertical-align: middle">A</td>
+                        </tr>
+                        <tr style="height: 36px">
+                            <td style="width: 22.4736%; vertical-align: middle">郭晓萍</td>
+                            <td style="width: 22.4736%; vertical-align: middle"></td>
+                            <td style="width: 22.4736%; vertical-align: middle">500</td>
+                            <td style="width: 22.4736%; vertical-align: middle">A</td>
+                        </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>审批流程</strong></span>
+                        </td>
+                        <td style="width: 67.4208%; vertical-align: middle" colspan="3">
+                        </td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>会议日程</strong></span>
+                        </td>
+                        <td style="width: 67.4208%; vertical-align: middle" colspan="3">
+                            <span style="color: #333333; font-size: 14px">见附件</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+                <div class="page page-break-before">
+                    <div class="images">
+                        <img src="https://representative-visit-1252497236.cos.accelerate.myqcloud.com/100000052/analysis/20240705/d864e85c-2e09-4d34-8de7-5eb960ec7f78.jpeg"/>
+                    </div>
+                </div>
+                <div class="page page-break-before">
+                    <div class="images">
+                        <img src="https://representative-visit-1252497236.cos.accelerate.myqcloud.com/test_100000052/meeting/2024-07-05/1720149341782qajr7695.jpg"/>
+                    </div>
+                </div>
+        <div>
+                <div class="page page-break-before">
+                        <p style="text-align: center;"><strong><span style="color: #000000;">讲者劳务协议</span></strong></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;"><span style="color: #000000;">甲方：上海艾力斯医药科技股份有限公司</span></p>
+<p style="text-align: left;"><span style="color: #000000;">地址：上海市浦东新区周浦镇凌霄花路266号</span></p>
+<p style="text-align: left;">&nbsp;</p>
+<p><span style="color: #000000;">乙方：范主任</span></p>
+<p><span style="color: #000000;">身份证号码：310115199911114567</span></p>
+<p><span style="color: #000000;">银行账号：6226100212345678</span></p>
+<p><span style="color: #000000;">开户支行：中国银行民生支行</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">鉴于：</span></p>
+<p><span style="color: #000000;">&nbsp; &nbsp; &nbsp;���方拟举办/赞助 迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05（以下简称&ldquo;会议&rdquo;），甲方特邀乙方在上述会议发表演讲，在乙方资源接受甲方邀请的前提下，经甲方双方友好、公平协商、就以下事项打成一致，并订立本协议，共同遵守履行。</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">一、甲方的权利及义务</span></p>
+<p><span style="color: #000000;">1. 甲方应当按照本合同约定按时举行会议，并向乙方提供发表演讲应具备的物质条件；</span></p>
+<p><span style="color: #000000;">2. 甲方应该按照本合同约定向乙方支付讲课费；</span></p>
+<p><span style="color: #000000;">3. 甲方应当承担乙方履行本合同义务所产生的差旅费，包括住宿费，交通费，餐饮费等。</span></p>
+<p><span style="color: #000000;">二、 乙方的权利和义务</span></p>
+<p><span style="color: #000000;">1. 演讲题目：7.1.1产品验收</span></p>
+<p><span style="color: #000000;">2. 演讲时间：2024-07-05</span></p>
+<p><span style="color: #000000;">3. 演讲地点：【会议地点】&nbsp;</span></p>
+<p><span style="color: #000000;">4. 讲课费（税前）：500.00元</span></p>
+<p><span style="color: #000000;">5. 乙方应当承担公民的纳税义务，经乙方谨慎考虑，委托甲方按照税务规定在向乙方支付讲课费时进行代扣和代缴，相</span></p>
+<p><span style="color: #000000;">关税金由乙方承担。</span></p>
+<p><span style="color: #000000;">6. 乙方应当确保发表演讲的内容不违反国家法律、法规、部门规章等规范性文件，同时须确保演讲内容不侵犯任何第三</span></p>
+<p><span style="color: #000000;">人的知识产权，名誉权，隐私权，荣誉权等合法权利。</span></p>
+<p><span style="color: #000000;">三、其他</span></p>
+<p><span style="color: #000000;">1. 本协议一式两份（协议编码唯一），甲、乙双方各执壹份，具有同等法律效力。</span></p>
+<p><span style="color: #000000;">2. 甲方授权公司员工代表签署本协议，乙方需要本人签署。</span></p>
+<p><span style="color: #000000;">3. 本协议于双方签字之日起生效。</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">甲方代表（签字）：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;乙方（签字）：</span></p>
+<p><span style="color: #000000;">签署日期：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 签署日期：&nbsp;&nbsp;</span></p>
+                </div>
+                <div class="page page-break-before">
+                        <p style="text-align: center;"><strong><span style="color: #000000;">讲者劳务协议</span></strong></p>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: left;"><span style="color: #000000;">甲方：上海艾力斯医药科技股份有限公司</span></p>
+<p style="text-align: left;"><span style="color: #000000;">地址：上海市浦东新区周浦镇凌霄花路266号</span></p>
+<p style="text-align: left;">&nbsp;</p>
+<p><span style="color: #000000;">乙方：郭晓萍</span></p>
+<p><span style="color: #000000;">身份证号码：411282199712054802</span></p>
+<p><span style="color: #000000;">银行账号：6215085485234528</span></p>
+<p><span style="color: #000000;">开户支行：中国银行民生支行</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">鉴于：</span></p>
+<p><span style="color: #000000;">&nbsp; &nbsp; &nbsp;甲方拟举办/赞助 迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05（以下简称&ldquo;会议&rdquo;），甲方特邀乙方在上述会议发表演讲，在乙方资源接受甲方邀请的前提下，经甲方双方友好、公平协商、就以下事项打成一致，并订立本协议，共同遵守履行。</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">一、甲方的权利及义务</span></p>
+<p><span style="color: #000000;">1. 甲方应当按照本合同约定按时举行会议，并向乙方提供发表演讲应具备的物质条件；</span></p>
+<p><span style="color: #000000;">2. 甲方应该按照本合同约定向乙方支付讲课费；</span></p>
+<p><span style="color: #000000;">3. 甲方应当承担乙方履行本合同义务所产生的差旅费，包括住宿费，交通费，餐饮费等。</span></p>
+<p><span style="color: #000000;">二、 乙方的权利和义务</span></p>
+<p><span style="color: #000000;">1. 演讲题目：7.1.1产品验收</span></p>
+<p><span style="color: #000000;">2. 演讲时间：2024-07-05</span></p>
+<p><span style="color: #000000;">3. 演讲地点：【会议地点】&nbsp;</span></p>
+<p><span style="color: #000000;">4. 讲课费（税前）：500.00元</span></p>
+<p><span style="color: #000000;">5. 乙方应当承担公民的纳税义务，经乙方谨慎考虑，委托甲方按照税务规定在向乙方支付讲课费时进行代扣和代缴，相</span></p>
+<p><span style="color: #000000;">关税金由乙方承担。</span></p>
+<p><span style="color: #000000;">6. 乙方应当确保发表演讲的内容不违反国家法律、法规、部门规章等规范性文件，同时须确保演讲内容不侵犯任何第三</span></p>
+<p><span style="color: #000000;">人的知识产权，名誉权，隐私权，荣誉权等合法权利。</span></p>
+<p><span style="color: #000000;">三、其他</span></p>
+<p><span style="color: #000000;">1. 本协议一式两份（协议编码唯一），甲、乙双方各执壹份，具有同等法律效力。</span></p>
+<p><span style="color: #000000;">2. 甲方授权公司员工代表签署本协议，乙方需要本人签署。</span></p>
+<p><span style="color: #000000;">3. 本协议于双方签字之日起生效。</span></p>
+<p><span style="color: #000000;">&nbsp;</span></p>
+<p><span style="color: #000000;">甲方代表（签字）：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;乙方（签字）：</span></p>
+<p><span style="color: #000000;">签署日期：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 签署日期：&nbsp;&nbsp;</span></p>
+                </div>
+                <div class="page page-break-before">
+                        <p><span style="color: #f00000;">鉴于：</span></p>
+<p><span style="color: #f00000;">&nbsp; &nbsp; &nbsp;���方拟举办/赞助 迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05（以下简称&ldquo;会议&rdquo;），甲方特邀乙方在上述会议发表演讲，在乙方资源接受甲方邀请的前提下，经甲方双方友好、公平协商、就以下事项打成一致，并订立本协议，共同遵守履行。</span></p>
+<p><span style="color: #f00000;">&nbsp;</span></p>
+<p><span style="color: #f00000;">一、甲方的权利及义务</span></p>
+<p><span style="color: #f00000;">1. 甲方应当按照本合同约定按时举行会议，并向乙方提供发表演讲应具备的物质条件；</span></p>
+<p><span style="color: #f00000;">2. 甲方应该按照本合同约定向乙方支付讲课费；</span></p>
+<p><span style="color: #f00000;">3. 甲方应当承担乙方履行本合同义务所产生的差旅费，包括住宿费，交通费，餐饮费等。</span></p>
+<p><span style="color: #f00000;">二、 乙方的权利和义务</span></p>
+<p><span style="color: #f00000;">1. 演讲主题：7.1.1产品验收</span></p>
+<p><span style="color: #f00000;">2. 演讲时间：2024-07-05</span></p>
+<p><span style="color: #f00000;">3. 演讲地点：迪士尼达到100号&nbsp;</span></p>
+<p><span style="color: #f00000;">4. 讲课费：500.00</span></p>
+<p><span style="color: #f00000;">5. 乙方应当承担公民的纳税义务，经乙方谨慎考虑，委托甲方按照税务规定在向乙方支付讲课费时进行代扣和代缴，相</span></p>
+<p><span style="color: #f00000;">关税金由乙方承担。</span></p>
+<p><span style="color: #f00000;">6. 乙方应当确保发表演讲的内容不违反国家法律、法规、部门规章等规范性文件，同时须确保演讲内容不侵犯任何第三</span></p>
+<p><span style="color: #f00000;">人的知识产权，名誉权，隐私权，荣誉权等合法权利。</span></p>
+<p><span style="color: #f00000;">三、其他</span></p>
+<p><span style="color: #f00000;">1. 本协议一式两份（协议编码唯一），甲、乙双方各执壹份，具有同等法律效力。</span></p>
+<p><span style="color: #f00000;">2. 甲方授权公司员工代表签署本协议，乙方需要本人签署。</span></p>
+<p><span style="color: #f00000;">3. 本协议于双方签字之日起生效。</span></p>
+<p><span style="color: #f00000;">&nbsp;</span></p>
+<p><span style="color: #f00000;">甲方代表（签字）：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;乙方<strong>代表（签字）：</strong></span></p>
+<p><span style="color: #f00000;">签署日期：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 签署日期：&nbsp;&nbsp;</span></p>
+<p><span style="color: #f00000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="color: #f00000;">有几个讲者就生成几份，有两种协议一个是股份公司一个是营销公司</span></p>
+                </div>
+                <div class="page page-break-before">
+                        <p><span style="color: #f00000;">鉴于：</span></p>
+<p><span style="color: #f00000;">&nbsp; &nbsp; &nbsp;甲方拟举办/赞助 迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05（以下简称&ldquo;会议&rdquo;），甲方特邀乙方在上述会议发表演讲，在乙方资源接受甲方邀请的前提下，经甲方双方友好、公平协商、就以下事项打成一致，并订立本协议，共同遵守履行。</span></p>
+<p><span style="color: #f00000;">&nbsp;</span></p>
+<p><span style="color: #f00000;">一、甲方的权利及义务</span></p>
+<p><span style="color: #f00000;">1. 甲方应当按照本合同约定按时举行会议，并向乙方提供发表演讲应具备的物质条件；</span></p>
+<p><span style="color: #f00000;">2. 甲方应该按照本合同约定向乙方支付讲课费；</span></p>
+<p><span style="color: #f00000;">3. 甲方应当承担乙方履行本合同义务所产生的差旅费，包括住宿费，交通费，餐饮费等。</span></p>
+<p><span style="color: #f00000;">二、 乙方的权利和义务</span></p>
+<p><span style="color: #f00000;">1. 演讲主题：7.1.1产品验收</span></p>
+<p><span style="color: #f00000;">2. 演讲时间：2024-07-05</span></p>
+<p><span style="color: #f00000;">3. 演讲地点：迪士尼达到100号&nbsp;</span></p>
+<p><span style="color: #f00000;">4. 讲课费：500.00</span></p>
+<p><span style="color: #f00000;">5. 乙方应当承担公民的纳税义务，经乙方谨慎考虑，委托甲方按照税务规定在向乙方支付讲课费时进行代扣和代缴，相</span></p>
+<p><span style="color: #f00000;">关税金由乙方承担。</span></p>
+<p><span style="color: #f00000;">6. 乙方应当确保发表演讲的内容不违反国家法律、法规、部门规章等规范性文件，同时须确保演讲内容不侵犯任何第三</span></p>
+<p><span style="color: #f00000;">人的知识产权，名誉权，隐私权，荣誉权等合法权利。</span></p>
+<p><span style="color: #f00000;">三、其他</span></p>
+<p><span style="color: #f00000;">1. 本协议一式两份（协议编码唯一），甲、乙双方各执壹份，具有同等法律效力。</span></p>
+<p><span style="color: #f00000;">2. 甲方授权公司员工代表签署本协议，乙方需要本人签署。</span></p>
+<p><span style="color: #f00000;">3. 本协议于双方签字之日起生效。</span></p>
+<p><span style="color: #f00000;">&nbsp;</span></p>
+<p><span style="color: #f00000;">甲方代表（签字）：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;乙方<strong>代表（签字）：</strong></span></p>
+<p><span style="color: #f00000;">签署日期：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 签署日期：&nbsp;&nbsp;</span></p>
+<p><span style="color: #f00000;">&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="color: #f00000;">有几个讲者就生成几份，���两种协议一个是股份公司一个是营销公司</span></p>
+                </div>
         </div>
-      <div class="page page-break-before">
-        <div class="images">
-            <img src="https://iph.href.lu/600x200?fg=666666&amp;bg=cccccc" />
-          </div>
-        </div>
-      <div>
-          <div class="page page-break-before">
-              <p style="text-align: center;"><span style="font-size: 18pt;"><strong>讲者劳动协议</strong></span></p>
-<hr />
-<p style="text-align: left;"><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span>第1章离家<br />&nbsp;&nbsp;&nbsp;&nbsp;我在里面待了七年，因为表现良好获得了减刑。<br />&nbsp;&nbsp;&nbsp;&nbsp;出来的第一天，我接到几个电话，老板们极力劝说我跟着他们干，有一月给十万配车的，还有一月给二十万给股份的，<br />&nbsp;&nbsp;&nbsp;&nbsp;这些电话大都从两个地方打来。<br />&nbsp;&nbsp;&nbsp;&nbsp;BJ的潘家园，天|津的沈阳道。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时考虑了下，还是都拒绝了。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当初入这行本就是错误，纵然一夜暴富，可我也付出了代价，七年光阴，从当初的白净小伙，变成了如今三十多岁的肚腩大叔。<br />&nbsp;&nbsp;&nbsp;&nbsp;当初认识的女孩，现在孩子都会打酱油了<br />&nbsp;&nbsp;&nbsp;&nbsp;我无亲无故截然一身，最后选择去了大理。<br />&nbsp;&nbsp;&nbsp;&nbsp;我在洱海边上买了个小门脸，开了个小超市，每天没生意的时候就去海边走走，吹吹海风，日子过得倒也清闲。<br />&nbsp;&nbsp;&nbsp;&nbsp;小超市的地址在苍山东路，挨着乐玛特，若有朋友想来玩，我将以茶待之。<br />&nbsp;&nbsp;&nbsp;&nbsp;前段时间不是发现了古蜀文明吗，还出土了轰动全国的黄金面具，其实啊，我的暴富路子，和这些东西有些关系，<br />&nbsp;&nbsp;&nbsp;&nbsp;离不开两个词。<br />&nbsp;&nbsp;&nbsp;&nbsp;古董，盗墓。<br />&nbsp;&nbsp;&nbsp;&nbsp;前几年鬼吹灯，盗墓笔记，黄金瞳，电影电视剧大热播，现在空闲下来，我也写写这行当里的那些事。<br />&nbsp;&nbsp;&nbsp;&nbsp;云顶天宫，秦岭神树我没见过，我也没有黄金瞳，但我十六岁入古董行，确实亲眼见过很多常人无法理解的事。<br />&nbsp;&nbsp;&nbsp;&nbsp;就从头说起吧。<br />&nbsp;&nbsp;&nbsp;&nbsp;我出生在祖国东北的小山村，紧挨漠河，冬天冷的能冻死人。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶把我养大，我没见过父母，更不想去问他们叫什么。<br />&nbsp;&nbsp;&nbsp;&nbsp;老话说隔辈亲，我小时候非常淘，不听老师管教，学习成绩差的一塌糊涂，常年班级倒数。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时村里给办了低保，好像是每月八十多块，还有个什么孤儿特困户补贴，每月一百多块，我家说是艰难维生都不过分。<br />&nbsp;&nbsp;&nbsp;&nbsp;初中那会儿，电视里天天放中央台的寻宝节目，我看的特别入迷，那些人之前不当回事的瓶瓶罐罐，结果专家说能卖好几万，是古董，能换房，换车！<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时一直骗奶奶，说学校让买学习资料，奶奶给了我钱，我就跑去书店，全买了古董方面的图书。<br />&nbsp;&nbsp;&nbsp;&nbsp;我记得看的第一本书是《古泉五十名珍》，戴老先生出版的，很厚的一本。<br />&nbsp;&nbsp;&nbsp;&nbsp;古泉就是铜钱，在我们那叫紫钱，这本书让我大开眼界，开始疯狂迷恋起了古董。<br />&nbsp;&nbsp;&nbsp;&nbsp;我在我们家翻箱倒柜，又忽悠同学，不看字，统一已五毛钱一枚的价格，让他们从自己家里偷铜钱，偷出来卖我，我收购。<br />&nbsp;&nbsp;&nbsp;&nbsp;省吃俭用，食堂的饭我从来不订菜，后来我又把一堆课本卖了七块钱，我学习太差，老师当时只是一直叹气，说这孩子完了，不好好学习，以后只能是社会的毒瘤。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时对老师的话不屑一顾，我心里做着发财梦，就算我成了毒瘤，也要做个有钱的毒瘤。<br />&nbsp;&nbsp;&nbsp;&nbsp;初三，临近中考那年，我16。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶因为在院里扫雪，发生了意外，不小心摔断了腿，医疗费手术费加起来要三千多。<br />&nbsp;&nbsp;&nbsp;&nbsp;我们家的情况，当时连六百块都拿不出来，我印象很深，奶奶当时躺在炕上，盖着厚厚的被子，晚上还会哭。<br />&nbsp;&nbsp;&nbsp;&nbsp;大姑夫在雪乡漠河开了好几家农家乐，他生意做得不错，我就跑去大姑夫家借钱，借钱给奶奶买药。<br />&nbsp;&nbsp;&nbsp;&nbsp;虽然表面上没说啥，但有一次我在背地里偷偷听到了，大姑夫说我是个扫把星，还说我们家是破落户，说这借出去的钱就当掉了，还让大姑姑少和我们来往。<br />&nbsp;&nbsp;&nbsp;&nbsp;那年冬天的晚上，漠河零下三十多度，我坐在一块石头上，坐了三个多小时。<br />&nbsp;&nbsp;&nbsp;&nbsp;年少轻狂，大姑父的话将一位少年的自尊心，狠狠的砸了个稀巴烂。<br />&nbsp;&nbsp;&nbsp;&nbsp;攥紧借来的钱，我心里发誓:&ldquo;我！项云峰！一定要出人头地！&rdquo;<br />&nbsp;&nbsp;&nbsp;&nbsp;我直接自己辍学了，严格说起来，我连个初中文凭都没有，算小学毕业生。<br />&nbsp;&nbsp;&nbsp;&nbsp;三千块钱，除了奶奶手术买药用的，还剩下七百五十三块，这笔钱我偷偷留下来了。<br />&nbsp;&nbsp;&nbsp;&nbsp;不光收铜钱，我还跑去邻村别人家收瓷器，收银元。<br />&nbsp;&nbsp;&nbsp;&nbsp;农村人只认为银元值钱，对瓶子碗盘瓷器之类的，大都不懂，也不太上心。<br />&nbsp;&nbsp;&nbsp;&nbsp;天天看书看鉴宝栏目，我渐渐有了一些基本眼力。<br />&nbsp;&nbsp;&nbsp;&nbsp;我用一百块的价格收了一对清末的洋蓝鸡毛大掸瓶，用不到两百块收了几件民国粉彩仕女图小盐罐，用一百八收了三只清中期民窑青花碗，可惜这三碗都有鸡爪纹，没保存好，都有大冲线。<br />&nbsp;&nbsp;&nbsp;&nbsp;之前我还存了一小袋铜钱，大概有两百多个，铜钱大都是宋钱和清钱，其中道光，光绪，乾隆，皇宋，元丰最多，这些铜钱存世量大，我知道不太值钱，其中最让我满意的是有三枚品相很好的雍正，我知道雍正通宝能值点钱，但当时不知道具体能值多少。<br />&nbsp;&nbsp;&nbsp;&nbsp;买完这些东西，总共花了五百多，我自己还剩下240块，当时的平均月工资也就三百出头。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时和一位女同学关系不错，她帮了我的忙，借给了我两个30寸的大拉杆箱。<br />&nbsp;&nbsp;&nbsp;&nbsp;一共11件瓷器和一小包铜钱，我小心的用被褥裹了又裹，怕摔碎，还塞了很多泡沫。<br />&nbsp;&nbsp;&nbsp;&nbsp;最后，整整装满了两个大拉杆箱和一个双肩包。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶很不理解我的做法，说我不务正业，还说她白养我了，大姑父也知道了这件事，村里人大都也知道了这件事。<br />&nbsp;&nbsp;&nbsp;&nbsp;不少人在背地里对我指指点点。<br />&nbsp;&nbsp;&nbsp;&nbsp;受着白眼，背负着别人的不理解，在腊月十七那天早上，我带着东西，离开了漠河。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时我脑子里认为BJ人最有钱，我收的古董当然要卖给BJ人，何况我对潘家园那个传说之地，早已心生向往。<br />&nbsp;&nbsp;&nbsp;&nbsp;从漠河到BJ没有直达车，只能先坐火车到四平，然后从四平到BJ西。<br />&nbsp;&nbsp;&nbsp;&nbsp;全程二千多公里，要五十多个小时，为了省钱我选择了最便宜的硬座。<br />&nbsp;&nbsp;&nbsp;&nbsp;我提着两个大拉杆箱，身后还背着大背包，头很油，穿的也很土，车站里的旅客不时对我指指点点，窃窃私语。<br />&nbsp;&nbsp;&nbsp;&nbsp;从没出过远门，这是我第一次坐火车，而且是孤身一人。<br />&nbsp;&nbsp;&nbsp;&nbsp;买完车票我身上就剩下不到一百块，要是东西卖不出去，我连返程的车票都买不起，更别说吃饭。<br />&nbsp;&nbsp;&nbsp;&nbsp;火车上的饭很贵，我不敢花钱，就用带的杯子一直接热水喝，实在饿的不行了，我就去买了一袋四块钱的麻花。<br />&nbsp;&nbsp;&nbsp;&nbsp;农村娃第一次到BJ，看啥都新鲜，车站里的安检仪我都是第一次见。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时岁数不大，但我不怕生人，敢和人交谈，我就问别人要怎么去潘家园古玩市场，售票姑娘很热心，他让我坐地铁，还告诉了我怎么换乘。<br />&nbsp;&nbsp;&nbsp;&nbsp;从BJ西站坐九号线，然后到六里桥下车换十号线，在到潘家园站下车。<br />&nbsp;&nbsp;&nbsp;&nbsp;还好我记性不差，没走多少冤枉路，那时候地铁还是两块钱随便坐，只要你不出站就没人管你。<br />&nbsp;&nbsp;&nbsp;&nbsp;下了地铁站，人行道上都是防滑坑，我背着包，拖着两大箱子很吃力。<br />&nbsp;&nbsp;&nbsp;&nbsp;走过华威桥，我终于看到了北门外立着的金字横碑。<br />&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;潘家园旧货市场。&rdquo;<br />&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;终于到了</p>
-          </div>
-          <div class="page page-break-before">
-              <p style="text-align: center;"><span style="font-size: 18pt;"><strong>讲者劳动协议</strong></span></p>
-<hr />
-<p style="text-align: left;"><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span>第1章离家<br />&nbsp;&nbsp;&nbsp;&nbsp;我在里面待了七年，因为表现良好获得了减刑。<br />&nbsp;&nbsp;&nbsp;&nbsp;出来的第一天，我接到几个电话，老板们极力劝说我跟着他们干，有一月给十万配车的，还有一月给二十万给股份的，<br />&nbsp;&nbsp;&nbsp;&nbsp;这些电话大都从两个地方打来。<br />&nbsp;&nbsp;&nbsp;&nbsp;BJ的潘家园，天|津的沈阳道。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时考虑了下，还是都拒绝了。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当初入这行本就是错误，纵然一夜暴富，可我也付出了代价，七年光阴，从当初的白净小伙，变成了如今三十多岁的肚腩大叔。<br />&nbsp;&nbsp;&nbsp;&nbsp;当初认识的女孩，现在孩子都会打酱油了<br />&nbsp;&nbsp;&nbsp;&nbsp;我无亲无故截然一身，最后选择去了大理。<br />&nbsp;&nbsp;&nbsp;&nbsp;我在洱海边上买了个小门脸，开了个小超市，每天没生意的时候就去海边走走，吹吹海风，日子过得倒也清闲。<br />&nbsp;&nbsp;&nbsp;&nbsp;小超市的地址在苍山东路，挨着乐玛特，若有朋友想来玩，我将以茶待之。<br />&nbsp;&nbsp;&nbsp;&nbsp;前段时间不是发现了古蜀文明吗，还出土了轰动全国的黄金面具，其实啊，我的暴富路子，和这些东西有些关系，<br />&nbsp;&nbsp;&nbsp;&nbsp;离不开两个词。<br />&nbsp;&nbsp;&nbsp;&nbsp;古董，盗墓。<br />&nbsp;&nbsp;&nbsp;&nbsp;前几年鬼吹灯，盗墓笔记，黄金瞳，电影电视剧大热播，现在空闲下来，我也写写这行当里的那些事。<br />&nbsp;&nbsp;&nbsp;&nbsp;云顶天宫，秦岭神树我没见过，我也没有黄金瞳，但我十六岁入古董行，确实亲眼见过很多常人无法理解的事。<br />&nbsp;&nbsp;&nbsp;&nbsp;就从头说起吧。<br />&nbsp;&nbsp;&nbsp;&nbsp;我出生在祖国东北的小山村，紧挨漠河，冬天冷的能冻死人。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶把我养大，我没见过父母，更不想去问他们叫什么。<br />&nbsp;&nbsp;&nbsp;&nbsp;老话说隔辈亲，我小时候非常淘，不听老师管教，学习成绩差的一塌糊涂，常年班级倒数。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时村里给办了低保，好像是每月八十多块，还有个什么孤儿特困户补贴，每月一百多块，我家说是艰难维生都不过分。<br />&nbsp;&nbsp;&nbsp;&nbsp;初中那会儿，电视里天天放中央台的寻宝节目，我看的特别入迷，那些人之前不当回事的瓶瓶罐罐，结果专家说能卖好几万，是古董，能换房，换车！<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时一直骗奶奶，说学校让买学习资料，奶奶给了我钱，我就跑去书店，全买了古董方面的图书。<br />&nbsp;&nbsp;&nbsp;&nbsp;我记得看的第一本书是《古泉五十名珍》，戴老先生出版的，很厚的一本。<br />&nbsp;&nbsp;&nbsp;&nbsp;古泉就是铜钱，在我们那叫紫钱，这本书让我大开眼界，开始疯狂迷恋起了古董。<br />&nbsp;&nbsp;&nbsp;&nbsp;我在我们家翻箱倒柜，又忽悠同学，不看字，统一已五毛钱一枚的价格，让他们从自己家里偷铜钱，偷出来卖我，我收购。<br />&nbsp;&nbsp;&nbsp;&nbsp;省吃俭用，食堂的饭我从来不订菜，后来我又把一堆课本卖了七块钱，我学习太差，老师当时只是一直叹气，说这孩子完了，不好好学习，以后只能是社会的毒瘤。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时对老师的话不屑一顾，我心里做着发财梦，就算我成了毒瘤，也要做个有钱的毒瘤。<br />&nbsp;&nbsp;&nbsp;&nbsp;初三，临近中考那年，我16。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶因为在院里扫雪，发生了意外，不小心摔断了腿，医疗费手术费加起来要三千多。<br />&nbsp;&nbsp;&nbsp;&nbsp;我们家的情况，当时连六百块都拿不出来，我印象很深，奶奶当时躺在炕上，盖着厚厚的被子，晚上还会哭。<br />&nbsp;&nbsp;&nbsp;&nbsp;大姑夫在雪乡漠河开了好几家农家乐，他生意做得不错，我就跑去大姑夫家借钱，借钱给奶奶买药。<br />&nbsp;&nbsp;&nbsp;&nbsp;虽然表面上没说啥，但有一次我在背地里偷偷听到了，大姑夫说我是个扫把星，还说我们家是破落户，说这借出去的钱就当掉了，还让大姑姑少和我们来往。<br />&nbsp;&nbsp;&nbsp;&nbsp;那年冬天的晚上，漠河零下三十多度，我坐在一块石头上，坐了三个多小时。<br />&nbsp;&nbsp;&nbsp;&nbsp;年少轻狂，大姑父的话将一位少年的自尊心，狠狠的砸了个稀巴烂。<br />&nbsp;&nbsp;&nbsp;&nbsp;攥紧借来的钱，我心里发誓:&ldquo;我！项云峰！一定要出人头地！&rdquo;<br />&nbsp;&nbsp;&nbsp;&nbsp;我直接自己辍学了，严格说起来，我连个初中文凭都没有，算小学毕业生。<br />&nbsp;&nbsp;&nbsp;&nbsp;三千块钱，除了奶奶手术买药用的，还剩下七百五十三块，这笔钱我偷偷留下来了。<br />&nbsp;&nbsp;&nbsp;&nbsp;不光收铜钱，我还跑去邻村别人家收瓷器，收银元。<br />&nbsp;&nbsp;&nbsp;&nbsp;农村人只认为银元值钱，对瓶子碗盘瓷器之类的，大都不懂，也不太上心。<br />&nbsp;&nbsp;&nbsp;&nbsp;天天看书看鉴宝栏目，我渐渐有了一些基本眼力。<br />&nbsp;&nbsp;&nbsp;&nbsp;我用一百块的价格收了一对清末的洋蓝鸡毛大掸瓶，用不到两百块收了几件民国粉彩仕女图小盐罐，用一百八收了三只清中期民窑青花碗，可惜这三碗都有鸡爪纹，没保存好，都有大冲线。<br />&nbsp;&nbsp;&nbsp;&nbsp;之前我还存了一小袋铜钱，大概有两百多个，铜钱大都是宋钱和清钱，其中道光，光绪，乾隆，皇宋，元丰最多，这些铜钱存世量大，我知道不太值钱，其中最让我满意的是有三枚品相很好的雍正，我知道雍正通宝能值点钱，但当时不知道具体能值多少。<br />&nbsp;&nbsp;&nbsp;&nbsp;买完这些东西，总共花了五百多，我自己还剩下240块，当时的平均月工资也就三百出头。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时和一位女同学关系不错，她帮了我的忙，借给了我两个30寸的大拉杆箱。<br />&nbsp;&nbsp;&nbsp;&nbsp;一共11件瓷器和一小包铜钱，我小心的用被褥裹了又裹，怕摔碎，还塞了很多泡沫。<br />&nbsp;&nbsp;&nbsp;&nbsp;最后，整整装满了两个大拉杆箱和一个双肩包。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶很不理解我的做法，说我不务正业，还说她白养我了，大姑父也知道了这件事，村里人大都也知道了这件事。<br />&nbsp;&nbsp;&nbsp;&nbsp;不少人在背地里对我指指点点。<br />&nbsp;&nbsp;&nbsp;&nbsp;受着白眼，背负着别人的不理解，在腊月十七那天早上，我带着东西，离开了漠河。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时我脑子里认为BJ人最有钱，我收的古董当然要卖给BJ人，何况我对潘家园那个传说之地，早已心生向往。<br />&nbsp;&nbsp;&nbsp;&nbsp;从漠河到BJ没有直达车，只能先坐火车到四平，然后从四平到BJ西。<br />&nbsp;&nbsp;&nbsp;&nbsp;全程二千多公里，要五十多个小时，为了省钱我选择了最便宜的硬座。<br />&nbsp;&nbsp;&nbsp;&nbsp;我提着两个大拉杆箱，身后还背着大背包，头很油，穿的也很土，车站里的旅客不时对我指指点点，窃窃私语。<br />&nbsp;&nbsp;&nbsp;&nbsp;从没出过远门，这是我第一次坐火车，而且是孤身一人。<br />&nbsp;&nbsp;&nbsp;&nbsp;买完车票我身上就剩下不到一百块，要是东西卖不出去，我连返程的车票都买不起，更别说吃饭。<br />&nbsp;&nbsp;&nbsp;&nbsp;火车上的饭很贵，我不敢花钱，就用带的杯子一直接热水喝，实在饿的不行了，我就去买了一袋四块钱的麻花。<br />&nbsp;&nbsp;&nbsp;&nbsp;农村娃第一次到BJ，看啥都新鲜，车站里的安检仪我都是第一次见。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时岁数不大，但我不怕生人，敢和人交谈，我就问别人要怎么去潘家园古玩市场，售票姑娘很热心，他让我坐地铁，还告诉了我怎么换乘。<br />&nbsp;&nbsp;&nbsp;&nbsp;从BJ西站坐九号线，然后到六里桥下车换十号线，在到潘家园站下车。<br />&nbsp;&nbsp;&nbsp;&nbsp;还好我记性不差，没走多少冤枉路，那时候地铁还是两块钱随便坐，只要你不出站就没人管你。<br />&nbsp;&nbsp;&nbsp;&nbsp;下了地铁站，人行道上都是防滑坑，我背着包，拖着两大箱子很吃力。<br />&nbsp;&nbsp;&nbsp;&nbsp;走过华威桥，我终于看到了北门外立着的金字横碑。<br />&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;潘家园旧货市场。&rdquo;<br />&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;终于到了</p>
-          </div>
-          <div class="page page-break-before">
-              <p style="text-align: center;"><span style="font-size: 18pt;"><strong>讲者劳动协议</strong></span></p>
-<hr />
-<p style="text-align: left;"><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span><span class="mce-nbsp-wrap" contenteditable="false">&nbsp;&nbsp;&nbsp;</span>第1章离家<br />&nbsp;&nbsp;&nbsp;&nbsp;我在里面待了七年，因为表现良好获得了减刑。<br />&nbsp;&nbsp;&nbsp;&nbsp;出来的第一天，我接到几个电话，老板们极力劝说我跟着他们干，有一月给十万配车的，还有一月给二十万给股份的，<br />&nbsp;&nbsp;&nbsp;&nbsp;这些电话大都从两个地方打来。<br />&nbsp;&nbsp;&nbsp;&nbsp;BJ的潘家园，天|津的沈阳道。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时考虑了下，还是都拒绝了。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当初入这行本就是错误，纵然一夜暴富，可我也付出了代价，七年光阴，从当初的白净小伙，变成了如今三十多岁的肚腩大叔。<br />&nbsp;&nbsp;&nbsp;&nbsp;当初认识的女孩，现在孩子都会打酱油了<br />&nbsp;&nbsp;&nbsp;&nbsp;我无亲无故截然一身，最后选择去了大理。<br />&nbsp;&nbsp;&nbsp;&nbsp;我在洱海边上买了个小门脸，开了个小超市，每天没生意的时候就去海边走走，吹吹海风，日子过得倒也清闲。<br />&nbsp;&nbsp;&nbsp;&nbsp;小超市的地址在苍山东路，挨着乐玛特，若有朋友想来玩，我将以茶待之。<br />&nbsp;&nbsp;&nbsp;&nbsp;前段时间不是发现了古蜀文明吗，还出土了轰动全国的黄金面具，其实啊，我的暴富路子，和这些东西有些关系，<br />&nbsp;&nbsp;&nbsp;&nbsp;离不开两个词。<br />&nbsp;&nbsp;&nbsp;&nbsp;古董，盗墓。<br />&nbsp;&nbsp;&nbsp;&nbsp;前几年鬼吹灯，盗墓笔记，黄金瞳，电影电视剧大热播，现在空闲下来，我也写写这行当里的那些事。<br />&nbsp;&nbsp;&nbsp;&nbsp;云顶天宫，秦岭神树我没见过，我也没有黄金瞳，但我十六岁入古董行，确实亲眼见过很多常人无法理解的事。<br />&nbsp;&nbsp;&nbsp;&nbsp;就从头说起吧。<br />&nbsp;&nbsp;&nbsp;&nbsp;我出生在祖国东北的小山村，紧挨漠河，冬天冷的能冻死人。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶把我养大，我没见过父母，更不想去问他们叫什么。<br />&nbsp;&nbsp;&nbsp;&nbsp;老话说隔辈亲，我小时候非常淘，不听老师管教，学习成绩差的一塌糊涂，常年班级倒数。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时村里给办了低保，好像是每月八十多块，还有个什么孤儿特困户补贴，每月一百多块，我家说是艰难维生都不过分。<br />&nbsp;&nbsp;&nbsp;&nbsp;初中那会儿，电视里天天放中央台的寻宝节目，我看的特别入迷，那些人之前不当回事的瓶瓶罐罐，结果专家说能卖好几万，是古董，能换房，换车！<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时一直骗奶奶，说学校让买学习资料，奶奶给了我钱，我就跑去书店，全买了古董方面的图书。<br />&nbsp;&nbsp;&nbsp;&nbsp;我记得看的第一本书是《古泉五十名珍》，戴老先生出版的，很厚的一本。<br />&nbsp;&nbsp;&nbsp;&nbsp;古泉就是铜钱，在我们那叫紫钱，这本书让我大开眼界，开始疯狂迷恋起了古董。<br />&nbsp;&nbsp;&nbsp;&nbsp;我在我们家翻箱倒柜，又忽悠同学，不看字，统一已五毛钱一枚的价格，让他们从自己家里偷铜钱，偷出来卖我，我收购。<br />&nbsp;&nbsp;&nbsp;&nbsp;省吃俭用，食堂的饭我从来不订菜，后来我又把一堆课本卖了七块钱，我学习太差，老师当时只是一直叹气，说这孩子完了，不好好学习，以后只能是社会的毒瘤。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时对老师的话不屑一顾，我心里做着发财梦，就算我成了毒瘤，也要做个有钱的毒瘤。<br />&nbsp;&nbsp;&nbsp;&nbsp;初三，临近中考那年，我16。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶因为在院里扫雪，发生了意外，不小心摔断了腿，医疗费手术费加起来要三千多。<br />&nbsp;&nbsp;&nbsp;&nbsp;我们家的情况，当时连六百块都拿不出来，我印象很深，奶奶当时躺在炕上，盖着厚厚的被子，晚上还会哭。<br />&nbsp;&nbsp;&nbsp;&nbsp;大姑夫在雪乡漠河开了好几家农家乐，他生意做得不错，我就跑去大姑夫家借钱，借钱给奶奶买药。<br />&nbsp;&nbsp;&nbsp;&nbsp;虽然表面上没说啥，但有一次我在背地里偷偷听到了，大姑夫说我是个扫把星，还说我们家是破落户，说这借出去的钱就当掉了，还让大姑姑少和我们来往。<br />&nbsp;&nbsp;&nbsp;&nbsp;那年冬天的晚上，漠河零下三十多度，我坐在一块石头上，坐了三个多小时。<br />&nbsp;&nbsp;&nbsp;&nbsp;年少轻狂，大姑父的话将一位少年的自尊心，狠狠的砸了个稀巴烂。<br />&nbsp;&nbsp;&nbsp;&nbsp;攥紧借来的钱，我心里发誓:&ldquo;我！项云峰！一定要出人头地！&rdquo;<br />&nbsp;&nbsp;&nbsp;&nbsp;我直接自己辍学了，严格说起来，我连个初中文凭都没有，算小学毕业生。<br />&nbsp;&nbsp;&nbsp;&nbsp;三千块钱，除了奶奶手术买药用的，还剩下七百五十三块，这笔钱我偷偷留下来了。<br />&nbsp;&nbsp;&nbsp;&nbsp;不光收铜钱，我还跑去邻村别人家收瓷器，收银元。<br />&nbsp;&nbsp;&nbsp;&nbsp;农村人只认为银元值钱，对瓶子碗盘瓷器之类的，大都不懂，也不太上心。<br />&nbsp;&nbsp;&nbsp;&nbsp;天天看书看鉴宝栏目，我渐渐有了一些基本眼力。<br />&nbsp;&nbsp;&nbsp;&nbsp;我用一百块的价格收了一对清末的洋蓝鸡毛大掸瓶，用不到两百块收了几件民国粉彩仕女图小盐罐，用一百八收了三只清中期民窑青花碗，可惜这三碗都有鸡爪纹，没保存好，都有大冲线。<br />&nbsp;&nbsp;&nbsp;&nbsp;之前我还存了一小袋铜钱，大概有两百多个，铜钱大都是宋钱和清钱，其中道光，光绪，乾隆，皇宋，元丰最多，这些铜钱存世量大，我知道不太值钱，其中最让我满意的是有三枚品相很好的雍正，我知道雍正通宝能值点钱，但当时不知道具体能值多少。<br />&nbsp;&nbsp;&nbsp;&nbsp;买完这些东西，总共花了五百多，我自己还剩下240块，当时的平均月工资也就三百出头。<br />&nbsp;&nbsp;&nbsp;&nbsp;我当时和一位女同学关系不错，她帮了我的忙，借给了我两个30寸的大拉杆箱。<br />&nbsp;&nbsp;&nbsp;&nbsp;一共11件瓷器和一小包铜钱，我小心的用被褥裹了又裹，怕摔碎，还塞了很多泡沫。<br />&nbsp;&nbsp;&nbsp;&nbsp;最后，整整装满了两个大拉杆箱和一个双肩包。<br />&nbsp;&nbsp;&nbsp;&nbsp;奶奶很不理解我的做法，说我不务正业，还说她白养我了，大姑父也知道了这件事，村里人大都也知道了这件事。<br />&nbsp;&nbsp;&nbsp;&nbsp;不少人在背地里对我指指点点。<br />&nbsp;&nbsp;&nbsp;&nbsp;受着白眼，背负着别人的不理解，在腊月十七那天早上，我带着东西，离开了漠河。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时我脑子里认为BJ人最有钱，我收的古董当然要卖给BJ人，何况我对潘家园那个传说之地，早已心生向往。<br />&nbsp;&nbsp;&nbsp;&nbsp;从漠河到BJ没有直达车，只能先坐火车到四平，然后从四平到BJ西。<br />&nbsp;&nbsp;&nbsp;&nbsp;全程二千多公里，要五十多个小时，为了省钱我选择了最便宜的硬座。<br />&nbsp;&nbsp;&nbsp;&nbsp;我提着两个大拉杆箱，身后还背着大背包，头很油，穿的也很土，车站里的旅客不时对我指指点点，窃窃私语。<br />&nbsp;&nbsp;&nbsp;&nbsp;从没出过远门，这是我第一次坐火车，而且是孤身一人。<br />&nbsp;&nbsp;&nbsp;&nbsp;买完车票我身上就剩下不到一百块，要是东西卖不出去，我连返程的车票都买不起，更别说吃饭。<br />&nbsp;&nbsp;&nbsp;&nbsp;火车上的饭很贵，我不敢花钱，就用带的杯子一直接热水喝，实在饿的不行了，我就去买了一袋四块钱的麻花。<br />&nbsp;&nbsp;&nbsp;&nbsp;农村娃第一次到BJ，看啥都新鲜，车站里的安检仪我都是第一次见。<br />&nbsp;&nbsp;&nbsp;&nbsp;当时岁数不大，但我不怕生人，敢和人交谈，我就问别人要怎么去潘家园古玩市场，售票姑娘很热心，他让我坐地铁，还告诉了我怎么换乘。<br />&nbsp;&nbsp;&nbsp;&nbsp;从BJ西站坐九号线，然后到六里桥下车换十号线，在到潘家园站下车。<br />&nbsp;&nbsp;&nbsp;&nbsp;还好我记性不差，没走多少冤枉路，那时候地铁还是两块钱随便坐，只要你不出站就没人管你。<br />&nbsp;&nbsp;&nbsp;&nbsp;下了地铁站，人行道上都是防滑坑，我背着包，拖着两大箱子很吃力。<br />&nbsp;&nbsp;&nbsp;&nbsp;走过华威桥，我终于看到了北门外立着的金字横碑。<br />&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;潘家园旧货市场。&rdquo;<br />&nbsp;&nbsp;&nbsp;&nbsp;&ldquo;终于到了</p>
-          </div>
-      </div>
     </div>
 
 </body>

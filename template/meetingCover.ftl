@@ -31,7 +31,6 @@
         @media print {
             .page-break-before {
                 page-break-before: always;
-                page-break-after: avoid;
             }
         }
 
@@ -55,12 +54,6 @@
 
         hr {
             margin: 24px 0;
-        }
-
-        table {
-            page-break-inside: avoid;
-            -fs-table-paginate: paginate;
-            -fs-page-break-min-height: 1.5cm;
         }
 
         table td {
