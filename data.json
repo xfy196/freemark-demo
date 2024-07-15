@@ -15,6 +15,8 @@
     "participantCount": 0,
     "totalRecordCount": 0
   },
+  "showAttendance":false,
+  "showQuestionnaire": false,
   "actualFee": 0.00,
   "planStartTime": 1700705252000,
   "planDate": "2023/11/23",
