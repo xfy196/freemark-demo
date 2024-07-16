@@ -66,6 +66,38 @@
         height: 10px;
         border-radius: 100%;
       }
+      .approval-record-list{
+
+      }
+      .approval-record-list .approval-record-item .outer-circle{
+        width: 8px;
+        height: 8px;
+        background: #cceede;
+        position: relative;
+        border-radius: 100%;
+        display: inline-block;
+      }
+      .approval-record-list .approval-record-item .inner-circle{
+        width: 8px;
+        height: 8px;
+        background: #1AB370;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+      }
+      .approval-record-list .approval-record-item .approval-type{
+        display: inline-block;
+        width: 29px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        background-color: #f4f4f4;
+        border-radius: 2px;
+        font-size: 12px;
+        color: #1AB370;
+      }
     </style>
     </head>
     <body>
@@ -76,6 +108,26 @@
         <span class="public-header-tltle"><span
             style="margin-right: 10px;" class="circle"></span>
             讲者申请记录</span>
+    </div>
+    <!-- 审批记录 -->
+    <div class="approval-record-list">
+    <div>
+        <div class="approval-record-item">
+         <!-- 左侧 -->
+          <div>
+              <div class="active outer-circle">
+                  <div class="inner-circle"></div>
+              </div>
+              <div class="approval-type">或签</div>
+          </div>
+     </div>
+    <div>
+
+    </div>
+    <!-- 中间  -->
+    <!-- 右侧 -->
+    </div>
+   
     </div>
 </div>
 </#escape>
