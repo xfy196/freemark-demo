@@ -1,0 +1,141 @@
+{
+  "speaker": {
+    "id": 1762,
+    "code": "",
+    "enterpriseId": 100000009,
+    "levelId": 763,
+    "customerId": 37157,
+    "creator": 130786,
+    "templateId": 21031,
+    "approvalRecordId": 38086,
+    "audited": 40,
+    "createTime": 1683510456000,
+    "creatorName": "邱硕",
+    "nationality": "",
+    "bank": "",
+    "bankCard": ""
+  },
+  "approvalRecordDetailDto": {
+    "auditors": [
+      {
+        "participants": [
+          {
+            "id": 97736,
+            "auditUid": 130786,
+            "auditName": "邱硕",
+            "status": 20,
+            "reason": "",
+            "approvalTime": 1683860394000,
+            "identityType": 1,
+            "approvalType": 0,
+            "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIho80lTJibYNwGSrRfq37Y5n1WJdGcFM1hIQYON8ECMq8pDiaSE5oTIMxKkZ7byN6ica1WeYZoVNdfA/132",
+            "auditTime": 1683860394000,
+            "statusValue": "通过"
+          }
+        ],
+        "identity": 1,
+        "approvalType": 0,
+        "status": 20,
+        "levelStatus": 20,
+        "statusString": "通过"
+      },
+      {
+        "participants": [
+          {
+            "id": 97738,
+            "auditUid": 130786,
+            "auditName": "邱硕",
+            "status": 20,
+            "reason": "",
+            "approvalTime": 1683860394000,
+            "identityType": 2,
+            "approvalType": 0,
+            "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIho80lTJibYNwGSrRfq37Y5n1WJdGcFM1hIQYON8ECMq8pDiaSE5oTIMxKkZ7byN6ica1WeYZoVNdfA/132",
+            "auditTime": 1683860394000,
+            "statusValue": "通过"
+          }
+        ],
+        "identity": 2,
+        "approvalType": 0,
+        "status": 20,
+        "levelStatus": 20,
+        "statusString": "通过"
+      },
+      {
+        "participants": [
+          {
+            "id": 97742,
+            "auditUid": 130559,
+            "auditName": "孙健-7221",
+            "status": 20,
+            "reason": "",
+            "approvalTime": 1683860394000,
+            "identityType": 3,
+            "approvalType": 0,
+            "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83erKFrDkPH0kdSPqmLpgy5DpIAbPboe0ZdnXMZCFWF5sHATabk5CIicBqib0QPHichoZRpCI07DjEO3rw/132",
+            "auditTime": 1683860394000,
+            "statusValue": "通过"
+          }
+        ],
+        "identity": 3,
+        "approvalType": 0,
+        "status": 20,
+        "levelStatus": 20,
+        "statusString": "通过"
+      }
+    ],
+    "ccUser": [
+      {
+        "auditUid": 132246,
+        "auditName": "李健133",
+        "approvalType": 0,
+        "statusValue": ""
+      },
+      {
+        "auditUid": 131416,
+        "auditName": "李健",
+        "approvalType": 0,
+        "avatar": "https://representative-visit-1252497236.cos.ap-nanjing.myqcloud.com/certification_dev/100000009/1698718938836PxEFWwEwEZ",
+        "statusValue": ""
+      }
+    ],
+    "recordVo": {
+      "id": 38086,
+      "processId": 0,
+      "applyUid": 130559,
+      "applierName": "孙健-7221",
+      "applierDeptNames": "医百兴合dev3",
+      "endAuditIdentity": 3,
+      "enterpriseId": 100000009,
+      "createTime": 1683860370000,
+      "approvalTime": 1688115769000,
+      "status": 20,
+      "reason": "",
+      "templateId": 20989,
+      "templateName": "ljljljllj二级审核人",
+      "templateStatus": 0,
+      "controlChanged": false,
+      "category": 39,
+      "bizId": 1762,
+      "bizName": "",
+      "transfer": false,
+      "auditor": false,
+      "approvalStatus": "APPROVED",
+      "applier": false,
+      "showChange": false,
+      "showCancel": false,
+      "categoryName": "讲者",
+      "statusValue": "通过",
+      "approvedTime": 1688115769000
+    },
+    "controls": []
+  },
+  "applyInfoDetails": [
+    {
+      "inputValue": "",
+      "controlName": "number",
+      "controlTypeName": "NUMBER",
+      "jsonConfig": "{\"options\":[],\"label\":\"number\",\"required\":false}"
+    }
+  ]
+}
