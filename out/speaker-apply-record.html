@@ -2,17 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta http-equiv="Expires" content="0"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Cache-control" content="no-cache"/>
-    <meta http-equiv="Cache" content="no-cache"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PDF</title>
     <style>
-     @page {
+        @page {
             size: 1100px 1200px;
+        }
+
+        .clearfix:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .clear-left {
+            clear: left;
+        }
+
+        .clear-right {
+            clear: right;
         }
 
         object[type="watermark"] {
@@ -50,6 +64,7 @@
             padding-top: 40px;
             border-bottom: 1px solid #333333;
         }
+
         .public-header-tltle {
             color: #333;
             font-size: 24px;
@@ -58,76 +73,273 @@
             padding-left: 1px;
             display: inline;
         }
+
         .circle {
-        pointer-events: none;
-        background: #1ab370;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        border-radius: 100%;
-      }
-      .approval-record-list{
+            pointer-events: none;
+            display: inline-block;
+            background-color: #1ab370;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+        }
+        .approval-record-list {
+            width: 49%;
+            margin-top: 8px;
 
-      }
-      .approval-record-list .approval-record-item .outer-circle{
-        width: 8px;
-        height: 8px;
-        background: #cceede;
-        position: relative;
-        border-radius: 100%;
-        display: inline-block;
-      }
-      .approval-record-list .approval-record-item .inner-circle{
-        width: 8px;
-        height: 8px;
-        background: #1AB370;
-        border-radius: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%)
-      }
-      .approval-record-list .approval-record-item .approval-type{
-        display: inline-block;
-        width: 29px;
-        height: 16px;
-        line-height: 16px;
-        text-align: center;
-        background-color: #f4f4f4;
-        border-radius: 2px;
-        font-size: 12px;
-        color: #1AB370;
-      }
+        }
+
+        .approval-record-list .approval-record-item {
+            /* height: 32px; */
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-left {
+            width: 66px;
+            height: 100%;
+            line-height: 32px;
+            float: left;
+            padding: 0 8px;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-body {
+            margin: 0 150px 0 60px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item {
+            min-width: 56px;
+            text-align: center;
+            float: left;
+            overflow: hidden;
+            height: 66px;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            margin: 0 auto;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: red;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .person-name {
+            font-size: 12px;
+            font-weight: 400;
+            color: #333333;
+            margin-top: 5px;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-right {
+            float: right;
+            min-width: 150px;
+            text-align: center;
+            text-align: right;
+        }
+
+        .approval-record-list .approval-record-item .circle {
+            width: 8px;
+            height: 8px;
+            background: #e5e5e5;
+            border-radius: 100%;
+            border: 2px solid #FAFAFA;
+        }
+        .approval-record-list .approval-record-item .circle.active{
+            background: #1AB370;
+        }
+
+        .approval-record-list .approval-record-item .approval-type {
+            display: inline-block;
+            padding: 1px 3px;
+            line-height: 16px;
+            text-align: center;
+            background-color: #f4f4f4;
+            border-radius: 2px;
+            font-size: 12px;
+            color: #1AB370;
+            margin-left: 12px;
+        }
+        .approval-record-list .approval-record-item .approval-record-item-right .date {
+            font-weight: 400;
+            font-size: 12px;
+            color: #999999;
+            margin-top: 8px;
+        }
+        .approval-record-list .approval-record-item .approval-record-item-right .status {
+            font-size: 12px;
+            font-weight: 400;
+
+            line-height: 14px;
+        }
+        .approval-record-list .approval-record-item .approval-record-item-right .reject {
+            color: #FF4D4F;
+
+        }
+        .approval-record-list .approval-record-item .approval-record-item-right .pass {
+            color: #1ab370;
+        }
+        .approval-record-list .approval-record-item .approval-record-item-right .withdraw{
+            color: #999999;
+        }
     </style>
-    </head>
-    <body>
+</head>
 
-<div class="container">
-    <div class="public-header">
-        <span class="public-header-tltle"><span
-            style="margin-right: 10px;" class="circle"></span>
-            讲者申请记录</span>
-    </div>
-    <!-- 审批记录 -->
-    <div class="approval-record-list">
-    <div>
-        <div class="approval-record-item">
-         <!-- 左侧 -->
-          <div>
-              <div class="active outer-circle">
-                  <div class="inner-circle"></div>
-              </div>
-              <div class="approval-type">或签</div>
-          </div>
-     </div>
-    <div>
+<body>
 
-    </div>
-    <!-- 中间  -->
-    <!-- 右侧 -->
-    </div>
-   
-    </div>
-</div>
+            <div class="container">
+            <div class="public-header">
+                <span class="public-header-tltle"><span style="margin-right: 10px;" class="circle"></span>
+                    讲者申请记录</span>
+            </div>
+            <!-- 审批记录 -->
+            <div class="approval-record-list">
+                <div>
+                    <div class="approval-record-item">
+                        <!-- 左侧 -->
+                        <div class="approval-record-item-left">
+                            <div class="active circle">
+                            </div>
+                            <div class="approval-type">或签</div>
+                        </div>
+
+                        <!-- 右侧 -->
+                        <div class="approval-record-item-right">
+                            <div class="status pass">已通过</div>
+                            <div class="date">2024-10-08 12:23</div>
+                        </div>
+                        <!-- 中间  -->
+                        <div class="approval-record-item-body clearfix">
+                            <div class="approval-record-person-list">
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="approval-record-item">
+                        <!-- 左侧 -->
+                        <div class="approval-record-item-left">
+                            <div class="circle">
+                            </div>
+                            <div class="approval-type">或签</div>
+                        </div>
+
+                        <!-- 右侧 -->
+                        <div class="approval-record-item-right">
+                            <div class="status pass">已通过</div>
+                            <div class="date">2024-10-08 12:23</div>
+                        </div>
+                        <!-- 中间  -->
+                        <div class="approval-record-item-body clearfix">
+                            <div class="approval-record-person-list">
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+                                <div class="approval-record-person-item">
+                                    <div class="avatar">
+                                    </div>
+                                    <div class="person-name">
+                                        小小荧
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
 </body>
+
 </html>
