@@ -82,6 +82,7 @@
             height: 10px;
             border-radius: 100%;
         }
+
         .approval-record-list {
             width: 49%;
             margin-top: 8px;
@@ -90,6 +91,7 @@
 
         .approval-record-list .approval-record-item {
             /* height: 32px; */
+            position: relative;
         }
 
         .approval-record-list .approval-record-item .approval-record-item-left {
@@ -107,12 +109,20 @@
         }
 
         .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item {
-            min-width: 56px;
+            width: 56px;
             text-align: center;
             float: left;
             overflow: hidden;
             height: 66px;
         }
+
+        .approval-record-list .approval-record-item.countersign .approval-record-item-body .approval-record-person-list .approval-record-person-item {
+            float: none;
+        }
+
+        /* .approval-record-list .approval-record-item.countersign .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar {
+            margin: 0;
+        } */
 
         .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar {
             width: 32px;
@@ -132,6 +142,14 @@
             margin-top: 5px;
         }
 
+        .approval-record-list .approval-record-item.countersign .approval-record-item-right {
+            position: absolute;
+            float: none;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+
         .approval-record-list .approval-record-item .approval-record-item-right {
             float: right;
             min-width: 150px;
@@ -146,10 +164,19 @@
             border-radius: 100%;
             border: 2px solid #FAFAFA;
         }
-        .approval-record-list .approval-record-item .circle.active{
-            background: #1AB370;
+
+        .approval-record-list .approval-record-item .circle.reject {
+            background-color: #FF4D4F;
+
         }
 
+        .approval-record-list .approval-record-item .circle.pass {
+            background-color: #1ab370;
+        }
+
+        .approval-record-list .approval-record-item .circle.withdraw {
+            background-color: #999999;
+        }
         .approval-record-list .approval-record-item .approval-type {
             display: inline-block;
             padding: 1px 3px;
@@ -161,26 +188,31 @@
             color: #1AB370;
             margin-left: 12px;
         }
+
         .approval-record-list .approval-record-item .approval-record-item-right .date {
             font-weight: 400;
             font-size: 12px;
             color: #999999;
             margin-top: 8px;
         }
+
         .approval-record-list .approval-record-item .approval-record-item-right .status {
             font-size: 12px;
             font-weight: 400;
 
             line-height: 14px;
         }
+
         .approval-record-list .approval-record-item .approval-record-item-right .reject {
             color: #FF4D4F;
 
         }
+
         .approval-record-list .approval-record-item .approval-record-item-right .pass {
             color: #1ab370;
         }
-        .approval-record-list .approval-record-item .approval-record-item-right .withdraw{
+
+        .approval-record-list .approval-record-item .approval-record-item-right .withdraw {
             color: #999999;
         }
     </style>
@@ -195,82 +227,94 @@
                     讲者申请记录</span>
             </div>
             <!-- 审批记录 -->
-            <div class="approval-record-list">
-                <div>
-                    <div class="approval-record-item">
-                        <!-- 左侧 -->
-                        <div class="approval-record-item-left">
-                            <div class="active circle">
+            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.auditors??) && (approvalRecordDetailDto.auditors?size gt 0)>
+                <div class="approval-record-list">
+                    <#list approvalRecordDetailDto.auditors as auditor>
+                        <!-- 正常就是或签 会签就是countersign -->
+                        <div class="approval-record-item <#if auditor.approvalType != 0>countersign</#if>">
+                            <!-- 左侧 -->
+                            <div class="approval-record-item-left clearfix">
+                                <div class="circle pass">
+                                </div>
+                                <div class="approval-type">
+                                    <#if auditor.approvalType==0>
+                                        或签
+                                        <#else>
+                                            会签
+                                    </#if>
+                                </div>
                             </div>
-                            <div class="approval-type">或签</div>
-                        </div>
 
-                        <!-- 右侧 -->
-                        <div class="approval-record-item-right">
-                            <div class="status pass">已通过</div>
-                            <div class="date">2024-10-08 12:23</div>
-                        </div>
-                        <!-- 中间  -->
-                        <div class="approval-record-item-body clearfix">
-                            <div class="approval-record-person-list">
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
+                            <!-- 右侧 -->
+                            <div class="approval-record-item-right">
+                                <div class="status pass">
+                                    已通过
                                 </div>
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
-                                </div>
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
-                                </div>
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
-                                </div>
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
-                                </div>
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
-                                </div>
-                                <div class="approval-record-person-item">
-                                    <div class="avatar">
-                                    </div>
-                                    <div class="person-name">
-                                        小小荧
-                                    </div>
-                                </div>
-
+                                <#if auditor.auditTime?has_content>
+                                    <div class="date"> ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
+                                        HH:mm:ss")}</div>
+                                </#if>
                             </div>
+                            <!-- 中间  -->
+                            <div class="approval-record-item-body clearfix">
+                                <div class="approval-record-person-list">
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+                                    <div class="approval-record-person-item">
+                                        <div class="avatar">
+                                        </div>
+                                        <div class="person-name">
+                                            小小荧
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
                         </div>
-
-                    </div>
-
+                    </#list>
                 </div>
-
-            </div>
+            </#if>
         </div>
     </#escape>
 </body>

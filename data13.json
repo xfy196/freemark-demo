@@ -34,7 +34,7 @@
           }
         ],
         "identity": 1,
-        "approvalType": 0,
+        "approvalType": 1,
         "status": 20,
         "levelStatus": 20,
         "statusString": "通过"

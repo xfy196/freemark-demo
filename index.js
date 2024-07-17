@@ -22,7 +22,7 @@ var fm = new Freemarker({
 });
 
 // Single template file
-fm.render("speaker-apply-record.ftl", data9, function (err, html, output) {
+fm.render("speaker-apply-record.ftl", data13, function (err, html, output) {
   console.log("🚀 ~ file: index.js:14 ~ output:", output);
   if (err) {
     console.log("🚀 ~ file: index.js:17 ~ err:", err);
