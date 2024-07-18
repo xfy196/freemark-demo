@@ -16,6 +16,43 @@
     "bankCard": ""
   },
   "nestedName":"嵌套模板",
+  "customFields":[
+		{
+			"name":"会议图片",
+			"type":"IMAGE"
+		},
+		{
+			"name":"会议总结",
+			"type":"MEETING_SUMMARIZE",
+			"value":""
+		},
+		{
+			"name":"视频123",
+			"type":"VIDEO",
+			"value":[
+				{
+					"url":"https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773951373m4di7vit.mp4",
+					"name":"1713773951373m4di7vit.mp4",
+					"thumb":"https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773951110OONqkDxV.jpg",
+					"imageDesc":""
+				}
+			]
+		},
+		{
+			"name":"图片12",
+			"type":"IMAGE",
+			"value":[
+				{
+					"url":"https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg",
+					"imageDesc":"审核中"
+				},
+                {
+					"url":"https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg",
+					"imageDesc":"审核中"
+				}
+			]
+		}
+	],
   "nested":[
       {
         "name":"图片",

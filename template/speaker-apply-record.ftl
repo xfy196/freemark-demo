@@ -216,6 +216,7 @@
         .approval-record-list .approval-record-item .approval-record-item-right .withdraw {
             color: #999999;
         }
+
         .filed-container .item .label {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
@@ -225,6 +226,7 @@
             line-height: 20px;
             text-align: left;
         }
+
         .filed-container .item .value {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
@@ -233,6 +235,7 @@
             color: #666666;
             line-height: 16px;
         }
+
         .filed-container .item .time {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
@@ -345,37 +348,78 @@
             </#if>
             <div class="filed-container">
                 <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.recordVo??)>
-                <div class="item">
-                    <div class="label">发起人</div>
-                    <div class="value">${approvalRecordDetailDto.recordVo.applierName}</div>
-                    <div class="time">
-                        ${approvalRecordDetailDto.recordVo.createTime?number_to_datetime?string("yyyy-MM-dd
-                        HH:mm:ss")}</div>
-                </div>
-            </#if>
-            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.ccUser??) && (approvalRecordDetailDto.ccUser?size gt 0)>
-            <#assign ccUsers = ''>
-            <#list approvalRecordDetailDto.ccUser as user>
-                <#if user?index == 0>
-                    <#assign ccUsers = user.auditName>
-                <#else>
-                    <#assign ccUsers = ccUsers + ";" + user.auditName>
+                    <div class="item">
+                        <div class="label">发起人</div>
+                        <div class="value">${approvalRecordDetailDto.recordVo.applierName}</div>
+                        <div class="time">
+                            ${approvalRecordDetailDto.recordVo.createTime?number_to_datetime?string("yyyy-MM-dd
+                            HH:mm:ss")}</div>
+                    </div>
                 </#if>
-            </#list>
-            <div class="item">
-                <div class="label">抄送人</div>
-                <div class="value">${ccUsers}</div>
+                <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.ccUser??) &&
+                    (approvalRecordDetailDto.ccUser?size gt 0)>
+                    <#assign ccUsers=''>
+                        <#list approvalRecordDetailDto.ccUser as user>
+                            <#if user?index==0>
+                                <#assign ccUsers=user.auditName>
+                                    <#else>
+                                        <#assign ccUsers=ccUsers + ";" + user.auditName>
+                            </#if>
+                        </#list>
+                        <div class="item">
+                            <div class="label">抄送人</div>
+                            <div class="value">${ccUsers}</div>
+                        </div>
             </div>
+            </#if>
+            <div class="filed-container">
+
+                <#if (customFields??) && (customFields?size gt 0)>
+                    <#list customFields as customField>
+                        <#if customField.type !='IMAGE' && customField.type !='VIDEO' && customField.type !='FILE'>
+                            <div class="item">
+                                <div class="label">${customField.name}</div>
+                                <div class="value">${customField.value}</div>
+                            </div>
+                        <#elseif customField.type == 'FILE'>
+                        <div class="item">
+                            <div class="label">${customField.name}</div>
+                            <div class="file-list">
+                                <#if customField.value ?? && (customField.value?size> 0)>
+                                <#list customField.value as file>
+
+                                    <div class="file-item">
+                                        <div class="name">${file.name}</div>
+                                        <div class="url">
+                                            <a style="text-decoration: none; color: #1ab370;" href="${file.url}" href="${file.url}">点击预览</a>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+                            </div>
+                        </div>
+                        <#elseif customField.type == 'VIDEO'>
+                        <div class="item">
+                            <div class="label">${customField.name}</div>
+                            <div class="file-list">
+                                <#if customField.value ?? && (customField.value?size> 0)>
+                                <#list customField.value as file>
+
+                                    <div class="file-item">
+                                        <div class="name">${file.name}</div>
+                                        <div class="url">
+                                            <a style="text-decoration: none; color: #1ab370;" href="${file.url}" href="${file.url}">点击预览</a>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+                            </div>
+                        </div>
+                        </#if>
+                    </#list>
+
+                </#if>
             </div>
-           </#if>
-            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.customFields??) && (customFields?size gt 0)>
-            <#list approvalRecordDetailDto.customFields as customField>
-            <div class="item">
-                <div class="label">${customField.value}</div>
-            </div>
-            </#list>
-           
-           </#if>
         </div>
     </#escape>
 </body>
