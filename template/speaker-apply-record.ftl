@@ -20,7 +20,11 @@
             display: block;
             clear: both;
         }
-
+        @media print {
+            .page-break-before {
+                page-break-before: always;
+            }
+        }
         .clear-left {
             clear: left;
         }
