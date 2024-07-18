@@ -177,6 +177,7 @@
         .approval-record-list .approval-record-item .circle.withdraw {
             background-color: #999999;
         }
+
         .approval-record-list .approval-record-item .approval-type {
             display: inline-block;
             padding: 1px 3px;
@@ -215,6 +216,31 @@
         .approval-record-list .approval-record-item .approval-record-item-right .withdraw {
             color: #999999;
         }
+        .filed-container .item .label {
+            display: inline-block;
+            font-family: PingFang SC, PingFang SC;
+            font-weight: 400;
+            font-size: 14px;
+            color: #333333;
+            line-height: 20px;
+            text-align: left;
+        }
+        .filed-container .item .value {
+            display: inline-block;
+            font-family: PingFang SC, PingFang SC;
+            font-weight: 400;
+            font-size: 14px;
+            color: #666666;
+            line-height: 16px;
+        }
+        .filed-container .item .time {
+            display: inline-block;
+            font-family: PingFang SC, PingFang SC;
+            font-weight: 400;
+            font-size: 14px;
+            color: #666666;
+            line-height: 16px;
+        }
     </style>
 </head>
 
@@ -227,7 +253,8 @@
                     讲者申请记录</span>
             </div>
             <!-- 审批记录 -->
-            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.auditors??) && (approvalRecordDetailDto.auditors?size gt 0)>
+            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.auditors??) &&
+                (approvalRecordDetailDto.auditors?size gt 0)>
                 <div class="approval-record-list">
                     <#list approvalRecordDetailDto.auditors as auditor>
                         <!-- 正常就是或签 会签就是countersign -->
@@ -251,7 +278,7 @@
                                     已通过
                                 </div>
                                 <#if auditor.auditTime?has_content>
-                                    <div class="date"> ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
+                                    <div class="date"> ${auditor.auditTime?number_to_datetime?string("yyyy-MM-dd
                                         HH:mm:ss")}</div>
                                 </#if>
                             </div>
@@ -314,7 +341,41 @@
                         </div>
                     </#list>
                 </div>
+
             </#if>
+            <div class="filed-container">
+                <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.recordVo??)>
+                <div class="item">
+                    <div class="label">发起人</div>
+                    <div class="value">${approvalRecordDetailDto.recordVo.applierName}</div>
+                    <div class="time">
+                        ${approvalRecordDetailDto.recordVo.createTime?number_to_datetime?string("yyyy-MM-dd
+                        HH:mm:ss")}</div>
+                </div>
+            </#if>
+            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.ccUser??) && (approvalRecordDetailDto.ccUser?size gt 0)>
+            <#assign ccUsers = ''>
+            <#list approvalRecordDetailDto.ccUser as user>
+                <#if user?index == 0>
+                    <#assign ccUsers = user.auditName>
+                <#else>
+                    <#assign ccUsers = ccUsers + ";" + user.auditName>
+                </#if>
+            </#list>
+            <div class="item">
+                <div class="label">抄送人</div>
+                <div class="value">${ccUsers}</div>
+            </div>
+            </div>
+           </#if>
+            <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.customFields??) && (customFields?size gt 0)>
+            <#list approvalRecordDetailDto.customFields as customField>
+            <div class="item">
+                <div class="label">${customField.value}</div>
+            </div>
+            </#list>
+           
+           </#if>
         </div>
     </#escape>
 </body>
