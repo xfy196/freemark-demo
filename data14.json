@@ -1,0 +1,229 @@
+{
+  "country": "",
+  "deptName": "中医科",
+  "sysCode": "CH195606",
+  "gender": "男",
+  "city": "",
+  "idCard": "",
+  "customFields": [
+    {
+      "name": "讲者协议",
+      "type": "FILE",
+      "value": [
+        {
+          "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/17212962988894xhkh0se.pptx",
+          "name": "红豆山庄介绍.pptx"
+        }
+      ]
+    },
+    { "name": "文本", "type": "TEXT_SINGLE", "value": "文本" },
+    { "name": "多行文本", "type": "TEXT_MULTILINE", "value": "多行文本" },
+    { "name": "数字", "type": "NUMBER", "value": "100" },
+    { "name": "日期", "type": "DATE", "value": "2024-07-01" },
+    { "name": "时间", "type": "DATETIME", "value": "2024-07-01 00:04" },
+    { "name": "单选", "type": "SELECT_SINGLE", "value": "单选1" },
+    { "name": "多选", "type": "SELECT_MULTIPLE", "value": "多选1,多选2" },
+    {
+      "name": "图片",
+      "type": "IMAGE",
+      "value": [
+        {
+          "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/1721296315251uyat8ky0.jpg"
+        }
+      ]
+    },
+    {
+      "name": "视频",
+      "type": "VIDEO",
+      "value": [
+        {
+          "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/1721296322357zhydf0hj.mp4",
+          "name": "1721296322357zhydf0hj.mp4"
+        }
+      ]
+    },
+    {
+      "name": "位置",
+      "type": "POSITION",
+      "value": "兴智科技园C座,32.136726,118.878621"
+    },
+    {
+      "name": "附件",
+      "type": "FILE",
+      "value": [
+        {
+          "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/1721296337083fg0ykq3b.pdf",
+          "name": "南京欢乐谷门票福利工厂限时特惠活动.pdf"
+        }
+      ]
+    }
+  ],
+  "templateId": 74232,
+  "title": "",
+  "speakerApplyDetails": [],
+  "orgId": 556737,
+  "updater": "147742",
+  "approvalRecordId": 58841,
+  "orgType": "HOSPITAL",
+  "approvalRecordDetailDto": {
+    "auditors": [
+      {
+        "participants": [
+          {
+            "id": 181710,
+            "auditUid": 147742,
+            "auditName": "许富荧",
+            "status": 20,
+            "reason": "",
+            "approvalTime": 1721296267000,
+            "identityType": 1,
+            "approvalType": 1,
+            "avatar": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTInShcaY9KZ8HQqW0tGG8cFotoGxZiaHVtrfjfiaWysOnia1Dq22VkticFFVbVb72xII7pYZpKo0MialYA/132",
+            "auditTime": 1721296267000,
+            "statusValue": "通过"
+          }
+        ],
+        "identity": 1,
+        "approvalType": 1,
+        "status": 20,
+        "levelStatus": 20,
+        "statusString": "通过"
+      }
+    ],
+    "ccUser": [],
+    "recordVo": {
+      "id": 58841,
+      "processId": 0,
+      "applyUid": 147742,
+      "applierName": "许富荧",
+      "applierDeptNames": "盈合dev",
+      "endAuditIdentity": 1,
+      "enterpriseId": 100000004,
+      "createTime": 1721296267000,
+      "approvalTime": 1721296267000,
+      "status": 20,
+      "reason": "",
+      "templateId": 73823,
+      "templateName": "dqwd",
+      "templateStatus": 0,
+      "controlChanged": false,
+      "category": 39,
+      "bizId": 6164,
+      "bizName": "",
+      "transfer": false,
+      "showCancel": false,
+      "applier": false,
+      "showChange": false,
+      "auditor": false,
+      "categoryName": "讲者",
+      "statusValue": "通过",
+      "approvedTime": 1721296267000,
+      "approvalStatus": "APPROVED"
+    },
+    "controls": []
+  },
+  "orgIntType": 4,
+  "province": "",
+  "levelId": 7418,
+  "customerId": 247394,
+  "applyInfoDetails": [
+    {
+      "inputValue": "[{\"url\":\"https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/17212962988894xhkh0se.pptx\",\"name\":\"红豆山庄介绍.pptx\",\"isImage\":false,\"isVideo\":false}]",
+      "controlName": "讲者协议",
+      "controlTypeName": "FILE",
+      "jsonConfig": "{\"options\":[],\"label\":\"讲者协议\",\"num\":2,\"required\":false}"
+    },
+    {
+      "inputValue": "文本",
+      "controlName": "文本",
+      "controlTypeName": "TEXT_SINGLE",
+      "jsonConfig": "{\"options\":[],\"label\":\"文本\",\"required\":false}"
+    },
+    {
+      "inputValue": "多行文本",
+      "controlName": "多行文本",
+      "controlTypeName": "TEXT_MULTILINE",
+      "jsonConfig": "{\"options\":[],\"label\":\"多行文本\",\"required\":false}"
+    },
+    {
+      "inputValue": "100",
+      "controlName": "数字",
+      "controlTypeName": "NUMBER",
+      "jsonConfig": "{\"options\":[],\"label\":\"数字\",\"required\":false}"
+    },
+    {
+      "inputValue": "1719763200000",
+      "controlName": "日期",
+      "controlTypeName": "DATE",
+      "jsonConfig": "{\"options\":[],\"label\":\"日期\",\"required\":false,\"minDate\":1719763200000,\"maxDate\":1722355200000}"
+    },
+    {
+      "inputValue": "1719763440000",
+      "controlName": "时间",
+      "controlTypeName": "DATETIME",
+      "jsonConfig": "{\"options\":[],\"label\":\"时间\",\"minDate\":1719763200000,\"maxDate\":1722355200000,\"required\":false}"
+    },
+    {
+      "inputValue": "单选1",
+      "controlName": "单选",
+      "controlTypeName": "SELECT_SINGLE",
+      "jsonConfig": "{\"options\":[{\"name\":\"单选1\"},{\"name\":\"单选2\"}],\"label\":\"单选\",\"required\":false}"
+    },
+    {
+      "inputValue": "多选1,多选2",
+      "controlName": "多选",
+      "controlTypeName": "SELECT_MULTIPLE",
+      "jsonConfig": "{\"options\":[{\"name\":\"多选1\"},{\"name\":\"多选2\"}],\"label\":\"多选\",\"required\":false}"
+    },
+    {
+      "inputValue": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/1721296315251uyat8ky0.jpg",
+      "controlName": "图片",
+      "controlTypeName": "IMAGE",
+      "jsonConfig": "{\"options\":[],\"label\":\"图片\",\"num\":9,\"maxSize\":4,\"required\":false,\"allowRealTimeShoot\":false}"
+    },
+    {
+      "inputValue": "[{\"url\":\"https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/1721296322357zhydf0hj.mp4\",\"name\":\"1721296322357zhydf0hj.mp4\",\"isImage\":false,\"isVideo\":true}]",
+      "controlName": "视频",
+      "controlTypeName": "VIDEO",
+      "jsonConfig": "{\"options\":[],\"label\":\"视频\",\"num\":9,\"maxSize\":200,\"required\":false,\"allowRealTimeShoot\":false}"
+    },
+    {
+      "inputValue": "兴智科技园C座,32.136726,118.878621",
+      "controlName": "位置",
+      "controlTypeName": "POSITION",
+      "jsonConfig": "{\"options\":[],\"label\":\"位置\",\"required\":false}"
+    },
+    {
+      "inputValue": "[{\"url\":\"https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/1721296337083fg0ykq3b.pdf\",\"name\":\"南京欢乐谷门票福利工厂限时特惠活动.pdf\",\"isImage\":false,\"isVideo\":false}]",
+      "controlName": "附件",
+      "controlTypeName": "FILE",
+      "jsonConfig": "{\"options\":[],\"label\":\"附件\",\"num\":5,\"required\":false}"
+    }
+  ],
+  "creator": "147742",
+  "orgName": "通过热",
+  "speakerTemplateId": 63901,
+  "speakLevel": "h111",
+  "avatarUrl": "",
+  "mobile": "",
+  "createTime": 1721296266000,
+  "speaker": {
+    "id": 6164,
+    "code": "",
+    "enterpriseId": 100000004,
+    "levelId": 7418,
+    "customerId": 247394,
+    "creator": 147742,
+    "templateId": 74232,
+    "approvalRecordId": 58841,
+    "audited": 40,
+    "createTime": 1721296266000,
+    "creatorName": "许富荧",
+    "nationality": "",
+    "bank": "",
+    "bankCard": ""
+  },
+  "addCustomerByManual": false,
+  "name": "vdf,vv快递费考虑到开了房",
+  "wechatAvatarUrl": ""
+}
