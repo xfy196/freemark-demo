@@ -92,6 +92,7 @@
         .approval-record-list .approval-record-item {
             /* height: 32px; */
             position: relative;
+            min-height: 66px;
         }
 
         .approval-record-list .approval-record-item .approval-record-item-left {
@@ -132,7 +133,13 @@
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: red;
+            overflow: hidden;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
         }
 
         .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .person-name {
@@ -140,6 +147,8 @@
             font-weight: 400;
             color: #333333;
             margin-top: 5px;
+            text-wrap: nowrap;
+            overflow: hidden;
         }
 
         .approval-record-list .approval-record-item.countersign .approval-record-item-right {
@@ -217,7 +226,11 @@
             color: #999999;
         }
 
-        .filed-container .item .label {
+        .field-container .item {
+            margin-top: 24px;
+        }
+
+        .field-container .item .label {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
             font-weight: 400;
@@ -227,7 +240,17 @@
             text-align: left;
         }
 
-        .filed-container .item .value {
+        .field-container .item .value {
+            display: inline-block;
+            font-family: PingFang SC, PingFang SC;
+            font-weight: 400;
+            font-size: 14px;
+            color: #666666;
+            line-height: 16px;
+            margin-top: 8px;
+        }
+
+        .field-container .item .time {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
             font-weight: 400;
@@ -236,13 +259,78 @@
             line-height: 16px;
         }
 
-        .filed-container .item .time {
-            display: inline-block;
-            font-family: PingFang SC, PingFang SC;
+        .field-container .item .label {
+            display: block;
+        }
+
+        .field-container .item .video-list {
+            margin-top: 8px;
+        }
+
+        .field-container .item .video-list .video-item {
+            float: left;
+            padding: 16px;
+            margin-top: 8px;
+            border: 1px solid #f5f5f5;
+            margin-right: 20px;
+            width: 136px;
+            height: 156px;
+            box-sizing: border-box;
+            margin-bottom: 24px;
+        }
+
+        .field-container .item .video-list .video-item img {
+            border: 1px solid #f5f5f5;
+            width: 104px;
+            height: 104px;
+        }
+
+        .field-container .item .video-list .video-item .preview-btn {
+            color: #1ab370;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .field-container .item .file-list {
+            margin-top: 8px;
+        }
+
+        .field-container .item .image-list {
+            margin-top: 8px;
+        }
+
+        .field-container .item .image-list .img-item img {
+            width: 336px;
+            height: 336px;
+        }
+
+        .field-container .item .file-list .file-item {
+            width: 100%;
+            min-height: 36px;
+            border: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            margin-top: 4px;
+            padding: 8px 14px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .field-container .item .file-list .file-item .name {
             font-weight: 400;
             font-size: 14px;
-            color: #666666;
-            line-height: 16px;
+            color: #333333;
+            float: left;
+            max-width: 760px;
+        }
+
+        .field-container .item .file-list .file-item .preview-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -276,55 +364,14 @@
                             <!-- 中间  -->
                             <div class="approval-record-item-body clearfix">
                                 <div class="approval-record-person-list">
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
+                                            <div class="approval-record-person-item">
+                                                <div class="avatar">
+                                                        <img src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIho80lTJibYNwGSrRfq37Y5n1WJdGcFM1hIQYON8ECMq8pDiaSE5oTIMxKkZ7byN6ica1WeYZoVNdfA/132" alt="" />
+                                                </div>
+                                                <div class="person-name">
+                                                    邱硕
+                                                </div>
+                                            </div>
 
                                 </div>
                             </div>
@@ -350,55 +397,14 @@
                             <!-- 中间  -->
                             <div class="approval-record-item-body clearfix">
                                 <div class="approval-record-person-list">
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
+                                            <div class="approval-record-person-item">
+                                                <div class="avatar">
+                                                        <img src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIho80lTJibYNwGSrRfq37Y5n1WJdGcFM1hIQYON8ECMq8pDiaSE5oTIMxKkZ7byN6ica1WeYZoVNdfA/132" alt="" />
+                                                </div>
+                                                <div class="person-name">
+                                                    邱硕
+                                                </div>
+                                            </div>
 
                                 </div>
                             </div>
@@ -424,55 +430,14 @@
                             <!-- 中间  -->
                             <div class="approval-record-item-body clearfix">
                                 <div class="approval-record-person-list">
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
+                                            <div class="approval-record-person-item">
+                                                <div class="avatar">
+                                                        <img src="https://thirdwx.qlogo.cn/mmopen/vi_32/DYAIOgq83erKFrDkPH0kdSPqmLpgy5DpIAbPboe0ZdnXMZCFWF5sHATabk5CIicBqib0QPHichoZRpCI07DjEO3rw/132" alt="" />
+                                                </div>
+                                                <div class="person-name">
+                                                    孙健-7221
+                                                </div>
+                                            </div>
 
                                 </div>
                             </div>
@@ -480,12 +445,12 @@
                         </div>
                 </div>
 
-            <div class="filed-container">
+            <div class="field-container">
                     <div class="item">
                         <div class="label">发起人</div>
                         <div class="value">孙健-7221</div>
                         <div class="time">
-                            2023-05-12
+                            2023年05月12日
                             10:59:30</div>
                     </div>
                         <div class="item">
@@ -493,24 +458,232 @@
                             <div class="value">李健133;李健</div>
                         </div>
             </div>
-            <div class="filed-container">
+            <div class="field-container custom-container">
 
-                            <div class="item">
-                                <div class="label">会议总结</div>
-                                <div class="value"></div>
+                                        <div class="item clearfix">
+                                            <div class="label">会议图片:</div>
+                                            <div class="image-list">
+                                            </div>
+                                        </div>
+                            <div class="item clearfix">
+                                <div class="label">会议总结:</div>
+                                <div class="value">dasndldnsad到那时大家爱的撒旦撒登记收纳对哦i啊上拿到isDNA所大呢吧萨迪阿萨达奶萨对吧上单大叔大婶你的撒偶读那艘到哪手打都能扫到哪手抖啊三年多萨达花洒偶大萨达大搜ID就哦is啊到</div>
                             </div>
-                        <div class="item">
-                            <div class="label">视频123</div>
-                            <div class="file-list">
+                                    <div class="item clearfix">
+                                        <div class="label">视频123:</div>
+                                        <div class="video-list">
 
-                                    <div class="file-item">
-                                        <div class="name">1713773951373m4di7vit.mp4</div>
-                                        <div class="url">
-                                            <a style="text-decoration: none; color: #1ab370;" href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773951373m4di7vit.mp4" href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773951373m4di7vit.mp4">点击预览</a>
+                                                    <div class="video-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773951110OONqkDxV.jpg" alt="" />
+                                                        <div class="preview-btn">
+                                                            <a style="text-decoration: none; color: #1ab370;"
+                                                                href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773951373m4di7vit.mp4">点击预览</a>
+                                                        </div>
+                                                    </div>
                                         </div>
                                     </div>
-                            </div>
-                        </div>
+
+                                    <!-- 图片 -->
+                                        <div class="item clearfix">
+                                            <div class="label">图片12:</div>
+                                            <div class="image-list">
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+
+                                                        <div class="img-item">
+                                                            <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773956977ebjvsg9i.jpeg" alt="" />
+                                                        </div>
+                                            </div>
+                                        </div>
+
+                                    <div class="item clearfix">
+                                        <div class="label">文件:</div>
+                                        <div class="file-list .file-item">
+
+                                                    <div class="file-item">
+                                                        <div class="name">dasndldnsad到那时大家爱的撒旦撒登记收纳对哦i啊上拿到isDNA所大呢吧萨迪阿萨达奶萨对吧上单大叔大婶你的撒偶读那艘到哪手打都能扫到哪手抖啊三年多萨达花洒偶大萨达大搜ID就哦is啊到</div>
+                                                        <div class="preview-btn">
+                                                            <a style="text-decoration: none; color: #1ab370;"
+                                                                href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/17137732836862xqluvae.jpg">点击预览</a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="file-item">
+                                                        <div class="name">2222</div>
+                                                        <div class="preview-btn">
+                                                            <a style="text-decoration: none; color: #1ab370;"
+                                                                href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773396790k7rn2xvn.jpg">点击预览</a>
+                                                        </div>
+                                                    </div>
+                                        </div>
+                                    </div>
+                                            <div class="item clearfix">
+                                                <div class="label">图片:</div>
+                                                <div class="image-list">
+
+                                                            <div class="img-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/17137732836862xqluvae.jpg" alt="" />
+                                                            </div>
+
+                                                            <div class="img-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773396790k7rn2xvn.jpg" alt="" />
+                                                            </div>
+                                                </div>
+                                            </div>
+                                <div class="item clearfix">
+                                    <div class="label">1:</div>
+                                    <div class="value"></div>
+                                </div>
+                                        <div class="item clearfix">
+                                            <div class="label">视频333333:</div>
+                                            <div class="video-list">
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773325520on7sGJ9q.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773325301irp9u35y.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="video-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/dev_27331/extract_first_frame/2024-04-22/1713773297461irVSB2Oy.jpg" alt="" />
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773297237rt35jnf0.mp4">点击预览</a>
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 图片 -->
+                                            <div class="item clearfix">
+                                                <div class="label">图片44444:</div>
+                                                <div class="image-list">
+
+                                                            <div class="img-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/1713773307197nh2re7ah.jpg" alt="" />
+                                                            </div>
+
+                                                            <div class="img-item">
+                                                                <img src="https://omnidevf.100url.cn/s3file/devf_27331/meeting/2024-04-22/17137733126008wy0icmu.jpg" alt="" />
+                                                            </div>
+                                                </div>
+                                            </div>
 
             </div>
         </div>

@@ -92,6 +92,7 @@
         .approval-record-list .approval-record-item {
             /* height: 32px; */
             position: relative;
+            min-height: 66px;
         }
 
         .approval-record-list .approval-record-item .approval-record-item-left {
@@ -132,7 +133,13 @@
             background-position: center center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: red;
+            overflow: hidden;
+        }
+
+        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
         }
 
         .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .person-name {
@@ -140,6 +147,8 @@
             font-weight: 400;
             color: #333333;
             margin-top: 5px;
+            text-wrap: nowrap;
+            overflow: hidden;
         }
 
         .approval-record-list .approval-record-item.countersign .approval-record-item-right {
@@ -217,7 +226,11 @@
             color: #999999;
         }
 
-        .filed-container .item .label {
+        .field-container .item {
+            margin-top: 24px;
+        }
+
+        .field-container .item .label {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
             font-weight: 400;
@@ -227,7 +240,17 @@
             text-align: left;
         }
 
-        .filed-container .item .value {
+        .field-container .item .value {
+            display: inline-block;
+            font-family: PingFang SC, PingFang SC;
+            font-weight: 400;
+            font-size: 14px;
+            color: #666666;
+            line-height: 16px;
+            margin-top: 8px;
+        }
+
+        .field-container .item .time {
             display: inline-block;
             font-family: PingFang SC, PingFang SC;
             font-weight: 400;
@@ -236,13 +259,78 @@
             line-height: 16px;
         }
 
-        .filed-container .item .time {
-            display: inline-block;
-            font-family: PingFang SC, PingFang SC;
+        .field-container .item .label {
+            display: block;
+        }
+
+        .field-container .item .video-list {
+            margin-top: 8px;
+        }
+
+        .field-container .item .video-list .video-item {
+            float: left;
+            padding: 16px;
+            margin-top: 8px;
+            border: 1px solid #f5f5f5;
+            margin-right: 20px;
+            width: 136px;
+            height: 156px;
+            box-sizing: border-box;
+            margin-bottom: 24px;
+        }
+
+        .field-container .item .video-list .video-item img {
+            border: 1px solid #f5f5f5;
+            width: 104px;
+            height: 104px;
+        }
+
+        .field-container .item .video-list .video-item .preview-btn {
+            color: #1ab370;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .field-container .item .file-list {
+            margin-top: 8px;
+        }
+
+        .field-container .item .image-list {
+            margin-top: 8px;
+        }
+
+        .field-container .item .image-list .img-item img {
+            width: 336px;
+            height: 336px;
+        }
+
+        .field-container .item .file-list .file-item {
+            width: 100%;
+            min-height: 36px;
+            border: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            margin-top: 4px;
+            padding: 8px 14px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .field-container .item .file-list .file-item .name {
             font-weight: 400;
             font-size: 14px;
-            color: #666666;
-            line-height: 16px;
+            color: #333333;
+            float: left;
+            max-width: 760px;
+        }
+
+        .field-container .item .file-list .file-item .preview-btn {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
         }
     </style>
 </head>
@@ -281,62 +369,30 @@
                                     已通过
                                 </div>
                                 <#if auditor.auditTime?has_content>
-                                    <div class="date"> ${auditor.auditTime?number_to_datetime?string("yyyy-MM-dd
+                                    <div class="date"> ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
                                         HH:mm:ss")}</div>
                                 </#if>
                             </div>
                             <!-- 中间  -->
                             <div class="approval-record-item-body clearfix">
                                 <div class="approval-record-person-list">
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
-                                    <div class="approval-record-person-item">
-                                        <div class="avatar">
-                                        </div>
-                                        <div class="person-name">
-                                            小小荧
-                                        </div>
-                                    </div>
+                                    <#if (auditor.participants??) && (auditor.participants?size gt 0)>
+                                        <#list auditor.participants as participant>
+                                            <div class="approval-record-person-item">
+                                                <div class="avatar">
+                                                    <#if participant.avatar?? && participant.avatar !=''>
+                                                        <img src="${participant.avatar}" alt="" />
+                                                        <#else>
+                                                            <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/static/default_avatar.png"
+                                                                alt="" />
+                                                    </#if>
+                                                </div>
+                                                <div class="person-name">
+                                                    ${participant.auditName}
+                                                </div>
+                                            </div>
+                                        </#list>
+                                    </#if>
 
                                 </div>
                             </div>
@@ -346,13 +402,13 @@
                 </div>
 
             </#if>
-            <div class="filed-container">
+            <div class="field-container">
                 <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.recordVo??)>
                     <div class="item">
                         <div class="label">发起人</div>
                         <div class="value">${approvalRecordDetailDto.recordVo.applierName}</div>
                         <div class="time">
-                            ${approvalRecordDetailDto.recordVo.createTime?number_to_datetime?string("yyyy-MM-dd
+                            ${approvalRecordDetailDto.recordVo.createTime?number_to_datetime?string("yyyy年MM月dd日
                             HH:mm:ss")}</div>
                     </div>
                 </#if>
@@ -370,55 +426,148 @@
                             <div class="label">抄送人</div>
                             <div class="value">${ccUsers}</div>
                         </div>
+                </#if>
             </div>
-            </#if>
-            <div class="filed-container">
+            <div class="field-container custom-container">
 
                 <#if (customFields??) && (customFields?size gt 0)>
                     <#list customFields as customField>
                         <#if customField.type !='IMAGE' && customField.type !='VIDEO' && customField.type !='FILE'>
-                            <div class="item">
-                                <div class="label">${customField.name}</div>
+                            <div class="item clearfix">
+                                <div class="label">${customField.name}:</div>
                                 <div class="value">${customField.value}</div>
                             </div>
-                        <#elseif customField.type == 'FILE'>
-                        <div class="item">
-                            <div class="label">${customField.name}</div>
-                            <div class="file-list">
-                                <#if customField.value ?? && (customField.value?size> 0)>
-                                <#list customField.value as file>
+                            <#elseif customField.type=='FILE'>
+                                <div class="item clearfix">
+                                    <div class="label">${customField.name}:</div>
+                                    <div class="file-list .file-item">
+                                        <#if customField.value ?? && (customField.value?size> 0)>
+                                            <#list customField.value as file>
 
-                                    <div class="file-item">
-                                        <div class="name">${file.name}</div>
-                                        <div class="url">
-                                            <a style="text-decoration: none; color: #1ab370;" href="${file.url}" href="${file.url}">点击预览</a>
+                                                <div class="file-item">
+                                                    <div class="name">${file.name}</div>
+                                                    <div class="preview-btn">
+                                                        <a style="text-decoration: none; color: #1ab370;"
+                                                            href="${file.url}">点击预览</a>
+                                                    </div>
+                                                </div>
+                                            </#list>
+                                        </#if>
+                                    </div>
+                                </div>
+                                <#elseif customField.type=='VIDEO'>
+                                    <div class="item clearfix">
+                                        <div class="label">${customField.name}:</div>
+                                        <div class="video-list">
+                                            <#if customField.value ?? && (customField.value?size> 0)>
+                                                <#list customField.value as video>
+
+                                                    <div class="video-item">
+                                                        <#if video.thumb?? && video.thumb !="">
+                                                            <img src="${video.thumb}" alt="" />
+                                                            <#else>
+                                                                <img src="https://representative-1252497236.cos.accelerate.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
+                                                                    alt="" />
+                                                        </#if>
+                                                        <div class="preview-btn">
+                                                            <a style="text-decoration: none; color: #1ab370;"
+                                                                href="${video.url}">点击预览</a>
+                                                        </div>
+                                                    </div>
+                                                </#list>
+                                            </#if>
                                         </div>
                                     </div>
-                                </#list>
-                            </#if>
-                            </div>
-                        </div>
-                        <#elseif customField.type == 'VIDEO'>
-                        <div class="item">
-                            <div class="label">${customField.name}</div>
-                            <div class="file-list">
-                                <#if customField.value ?? && (customField.value?size> 0)>
-                                <#list customField.value as file>
 
-                                    <div class="file-item">
-                                        <div class="name">${file.name}</div>
-                                        <div class="url">
-                                            <a style="text-decoration: none; color: #1ab370;" href="${file.url}" href="${file.url}">点击预览</a>
+                                    <!-- 图片 -->
+                                    <#elseif customField.type=='IMAGE'>
+                                        <div class="item clearfix">
+                                            <div class="label">${customField.name}:</div>
+                                            <div class="image-list">
+                                                <#if customField.value ?? && (customField.value?size> 0)>
+                                                    <#list customField.value as img>
+
+                                                        <div class="img-item">
+                                                            <img src="${img.url}" alt="" />
+                                                        </div>
+                                                    </#list>
+                                                </#if>
+                                            </div>
                                         </div>
-                                    </div>
-                                </#list>
-                            </#if>
-                            </div>
-                        </div>
                         </#if>
                     </#list>
-
                 </#if>
+
+                <#if nestedName??>
+                    <#if nested?? && (nested?size> 0) >
+                        <#list nested as customField>
+                            <#if customField.type !='IMAGE' && customField.type !='VIDEO' && customField.type !='FILE'>
+                                <div class="item clearfix">
+                                    <div class="label">${customField.name}:</div>
+                                    <div class="value">${customField.value}</div>
+                                </div>
+                                <#elseif customField.type=='FILE'>
+                                    <div class="item clearfix">
+                                        <div class="label">${customField.name}:</div>
+                                        <div class="file-list .file-item">
+                                            <#if customField.value ?? && (customField.value?size> 0)>
+                                                <#list customField.value as file>
+
+                                                    <div class="file-item">
+                                                        <div class="name">${file.name}</div>
+                                                        <div class="preview-btn">
+                                                            <a style="text-decoration: none; color: #1ab370;"
+                                                                href="${file.url}">点击预览</a>
+                                                        </div>
+                                                    </div>
+                                                </#list>
+                                            </#if>
+                                        </div>
+                                    </div>
+                                    <#elseif customField.type=='VIDEO'>
+                                        <div class="item clearfix">
+                                            <div class="label">${customField.name}:</div>
+                                            <div class="video-list">
+                                                <#if customField.value ?? && (customField.value?size> 0)>
+                                                    <#list customField.value as video>
+
+                                                        <div class="video-item">
+                                                            <#if video.thumb?? && video.thumb !="">
+                                                                <img src="${video.thumb}" alt="" />
+                                                                <#else>
+                                                                    <img src="https://representative-1252497236.cos.accelerate.myqcloud.com/pdf_html/%E8%A7%86%E9%A2%91%E7%BC%A9%E7%95%A5%E5%9B%BE104px.jpg"
+                                                                        alt="" />
+                                                            </#if>
+                                                            <div class="preview-btn">
+                                                                <a style="text-decoration: none; color: #1ab370;"
+                                                                    href="${video.url}">点击预览</a>
+                                                            </div>
+                                                        </div>
+                                                    </#list>
+                                                </#if>
+                                            </div>
+                                        </div>
+
+                                        <!-- 图片 -->
+                                        <#elseif customField.type=='IMAGE'>
+                                            <div class="item clearfix">
+                                                <div class="label">${customField.name}:</div>
+                                                <div class="image-list">
+                                                    <#if customField.value ?? && (customField.value?size> 0)>
+                                                        <#list customField.value as img>
+
+                                                            <div class="img-item">
+                                                                <img src="${img.url}" alt="" />
+                                                            </div>
+                                                        </#list>
+                                                    </#if>
+                                                </div>
+                                            </div>
+                            </#if>
+                        </#list>
+                    </#if>
+                </#if>
+
             </div>
         </div>
     </#escape>
