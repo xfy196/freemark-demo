@@ -20,11 +20,13 @@
             display: block;
             clear: both;
         }
+
         @media print {
             .page-break-before {
                 page-break-before: always;
             }
         }
+
         .clear-left {
             clear: left;
         }
@@ -140,18 +142,12 @@
             overflow: hidden;
         }
 
-        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-        }
-
         .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .person-name {
             font-size: 12px;
             font-weight: 400;
             color: #333333;
             margin-top: 5px;
-            text-wrap: nowrap;
+            white-space: nowrap;
             overflow: hidden;
         }
 
@@ -193,7 +189,8 @@
 
         .approval-record-list .approval-record-item .approval-type {
             display: inline-block;
-            padding: 1px 3px;
+            width: 29px;
+            height: 16px;
             line-height: 16px;
             text-align: center;
             background-color: #f4f4f4;
@@ -333,8 +330,9 @@
         .field-container .item .file-list .file-item .preview-btn {
             position: absolute;
             right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
+            font-size: 14px;
+            /* top: 50%; */
+            /* transform: translateY(-50%); */
         }
     </style>
 </head>
@@ -382,14 +380,16 @@
                                     <#if (auditor.participants??) && (auditor.participants?size gt 0)>
                                         <#list auditor.participants as participant>
                                             <div class="approval-record-person-item">
-                                                <div class="avatar">
-                                                    <#if participant.avatar?? && participant.avatar !=''>
-                                                        <img src="${participant.avatar}" alt="" />
-                                                        <#else>
-                                                            <img src="https://representative-1252497236.cos.ap-beijing.myqcloud.com/static/default_avatar.png"
-                                                                alt="" />
-                                                    </#if>
-                                                </div>
+                                                <#if participant.avatar?? && participant.avatar !=''>
+                                                    <div class="avatar"
+                                                        style="background-image: url(${participant.avatar});">
+                                                    </div>
+                                                    <#else>
+                                                        <div class="avatar"
+                                                            style="background-image: url(https://representative-1252497236.cos.ap-beijing.myqcloud.com/static/default_avatar.png);">
+                                                        </div>
+
+                                                </#if>
                                                 <div class="person-name">
                                                     ${participant.auditName}
                                                 </div>

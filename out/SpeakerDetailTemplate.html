@@ -20,11 +20,13 @@
             display: block;
             clear: both;
         }
+
         @media print {
             .page-break-before {
                 page-break-before: always;
             }
         }
+
         .clear-left {
             clear: left;
         }
@@ -140,18 +142,12 @@
             overflow: hidden;
         }
 
-        .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .avatar img {
-            width: 100%;
-            height: 100%;
-            border-radius: 100%;
-        }
-
         .approval-record-list .approval-record-item .approval-record-item-body .approval-record-person-list .approval-record-person-item .person-name {
             font-size: 12px;
             font-weight: 400;
             color: #333333;
             margin-top: 5px;
-            text-wrap: nowrap;
+            white-space: nowrap;
             overflow: hidden;
         }
 
@@ -193,7 +189,8 @@
 
         .approval-record-list .approval-record-item .approval-type {
             display: inline-block;
-            padding: 1px 3px;
+            width: 29px;
+            height: 16px;
             line-height: 16px;
             text-align: center;
             background-color: #f4f4f4;
@@ -333,8 +330,9 @@
         .field-container .item .file-list .file-item .preview-btn {
             position: absolute;
             right: 14px;
-            top: 50%;
-            transform: translateY(-50%);
+            font-size: 14px;
+            /* top: 50%; */
+            /* transform: translateY(-50%); */
         }
     </style>
 </head>
@@ -369,9 +367,9 @@
                             <div class="approval-record-item-body clearfix">
                                 <div class="approval-record-person-list">
                                             <div class="approval-record-person-item">
-                                                <div class="avatar">
-                                                        <img src="https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTInShcaY9KZ8HQqW0tGG8cFotoGxZiaHVtrfjfiaWysOnia1Dq22VkticFFVbVb72xII7pYZpKo0MialYA/132" alt="" />
-                                                </div>
+                                                    <div class="avatar"
+                                                        style="background-image: url(https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTInShcaY9KZ8HQqW0tGG8cFotoGxZiaHVtrfjfiaWysOnia1Dq22VkticFFVbVb72xII7pYZpKo0MialYA/132);">
+                                                    </div>
                                                 <div class="person-name">
                                                     许富荧
                                                 </div>
@@ -398,7 +396,7 @@
                                     <div class="file-list .file-item">
 
                                                 <div class="file-item">
-                                                    <div class="name">红豆山庄介绍.pptx</div>
+                                                    <div class="name">红豆山庄大大大大打单打到哪手抖啊手打哦啊是多哈搜点好骚打撒红豆阿莎打撒殴打花洒殴打好啊多哈搜等哈手抖啊是对阿萨达花洒多哈搜的哈都啊手抖啊三打哈大合适的话扫扫地哈搜大厦打撒等哈多哈搜电话撒豆阿斯达花洒殴打介绍红豆山庄大大大大打单打到哪手抖啊手打哦啊是多哈搜点好骚打撒红豆阿莎打撒殴打花洒殴打好啊多哈搜等哈手抖啊是对阿萨达花洒多哈搜的哈都啊手抖啊三打哈大合适的话扫扫地哈搜大厦打撒等哈多哈搜电话撒豆阿斯达花洒殴打介绍红豆山庄大大大大打单打到哪手抖啊手打哦啊是多哈搜点好骚打撒红豆阿莎打撒殴打花洒殴打好啊多哈搜等哈手抖啊是对阿萨达花洒多哈搜的哈都啊手抖啊三打哈大合适的话扫扫地哈搜大厦打撒等哈多哈搜电话撒豆阿斯达花洒殴打介绍红豆山庄大大大大打单打到哪手抖啊手打哦啊是多哈搜点好骚打撒红豆阿莎打撒殴打花洒殴打好啊多哈搜等哈手抖啊是对阿萨达花洒多哈搜的哈都啊手抖啊三打哈大合适的话扫扫地哈搜大厦打撒等哈多哈搜电话撒豆阿斯达花洒殴打介绍红豆山庄大大大大打单打到哪手抖啊手打哦啊是多哈搜点好骚打撒红豆阿莎打撒殴打花洒殴打好啊多哈搜等哈手抖啊是对阿萨达花洒多哈搜的哈都啊手抖啊三打哈大合适的话扫扫地哈搜大厦打撒等哈多哈搜电话撒豆阿斯达花洒殴打介绍.pptx</div>
                                                     <div class="preview-btn">
                                                         <a style="text-decoration: none; color: #1ab370;"
                                                             href="https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/speaker/2024-07-18/17212962988894xhkh0se.pptx">点击预览</a>
