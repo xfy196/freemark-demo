@@ -100,6 +100,7 @@
       "endAuditIdentity": 1,
       "enterpriseId": 100000004,
       "createTime": 1721296267000,
+      "createTimeStr": "2024年07月8号 14:54:27",
       "approvalTime": 1721296267000,
       "status": 20,
       "reason": "",
