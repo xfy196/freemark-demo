@@ -233,7 +233,6 @@
 
         .field-container .item .label {
             display: inline-block;
-            font-family: PingFang SC, PingFang SC;
             font-weight: 400;
             font-size: 14px;
             color: #333333;
@@ -243,7 +242,6 @@
 
         .field-container .item .value {
             display: inline-block;
-            font-family: PingFang SC, PingFang SC;
             font-weight: 400;
             font-size: 14px;
             color: #666666;
@@ -253,7 +251,6 @@
 
         .field-container .item .time {
             display: inline-block;
-            font-family: PingFang SC, PingFang SC;
             font-weight: 400;
             font-size: 14px;
             color: #666666;
