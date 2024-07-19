@@ -372,9 +372,8 @@
                                 <div class="status pass">
                                     已通过
                                 </div>
-                                <#if auditor.auditTime?has_content>
-                                    <div class="date"> ${auditor.auditTime?number_to_datetime?string("yyyy年MM月dd日
-                                        HH:mm:ss")}</div>
+                                <#if (auditor.auditTimeStr??) && (auditor.auditTimeStr?has_content)>
+                                    <div class="date"> ${auditor.auditTimeStr}</div>
                                 </#if>
                             </div>
                             <!-- 中间  -->
@@ -412,8 +411,7 @@
                         <div class="label">发起人</div>
                         <div class="value">${approvalRecordDetailDto.recordVo.applierName}</div>
                         <div class="time">
-                            ${approvalRecordDetailDto.recordVo.createTime?number_to_datetime?string("yyyy年MM月dd日
-                            HH:mm:ss")}</div>
+                            ${approvalRecordDetailDto.recordVo.createTimeStr}</div>
                     </div>
                 </#if>
                 <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.ccUser??) &&

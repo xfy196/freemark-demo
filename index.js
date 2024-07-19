@@ -23,14 +23,14 @@ var fm = new Freemarker({
 });
 
 // Single template file
-fm.render("speaker-apply-record.ftl", data14, function (err, html, output) {
+fm.render("SpeakerDetailTemplate.ftl", data14, function (err, html, output) {
   console.log("🚀 ~ file: index.js:14 ~ output:", output);
   if (err) {
     console.log("🚀 ~ file: index.js:17 ~ err:", err);
     return;
   }
   fs.writeFile(
-    path.join(__dirname, "./out/speaker-apply-record.html"),
+    path.join(__dirname, "./out/SpeakerDetailTemplate.html"),
     html,
     "utf8",
     (err) => {
