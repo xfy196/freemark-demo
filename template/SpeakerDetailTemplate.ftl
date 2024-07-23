@@ -411,6 +411,14 @@
                             ${approvalRecordDetailDto.recordVo.createTimeStr}</div>
                     </div>
                 </#if>
+                <#if speaker??>
+                    <div class="item">
+                        <div class="label">发起人</div>
+                        <div class="value">${speaker.creatorName}</div>
+                        <div class="time">
+                            ${speaker.createTimeStr}</div>
+                    </div>
+                </#if>
                 <#if (approvalRecordDetailDto??) && (approvalRecordDetailDto.ccUser??) &&
                     (approvalRecordDetailDto.ccUser?size gt 0)>
                     <#assign ccUsers=''>
