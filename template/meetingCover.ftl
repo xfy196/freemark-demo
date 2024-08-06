@@ -56,6 +56,12 @@
             margin: 24px 0;
         }
 
+        /*table {*/
+        /*    page-break-inside: avoid;*/
+        /*    -fs-table-paginate: paginate;*/
+        /*    -fs-page-break-min-height: 1.5cm;*/
+        /*}*/
+
         table td {
             padding: 10px 0 10px 14px;
         }
@@ -106,7 +112,7 @@
                             <span style="color: #333333; font-size: 14px"><strong>姓名</strong></span>
                         </td>
                         <td style="width: 22.4736%; vertical-align: middle">
-                            <span style="color: #333333; font-size: 14px">${userName}</span>
+                            <span style="color: #333333;">${userName}</span>
                         </td>
                         <td style="width: 22.4736%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>岗位</strong></span>
@@ -298,7 +304,7 @@
                         <tr style="height: 36px">
                             <td style="width: 22.4736%; vertical-align: middle">${speaker.name}</td>
                             <td style="width: 22.4736%; vertical-align: middle">${speaker.speakerRoleName}</td>
-                            <td style="width: 22.4736%; vertical-align: middle">${speaker.fee}</td>
+                            <td style="width: 22.4736%; vertical-align: middle">${speaker.feeUsFeeDesc}</td>
                             <td style="width: 22.4736%; vertical-align: middle">${speaker.speakerLevel}</td>
                         </tr>
                     </#list>
