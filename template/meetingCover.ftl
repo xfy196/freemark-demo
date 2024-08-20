@@ -249,7 +249,7 @@
                                     <span style="color: #333333; font-size: 14px"><strong>${header}</strong></span>
                                 </td>
                             <#else>
-                                <td style="width: 22.4736%; text-align: left; vertical-align: middle">
+                                <td style="width: 22.4736%; text-align: left; vertical-align: middle;" colspan="2">
                                     <span style="color: #333333; font-size: 14px"><strong>${header}</strong></span>
                                 </td>
                             </#if>
@@ -268,7 +268,7 @@
 
                                     </td>
                                 <#else>
-                                    <td style="width: 22.4736%; vertical-align: middle">
+                                    <td style="width: 22.4736%; vertical-align: middle" colspan="2">
                                         ${item[header]}
                                     </td>
                                 </#if>
