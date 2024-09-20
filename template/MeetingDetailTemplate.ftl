@@ -699,6 +699,18 @@
                             <span>${staffInCharge.name} ${staffInCharge.deptName}</span>
                         </div>
                     </div>
+                    <#if isNewSunShine?? && isNewSunShine==true>
+                        <div class="basicInfo-main-sponsor">
+                            <div class="basicInfo-main-sponsor-C">
+                                <label>会议日期：</label>
+                                <span>${meetingDate!''}</span>
+                            </div>
+                            <div class="basicInfo-main-sponsor-C">
+                                <label>会议名称：</label>
+                                <span>${name}</span>
+                            </div>
+                        </div>
+                    </#if>
                     <#if organiser?? && organiser!=''>
                         <div class="basicInfo-main-organizer">
                             <label>协办人：</label>
@@ -1468,5 +1480,5 @@
     </div>
 </#escape>
 </body>
-
+<object type="watermark"></object>
 </html>

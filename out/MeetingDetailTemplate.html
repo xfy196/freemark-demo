@@ -1,9 +1,742 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="Expires" content="0"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Cache-control" content="no-cache"/>
+    <meta http-equiv="Cache" content="no-cache"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>PDF</title>
+    <style>
+        @page {
+            size: 1100px 1200px;
+        }
+
+        object[type="watermark"] {
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transform: rotate(-45deg);
+            z-index: 1000;
+            left: 0;
+            top: 0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Source Han Sans', 'Emoji';
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .container {
+            background: #fff;
+        }
+
+        .pt16 {
+            padding-top: 16px;
+        }
+
+        .public-header {
+            padding-bottom: 14px;
+            padding-top: 40px;
+            border-bottom: 1px solid #333333;
+        }
+
+        .table-title {
+            margin: 12px 0;
+            height: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 16px;
+            padding-left: 10px;
+            border-left: 2px solid #1AB370;
+        }
+
+        .public-header-tltle {
+            color: #333;
+            font-size: 24px;
+            font-weight: 500;
+            position: relative;
+            padding-left: 1px;
+            display: inline;
+        }
+
+        .public-header-tltle-right {
+            position: absolute;
+            top: 50px;
+            right: 0px;
+        }
+
+        .public-header-tltle-right-code {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 14px;
+            margin-right: 12px;
+        }
+
+        .public-header-tltle-right-code-name {
+            margin-right: 8px;
+        }
+
+        .public-header-tltle-right-tag {
+            /* width: 100%;
+              height: 100%; */
+            width: 36px;
+            height: 20px;
+            display: inline-block;
+            position: relative;
+            top: 4px;
+        }
+
+        .basic-info {
+        }
+
+        .basicInfo-main-title {
+            font-size: 22px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 30px;
+        }
+
+        .basicInfo-main-titleFlag {
+            width: 60px;
+            height: 25px;
+            padding: 0px 7px;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 2;
+            color: #ffffff;
+            text-align: center;
+            background: #1ab370;
+            vertical-align: middle;
+            display: inline-block;
+            margin-bottom: 7px;
+        }
+
+        .basicInfo-main-titleFlagNew {
+            min-width: 10px;
+            padding: 0 6px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #ffffff;
+            text-align: center;
+            background: #1ab370;
+            vertical-align: middle;
+        }
+
+        .basicInfo-main-titleC {
+            padding-left: 10px;
+            font-size: 19px;
+        }
+
+        .basicInfo-main-type {
+            font-size: 18px;
+            font-weight: 400;
+            color: #333333;
+            padding: 16px 0 24px 0;
+        }
+
+        .basicInfo-main-time {
+            /* display: flex; */
+        }
+
+        .basicInfo-main-timeR {
+            width: 36%;
+            height: 36px;
+            line-height: 36px;
+            background: #f9f9f9;
+            margin-right: 1%;
+            float: left;
+        }
+
+        .basicInfo-main-timeR label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            float: left;
+        }
+
+        .basicInfo-main-timeR span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            float: left;
+        }
+
+        .basic-info-main label {
+            padding-left: 16px;
+        }
+
+        .basic-info-main span {
+            padding-left: 8px;
+        }
+
+        .basicInfo-main-sponsor {
+            clear: both;
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        .basicInfo-main-sponsor-C {
+            float: left;
+            margin-right: 1%;
+            background: #f9f9f9;
+            width: 49%;
+            margin-bottom: 4px;
+
+            min-height: 36px;
+            line-height: 36px;
+            word-break: break-all;
+        }
+
+        .basicInfo-main-sponsor-C label {
+            font-size: 14px;
+            min-width: 70px;
+            font-weight: 500;
+            display: block;
+            float: left;
+        }
+
+        .basicInfo-main-sponsor-C span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            display: block;
+        }
+
+        .basicInfo-main-organizer {
+            clear: both;
+            background: #f9f9f9;
+            width: 99%;
+
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .basicInfo-main-organizer label {
+            font-size: 14px;
+            min-width: 70px;
+            display: block;
+            font-weight: 500;
+            float: left;
+            height: 60px;
+        }
+
+        .basicInfo-main-organizer span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            margin-top: 4px;
+            background: #f9f9f9;
+            display: block;
+        }
+
+        .speaker {
+            clear: both;
+        }
+
+        .speaker-main {
+            margin-top: 16px;
+        }
+
+        .staff {
+        }
+
+        .attend-info {
+            clear: both;
+        }
+
+        .attend-info-main {
+            margin-top: 16px;
+        }
+
+        .attend-info-main-people {
+            /* display: flex; */
+            height: 36px;
+        }
+
+        .attend-info-main-people label,
+        .attend-info-main-customer label,
+        .attend-info-main-qrcode label,
+        .attend-info-main-staff label {
+            font-size: 14px;
+            color: #333333;
+            line-height: 16px;
+            padding-left: 16px;
+        }
+
+        .attend-info-main-people label,
+        .attend-info-main-qrcode label {
+            font-weight: 500;
+        }
+
+        .customer-one {
+            font-weight: 500;
+        }
+
+        .attend-info-main-people span,
+        .attend-info-main-customer span,
+        .attend-info-main-qrcode span,
+        .attend-info-main-staff span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 16px;
+            padding-left: 8px;
+        }
+
+        .people-one,
+        .people-two {
+            width: 49%;
+            height: 36px;
+            line-height: 36px;
+            background: #f9f9f9;
+            margin-right: 1%;
+            float: left;
+        }
+
+        .attend-info-main-customer {
+            width: 99%;
+            background: #f9f9f9;
+            margin-top: 4px;
+        }
+
+        .customer-one,
+        .customer-two,
+        .customer-there {
+            padding-top: 5px
+        }
+
+        .attend-info-main-staff {
+            width: 99%;
+            background: #f9f9f9;
+            margin-top: 4px;
+        }
+
+        .staff-one,
+        .staff-two,
+        .staff-there {
+            padding-top: 5px
+        }
+
+        .staff-one {
+            font-weight: 500;
+        }
+
+        .attend-info-main-qrcode {
+            width: 99%;
+            background: #f9f9f9;
+            margin-top: 4px;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .other-info {
+        }
+
+        .other-info-one {
+            /* display: flex;
+              flex-direction: column; */
+            margin-top: 16px;
+            width: 100%;
+        }
+
+        .other-info-one .info-one-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 16px;
+        }
+
+        .other-info-one .info-one-desc {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 20px;
+            padding-top: 8px;
+        }
+
+        .other-info-two {
+            width: 99%;
+            margin-top: 24px;
+        }
+
+        .other-info-planMoney {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 16px;
+            margin-top: 2px;
+            margin-bottom: 8px;
+            clear: both;
+        }
+
+        .other-info-template {
+            margin-top: 24px;
+            width: 100%;
+        }
+
+        .other-info-template .other-info-T {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 16px;
+            margin-bottom: 16px;
+        }
+
+        .other-info-template .temp-text {
+            margin-bottom: 24px;
+            clear: both;
+        }
+
+        .temp-text .temp-title {
+            font-size: 14px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 20px;
+        }
+
+        .temp-text .temp-desc {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 20px;
+            margin-top: 8px;
+        }
+
+        .temp-text .temp-list {
+            margin-top: 8px;
+        }
+
+        .temp-text .temp-list .temp-li {
+            padding: 0px 14px;
+            border: 1px solid #f5f5f5;
+            margin-top: 4px;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .temp-li .temp-li-T {
+            display: inline-block;
+            width: 90%;
+        }
+
+        .temp-li .temp-li-B {
+            display: inline-block;
+            padding-left: 10px;
+        }
+
+        .temp-text .temp-list .temp-li span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #333333;
+            line-height: 20px;
+        }
+
+        .temp-text .temp-list .temp-li span:last-child {
+            color: #1ab370;
+            cursor: pointer;
+        }
+
+        .temp-mp4 {
+        }
+
+        .temp-mp4-li {
+            float: left;
+            padding: 16px;
+            margin-top: 8px;
+            border: 1px solid #f5f5f5;
+            margin-right: 20px;
+            width: 136px;
+            height: 156px;
+            box-sizing: border-box;
+            margin-bottom: 24px;
+        }
+
+        .temp-mp4-li .temp-mp4-img {
+            border: 1px solid #f5f5f5;
+            width: 104px;
+            height: 104px;
+        }
+
+        .temp-mp4-li .temp-mp4-btn {
+            color: #1ab370;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            text-align: center;
+            padding-top: 8px;
+        }
+
+        .temp-mp4-li .temp-mp4-img img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .temp-img-li {
+            width: 600px;
+            height: 100%;
+            margin-top: 16px;
+        }
+
+        .temp-img-li img {
+            max-width: 100%;
+            max-height: 400px;
+        }
+
+        .ask {
+            clear: both;
+        }
+
+        .cloud-recording {
+            clear: both;
+        }
+
+        .meeting-detail {
+            clear: both;
+        }
+
+        .meeting-detail th, .meeting-detail td {
+            font-size: 12px;
+        }
+
+        .cloud-recording td:last-child {
+            color: #1ab370;
+            cursor: pointer;
+        }
+
+        .cloud-chart {
+            clear: both;
+        }
+
+        .img-list {
+            width: 100%;
+            height: 533px;
+            margin-top: 16px;
+        }
+
+        .img-list img {
+            width: auto;
+            height: 100%;
+        }
+
+        /* @media only screen and (max-width: 1200px) {
+            .basicInfo-main-title {
+              align-items: baseline;
+            }
+          } */
+        table {
+            width: 100%;
+        }
+
+        td {
+            border-bottom: 1px solid #f5f5f5;
+            padding: 14px 17px 14px 0;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333333;
+        }
+
+        th {
+            text-align: left;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333333;
+            line-height: 20px;
+            height: 48px;
+            background: #EEF7F1;
+            border-radius: 4px;
+        }
+
+        th:first-child,
+        td:first-child {
+            padding-left: 20px;
+        }
+
+        .picture-item {
+            margin-bottom: 10px;
+            margin-top: 16px;
+        }
+
+        .parent-img {
+            text-align: center;
+            background: #333;
+            padding-top: 1px;
+        }
+
+        .pic-img {
+            max-height: 400px;
+            max-width: 100%;
+        }
+
+        .picture-info {
+            position: relative;
+            top: -21px;
+            padding: 7px 14px;
+            background: #f5f5f5;
+            border-radius: 0px 0px 4px 4px;
+            border: 1px solid #eeeeee;
+            font-size: 13px;
+            color: #666666;
+            overflow: hidden;
+        }
+
+        .info-left {
+            float: left;
+            padding-top: 7px;
+        }
+
+        .info-right {
+            float: right;
+            padding: 3px 10px;
+            background: #eeeeee;
+            border-radius: 18px;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .split-line {
+            display: inline-block;
+            position: relative;
+            top: 2px;
+            width: 1px;
+            height: 14px;
+            background: #e5e5e5;
+            margin: 0 14px;
+        }
+
+        .attend-info-main-people,
+        .attend-info-main-qrcode,
+        .attend-info-main-customer,
+        .temp-text,
+        .temp-li,
+        .temp-img-li,
+        .picture-item,
+        tr {
+            page-break-inside: avoid;
+        }
+    </style>
 </head>
+
+<body>
+
+    <div class="container">
+        <div class="container-all">
+            <div class="basic-info">
+                <div class="public-header">
+          <span class="public-header-tltle"><a
+                      style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
+            基础信息</span>
+                    <span class="public-header-tltle-right">
+            <span class="public-header-tltle-right-code">
+              <span class="public-header-tltle-right-code-name">会议编码</span>
+              <span>XXHY000000001</span>
+            </span>
+          </span>
+                </div>
+
+                <div class="basic-info-main pt16">
+                    <div class="basicInfo-main-title">
+                        <span class="basicInfo-main-titleC">
+              aaa
+            </span>
+                    </div>
+                    <div class="basicInfo-main-type">
+                        会议类型：院内会
+                    </div>
+                    <div class="basicInfo-main-time">
+                        <div class="basicInfo-main-timeR">
+                            <label>计划时间：</label>
+                            <span>2024/09/18 18:35~19:35</span>
+                        </div>
+                        <div class="basicInfo-main-timeR">
+                            <label>实际时间：</label>
+                            <span>2024/09/18 18:35~19:35</span>
+                        </div>
+                            <div style="width: 25%;margin-right: 0;" class="basicInfo-main-timeR">
+                                <label>会议时长：</label>
+                                <span>1时</span>
+                            </div>
+                    </div>
+                    <div class="basicInfo-main-sponsor">
+                        <div class="basicInfo-main-sponsor-C">
+                            <label>发起人：</label>
+                            <span>顾进荣 新阳光专属部署（老的自定义字段）</span>
+                        </div>
+                        <div class="basicInfo-main-sponsor-C">
+                            <label>负责人：</label>
+                            <span>顾进荣 新阳光专属部署（老的自定义字段）</span>
+                        </div>
+                    </div>
+                        <div class="basicInfo-main-sponsor">
+                            <div class="basicInfo-main-sponsor-C">
+                                <label>会议日期：</label>
+                                <span>2024/09/18</span>
+                            </div>
+                            <div class="basicInfo-main-sponsor-C">
+                                <label>会议名称：</label>
+                                <span>aaa 哒哒哒拿到的纳森撒答案的教练打架了那睡觉了三的理解三地理三大到哪大大收到了卡萨帝那三十多拉屎的那是两单撒手单独拉到哪里的大当家打了卡是的呢</span>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+
+
+
+
+                <div class="other-info">
+                    <div class="public-header">
+            <span class="public-header-tltle"><a
+                        style="pointer-events:none; color:#1ab370; font-size:30px;">・</a>
+              其他信息</span>
+                    </div>
+
+
+
+                    <div class="other-info-template">
+                                    <div class="temp-text">
+                                        <div class="temp-title"
+                                             style="font-size: 16px; font-weight: 500; color: #333333;">
+                                            日期1：
+                                        </div>
+                                        <div class="temp-desc"
+                                             style="font-size: 14px; font-weight: 400; color: #666666;">
+                                            2024-09-10
+                                        </div>
+                                    </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+
+
+            <!-- 参会员工 -->
+
+
+            <!-- 执行标准 -->
+
+            <!-- 执行标准 -->
+        </div>
+    </div>
+</body>
+<object type="watermark"></object>
 </html>
