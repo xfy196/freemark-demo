@@ -150,51 +150,61 @@
                         <td style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>编码</strong></span>
                         </td>
-                        <td style="width: 20%; vertical-align: middle">${planCode}</td>
+                        <td colspan="2" style="width: 20%; vertical-align: middle">${planCode}</td>
                         <td  style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>参会人数</strong></span>
                         </td>
-                        <td colspan="2" style="width: 40%; vertical-align: middle">${attendeesCount}</td>
+                        <td colspan="1" style="width: 20%; vertical-align: middle">${attendeesCount}</td>
+                    </tr>
+                    <tr style="height: 36px">
+                        <td style="width: 20%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>内部参会人</strong></span>
+                        </td>
+                        <td colspan="2" style="width: 20%; vertical-align: middle">${attendeesCount}</td>
+                        <td  style="width: 20%; text-align: left; vertical-align: middle">
+                            <span style="color: #333333; font-size: 14px"><strong>外部参会人</strong></span>
+                        </td>
+                        <td colspan="1" style="width: 20%; vertical-align: middle">${attendeesCount}</td>
                     </tr>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>会议名称</strong></span>
                         </td>
-                        <td style="width: 20%; vertical-align: middle">${name}</td>
+                        <td colspan="2" style="width: 40%; vertical-align: middle">${name}</td>
                         <td  style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>活动类型</strong></span>
                         </td>
-                        <td colspan="2" style="width: 40%; vertical-align: middle">${meetingTypeName}</td>
+                        <td colspan="1" style="width: 20%; vertical-align: middle">${meetingTypeName}</td>
                     </tr>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>会议主题</strong></span>
                         </td>
-                        <td style="width: 20%; vertical-align: middle">${topic}</td>
+                        <td colspan="2" style="width: 40%; vertical-align: middle">${topic}</td>
                         <td style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>活动地点</strong></span>
                         </td>
-                        <td colspan="2" style="width: 40%; vertical-align: middle">${meetingAddress}</td>
+                        <td colspan="1" style="width: 20%; vertical-align: middle">${meetingAddress}</td>
                     </tr>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>活动开始时间</strong></span>
                         </td>
-                        <td style="width: 20%; vertical-align: middle">${planStartTimeStr}</td>
+                        <td colspan="2" style="width: 40%; vertical-align: middle">${planStartTimeStr}</td>
                         <td  style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>成本中心</strong></span>
                         </td>
-                        <td colspan="2" style="width: 40%; vertical-align: middle">${costCenter}</td>
+                        <td colspan="1" style="width: 20%; vertical-align: middle">${costCenter}</td>
                     </tr>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>预算金额</strong></span>
                         </td>
-                        <td style="width: 20%; vertical-align: middle">${expenseCost}</td>
+                        <td colspan="2" style="width: 40%; vertical-align: middle">${expenseCost}</td>
                         <td  style="width: 20%; text-align: left; vertical-align: middle">
                             <span style="color: #333333; font-size: 14px"><strong>实际金额</strong></span>
                         </td>
-                        <td colspan="2" style="width: 40%; vertical-align: middle">${actualFee}</td>
+                        <td colspan="1" style="width: 20%; vertical-align: middle">${actualFee}</td>
                     </tr>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
