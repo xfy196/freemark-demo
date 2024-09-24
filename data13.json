@@ -5,6 +5,8 @@
   "meetingTypeName": "内部会议",
   "remark": "",
   "expenseCost": "11",
+  "outsideAttendeeCount": 10,
+  "insideAttendeeCount": 10,
   "userCode": "",
   "speakerProtocols": [],
   "otherExpenseCost": [
