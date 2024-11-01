@@ -23,9 +23,10 @@
         }
 
         .clearfix:after {
-            content: "";
+            content: "\20";
             display: block;
             clear: both;
+            height: 0;
         }
 
         @media print {
@@ -99,24 +100,32 @@
             font-weight: bold;
         }
         .list .list-item{
-            height: 48px;
+            width: 100%;
+            min-height: 36px;
             border: 1px solid #f4f4f4;
-            line-height: 48px;
-            padding: 0 12px;
+            line-height: 1.5;
+            padding: 8px 12px;
             margin-top: 8px;
+            box-sizing: border-box;
+            display: table;
         }
         .list .list-item:first-child{
             margin-top: 0;
         }
         .list .list-item .left {
             width: 50%;
-            float: left;
+            display: table-cell;
+            vertical-align: middle;
             font-size: 14px;
+            word-wrap: break-word; /* 允许内容换行 */
         }
         .list .list-item .right{
             width: 50%;
-            float: right;
             font-size: 14px;
+            display: table-cell;
+            vertical-align: middle;
+
+            height: 100%;
         }
         .protocols{
             margin-top: 24px;
@@ -395,14 +404,14 @@
                 <div class="title">
                     附件2
                 </div>
-            <div class="list-item">
+            <div class="list-item ">
                 <div class="left">1 驳回.docx</div>
                 <div class="right">
                     <span class="label">上传时间:</span>
                     <span class="value">2024-11-01 17:05:08</span>
                 </div>
             </div>
-            <div class="list-item">
+            <div class="list-item ">
                 <div class="left">meeting-approval.xlsx</div>
                 <div class="right">
                     <span class="label">上传时间:</span>
@@ -414,14 +423,14 @@
                 <div class="title">
                     附件1
                 </div>
-            <div class="list-item">
-                <div class="left">工作簿2.xlsx</div>
+            <div class="list-item ">
+                <div class="left">工作簿2的的确确我去额温枪和我窃取结婚前委屈我和我球和全球核武器全屋和全球和轻微工作簿2的的确确我去额温枪和我窃取结婚前委屈我和我球和全球核武器全屋和全球和轻微工作簿2的的确确我去额温枪和我窃取结婚前委屈我和我球和全球核武器全屋和全球和轻微工作簿2的的确确我去额温枪和我窃取结婚前委屈我和我球和全球核武器全屋和全球和轻微.xlsx</div>
                 <div class="right">
                     <span class="label">上传时间:</span>
                     <span class="value">2024-11-01 17:05:08</span>
                 </div>
             </div>
-            <div class="list-item">
+            <div class="list-item ">
                 <div class="left">状态同步.docx</div>
                 <div class="right">
                     <span class="label">上传时间:</span>

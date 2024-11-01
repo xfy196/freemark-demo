@@ -23,9 +23,10 @@
         }
 
         .clearfix:after {
-            content: "";
+            content: "\20";
             display: block;
             clear: both;
+            height: 0;
         }
 
         @media print {
@@ -99,24 +100,32 @@
             font-weight: bold;
         }
         .list .list-item{
-            height: 48px;
+            width: 100%;
+            min-height: 36px;
             border: 1px solid #f4f4f4;
-            line-height: 48px;
-            padding: 0 12px;
+            line-height: 1.5;
+            padding: 8px 12px;
             margin-top: 8px;
+            box-sizing: border-box;
+            display: table;
         }
         .list .list-item:first-child{
             margin-top: 0;
         }
         .list .list-item .left {
             width: 50%;
-            float: left;
+            display: table-cell;
+            vertical-align: middle;
             font-size: 14px;
+            word-wrap: break-word; /* 允许内容换行 */
         }
         .list .list-item .right{
             width: 50%;
-            float: right;
             font-size: 14px;
+            display: table-cell;
+            vertical-align: middle;
+
+            height: 100%;
         }
         .protocols{
             margin-top: 24px;
@@ -385,7 +394,7 @@
                     ${key}
                 </div>
                 <#list arr as attachment>
-            <div class="list-item">
+            <div class="list-item ">
                 <div class="left">${attachment.name}</div>
                 <div class="right">
                     <span class="label">上传时间:</span>
