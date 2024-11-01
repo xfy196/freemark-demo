@@ -6,6 +6,54 @@
   "remark": "这里是成本中心���注",
   "expenseCost": "1000.00",
   "userCode": "18616306336",
+  "insideAttendeeCount": 10,
+  "outsideAttendeeCount": 10,
+  "controlTypeFileInfo": {
+    "附件1": [
+      {
+        "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/meeting/2024-11-01/17304502466767936cocv.xlsx",
+        "name": "工作簿2.xlsx",
+        "controlName": "附件1",
+        "uploadTimeStr": "2024-11-01 17:05:08",
+        "inputCreateTime": 1730451908000,
+        "controlTypeEnums": "FILE",
+        "isImage": false,
+        "isVideo": false
+      },
+      {
+        "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/meeting/2024-11-01/17304502560869dl5drcu.docx",
+        "name": "状态同步.docx",
+        "controlName": "附件1",
+        "uploadTimeStr": "2024-11-01 17:05:08",
+        "inputCreateTime": 1730451908000,
+        "controlTypeEnums": "FILE",
+        "isImage": false,
+        "isVideo": false
+      }
+    ],
+    "附件2": [
+      {
+        "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/meeting/2024-11-01/1730451896387fzgkpl6q.docx",
+        "name": "1 驳回.docx",
+        "controlName": "附件2",
+        "uploadTimeStr": "2024-11-01 17:05:08",
+        "inputCreateTime": 1730451908000,
+        "controlTypeEnums": "FILE",
+        "isImage": false,
+        "isVideo": false
+      },
+      {
+        "url": "https://representative-visit-1252497236.cos.accelerate.myqcloud.com/dev_100000004/meeting/2024-11-01/1730451900321ypbwf5xc.xlsx",
+        "name": "meeting-approval.xlsx",
+        "controlName": "附件2",
+        "uploadTimeStr": "2024-11-01 17:05:08",
+        "inputCreateTime": 1730451908000,
+        "controlTypeEnums": "FILE",
+        "isImage": false,
+        "isVideo": false
+      }
+    ]
+  },
   "speakerProtocols": [
     "<p style=\"text-align: center;\"><strong><span style=\"color: #000000;\">讲者劳务协议</span></strong></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: left;\"><span style=\"color: #000000;\">甲方：上海艾力斯医药科技股份有限公司</span></p>\n<p style=\"text-align: left;\"><span style=\"color: #000000;\">地址：上海市浦东新区周浦镇凌霄花路266号</span></p>\n<p style=\"text-align: left;\">&nbsp;</p>\n<p><span style=\"color: #000000;\">乙方：范主任</span></p>\n<p><span style=\"color: #000000;\">身份证号码：310115199911114567</span></p>\n<p><span style=\"color: #000000;\">银行账号：6226100212345678</span></p>\n<p><span style=\"color: #000000;\">开户支行：中国银行民生支行</span></p>\n<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\">鉴于：</span></p>\n<p><span style=\"color: #000000;\">&nbsp; &nbsp; &nbsp;���方拟举办/赞助 迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05（以下简称&ldquo;会议&rdquo;），甲方特邀乙方在上述会议发表演讲，在乙方资源接受甲方邀请的前提下，经甲方双方友好、公平协商、就以下事项打成一致，并订立本协议，共同遵守履行。</span></p>\n<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\">一、甲方的权利及义务</span></p>\n<p><span style=\"color: #000000;\">1. 甲方应当按照本合同约定按时举行会议，并向乙方提供发表演讲应具备的物质条件；</span></p>\n<p><span style=\"color: #000000;\">2. 甲方应该按照本合同约定向乙方支付讲课费；</span></p>\n<p><span style=\"color: #000000;\">3. 甲方应当承担乙方履行本合同义务所产生的差旅费，包括住宿费，交通费，餐饮费等。</span></p>\n<p><span style=\"color: #000000;\">二、 乙方的权利和义务</span></p>\n<p><span style=\"color: #000000;\">1. 演讲题目：7.1.1产品验收</span></p>\n<p><span style=\"color: #000000;\">2. 演讲时间：2024-07-05</span></p>\n<p><span style=\"color: #000000;\">3. 演讲地点：【会议地点】&nbsp;</span></p>\n<p><span style=\"color: #000000;\">4. 讲课费（税前）：500.00元</span></p>\n<p><span style=\"color: #000000;\">5. 乙方应当承担公民的纳税义务，经乙方谨慎考虑，委托甲方按照税务规定在向乙方支付讲课费时进行代扣和代缴，相</span></p>\n<p><span style=\"color: #000000;\">关税金由乙方承担。</span></p>\n<p><span style=\"color: #000000;\">6. 乙方应当确保发表演讲的内容不违反国家法律、法规、部门规章等规范性文件，同时须确保演讲内容不侵犯任何第三</span></p>\n<p><span style=\"color: #000000;\">人的知识产权，名誉权，隐私权，荣誉权等合法权利。</span></p>\n<p><span style=\"color: #000000;\">三、其他</span></p>\n<p><span style=\"color: #000000;\">1. 本协议一式两份（协议编码唯一），甲、乙双方各执壹份，具有同等法律效力。</span></p>\n<p><span style=\"color: #000000;\">2. 甲方授权公司员工代表签署本协议，乙方需要本人签署。</span></p>\n<p><span style=\"color: #000000;\">3. 本协议于双方签字之日起生效。</span></p>\n<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\">甲方代表（签字）：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;乙方（签字）：</span></p>\n<p><span style=\"color: #000000;\">签署日期：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 签署日期：&nbsp;&nbsp;</span></p>",
     "<p style=\"text-align: center;\"><strong><span style=\"color: #000000;\">讲者劳务协议</span></strong></p>\n<p style=\"text-align: center;\">&nbsp;</p>\n<p style=\"text-align: left;\"><span style=\"color: #000000;\">甲方：上海艾力斯医药科技股份有限公司</span></p>\n<p style=\"text-align: left;\"><span style=\"color: #000000;\">地址：上海市浦东新区周浦镇凌霄花路266号</span></p>\n<p style=\"text-align: left;\">&nbsp;</p>\n<p><span style=\"color: #000000;\">乙方：郭晓萍</span></p>\n<p><span style=\"color: #000000;\">身份证号码：411282199712054802</span></p>\n<p><span style=\"color: #000000;\">银行账号：6215085485234528</span></p>\n<p><span style=\"color: #000000;\">开户支行：中国银行民生支行</span></p>\n<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\">鉴于：</span></p>\n<p><span style=\"color: #000000;\">&nbsp; &nbsp; &nbsp;甲方拟举办/赞助 迪士尼达到100号-产品测试会议类型-子类型二-2024-07-05（以下简称&ldquo;会议&rdquo;），甲方特邀乙方在上述会议发表演讲，在乙方资源接受甲方邀请的前提下，经甲方双方友好、公平协商、就以下事项打成一致，并订立本协议，共同遵守履行。</span></p>\n<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\">一、甲方的权利及义务</span></p>\n<p><span style=\"color: #000000;\">1. 甲方应当按照本合同约定按时举行会议，并向乙方提供发表演讲应具备的物质条件；</span></p>\n<p><span style=\"color: #000000;\">2. 甲方应该按照本合同约定向乙方支付讲课费；</span></p>\n<p><span style=\"color: #000000;\">3. 甲方应当承担乙方履行本合同义务所产生的差旅费，包括住宿费，交通费，餐饮费等。</span></p>\n<p><span style=\"color: #000000;\">二、 乙方的权利和义务</span></p>\n<p><span style=\"color: #000000;\">1. 演讲题目：7.1.1产品验收</span></p>\n<p><span style=\"color: #000000;\">2. 演讲时间：2024-07-05</span></p>\n<p><span style=\"color: #000000;\">3. 演讲地点：【会议地点】&nbsp;</span></p>\n<p><span style=\"color: #000000;\">4. 讲课费（税前）：500.00元</span></p>\n<p><span style=\"color: #000000;\">5. 乙方应当承担公民的纳税义务，经乙方谨慎考虑，委托甲方按照税务规定在向乙方支付讲课费时进行代扣和代缴，相</span></p>\n<p><span style=\"color: #000000;\">关税金由乙方承担。</span></p>\n<p><span style=\"color: #000000;\">6. 乙方应当确保发表演讲的内容不违反国家法律、法规、部门规章等规范性文件，同时须确保演讲内容不侵犯任何第三</span></p>\n<p><span style=\"color: #000000;\">人的知识产权，名誉权，隐私权，荣誉权等合法权利。</span></p>\n<p><span style=\"color: #000000;\">三、其他</span></p>\n<p><span style=\"color: #000000;\">1. 本协议一式两份（协议编码唯一），甲、乙双方各执壹份，具有同等法律效力。</span></p>\n<p><span style=\"color: #000000;\">2. 甲方授权公司员工代表签署本协议，乙方需要本人签署。</span></p>\n<p><span style=\"color: #000000;\">3. 本协议于双方签字之日起生效。</span></p>\n<p><span style=\"color: #000000;\">&nbsp;</span></p>\n<p><span style=\"color: #000000;\">甲方代表（签字）：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;乙方（签字）：</span></p>\n<p><span style=\"color: #000000;\">签署日期：&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 签署日期：&nbsp;&nbsp;</span></p>",

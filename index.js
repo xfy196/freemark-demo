@@ -24,14 +24,14 @@ var fm = new Freemarker({
 
 // Single template file
 // MeetingDetailTemplate.ftl
-fm.render("MeetingDetailTemplate.ftl", data14, function (err, html, output) {
+fm.render("MeetingCover.ftl", data13, function (err, html, output) {
   console.log("🚀 ~ file: index.js:14 ~ output:", output);
   if (err) {
     console.log("🚀 ~ file: index.js:17 ~ err:", err);
     return;
   }
   fs.writeFile(
-    path.join(__dirname, "./out/MeetingDetailTemplate.html"),
+    path.join(__dirname, "./out/MeetingCover.html"),
     html,
     "utf8",
     (err) => {
