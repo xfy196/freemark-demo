@@ -378,6 +378,7 @@
                     </div>
                 </div>
             </#list>
+            <#if controlTypeFileInfo?has_content>
             <#list controlTypeFileInfo as key, arr >
             <div class="page list">
                 <div class="title">
@@ -394,6 +395,7 @@
             </#list>
             </div>
             </#list>
+            </#if>
         </#if>
         <div class="protocols">
             <#list speakerProtocols as template>
