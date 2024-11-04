@@ -396,9 +396,14 @@
                 <#list arr as attachment>
             <div class="list-item ">
                 <div class="left">${attachment.name}</div>
-                <div class="right">
-                    <span class="label">上传时间:</span>
-                    <span class="value">${attachment.uploadTimeStr}</span>
+                    <div class="right">
+                    <#if attachment.uploadTimeStr?has_content>
+                        <div>
+                        
+                            <span class="label">上传时间:</span>
+                            <span class="value">${attachment.uploadTimeStr}</span>
+                        </div>
+                    </#if>
                 </div>
             </div>
             </#list>
