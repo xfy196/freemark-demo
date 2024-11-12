@@ -23,10 +23,9 @@
         }
 
         .clearfix:after {
-            content: "\20";
+            content: "";
             display: block;
             clear: both;
-            height: 0;
         }
 
         @media print {
@@ -64,7 +63,10 @@
         /*}*/
 
         table td {
-            padding: 10px 0 10px 14px;
+            padding: 10px 10px 10px 14px;
+            word-wrap: break-word;
+            word-break: break-all;
+            white-space: normal;
         }
 
         .images {
@@ -93,43 +95,6 @@
             background: #fff;
             color: #333333;
         }
-        .list {
-            margin-top: 24px;
-        }
-        .list .title {
-            font-weight: bold;
-        }
-        .list .list-item{
-            width: 100%;
-            min-height: 36px;
-            border: 1px solid #f4f4f4;
-            line-height: 1.5;
-            padding: 8px 12px;
-            margin-top: 8px;
-            box-sizing: border-box;
-            display: table;
-        }
-        .list .list-item:first-child{
-            margin-top: 0;
-        }
-        .list .list-item .left {
-            width: 50%;
-            display: table-cell;
-            vertical-align: middle;
-            font-size: 14px;
-            word-wrap: break-word; /* 允许内容换行 */
-        }
-        .list .list-item .right{
-            width: 50%;
-            font-size: 14px;
-            display: table-cell;
-            vertical-align: middle;
-
-            height: 100%;
-        }
-        .protocols{
-            margin-top: 24px;
-        }
     </style>
 </head>
 
@@ -143,7 +108,7 @@
                 </p>
                 <div class="divider"></div>
 
-                <table style="border-collapse: collapse; width: 100%" border="1" cellpadding="0">
+                <table style="border-collapse: collapse; table-layout: fixed; width: 100%" border="1" cellpadding="0">
                     <tbody>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
@@ -387,31 +352,8 @@
                     </div>
                 </div>
             </#list>
-            <#if controlTypeFileInfo?has_content>
-            <#list controlTypeFileInfo as key, arr >
-            <div class="page list">
-                <div class="title">
-                    ${key}
-                </div>
-                <#list arr as attachment>
-            <div class="list-item ">
-                <div class="left">${attachment.name}</div>
-                    <div class="right">
-                    <#if attachment.uploadTimeStr?has_content>
-                        <div>
-                        
-                            <span class="label">上传时间:</span>
-                            <span class="value">${attachment.uploadTimeStr}</span>
-                        </div>
-                    </#if>
-                </div>
-            </div>
-            </#list>
-            </div>
-            </#list>
-            </#if>
         </#if>
-        <div class="protocols">
+        <div>
             <#list speakerProtocols as template>
                 <div class="page page-break-before">
                     <#noescape>
