@@ -109,6 +109,13 @@
                 <div class="divider"></div>
 
                 <table style="border-collapse: collapse; table-layout: fixed; width: 100%" border="1" cellpadding="0">
+                    <colgroup>
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                        <col style="width: 20%;">
+                      </colgroup>
                     <tbody>
                     <tr style="height: 36px">
                         <td style="width: 20%; text-align: left; vertical-align: middle">
