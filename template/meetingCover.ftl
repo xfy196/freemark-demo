@@ -101,6 +101,7 @@
 <body>
 <#escape x as x?html>
     <div class="container">
+   
         <#if exportCover?? && exportCover>
             <div class="page">
                 <p style="text-align: center;margin-top: 48px;">
